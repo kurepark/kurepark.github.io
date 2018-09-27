@@ -1,0 +1,668 @@
+@charset "utf-8";
+@import url(core.css);
+@import url(DTcommon.css);
+/* DT형 메인디자인 */
+
+/***************************3.메인이미지******************************/
+#main{
+	position: relative;
+	width:100%;
+	height:550px;
+	overflow:hidden;
+	/*원본사진을 크고, 긴 사진으로! 위치를 center로 두면 항상 가운데, 세로를 100%로 맞춘다!!!!*/
+}
+#main>ul{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+#main>ul>li{/*각 슬라이드 */
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+#main>ul>li:first-child{
+	background:url(../web_images/banner01.jpg) no-repeat center;
+}
+#main>ul>li:nth-child(2){
+	background:url(../web_images/banner02.jpg) no-repeat center;
+}
+#main>ul>li:last-child{
+	background:url(../web_images/banner03.jpg) no-repeat center;
+}
+#main>ul>li>span{
+	display:none;
+}
+/*배경지미지 가운데 텍스트박스*/
+
+	#main>b{/*글자*/
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -75%);
+		color:#fff;
+		text-align: center;
+		font-size:1.8em;
+		font-family: NGB;
+		line-height:50px;
+	}
+	#main>span{/*글자배경*/
+		position:relative;
+		display:block;
+		margin:0 auto;
+		margin-top:150px;
+		width:400px;
+		height: 200px;
+		background-color:#000;
+		opacity:0.5;
+	}
+
+/***************************4.코픽서비스,아이콘메뉴******************************/
+#icon{
+	position: relative;
+	width:1200px;
+	margin:0 auto;
+	height:300px;
+	border:1px solid #e1e1e1;
+	box-sizing: border-box;
+	background-color:#fff;
+	margin-top:-100px;
+}
+/*아이콘메뉴 제목*/
+#icon h1{
+	position:relative;
+	margin:0 auto;
+	margin-top:30px;
+	width:250px;
+	height:50px;
+	line-height: 50px;
+	color:#004b7b;
+	text-align: center;
+	font-size:35px;
+	font-family: NGB;
+	font-weight:bold;
+}
+#icon>h1>em{
+	font-style: normal;
+	color:#333;
+	font-size:35px;
+	font-weight:bold;
+}
+/*아이콘메뉴 ul박스*/
+#icon>ul{
+	width:100%;
+	margin: 0 auto;
+	margin:40px 0px;
+}
+#icon>ul>li{
+	width:11.11%;
+	text-align: center;
+}
+#icon>ul>li>span{
+	display:block;
+	margin-top:10px;
+	font-size:0.93em;
+	font-weight: bold;
+	transition:all 0.4s;
+}
+#icon>ul>li>a>img{
+	width:80px;
+	transition:all 0.4s;
+}
+#icon>ul>li:hover img{/*hover시 이미지 커지게*/
+	transform:scale(1.3);
+}
+#icon>ul>li:hover span{
+	transform:scale(1.1);
+	text-shadow: 1px 1px 5px #ccc;
+/*	font-weight: bold;*/
+}
+
+
+
+
+
+
+
+/*******************************5. 전체컨텐츠 박스********************************/
+
+#cont{
+	position:relative;
+	width:1200px;
+	height:auto;
+	margin:0 auto;
+}
+#cont>div{
+	width:33.333%;
+	height:300px;
+	float:left;
+}
+#cont>div:nth-child(2){
+	border-right:1px solid #e1e1e1;
+	border-bottom:1px solid #e1e1e1;
+	box-sizing: border-box;
+}
+#cont>div:nth-child(3){
+	border-right:1px solid #e1e1e1;
+/*	border-bottom:1px solid #e1e1e1;*/
+	box-sizing: border-box;
+}
+#cont>div:nth-child(4){
+	border-right:1px solid #e1e1e1;
+	border-left:1px solid #e1e1e1;
+/*	border-bottom:1px solid #e1e1e1;*/
+	box-sizing: border-box;
+}
+/***************************5-1. 박스오피스******************************/
+#box{
+	position: relative;
+	height: 100%;
+	background-color:#004b7b;
+}
+#box>div:first-child{/*박스오피스 타이틀 디자인 공통*/
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+#box h1,em{
+	font-size:20px;
+	font-weight:800;
+	color:#f29503;
+	white-space: nowrap;
+}
+#box em{
+	font-style: normal;
+	color:#fff
+}
+
+#box>div:nth-child(2){/*일일주말 더보기 전체박스*/
+	position:absolute;
+	top:20px;
+	right:20px;
+	width:100px;
+	height:20px;
+	text-align: center;
+}
+#box>div:nth-child(2)>a{/*일일주말 더보기 글자*/
+	font-size:12px;
+	color:#f29503;
+	padding-right:5px;
+}
+
+#box>div:nth-child(2)>a:nth-child(2){
+	color:#fff;
+}
+#box>div:nth-child(2)>a:nth-child(2)::before{
+	content:"";
+	display:inline-block;
+	width:1px;
+	height: 13px;
+	background-color:#fff;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#box>div:nth-child(2)>a:last-child{/*일일주말 더보기 버튼*/
+	display:inline-block;
+	position: absolute;
+	width:10px;
+	height:10px;
+	top:5px;
+	right:0;
+	background:url(../images/icon_plus.png) no-repeat 0 0;
+}
+#box>div:nth-child(3){/*영화포스터*/
+	position:absolute;
+	width:130px;
+	top:70px;
+	left:16px;
+}
+#box>div:nth-child(3) img{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+/*영화 순위테이블*/
+.boxoffice{
+	position:absolute;
+	top:70px;
+	left:160px;
+	width:58%;
+	font-size:0.7em;
+	text-align: left;
+	border-collapse:collapse;
+	color:#fff;
+/*	outline:1px solid red;*/
+}
+.boxoffice th, td{
+	padding:5px 0px;
+	height:13px;
+}
+.boxoffice th, td:nth-child(2), td:nth-child(3), td:nth-child(4){
+	text-align: center;
+}
+/*점유율*/
+.boxoffice th, td:nth-child(1){
+	width:12%;
+}
+/*점유율*/
+.boxoffice th, td:nth-child(2){
+	width:33%;
+}
+/*점유율*/
+.boxoffice th, td:nth-child(3){
+	width:10%;
+}
+/*점유율*/
+.boxoffice th, td:nth-child(4){
+	width:35%;
+}
+/*순위아이콘디자인*/
+.boxoffice tr td>img:first-child{
+	
+	width:15px;
+	height: 15px;
+}
+.boxoffice thead{/*테이블 제목들*/
+	font-size:1.2em;
+	font-weight: bold;
+	color:#F0F0F0;
+/*	text-align: center;*/
+}
+.boxoffice tfoot{
+	text-align:center;
+}
+.boxoffice tbody td:last-child{
+	text-align: right;
+}
+#mvtb{
+/*	display:none;*/
+}
+#box>div:nth-child(3) img:first-child{
+/*	display:none;*/
+}
+/*영화순위테이블 주말*/
+#mvtbweek{
+	display:none;
+}
+#box>div:nth-child(3) img:last-child{
+	display:none;
+}
+.mvchart{/*영화순위알림*/
+	color:#f29503;
+	font-weight: bold;
+	font-size:15px;
+	border:3px solid #fff;
+	box-sizing: border-box;
+}
+
+
+
+
+/***************************5-2. 코픽뉴스******************************/
+/*뉴스전체박스*/
+#news{
+	position:relative;
+	width:100%;
+	background-color:#fff;
+	
+}
+#news>div{
+	position: relative;
+	padding:18px 25px;
+}
+#news>div>a{/*더보기 버튼*/
+	position:absolute;
+	top:20px;
+	right:20px;
+	width:14px;
+	height: 14px;
+	background:#c3c3c3 url(../images/icon_plus.png) no-repeat 2px 50%;
+}
+#news>div>h3{/*뉴스박스 제목*/
+	font-size:20px;
+	font-weight:600;
+}
+#news>div>h3>em{
+	font-style: normal;
+	color:#004b7b;
+}
+
+#news>div>ul{/*뉴스  ul 전체박스*/
+	position: relative;
+	width:100%;
+/*	overflow: hidden;*/
+}
+
+#news>div>ul>li{/*각 뉴스 li 설정*/
+	position: relative;
+	width:100%;
+	height:100px;
+	margin:8px 0;
+	padding:2px 0;
+	border-bottom:1px dotted #a7a7a7;
+}
+#news>div>ul>li:last-child{
+	border:none;
+}
+
+
+#news>div>ul>li img{/*뉴스사진 설정*/
+	width:120px;
+	height:90px;
+}
+#news>div>ul>li>div{/*기사문단 박스설정*/
+	position:absolute;
+	top:0;
+/*	right:0px;*/
+	left:120px;
+	right: 0;
+/*	width:60%;*/
+/*	height:100%;*/
+}
+#news>div>ul>li>div p{/*기사문단 내용설정*/
+	width:95%;
+	font-size:13px;
+	font-weight: 600;
+	line-height: 18px;
+/*	width:100%;*/
+/*	height: 100%;*/
+	word-break: break-all;
+	overflow:hidden;
+	text-overflow: ellipsis;	
+	display: -webkit-box;/*여러줄 생략 처리*/
+	-webkit-line-clamp:3;/*처리할 줄 수*/
+	-webkit-box-orient:vertical;/*처리할 박스 방향*/
+	padding:3px;
+}
+
+#news>div>ul>li>div>p:last-child{/*두번째 문단 설정*/
+	font-size:11px;
+	font-weight:200;
+	color:#666;
+	line-height: 15px;
+}
+		
+		
+/***************************5-3. 코픽공지******************************/
+
+#noti{/*공지전체박스*/
+	position:relative;
+	width:100%;
+	background-color:#fff;
+}
+#noti>div{
+	position:relative;
+	padding:18px 25px;
+}
+#noti>div>a{/*코픽알림 더보기 버튼*/
+	position:absolute;
+	top:25px;
+	right:25px;
+	display:block;
+	width:14px;
+	height:14px;
+	background:#c3c3c3 url(../images/icon_plus.png) no-repeat 2px 50%;
+}
+#noti>div>h3{/*공지박스 제목*/
+	font-size:20px;
+	font-weight:600;
+}
+#noti>div>h3>em{
+	font-style: normal;
+	color:#004b7b;
+}
+
+/*공지 선택제목들*/
+#title{
+	margin-top:3px;
+	left:45px;
+	width:100%;
+	height: 28px;
+	text-align: center;
+}
+#title>span{
+	padding:0 3px;
+	border-left:1px solid #c5c5c5;
+	font-size:14px;
+}
+#title>span:first-child{
+	border:none;
+}
+#title>span>a{
+	color:#666;
+	font-weight: 600;
+}
+#title>span:first-child>a:first-child{
+	color:#265d86;
+	font-weight: 600;
+}
+#realnotibox{
+	position:relative;
+	width:100%;
+	height: 215px;
+	overflow: hidden;
+}
+.realnoti{/*실제 공지내용 리스트*/
+	position:absolute;
+	width:100%;
+	height: 100%;
+}
+.noti2,.noti3,.noti4{
+	display:none;
+}
+.realnoti>ul>li{
+	padding:7px 0;
+/*	margin:9px 0;*/
+	width:100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+}
+.realnoti>ul>li>a{
+	width:100%;
+	height:100%;
+	font-size:13px;
+	font-weight: 600;
+	color:#666;
+	padding-left: 6px;
+   background: url(../images/bullet_service.gif) no-repeat 0 50%;
+}
+/***************************5-4. 서비스******************************/
+
+#serv{/*메뉴 전체박스*/
+	position:relative;
+	width:100%;
+	background-color:#fff;
+}
+#serv>div>span:first-child{
+	display:block;
+	position:absolute;
+	top:25px;
+	left:25px;
+	right:25px;
+	height:67px;
+	border: 1px solid #dcdcdc;
+	background-color:#f8f8f8;
+}
+#serv>div>span:first-child>a{
+	display:inline-block;
+	width:44%;
+	margin-left:10px;
+	font-size:13px;
+	line-height:33px;
+}
+#serv>div>span:first-child>a:hover{/*hover했을때 폰트변경*/
+	color:#3980a8;
+	text-decoration: underline;
+}
+#serv>div>span:last-child{/*아이콘메뉴박스*/
+	display: block;
+	position:absolute;
+	bottom:45px;
+	left:25px;
+	right: 25px;
+	height: 50%;
+}
+#serv>div>span:last-child>span{/*텍스트아이콘메뉴공통*/
+	display:inline-block;
+	position:relative;
+	width:48%;
+	height:35px;
+	margin-top:10px;
+	margin-left:3.5px;
+	background-color:#3980a8;
+	border-radius: 3px;
+}
+#serv>div>span:last-child>span>a:first-child{/*글씨설정*/
+	font-size:13px;
+	line-height: 35px;
+	padding-left:10px;
+	color:#fff;
+}
+/***************************5-5. 트위터******************************/
+#sns{
+	position: relative;
+	width:100%;
+}
+
+/***************************5-6. 배너, 광고박스******************************/
+#ad{
+	position: relative;
+	width:100%;
+	background-color:#fff;
+}
+#ad>div:first-child{/*움직일 배너가 보일 박스*/
+	position: relative;
+	width:100%;
+	overflow: hidden;
+}
+#banslide{
+	position:relative;
+	width:300%;
+	height: 100%;
+	outline:1px solid blue;
+}
+#banslide>li{
+	width:33.3%;
+	left:0;
+}
+#banslide>li img{
+	width:100%;
+}
+/*배너 블릿박스*/
+#ad>div:first-child>span{
+	position:absolute;
+	right:5px;
+	bottom:10px;
+	display:block;
+	width:40px;
+}
+#ad>div:last-child{/*광고 전화번호 전체박스*/
+	position:relative;
+	width:100%;
+	height:50%;
+}
+#ad>div:last-child img{
+	position:relative;
+	display:block;
+	width:100%;
+	margin:0 auto;
+	top:10px;
+/*	height: 50%;*/
+/*	vertical-align: bottom;*/
+}
+
+/**********************미디어쿼리영역**********/
+@media only screen and (max-width:1020px){
+	/*아이콘메뉴 바꾸기*/
+	#icon{
+		width:100%;
+		height: 300px;
+	}
+	#icon>ul{
+		width:100%;
+		margin: 0 auto;
+		margin:10px 2.5px;
+	}
+	/*컨텐츠전체박스*/
+	#cont{
+		width:100%;
+	}
+	#cont>div{
+		width:50%;
+	}
+	/*사이즈 바뀔때 각 컨텐츠 박스 보더 정하기*/
+	#cont>div:nth-child(3){
+		border-right: none;
+		border-bottom:1px solid #e1e1e1;
+		box-sizing: border-box;
+	}
+}/*media*/
+@media only screen and (max-width:760px){
+	
+	#main{
+		display:none;
+	}
+	/*아이콘메뉴 바꾸기*/
+	#icon{
+		width:100%;
+		height:350px;
+		margin-top:0px;
+		}
+	#icon>h1{
+		display:none;
+	}
+		/*아이콘메뉴 ul박스*/
+	#icon>ul{
+		width:100%;
+		margin: 0 auto;
+		margin:40px 0px;
+	}
+	#icon>ul>li{
+		width:33.2%;
+		text-align: center;
+	}
+	#icon>ul>li>span{
+		display:block;
+		margin-top:10px;
+		font-size:0.93em;
+		font-weight: bold;
+	}
+	#icon>ul>li>a>img{
+		width:60px
+	}
+	/*컨텐츠전체박스*/
+	#cont{
+		width:100%;
+	}
+	#cont>div{
+		width:100%;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

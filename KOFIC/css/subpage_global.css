@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* CSS 서브 글로벌페이지 */
+@import url(core.css);
+@import url(DTcommon.css);
+/*lnb디자인*/
+#lnb_menu{
+	position: relative;
+	width:100%;
+	height: 55px;
+	background-color:#3980a8;
+	z-index: 99;
+}
+#lnb_menu>div{
+	position:relative;
+	width:1200px;
+	height: 100%;
+	margin:0 auto;
+/*	outline:1px solid lime;*/
+}
+#lnb_menu>div>ul{
+	position:absolute;
+	top:0;
+	left:0;
+	width:375px;
+	height: 55px;
+/*	outline:1px solid red;*/
+}
+#lnb_menu>div>ul>li{
+	width:160px;
+	height: 55px;
+	line-height: 55px;
+	border-left:1px solid #71b3d8;
+	box-sizing: border-box;
+	text-align: center;
+}
+#lnb_menu>div>ul>li:first-child{/*홈버튼튼*/
+	width:55px;
+	height: 100%;
+}
+#lnb_menu>div>ul>li:last-child{/*마지막 선, 마지막페이지표시*/
+	border-right:1px solid #71b3d8;
+	box-sizing: border-box;
+	background-color:#5394b8;
+}
+#lnb_menu>div>ul>li>a::after{
+	content:"";
+	display: inline-block;
+	position:relative;
+top:0;
+	left:10px;
+width:10px;
+	height: 10px;
+	background:url(../web_images/renew_bg_location_arrow.png) no-repeat 0 0;
+/*	outline:1px solid red;*/
+}
+#lnb_menu>div>ul>li:first-child>a::after{
+	display: none;
+}
+#lnb_menu>div>ul>li>a{
+	display:block;
+	width:100%;
+	height: 100%;
+	color:#fff;
+/*	outline:1px solid red;*/
+}
+/*lnb메뉴 클릭시 나오는 내비게이션 메뉴들*/
+
+#lnb_menu>div>ul>li ol{
+	display:none;
+	position:relative;
+	width:100%;
+	border:1px solid #71b3d8;
+	box-sizing: border-box;
+/*	outline:1px solid red;*/
+}
+#lnb_menu>div>ul>li>ol>li{
+	width:100%;
+	height: 40px;
+	background-color:#fff;
+	border-top:1px solid #71b3d8;
+	box-sizing: border-box;
+	line-height: 40px;
+}
+#lnb_menu>div>ul>li>ol>li:hover a{/*하위메뉴 hover*/
+	color:#2295d5;
+	font-weight: bold;
+	background-color:#ecf6fc;
+}
+#lnb_menu>div>ul>li>ol>li:first-child{
+	border-top:none;
+}
+#lnb_menu>div>ul>li>ol>li>a{
+	display:block;
+	width:100%;
+	height: 100%;
+	color:#464646;
+/*	outline:1px solid red;*/
+}
+
+/*서브컨텐츠 영역*/
+#subcont{
+	position:relative;
+	width:1200px;
+	min-height: 1500px;/*컨텐츠가 없을땐 800px을 유지하다가 컨텐츠가 800px 이상으로 늘어나면 밀고 나간다*/
+	margin:0 auto;
+	background-color:#fff;
+/*	outline:1px solid red;*/
+	padding-top:10px;
+	padding-bottom:20px;
+	border-right:1px solid #d2d2d2;
+	border-left:1px solid #d2d2d2;
+	box-sizing: border-box;
+}
+#subcont>h2{/*타이틀*/
+	position:relative;
+	width:350px;
+	height: 70px;
+	font-size:2.2em;
+	line-height: 70px;
+	text-align: center;
+	margin:0 auto;
+	margin-top:20px;
+/*	outline:1px solid red;*/
+	border-bottom:7px solid #3980a8;
+	box-sizing: border-box;
+	color:#464646;
+}
+
+
+#glob_info>div:first-child{/*첫번째박스*/
+	position: relative;
+	width: 75%;
+	height: 190px;
+	margin:0 auto;
+	margin-top:30px;
+	background-color:#fff;
+/*	outline:1px solid blue;*/
+}
+#glob_info>div:first-child::before{/*상자 윗선*/
+	content:"";
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	height: 10px;	
+	background:url(../web_images/renew_bg_introduce.gif) repeat-x 0 0 ;
+}
+#glob_info>div:first-child::after{/*상자 윗선 모서리*/
+	content:"";
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	height: 40px;	
+	background:url(../web_images/renew_bg_introduce_icon.png) no-repeat 0 0;
+}
+#glob_info>div:first-child p{
+	position:absolute;
+	margin-top:30px;
+	left:30px;
+	line-height: 30px;
+	font-size:15px;
+}
+#glob_info>div:first-child p::after{/*상자 아래선*/
+	content:"";
+	display: block;
+	position: absolute;
+	bottom:-40px;
+	left:-30px;
+	right: 0;
+	height: 10px;
+	background:url(../web_images/renew_bg_introduce.gif) repeat-x 0 0;
+}
+#glob_info>ul{
+	position:relative;
+	margin:0 auto;
+	margin-top:180px;
+	width:75%;
+/*	outline:1px solid red;*/
+}
+
+#glob_info>ul>li{
+	position: relative;
+	width:48%;
+	margin-bottom:25px;
+	padding-left:10px;
+}
+#glob_info>ul>li>a{
+	display:inline-block;
+/*	outline:1px solid blue;*/
+	width:29%;
+}
+#glob_info>ul>li>a:hover img{
+	transform: scale(1.2);
+}
+#glob_info>ul>li>a>img{
+	width:120px;
+	vertical-align: middle;
+	transition: all 0.4s;
+}
+#glob_info>ul>li>b{
+	position: absolute;
+	display: block;
+/*	outline:1px solid lime;*/
+	top:20px;
+	left:160px;
+	font-size:18px;
+	letter-spacing: -2px;
+	color:#3f3f3f;
+	font-family: NGB;
+}
+#glob_info>ul>li>span{
+	display:block;
+	position: absolute;
+	width:200px;
+	left:160px;
+	top:50px;
+	font-size:15px;
+}
+/*지도영역 제목디자인*/
+#glob_info>h6{
+	position:relative;
+	margin-top:20px;
+	left:14%;
+	color:#333;
+	font-size: 15px;
+	padding-left:10px;
+	background:url(../web_images/renew_bg_gnbArw.png) no-repeat left 5px;
+}
+/*지도 디자인*/
+#map{
+	position:relative;
+	width:75%;
+	height: 450px;
+	margin:0 auto;
+	margin-top:10px;
+	background:url(../web_images/map.jpg) no-repeat 0/ 100%;
+}
+#map img{/*손가락표시*/
+	cursor:pointer;
+}
+#map>div{
+	position:relative;
+	display:inline-block;
+	width:49%;
+	height: 100%;
+/*	outline:1px solid red;*/
+}
+#map>div:first-child>.pointer{
+	position:absolute;
+	display:inline-block;
+	width:40px;
+	top:170px;
+	right:100px;
+}
+#map>div:first-child>.glob_info{
+	position:absolute;
+	display:inline-block;
+	width:250px;
+	top:30px;
+	right:130px;
+	opacity:0;
+}
+#map>div:nth-child(2)>.pointer{
+	position:absolute;
+	display:inline-block;
+	width:40px;
+	top:170px;
+	right:190px;
+}
+#map>div:nth-child(2)>.glob_info{
+	position:absolute;
+	display:inline-block;
+	width:250px;
+	bottom:60px;
+	right:-50px;
+	opacity:0;
+}
+#map>div:first-child>span{/*중국주재원글씨*/
+	position:absolute;
+	display: block;
+	top:220px;
+	right:70px;
+	color:#333;
+	font-weight: bold;
+/*	outline:1px solid red;*/
+}
+#map>div:last-child>span{/*미국주재원글씨*/
+	position:absolute;
+	display: block;
+	top:210px;
+	right:150px;
+	color:#333;
+	font-weight: bold;
+/*	outline:1px solid red;*/
+}
+.updown{
+	animation:updown 1.5s infinite;
+}
+@keyframes updown{
+  50%{
+    transform:translateY(1em)
+	}
+}

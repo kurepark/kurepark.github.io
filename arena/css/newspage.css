@@ -1,0 +1,136 @@
+@charset "utf-8";
+@import url(../css/subcommon.css);
+@import url(../css/core.css);
+/* CSS history page*/
+
+/*컨텐츠영역*/
+#newscont{
+    position:relative;
+    width:100%;
+    min-height: 1000px;
+    padding-bottom:100px;
+    background-color:#000;
+}
+
+#newscont>div:first-of-type{
+	position:relative;
+	width:100%;
+	height: 300px;	background:url(../sub/subimages/newscont.png) no-repeat center/cover;
+/*	z-index:99;*/
+
+}
+#newscont>div:first-of-type>h1{
+	position:absolute;
+	top:50%;
+	left:5%;
+	transform:translateY(-50%);
+	font:2.5em 'BRoboto';
+	color:#fff;
+}
+
+/*게시판 테이블디자인*/
+#newstb{
+    position:relative;
+    width:80%;
+    margin:0 auto;
+    margin-top:100px;
+    font-family: NGB;
+    line-height: 50px;
+    border-collapse: collapse;
+/*    outline:1px solid red;*/
+    color:#fff;
+}
+/*테이블 보더*/
+#newstb>thead>tr{
+    border-top:2px solid #00aced;
+    border-bottom:1px solid #00aced;
+}
+#newstb>tbody>tr{
+    border-bottom:1px solid #00aced;
+}
+/*테이블 제목영역*/
+#newstb>thead>tr{
+    font-size:1.2em;
+}
+/*테이블 내용영역*/
+#newstb>tbody>tr{
+    font-size:.8em;
+}
+#newstb>tbody>tr>td>a{
+    color:#fff;
+}
+#newstb>tbody>tr>td:first-child{
+    padding-left:5%;
+}
+
+#newstb>tbody>tr>td:nth-child(2){
+    text-align: center;
+}
+
+/*페이지네이션*/
+#newscont #page{
+    position:relative;
+    width:300px;
+    height:50px;
+    margin:0 auto;
+    margin-top:40px;
+    border-top:2px solid #00aecd;
+    border-bottom:2px solid #00aecd;
+}
+#page>ul{
+    position:absolute;
+    width:150px;
+    height: 30px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    
+}
+#page>ul>li{
+    position: relative;
+    width:20%;
+    height: 100%;
+    text-align: center;
+}
+#page>ul>li>a{
+    position: absolute;
+    display: block;
+    color:#fff;
+    width:100%;
+    height: 100%;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+#page>span{
+    position:absolute;
+    display:inline-block;
+    width:40px;
+    height: 100%;
+}
+#page>span:last-of-type{
+    right:0;
+}
+#page>span>a{
+    display: block;
+    width:100%;
+    height: 15px;
+}
+#page>span>a>img{
+    position:absolute;
+    display:block;
+    width:100%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+/*선택페이지 표시 클래스*/
+.paging>a{
+    width:100%;
+    height: 100%;
+    font-weight: bold;
+    color:#00aced !important;
+    border:1px solid #00aced;
+}
+
+
+

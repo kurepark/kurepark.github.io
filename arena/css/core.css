@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS 초기화공통 */
+
+@font-face{
+	font-family:NG;/*한글기본폰트*/	src:url(../fonts/NanumGothic.eot)format("eot"),url(../fonts/NanumGothic.woff)format("woff"),url(../fonts/NanumGothic.ttf)format("ttf");
+}
+@font-face{
+	font-family:NBG;/*한글기본폰트*/	src:url(../fonts/NanumBarunGothic.eot)format("eot"),url(../fonts/NanumBarunGothic.woff)format("woff"),url(../fonts/NanumBarunGothic.ttf)format("ttf");
+}
+@font-face{/*영문폰트*/
+	font-family:Roboto;	src:url(../fonts/Roboto-Regular.eot)format("eot"),url(../fonts/Roboto-Regular.woff)format("woff"),url(../fonts/Roboto-Regular.ttf)format("ttf");
+}
+@font-face{
+	font-family:BRoboto;	src:url(../fonts/Roboto-Bold.eot)format("eot"),url(../fonts/Roboto-Bold.woff)format("woff"),url(../fonts/Roboto-Bold.ttf)format("ttf");
+}
+html,body{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+}
+img{
+	border:none;
+}
+body{
+	color:#000;
+	font-size:13px;
+	background-color:#FBFBFB;
+	overflow-x: hidden;/*가로스크롤 숨기기*/
+/*	min-width:740px;*/
+}
+body, button, h1, h2, h3, h4, h5, input, select, table, textarea {
+	font-family: NG,sans-serif;
+    font-size: 16px;
+    line-height: 1.267em;/*약 19px 1.267*16px(1em=16px이므로)*/
+}
+button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, select, table, td, textarea, th, ul, figure, figcaption {
+    margin: 0;
+    padding: 0;
+}
+a{/*a 태그 공통 설정, 색, 글자간격, 밑줄없애기*/
+	color:#222;
+	letter-spacing: -1px;
+	text-decoration:none;
+    border:none;
+}
+/*전체 ul ol li 만들기(한번 만들어서 사이즈, 위아래 조절만)*/
+ul,ol{
+	list-style:none;/*블릿 없애기*/
+}
+li{
+	float:left;/*옆으로 흐르게*/
+}
+ul::after, ol::after{/* float 설정 해제 */
+	content:"";
+	display:block;
+	clear:both;
+}
+

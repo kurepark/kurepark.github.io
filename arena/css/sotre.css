@@ -1,0 +1,264 @@
+@charset "utf-8";
+@import url(../css/subcommon.css);
+@import url(../css/core.css);
+/* CSS history page*/
+
+/*컨텐츠영역*/
+#scont{
+    position:relative;
+    width:100%;
+    min-height: 1000px;
+    padding-bottom:100px;
+    background-color:#000;
+}
+
+#scont>div:first-of-type{
+	position:relative;
+	width:100%;
+	height:300px;	background:url(../sub/subimages/storetit.jpg) no-repeat center/cover;
+/*	z-index:99;*/
+
+}
+#scont>div:first-of-type>h1{
+	position:absolute;
+	top:50%;
+	left:5%;
+	transform:translateY(-50%);
+	font:2.5em 'BRoboto';
+	color:#fff;
+}
+/*매장검색박스*/
+
+#sfind{
+    position:relative;
+    width:80%;
+    height: 150px;
+    margin:0 auto;
+    margin-top:50px;
+    border:1px solid #fff;
+}
+
+#sfind>ul{
+    position:relative;
+    width:65%;
+    height:120px;
+    top:15px;
+    margin-left:10%;
+/*    outline:1px solid blue;*/
+    
+}
+#sfind>ul>li{
+    position:relative;
+    width:100%;
+    height: 50%;
+}
+#sfind>ul>li label{
+    line-height: 60px;
+    margin-left:60px;
+    color:#fff;
+}
+#sfind>ul>li:first-child>#stb1{
+/*    position:absolute;*/
+    width:23%;
+    height:30px;
+    line-height: 60px;
+    margin-left:100px;
+}
+#sfind>ul>li:first-child>#stb2{
+    width:35%;
+    height:30px;
+    line-height: 60px;
+    margin-left:30px;
+}
+/*매장명 검색박스*/
+#sfind>ul>li:last-child>form{
+    position:relative;
+/*    outline:1px solid red;*/
+}
+#findstore{
+    position:absolute;
+    width:60%;
+    height: 30px;
+    top:50%;
+    transform:translateY(-50%);
+    left:230px;
+/*    margin-left:60px;*/
+    border-radius: 0;
+/*    outline:1px solid blue;*/
+}
+
+#sfind>#sbtn{
+    position:absolute;
+    width:100px;
+    height: 100px;
+    background-color:#00aecd;
+    top:25px;
+    right:20%;
+}
+#sfind>#sbtn>a{
+    display: block;
+    width:100%;
+    height: 100%;
+}
+#sfind>#sbtn>a::after{
+    content:"";
+    display: block;
+    position:absolute;
+    width:40px;
+    height: 40px;
+    top:45%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:url(../sub/subimages/search.png) no-repeat 0 0/100% 100%;
+}
+#sfind>#sbtn>a>span{
+    position:absolute;
+    color:#fff;
+    left:50%;
+    bottom:5px;
+    transform:translateX(-50%);
+}
+
+/*게시판 테이블디자인*/
+#slist{
+    position:relative;
+    width:80%;
+    margin:0 auto;
+    margin-top:50px;
+    font-family: NGB;
+    line-height: 50px;
+    border-collapse: collapse;
+/*    outline:1px solid red;*/
+    color:#fff;
+}
+/*테이블 보더*/
+#slist>thead>tr{
+    border-top:2px solid #00aced;
+    border-bottom:1px solid #00aced;
+}
+#slist>tbody>tr{
+    border-bottom:1px solid #00aced;
+}
+/*테이블 제목영역*/
+#slist>thead>tr{
+    font-size:1.2em;
+}
+/*테이블 내용영역*/
+#slist>tbody>tr{
+    font-size:.8em;
+}
+#slist>tbody>tr>td>a{
+    color:#fff;
+}
+#slist>tbody>tr>td{
+    text-align: center;
+}
+#slist>tbody>tr>td:last-child>a{
+    display:block;
+    width:100%;
+    height: 100%;
+}
+#slist>tbody>tr>td:last-child>a>img{
+    width:20px;
+    height:20px;
+    padding-right:5px;
+    vertical-align:-2px;
+}
+
+/*페이지네이션*/
+#scont #page{
+    position:relative;
+    width:300px;
+    height:50px;
+    margin:0 auto;
+    margin-top:40px;
+    border-top:2px solid #00aecd;
+    border-bottom:2px solid #00aecd;
+}
+#page>ul{
+    position:absolute;
+    width:150px;
+    height: 30px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    
+}
+#page>ul>li{
+    position: relative;
+    width:20%;
+    height: 100%;
+    text-align: center;
+}
+#page>ul>li>a{
+    position: absolute;
+    display: block;
+    color:#fff;
+    width:100%;
+    height: 100%;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+#page>span{
+    position:absolute;
+    display:inline-block;
+    width:40px;
+    height: 100%;
+}
+#page>span:last-of-type{
+    right:0;
+}
+#page>span>a{
+    display: block;
+    width:100%;
+    height: 15px;
+}
+#page>span>a>img{
+    position:absolute;
+    display:block;
+    width:100%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+/*선택페이지 표시 클래스*/
+.paging>a{
+    width:100%;
+    height: 100%;
+    font-weight: bold;
+    color:#00aced !important;
+    border:1px solid #00aced;
+}
+
+/*지도박스*/
+#mapbox{
+    position:relative;
+    width:80%;
+    height: 300px;
+    margin:0 auto;
+    margin-top:50px;
+    overflow:hidden;
+}
+#mapbox>aside{
+    position:absolute;
+	top: 0;
+	left: 0;
+    width:100%;
+    height: 100%;
+}
+/*
+#mapbox>span{
+    display: block;
+    position:absolute;
+    width:100px;
+    height: 50px;
+    top:-50px;
+    color:#fff;
+}
+
+*/
+
+
+
+
+

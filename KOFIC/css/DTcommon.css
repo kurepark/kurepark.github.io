@@ -1,0 +1,722 @@
+@charset "utf-8";
+@import url(core.css);
+/* GNB 및 footer 공통 CSS*/
+
+
+/***************************1.최상단******************************/
+#top{
+	position:relative;
+	width:100%;
+	height:100px;
+	background-color:#fff;
+	z-index:999;
+}
+#top>header:first-child{/*최상단 남색메뉴줄*/
+	position:relative;
+	width:100%;
+	height:30px;
+	background-color:#01253b;
+}
+/*최상단 메뉴줄 텍스트, 로그인줄*/
+#top>header:first-child>div{/*남색메뉴줄 속박스*/
+	position:relative;
+	width:1200px;
+	margin:0 auto;
+}
+#top>header:first-child>div ul{
+	float:right;
+	margin-right: 10px;
+}
+#top>header:first-child>div ul li{
+	position:relative;
+	top:4px;
+}
+#top>header:first-child>div>ul li a{
+	color:white;
+	font-size: 13px;
+	padding:3px;	
+}
+#top>header:first-child>div>ul li a::after{/*글자사이 가상요소 만들기*/
+	display:inline-block;
+	content:"";
+	vertical-align: middle;
+	width:1px;
+	height:13px;
+	margin: 0 0px 0 5px;
+	background-color:#fff;
+}
+#top>header:first-child>div>ul li:last-child>a::after{/*로그인뒤 가상요소 숨기기*/
+	display:none;
+}
+#top>header:first-child>div>ul li:last-child>a{/*로그인 글씨색 바꾸기*/
+	color:#FFE607;
+}
+
+
+/*로고*/
+#top>header:last-child{
+	position: relative;
+	width:1200px;
+	height: 70px;
+	margin:0 auto;
+	background-color:#fff;
+}
+
+#top>header:last-child img{
+	position:absolute;
+	top:5px;
+	left:35px;
+	width:125px;;
+}
+#top>header:last-child>span{
+	display:none;
+	position:absolute;
+	width:50px;
+	height: 50px;
+	top:15px;
+	right:15px;
+}
+#top>header:last-child>span>a{
+	display:block;
+	width:100%;
+	height: 100%;
+}
+#top>header:last-child>span>a>img{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	top:0;
+	left:0;
+}
+/*검색박스*/
+
+#search{/*검색창 부모박스*/
+	position:absolute;
+	width:25%;
+	height:30px;
+	top:21px;
+	right:5px;
+}
+#query{
+	position:absolute;
+	width:85%;
+	height:30px;
+	right:47px;
+}
+#query>input{
+	width:100%;
+	height:30px;
+	border-radius:2px;
+	outline:1px solid #1D1D1D;
+	border-style:none;
+	line-height:30px;
+	font-size:17px;
+	padding:0 15px;
+}
+/*검색박스 돋보기*/
+#search button{
+	position:absolute;
+	top:-1px;
+	right: 0px;
+	width:35px;
+	height:32px;
+	background-color:#01253b;
+	border:0;
+	border-radius: 0 2px 2px 0;
+}
+#search button span{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	background:url(../images/srch_btn.png) no-repeat 11px 8px;
+}
+/***************************2.GNB******************************/
+#navi{
+	position: relative;
+	width:100%;
+	height:50px;
+	border-top:1px solid #e1e1e1;
+	box-sizing: border-box;
+	background-color:#fff;
+	z-index:9999;
+}
+#navi>div{
+	position:relative;
+	width:100%;
+/*	border-bottom:1px solid #e1e1e1;*/
+}
+
+/*내비게이션 ul디자인*/
+#navi>div>ul{
+/*	position: relative;*/
+	width:1200px;
+	height:100%;
+	margin:0 auto;
+}
+/*내비게이션 각 메뉴li*/
+#navi>div>ul>li{
+/*	position:relative;*/
+	width:14.25%;
+	height:100%;
+	border-left:1px solid #e1e1e1;
+	box-sizing: border-box;
+}
+#navi>div>ul>li:last-child{/*마지막메뉴 오른쪽 구분선만들기*/
+	border-right: 1px solid #e1e1e1;
+/*	box-sizing: border-box;*/
+}
+#navi>div>ul>li>a{/*a링크, 글자디자인*/
+	position:relative;
+	display:block;
+	line-height: 50px;
+	text-align: center;
+	color:#333;
+	font-weight: bold;
+}/*
+#navi>div>ul>li:hover .gnb-sub{일단 메뉴에 마오스오버시 보이도록, 나중에  마우스오버가 아니라 클릭으로 고칠것!!!!
+	display:block;
+}*/
+#navi>div>ul>li:hover>a{/*메뉴에 마우스오버시 글씨색 바꾸기*/
+	color:#3980a8;
+/*	text-decoration: overline;*/
+}
+
+#navi>div>ul>li:hover>a::before{/*마우스 오버시 가상요소로 위쪽에 컬러바 보이기*/
+	content:"";
+	display:block;
+	position:absolute;
+	width:100%;
+	height:5px;
+	background-color:#3980a8;
+	box-sizing: content-box;
+}
+/**************************************gnb 서브메뉴 디자인************************************/
+
+#navi .gnb-sub{/*gnb클릭시 나오는 전체 흰박스*/
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	right:0;
+	width:100%;
+	padding:18px 0 66px;/*위, 양옆, 아래*/
+/*
+	border-top:1px solid #e1e1e1;
+	border-bottom:5px solid #3980a8;
+	background-color:#fff;
+*/
+/*	outline:1px solid red;*/
+	
+}
+.gnbline{/*gnb클릭시 나오는 전체 흰박스*/
+	position:absolute;
+	top:100%;
+	width:100%;	
+	height: 0;
+	border-top:1px solid #e1e1e1;
+/*	border-bottom:5px solid #3980a8;*/
+	background-color:#fff;
+/*	outline:1px solid red;*/
+}
+.gnbline>span{
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:-25px;
+	left:50%;
+	transform: translateX(-50%);
+	width:50px;
+	height: 50px;
+	background:url(../web_images/closeicon.png) no-repeat 0/100% 100%;
+	cursor:pointer;
+/*	outline:1px solid red;*/
+}
+#navi .gnb-sub-cont{/*실제 gnb 서브메뉴 내용있는 속박스*/
+	position:relative;
+	width:1200px;
+	height:300px;
+	margin:0 auto;
+/*	background-color:#FB7578;*/
+	border:1px solid #ebeaea;
+/*	outline:1px solid blue;*/
+}
+#navi .gnb-sub-cont::before{/*메뉴정보랑 메뉴 가운데 구분선*/
+	content:"";
+	display:block;
+	position:absolute;
+	top:0;
+	left:513px;
+	width:1px;
+	height: 100%;
+	background-color:#ebeaea;
+}
+#navi .gnb-sub-list{/*gnb 서브메뉴 ul 박스!!!*/
+	position:relative;
+	width:460px;
+/*	background-color:#E1F862;*/
+/*	outline:1px solid lime;*/
+}
+#navi .gnb-sub-list::after{/*서브메뉴 1,2구역 나누는 구분선*/
+	content:"";
+	display:block;
+	position:absolute;
+	top:0;
+	left:240px;
+	width:1px;
+	height: 300px;
+	background-color:#ebeaea;
+}
+
+#navi .gnb-sub-list>li{
+	line-height: 21px;
+	width:100%;
+/*	outline:1px solid red;*/
+	
+}
+/*서브메뉴 마우스 오버시 글자색 바꾸기*/
+#navi .gnb-sub-list>li:hover>a{
+	color:#3980a8;
+}
+#navi .gnb-sub-list>li>a{
+	display:block;
+	width:43.5%;
+	font-size:14px;
+	font-weight: bold;
+	color:#515151;
+	padding:9px 25px 9px 16px;
+	border-bottom:1px solid #ebeaea;
+	background-color:#fdfdfd;
+/*	outline:1px solid blue;*/
+}
+/*최하위 서브메뉴 디자인....숨겨져있다가 마우스 오버하면 두번째 영역에서 튀어나옴,*/
+#navi .gnb-sub-list>li:hover>ul{
+	display:block;
+}
+#navi .gnb-sub-list .gnb-sub2{
+	display:none;
+	position:absolute;
+	top:0;
+	left:230px;
+	right:0;
+	height:300px;
+	padding:13px 0 20px 0;
+/*	outline:1px solid blue;*/
+}
+#navi .gnb-sub-list .gnb-sub2>li{
+	line-height: 21px;
+/*	outline:1px solid yellow;*/
+}
+/*서브하위메뉴 클릭시 글자색 바뀌도록*/
+#navi .gnb-sub-list .gnb-sub2>li:hover>a{
+	color:#3980a8;
+}
+#navi .gnb-sub-list .gnb-sub2>li>a{
+	display:block;
+	font-size:13px;
+	font-weight: bold;
+	width:280px;
+	padding:0 0 12px 30px;
+}
+
+/*gnb박스 속 메뉴설명영역 디자인*/
+#navi .gnb-info{
+	position:absolute;
+	right:0;
+	width:43.5%;
+	height:240px;
+/*	outline:1px solid red;*/
+	padding:25px 136px 35px 29px;
+}
+#navi .gnb-info dl{
+	width:75%;
+	height: 100%;
+/*	outline:1px solid blue;*/
+}
+#navi .gnb-info dl dt{/*메뉴설명 제목디자인*/
+	font-size:2em;
+	font-family: NGB;
+	font-weight: bold;
+	color:#3980a8;
+	padding:10px 0;
+}
+#navi .gnb-info dl dd{
+	height: 30px;
+	line-height: 30px;
+	font-size:13px;
+	padding-top:5px;
+	color:#515151;
+/*	outline:1px solid red;*/
+}
+#navi .gnb-info img{/*메뉴설명이미지*/
+	position:absolute;
+	top:25px;
+	right:50px;
+	width:150px;
+}
+.sub_arr::before{
+	position: absolute;
+	content: "";
+	display:block;
+	width:10px;
+	height: 10px;
+	left:50%;
+	margin-top:15px;
+/*	outline:1px solid red;*/
+	background:url(../web_images/renew_bg_gnbArw.png) no-repeat 0;
+}
+
+
+/***************************11. 연관사이트******************************/
+#rsite{
+	position: relative;
+	width:100%;
+	height: 50px;
+	background-color:#fafafa;
+	clear:both;
+/*	outline:1px solid red;*/
+}
+#rsite>div{
+	position: relative;
+	width:1200px;
+	margin:0 auto;
+	background-color:#fff;
+	border-top:1px solid #e1e1e1;
+	box-sizing: border-box;
+/*	outline:1px solid red;*/
+}
+#rstie>div>ul{
+	width:100%;
+	height: 100%;
+}
+#rsite>div>ul>li{
+	width:12.4%;
+	height: 49px;
+	border-left:1px solid #ebeaea;
+	box-sizing: border-box;
+/*	outline:1px solid lime;*/
+}
+#rsite>div>ul>li:first-child{
+	border:none;
+}
+#rsite>div>ul>li>a{
+	display: block;
+	width:100%;
+	height: 100%;
+/*	outline:1px solid blue;*/
+}
+#rsite>div>ul>li img{
+	position:relative;
+	display: block;
+	top:10px;
+	width:100px;
+	height: 26px;
+	margin:0 auto;
+}
+/****************************************13. 패밀리사이트 더보기 영역 디자인*****************/
+#hideinfo{
+/*	display:none;*/
+	overflow: hidden;
+	width:100%;
+	height:0;
+	background-color:#707070;
+}
+#hideinfo>div{/*속박스*/
+	width:1200px;
+	height: 100%;
+	margin:0 auto;
+	background-color:#707070;
+/*	outline:1px solid red;*/
+}
+/*패밀리사이트 디자인*/
+#hideinfo>div>ul{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+#hideinfo>div>ul li{
+	width:19.9%;
+	height:49px;
+	border-left:1px dashed#ccc;
+	border-bottom:1px dashed#ccc;
+}
+/*불필요한 border없애기*/
+#hideinfo>div>ul li:nth-child(1){
+	border-left:none;
+}
+#hideinfo>div>ul li:nth-child(6){
+	border-left:none;
+	border-bottom:none;
+}
+#hideinfo>div>ul li:nth-child(7){
+	border-bottom:none;
+}
+#hideinfo>div>ul li:nth-child(8){
+	border-bottom:none;
+}
+#hideinfo>div>ul li:nth-child(9){
+	border-bottom:none;
+}
+#hideinfo>div>ul li:nth-child(10){
+	border-bottom:none;
+}
+#hideinfo>div>ul>li>a{
+	position: relative;
+	display: block;
+	width:100%;
+	height: 100%;
+	text-align: center;
+/*	outline:1px solid red;*/
+}
+#hideinfo>div>ul>li>a>span:first-child{
+	position: relative;
+	line-height: 50px;
+	color:#fff;
+/*	font-weight:600;*/
+	font-size:14px;
+}
+#hideinfo>div>ul>li>a>span:last-child{
+	position:absolute;
+	display: block;
+	width:100%;
+	font-size:11px;
+	left:50%;
+	bottom:0px;
+	transform: translateX(-50%);
+	color:#fff;
+/*	text-align: center;*/
+}
+
+/***************************12. FOOTER******************************/
+#info{
+	position: relative;
+	width:100%;
+	height: 230px;
+	background-color:#333;
+}
+#info>div{
+	position: relative;
+	width:1200px;
+	height: 100%;
+	margin:0 auto;
+/*	outline:1px solid lime;*/
+}
+#family{/*패밀리사이트 버튼*/
+	position:absolute;
+	right: 0;
+	width:30%;
+	height: 45px;
+	background-color:#414141;
+/*	outline:1px solid lime;*/
+}
+#family>a{
+	position:absolute;
+	width:100%;
+/*	outline:1px solid red;*/
+}
+#family>a>span{
+	font-size:20px;
+	font-weight: 500;
+	color:#fff;
+	line-height: 45px;
+/*	outline:1px solid blue;*/
+	margin-left:10px;
+}
+#family>span{/*더보기버튼*/
+	position:absolute;
+	top:18px;
+	right:20px;
+	display:block;
+	width:10px;
+	height: 10px;
+	background:url(../images/icon_plus.png) no-repeat 0 0;
+/*	outline:1px solid red;*/
+}
+#info>div>div:nth-child(2){/*안내링크 전체박스*/
+	position:absolute;
+	top:50px;
+	left:10px;
+/*	margin-top:30px;*/
+	width:100%;
+	height:40px;
+/*	outline:1px solid orange;*/
+}
+#info>div>div:nth-child(2)>p{
+	float:left;
+	font-size:14px;
+	line-height:40px;
+/*	text-align: center;*/
+/*	padding-top:6px;*/
+}
+#info>div>div:nth-child(2)>p>a{
+	color:#fff;
+	padding:3px;
+}
+#info>div>div:nth-child(2)>p>a::after{/*글자사이에 가상요소 넣기*/
+	content:"";
+	display:inline-block;
+	width:1px;
+	height:13px;
+	vertical-align: middle;
+	background-color:#fff;
+	margin: 0 0px 0 10px;
+}
+/*마지막 가상요소 없애기
+#info>div>div:nth-child(2) p:first-child>a:last-child::after{
+	display:none;
+}*/
+#info>div>div:nth-child(2) p:last-child>a:last-child::after{
+	display:none;
+}
+
+/*주소 전체 박스*/
+#info>div>address{
+	position:absolute;
+	width:100%;
+	bottom:60px;
+	left:10px;
+/*	text-align: center;*/
+	font-size:11px;
+	color:#fff;
+	font-style:normal;
+/*	outline:1px solid lime;*/
+}
+#info>div>address>span{/*전화번호*/
+	display:block;
+	margin-top:15px;
+	font-size:18px;
+	font-weight:blod;
+}
+
+#info>div>span{
+	position:absolute;
+	bottom:15px;
+	left:10px;
+	display: block;
+	width:100%;
+/*	margin:0 auto;*/
+/*	margin-top:10px;*/
+	font-size:11px;
+	color:#fff;
+/*	text-align: center;*/
+/*	outline:1px solid blue;*/
+}
+	
+/*****************미디어쿼리 영역************************/
+@media only screen and (max-width:1020px){
+	
+	#top>header:first-child>div{/*최상단 로그인관련버튼들*/
+		width:100%;
+	}
+	#top>header:last-child{/*로고와 검색박스*/
+		width:100%;
+	}
+	/*네비게이션메뉴*/
+	#navi>div>ul{
+		width:100%;
+	}
+	#navi .gnb-sub-cont{
+		width:98%;
+	}
+	#navi .gnb-info{
+	position:absolute;
+	left:60%;
+	width:30%;
+	height:240px;
+/*	outline:1px solid red;*/
+	}
+	#navi .gnb-info dl{
+	width:100%;
+	height: 100%;
+/*	outline:1px solid blue;*/
+	}
+	.gnb-info img{
+		display:none;
+	}
+	
+	#navi .gnb-info dl dt{/*메뉴설명 제목디자인*/
+	font-size:1.5em;
+	font-family: NGB;
+	font-weight: bold;
+	color:#3980a8;
+/*	outline:1px solid blue;*/
+}
+	/*연관사이트*/
+	#rsite{
+		width:100%;
+		height:100px;
+	}
+	#rsite>div{
+		width:100%;
+	}
+	#rsite>div>ul>li{
+		width:25%;
+	}
+	/*패밀리사이트 더보기*/
+	#hideinfo>div{
+		width:100%;
+	}
+	#hideinfo>div>ul li{
+		border:none;
+	}
+	/*footer디자인*/
+	#info>div{
+		width:100%;
+	}
+	#info>#family{
+		width:100%;
+	}
+}/*media 끝*/
+
+/*미디어쿼리 모바일형 비스무리이이이이~~~ -ㅁ-^ */
+@media only screen and (max-width:760px){
+	#navi{
+		display:none;
+	}
+	#top{
+	height:150px;
+	}
+	#search{/*검색창 부모박스*/
+	position:absolute;
+	width:100%;
+	height:30px;
+	top:75px;
+	right:5px;
+/*	outline:1px solid blue;*/
+	}
+	#top>header:last-child>span{
+		display:block;
+	}
+	/*패밀리사이트 더보기*/
+	#hideinfo>div{
+		width:100%;
+	}
+	#hideinfo>div>ul li{
+		border:none;
+	}
+	/*footer디자인*/
+	#info>div{
+		width:100%;
+	}
+	#family{
+		width:50%;
+/*		outline:1px solid red;*/
+	}
+	#hideinfo>div>ul>li>a>span:first-child{
+		font-size:11px;
+	}
+	#hideinfo>div>ul>li>a>span:last-child{
+		display:none;
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
