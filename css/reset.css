@@ -49,8 +49,8 @@ table {
 /* 
   reset 추가
 */
-body{
-  font-family: 'Lato', 'Nanum Gothic', sans-serif;
+html, body{
+	height: 100%;
 }
 img{
   border:0;
