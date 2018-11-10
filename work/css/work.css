@@ -52,6 +52,7 @@
 /* 작업물 개별 헤더 */
 .item_header h3{
   margin-bottom: 24px;
+  color: #4484ce;
   font-size: 30px;
   font-weight: 700;
 }
