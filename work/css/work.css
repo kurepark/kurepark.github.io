@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* work css */
+
+/* 작업물 공통 헤더 */
+.work_header{
+  position: relative;
+  padding: 150px 0 60px;
+  font-size: 0;
+  background-image: url(../images/work_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.work_header::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 47, 79, .8);
+}
+.work_header h2{
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+}
+.work_header p{
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+.work_header a{
+  margin-right: 16px;
+  padding:10px 12px;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  border:1px solid #fff;
+  cursor: pointer;
+}
+.work_header a i{
+  padding-left: 6px;
+}
+
+.article_item .item_header,
+.article_item .item_content{
+  padding: 60px 0px;
+}
+/* 작업물 개별 헤더 */
+.item_header h3{
+  margin-bottom: 24px;
+  font-size: 30px;
+  font-weight: 700;
+}
+.item_header p{
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.item_header p:last-of-type{
+  margin-bottom: 24px;
+}
+.item_header li{
+  margin-bottom: 12px;
+}
+/* 작업물 이미지 영역 */
+.item_content{
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.item_content .item_code{
+  text-align: left;
+}
+.item_content .item_code a{
+  margin-right: 16px;
+  padding:10px 12px;
+  position: relative;
+  display: inline-block;
+  color: #4484ce;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all .6s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 0;
+}
+.item_content .item_code a::before,
+.item_content .item_code a::after{
+  content:"";
+  display: block;
+  position: absolute;
+  left:0;
+  width: 100%;
+  height: 0;;
+  transition: all .6s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: -1;
+}
+.item_content .item_code a::before{
+  bottom: 0;
+  border:1px solid #4484ce;
+  border-top: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+}
+.item_content .item_code a::after{
+  top: 0;
+  height: 0;
+}
+.item_content .item_code a:hover{
+  color: #fff;
+  transition-delay: .6s;
+}
+.item_content .item_code a:hover::before{
+  height: 100%;
+  transition-delay:0s;
+}
+.item_content .item_code a:hover::after{
+  height: 100%;
+  background-color: #4484ce;
+  transition-delay: .4s;
+}
+.item_content .item_images {
+  padding: 60px 0;
+}
+.item_content .item_images img{
+  width:100%;
+  box-shadow: 0px 5px 30px rgba(41, 42, 43, 0.2);
+}

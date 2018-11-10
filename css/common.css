@@ -4,7 +4,7 @@
 */
 body{
   color: #292c33;
-  font-family: 'Lato', 'Nanum Gothic', sans-serif;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
 }
 .wrapper{
   position: relative;
@@ -34,7 +34,6 @@ body{
   width: 100%;
   height: 50px;
   background-color:rgba(217, 217, 217,.5);
-  /* background-color:rgba(255,255,255,.7); */
   z-index: 11;
 }
 .header h1{
@@ -81,11 +80,3 @@ body{
   color: #96858f;
   font-size: 14px;
 }
-
-/* 
-colorpicker
-#96858f
-#4484ce
-#9099a2
-#d5d5d5
-*/
