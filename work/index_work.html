@@ -19,8 +19,13 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/common.css">
-  <link rel="stylesheet" type="text/css" href="./css/work.css">
-  <script src="js/work.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/work.css">
+	<!-- slick slider -->
+	<link rel="stylesheet" type="text/css" href="../js/slick-1.8.1/slick/slick.css"/>
+	<script type="text/javascript" src="../js/slick-1.8.1/slick/slick.min.js"></script>
+	
+	<script src="../js/common.js"></script>
+	<script src="js/work.js"></script>
 	<title>EUNHYE PORTFOLIO</title>
 </head>
 <body>
@@ -30,7 +35,7 @@
 				<h1 class="logo"><a href="/"><img src="/images/meicon.png" alt="웹퍼블리셔 박은혜의 포트폴리오" title="웹 퍼블리셔 박은혜의 포트폴리오"></a></h1>
 				<nav class="gnb">
 					<ul>
-						<li class="active"><a href="https://kurepark.github.io/#HOME">HOME</a></li>
+						<li><a href="https://kurepark.github.io/#HOME">HOME</a></li>
 						<li><a href="https://kurepark.github.io/#WORK">WORK</a></li>
 						<li><a href="https://kurepark.github.io/#ABOUT">ABOUT</a></li>
 					</ul>
@@ -49,8 +54,8 @@
 				<h2>취업 전 작업페이지</h2>
         <p>국비지원 학원을 다니면서 만들었던 페이지 입니다<br>
         아래 버튼을 누르면 각 페이지에 대한 설명을 볼 수 있습니다</p>
-				<a onclick="btnKoficPage();">KOFIC<i class="fas fa-angle-right"></i></a>
-        <a onclick="btnArenaPage();">ARENA<i class="fas fa-angle-right"></i></a>
+				<a class="btn_linkPage" data-url="desc_kofic.html">KOFIC<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_arena.html">ARENA<i class="fas fa-angle-right"></i></a>
       </div>
 			</div>
 				<article id="workItem" class="article_item">
@@ -62,5 +67,11 @@
 			</div>
 		</footer>
 	</div>
+	<script>
+		$(document).ready(function(){
+			//최초 로딩시 보여줄 페이지
+			$("#workItem").load('desc_kofic.html');
+		});//jqb
+	</script>
 </body>
 </html>

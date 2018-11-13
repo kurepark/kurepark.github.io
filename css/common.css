@@ -80,3 +80,73 @@ body{
   color: #96858f;
   font-size: 14px;
 }
+
+
+/* slick slider custom css */
+.slick-next,
+.slick-prev{
+  position: absolute;
+  top:50%;
+  width:30px;
+  height: 30px;
+  font-size: 0;
+  background-color: #4484ce;
+  border:0;
+  border-radius:50%;
+  cursor:pointer;
+}
+.slick-prev{
+  left:-5%;;
+}
+.slick-prev::after{
+  content:"\f104";
+  color:#fff;
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-weight:600;
+}
+.slick-next{
+  right:-5%;;
+}
+.slick-next::after{
+  content:"\f105";
+  color:#fff;
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-weight:600;
+}
+.slick-dots li{
+  margin:0 5px;
+  position: relative;
+  display: inline-block;
+  width:20px;
+  height: 20px;
+  cursor: pointer;
+}
+.slick-dots li button{
+  padding: 5px;
+  width:20px;
+  height: 20px;
+  color:transparent;
+  font-size: 0;
+  line-height:0;
+  border:0;
+  background:transparent;
+  outline:0;
+  cursor: pointer;
+}
+.slick-dots li button:before{
+  content:'•';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  color: #292c33;
+  font-size: 35px;
+  text-align: center;
+  opacity: .25;
+}
+.slick-dots li.slick-active button:before{
+  opacity: .75;
+}

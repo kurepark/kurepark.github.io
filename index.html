@@ -19,6 +19,12 @@
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/js/slick-1.8.1/slick/slick.css"/>
+	<script type="text/javascript" src="/js/slick-1.8.1/slick/slick.min.js"></script>
+	<script src="/js/common.js"></script>
+
 	<title>EUNHYE PORTFOLIO</title>
 </head>
 <body>
@@ -28,7 +34,7 @@
 				<h1 class="logo"><a href="/"><img src="/images/meicon.png" alt="웹퍼블리셔 박은혜의 포트폴리오" title="웹 퍼블리셔 박은혜의 포트폴리오"></a></h1>
 				<nav class="gnb">
 					<ul>
-						<li class="active"><a href="#HOME">HOME</a></li>
+						<li><a href="#HOME">HOME</a></li>
 						<li><a href="#WORK">WORK</a></li>
 						<li><a href="#ABOUT">ABOUT</a></li>
 					</ul>
@@ -63,27 +69,29 @@
 					<h2>MY WORK</h2>
 					<div class="item_wrap">
 						<!-- 작업물 카드 -->
-						<div class="item_work">
-							<a href="#">
-								<div class="item_image" style="background-image: url(/images/work01.png)"></div>
-								<div class="item_caption">
-									<p class="item_title">크라우드 펀딩 플랫폼 네오스프링</p>
-									<p class="item_desc">플랫폼 구축 / 운영</p>
-									<span>자세히 보기<i class="fas fa-angle-double-right"></i></span>
-								</div>
-							</a>
-						</div>
-						<div class="item_work">
-							<a href="#">
-								<div class="item_image" style="background-image:url(/images/work02.png)"></div>
-								<div class="item_caption">
-									<p class="item_title">취업 전 작업 페이지</p>
-									<p class="item_desc">퍼블리싱 연습</p>
-									<span>자세히 보기<i class="fas fa-angle-double-right"></i></span>
-								</div>
-							</a>
-						</div>
+						<div class="item_slider">
+							<div class="item_work">
+								<a href="#">
+									<div class="item_image" style="background-image: url(/images/work01.png)"></div>
+									<div class="item_caption">
+										<p class="item_title">크라우드 펀딩 플랫폼 네오스프링</p>
+										<p class="item_desc">플랫폼 구축 / 운영</p>
+										<span>자세히 보기<i class="fas fa-angle-double-right"></i></span>
+									</div>
+								</a>
+							</div>
+							<div class="item_work">
+								<a href="https://kurepark.github.io/work/index_work.html">
+									<div class="item_image" style="background-image:url(/images/work02.png)"></div>
+									<div class="item_caption">
+										<p class="item_title">취업 전 작업 페이지</p>
+										<p class="item_desc">퍼블리싱 연습</p>
+										<span>자세히 보기<i class="fas fa-angle-double-right"></i></span>
+									</div>
+								</a>
+							</div>
 					</div>
+				</div>
 				</div>
 			</div>
 		</section>
