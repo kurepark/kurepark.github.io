@@ -5,6 +5,15 @@ $(document).ready(function(){
     linkToPage($url);
     makeImageSlide();
   });	 
+
+   
+  //링크 클릭시 헤당 섹션으로 부드럽게 이동시키기
+  $(document).on('click','nav.gnb a',function(event){
+    event.preventDefault();
+      $("html,body").animate({
+        scrollTop : $(this.hash).offset().top
+      },500)
+    });
   
 });
 
