@@ -1,0 +1,77 @@
+<!-- 자랑거리 성장하이라이트 모달 -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/investor-home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+   <!-- 자랑거리 입력 모달 수상실적/그래프/성장목표 선택하는 모달입니다-->
+    <section id="investorTypeSurveyModal" class="modal-layer survey-modal" style="display:block;">
+        <div class="survey-wrapper">
+           <!--모달 제목과 설명글-->
+            <div class="modal-header">
+                <h2>투자성향분석</h2>
+                <p class="step">STEP7</p>
+                <p>수입원&#47;소득</p>
+            </div>
+
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+              <!--진척도-->
+               <div class="progress-stage">
+                   <div class="progress">
+                       <div class="progress-mask"><!--이곳의 width값으로 진행률 이동합니다-->
+                           <div class="rate">10%</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="body-item">
+                   <div class="item-title">수입원&#47;소득 상태를 가장 잘 나타내는 것은?</div>
+                   <div class="item-contents">
+                      <form>
+                          <ul class="nonfloat-list">
+                              <li><input type="radio" id="income1" name="income"><label for="income1">현재 일정한 수입이 있으며, 향후 유지 또는 증가 예상</label></li>
+                              <li><input type="radio" id="income2" name="income"><label for="income2">현재 일정한 수입이 있으나, 향후 감소 또는 불안정 예상</label></li>
+                              <li><input type="radio" id="income3" name="income"><label for="income3">1현재 일정한 수입이 없으며, 연금이 주 수입원 임</label></li>
+                          </ul>
+                      </form> 
+                   </div>
+               </div>
+                
+           
+            </div>
+            <div class="modal-btn">
+                <button type="button" class="close-modal">이전</button>
+                <a href="#" class="next">다음 페이지</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<!--퍼블리싱 ui script-->
+
+<!--화면동작만 확인하시고 필요한것만 사용하세요.-->
+<script type="text/javascript">
+    $(document).ready(function() {}); //jqb
+</script>
+
+</html>

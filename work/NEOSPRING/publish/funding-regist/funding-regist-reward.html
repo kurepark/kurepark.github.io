@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+    <!--datepicker css충돌나지 않도록 순서 맨 위로.-->
+    <link href="../js/bootstrap-3.3.7/datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--필수 css-->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/parsley.min.js"></script>
+    <script src="../js/function.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <!--datepicker-->
+    <script src="../js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/bootstrap-3.3.7/datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    <link href="../css/funding-register.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header class="small-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+        <!-- pc버전 헤더영역 -->
+        <div id="header-menu">
+            <ul class="header-menu">
+                <li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+
+
+                <li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
+                    <ul id="header-menu-contest">
+
+                        <li class="menu-list"><a href="/contest/12/funding">전북지역 모의투자</a></li>
+
+                        <li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-list"><a href="/reward/funding">리워드형</a></li>
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+            <ul class="header-user-menu" id="header-user-menu">
+
+                <li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
+                <li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
+
+
+
+
+                <li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
+                <li class="menu-list"><a href="/dedicate">전용관</a></li>
+                <li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+
+                <li class="menu-list sign-up"><a href="/user/register">회원가입</a></li>
+                <li class="menu-list">
+                    <a class="pc-version" href="/user/login" data-toggle="modal" data-target="#header-login-layer">로그인</a>
+                    <a class="mobile-version" href="/user/login">로그인</a>
+                    <div id="header-login-layer" class="modal-layer">
+
+
+
+
+
+
+
+
+
+                        <section class="login">
+
+                            <div class="socialMedia">
+                                <ul>
+
+
+
+                                    <li>
+                                        <a href="/social/facebook/login"><img src="/img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/naver/login"><img src="/img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/kakao/login"><img src="/img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/google/login"><img src="/img/socialMedia/google.svg" alt="구글으로 로그인" title="구글으로 로그인"></a>
+                                    </li>
+
+                                </ul>
+                                <div>SNS계정으로 더욱 빠르게 로그인해 보세요!</div>
+                            </div>
+
+                            <form method="post" action="/user/login">
+                                <input type="hidden" name="" value="" />
+
+
+
+
+                                <input type="hidden" name="targetUrl" value="/file/download/390d8e16-4dd4-43a7-9ba9-e6b5d887cfe6/이봉수_아따맘마.jpg">
+
+                                <input type="text" name="username" placeholder="이메일 또는 휴대폰" required>
+
+                                <input type="password" name="password" placeholder="비밀번호" required>
+
+                                <div class="message">
+
+                                </div>
+                                <input type="submit" value="로그인" style="color:#fff;">
+                            </form>
+
+                            <ul class="links functions">
+                                <li><a href="/user/register">회원가입</a></li>
+                                <li><a data-toggle="modal" data-target="#find-id-modal">아이디 찾기</a></li>
+                                <li><a data-toggle="modal" data-target="#reset-password-request-popup">비밀번호 재설정</a></li>
+
+                            </ul>
+
+                        </section>
+
+                    </div>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+        <!-- 모바일버전 헤더영역-->
+        <div class="mobile-menu">
+
+            <a href="/user/login">로그인</a>
+
+
+            <a href="#header-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
+        </div>
+
+    </header>
+
+
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <!--메뉴는 모든 페이지 공통으로 보입니다-->
+                <div class="top-menu">
+                    <ul>
+                        <!--활성화는 active클래스, 모든 input이 입력된 탭에는 complete 클래스를 줍니다. 동시에 줄 수 도 있습니다-->
+                        <li class="active"><a href="#">기본정보</a></li>
+                        <li class="complete"><a href="#">스토리</a></li>
+                        <li><a href="#">리워드</a></li>
+                    </ul>
+                    <div class="btn-area">
+                        <a href="#">미리보기</a>
+                        <button type="submit">등록하기</button>
+                    </div>
+                </div>
+                <!--탭메뉴별로 바뀌는 영역-->
+                <section class="projectSection">
+                    <h1>프로젝트 정보</h1>
+                    <article class="project-article">
+                        <h3>프로젝트 제목</h3>
+                        <div class="explain">
+                            <p>제목을 입력해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">가나다라마바사아자차카타파하</div>
+                            <!--입력,등록하기 버튼은 입력완료 후 수정하기로 텍스트 전환-->
+                            <span class="registBtn">입력하기</span>
+                        </div>
+                        <form id="projectTitle">
+                            <div class="project-info project-image-info">
+                                <img src="../img/fundingRegister/project-title.png" alt="프로젝트 제목" title="프로젝트 제목">
+                                <p>주제가 명확하게 드러나는<br> 프로젝트의 제목을 40자 이내로 입력해주세요</p>
+                            </div>
+                            <div class="textwrap">
+                                <input type="text" placeholder="제목을 입력해주세요" onkeyup="chkword(this, 40, $(this))">
+                                <span class="textcount"><span>0</span>/40자</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기">
+                                <input type="submit" value="저장하기">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>프로젝트 소제목</h3>
+                        <div class="explain">
+                            <p>소제목을 입력해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">가나다라마바사아자차카타파하</div>
+                            <!--입력,등록하기 버튼은 입력완료 후 수정하기로 텍스트 전환-->
+                            <span class="registBtn">등록하기</span>
+                        </div>
+                        <form id="projectSubTitle">
+                            <div class="project-info project-image-info">
+                                <img src="../img/fundingRegister/project-subtitle.png" alt="프로젝트 소제목" title="프로젝트 소제목">
+                                <p>제목을 간략하게 보조하는 한줄평을<br> 20자 이내로 입력해주세요</p>
+                            </div>
+                            <div class="textwrap">
+                                <input type="text" placeholder="소제목을 입력해주세요" onkeyup="chkword(this, 20, $(this))">
+                                <span class="textcount"><span>0</span>/20자</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기">
+                                <input type="submit" value="저장하기">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>프로젝트 요약</h3>
+                        <div class="explain">
+                            <p>요약 내용을 입력해주세요</p>
+                            <!--complete클래스, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">가나다라마바사아자차카타파하 펀딩입니다</div>
+                            <span class="registBtn">등록하기</span>
+                        </div>
+                        <form id="projectSummary">
+                            <div class="project-info project-image-info">
+                                <img src="../img/fundingRegister/project-desc.png" alt="프로젝트 요약" title="프로젝트 요약">
+                                <p>제목과 소제목을 보조하는 요약글입니다.<br>소제목의 내용과 크게 겹치지 않는 내용을 입력해주세요.</p>
+                            </div>
+                            <div class="textwrap">
+                                <textarea class="autosize" placeholder="요약 내용을 입력해주세요" onkeyup="chkword(this, 50, $(this))"></textarea>
+                                <!--글자수세기, 해당 글자수 초과하면 텍스트0위치 span에 클래스 over 주시면 색상변경됩니다~-->
+                                <span class="textcount"><span>0</span>/50자</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>프로젝트 이미지</h3>
+                        <div class="explain">
+                            <p>이미지를 등록 해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">
+                                <div class="project-image">
+                                    <!--<img src="" alt="" title=""> 등록한 이미지 보임-->
+                                </div>
+                            </div>
+                            <span class="registBtn">등록하기</span>
+                        </div>
+                        <form id="projectImage">
+                            <div class="project-info">
+                                <img src="../img/fundingRegister/image-title-Pink.svg" alt="프로젝트 이미지" title="프로젝트 이미지">
+                                <p>프로젝트 이미지는 사이트에서 프로젝트를<br>소개하는 대표 이미지입니다.</p>
+                            </div>
+                            <div class="imagebox">
+                                <div class="default-image">
+                                    <!--이미지 등록시 이곳에 이미지 태그들어감, 아래는 샘플-->
+                                    <!--<img src="../img/story/achievement.png" alt="이미지">-->
+                                </div>
+                                <p>한번에 무슨 프로젝트인지 알 수 있는<br>대표 이미지를 등록해주세요.</p>
+                                <span class="file-registBtn">이미지 등록하기</span>
+                                <!-- 모든 이미지 등록 후에는 이미지 파일 변경하기로 버튼 텍스트 변경-->
+                                <input type="file" class="neo-file" name="image" placeholder="이미지를 등록 해주세요" onchange=" projectThumbnailPrivew(this,$('.default-image'))">
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스제거 / input버튼에 disabled 변경 필요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>프로젝트 카테고리</h3>
+                        <div class="explain">
+                            <p>카테고리를 설정해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">테크놀로지</div>
+                            <span class="registBtn">설정하기</span>
+                        </div>
+                        <form id="projectCategory">
+                            <div class="project-info">
+                                <p>프로젝트에 맞는 카테고리를 선택해주세요<br> &#40;성격에 맞지 않는 카테고리를 선택하시면 찾기 어려워질 수 있습니다 &#41;
+                                </p>
+                            </div>
+                            <div>
+                                <select name="categories">
+                                    <option value="SERVICE">서비스</option>
+                                    <option value="TECHNOLOGY">테크놀로지</option>
+                                    <option value="HEALTHCARE">헬스케어</option>
+                                    <option value="EAT_OUT">외식</option>
+                                    <option value="DESIGN">디자인</option>
+                                    <option value="FINE_ART">미술</option>
+                                    <option value="COMICS">만화</option>
+                                    <option value="FASHION_BEAUTY">패션&#47;뷰티</option>
+                                    <option value="FILM">영화&#47;비디오</option>
+                                    <option value="GAME">게임</option>
+                                    <option value="MUSIC">음악</option>
+                                    <option value="PHOTO">사진</option>
+                                    <option value="PUBLICATION">출판</option>
+                                    <option value="EDUCATION">교육</option>
+                                    <option value="SOCIAL_CONTRIBUTIONS">사회공헌</option>
+                                    <option value="HOUSEHOLD_GOODS">생활용품</option>
+                                    <option value="LIVING">생활</option>
+                                    <option value="MANUFACTURE">제조</option>
+                                    <option value="ADVERTISEMENT">광고</option>
+                                    <option value="OTHERS">기타</option>
+                                </select>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>프로젝트 태그</h3>
+                        <div class="explain">
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <p>태그를 입력해주세요</p>
+                            <div class="complete">
+                                <ul>
+                                    <li>#선물</li>
+                                    <li>#편지</li>
+                                    <li>#추석</li>
+                                </ul>
+                            </div>
+                            <span class="registBtn">입력하기</span>
+                        </div>
+                        <form id="projectTags">
+                            <div class="project-info">
+                                <p>사이트나 SNS에서 쓰일 태그를 입력해주세요.</p>
+                            </div>
+                            <div class="tag-area">
+                                <input type="text" placeholder="태그 입력">
+                                <input type="text" placeholder="태그 입력">
+                                <input type="text" placeholder="태그 입력">
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                </section>
+                <section class="projectSection">
+                    <h1>진행자 정보</h1>
+                    <article class="project-article">
+                        <h3>프로필 이미지</h3>
+                        <div class="explain">
+                            <p>이미지를 등록해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">
+                                <div class="profile-image">
+                                    <!--입력한 프로필 이미지 나오는 곳 img태그-->
+                                </div>
+                            </div>
+                            <span class="registBtn">등록하기</span>
+                        </div>
+                        <form id="profileImage">
+                            <div class="imagebox">
+                                <div id="profilefileImage" class="default-profile-image">
+                                    <!--이미지 등록시 이곳에 이미지태그가 들어갑니다~-->
+                                </div>
+                                <p>진행자님 개인이나 팀&#47;회사의 사진,<br>이미지를 올려주세요.</p>
+                                <span class="file-registBtn">이미지 등록하기</span>
+                                <input type="file" class="neo-file" name="image" placeholder="이미지를 등록 해주세요" onchange="profileThumbnailPrivew(this,$('#profilefileImage'))">
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="button" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>이름</h3>
+                        <div class="explain">
+                            <p>이름을 입력해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">가나다</div>
+                            <span class="registBtn">입력하기</span>
+                        </div>
+                        <form id="profileName">
+                            <div class="project-info">
+                                <p>진행자님을 대표할 수 있는 이름을 써주세요. 팀이나 회사로 진행하신다면<br>해당하는 이름을 적으셔도 됩니다.</p>
+                            </div>
+                            <div class="textwrap">
+                                <input type="text" placeholder="이름을 입력해주세요" onkeyup="chkword(this, 20, $(this))">
+                                <span class="textcount"><span>0</span>/20자</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="button" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>멤버 프로필 이미지</h3>
+                        <div class="explain">
+                            <p>이미지를 등록해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">
+                                <div class="profile">
+                                    <div class="profile-image">
+                                        <!--입력한 프로필 이미지 나오는 곳 img태그-->
+                                    </div>
+                                    <div class="profile-info">
+                                        <div class="name">가나다</div>
+                                        <div class="memberType">CEO</div>
+                                    </div>
+                                    <div class="career">
+                                        <p>2010 서울대학교 졸업</p>
+                                        <p>2010 서울대학교 졸업</p>
+                                        <p>2010 서울대학교 졸업</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="registBtn">등록하기</span>
+                        </div>
+
+                        <form id="profileTeam">
+                            <div class="project-info">
+                                <p>팀&#47;회사 멤버의 이미지와 이름 직함, 경력 등을 입력할 수 있습니다.</p>
+                            </div>
+                            <div class="imagebox">
+                                <div id="fileImage" class="default-profile-image">
+                                    <!--이미지 등록시 이곳에 이미지태그가 들어갑니다, 아래는 샘플~-->
+                                </div>
+                                <span class="file-registBtn">이미지 등록하기</span>
+                                <input type="file" class="neo-file" name="image" placeholder="이미지를 등록 해주세요" onchange="profileThumbnailPrivew(this,$('#fileImage'))">
+                                <div class="member-info">
+                                    <div>
+                                        <h5>이름</h5>
+                                        <input type="text" placeholder="이름">
+                                    </div>
+                                    <div>
+                                        <h5>직책</h5>
+                                        <input type="text" placeholder="팀장/CEO">
+                                    </div>
+                                    <textarea class="autosize" placeholder="경력/이력을 추가해주세요(선택사항)"></textarea>
+                                </div>
+                            </div>
+                            <!--멤버추가를 누르면 imagebox가 한개씩 생김-->
+                            <div class="update" onclick="memberUpdate()">
+                                <span>+ 멤버추가</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="button" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="project-article">
+                        <h3>기업&#47;팀 정보</h3>
+                        <div class="explain">
+                            <p style="">기업&#47;팀 정보를 등록해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete">
+                                <!--기업정보-->
+                                <div class="infomation companyinfo">
+                                    <div class="company-name">
+                                        가나다주식회사
+                                    </div>
+                                    <div>
+                                        <div class="side">
+                                            <div><span class="subject">대표자명</span>가나다</div>
+                                            <div><span class="subject">설립일</span>2010.10.10</div>
+                                            <div><span class="subject">임직원수</span>100명</div>
+                                        </div>
+                                        <div class="side">
+                                            <div><span class="subject">업종</span>소프트웨어</div>
+                                            <div><span class="subject">이메일</span>abcd@abc.com</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div><span class="subject">소재지</span>서울특별시 가나구 가나동 가나빌딩 1111호</div>
+                                            <div><span class="subject">홈페이지</span>www.abcdefg.co.kr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--팀정보-->
+                                <div class="infomation teaminfo">
+                                    <div class="company-name">
+                                        가나다주식회사
+                                    </div>
+                                    <div>
+                                        <div class="side">
+                                            <div><span class="subject">대표자명</span>가나다</div>
+                                            <div><span class="subject">임직원수</span>100명</div>
+                                        </div>
+                                        <div class="side">
+                                            <div><span class="subject">업종</span>소프트웨어</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span class="registBtn">등록하기</span>
+                        </div>
+                        <form method="post" id="selectInfo" action="">
+                            <div class="project-info">
+                                <p>
+                                    아래의 체크박스를 선택하여 나에게 맞는 기업&#47;팀 정보를 입력해주세요.
+                                </p>
+                            </div>
+
+                            <div>
+                                <select name="opnerType" required>
+                                            <option></option>						
+											
+											<option value="COMPANY" >기업</option>
+										
+											
+											<option value="TEAM" >팀</option>
+								</select>
+                                <div class="selectCompany">
+                                    <div>
+                                        <h5>대표자명</h5>
+                                        <input type="text" placeholder="이름">
+                                        <h5>설립일</h5>
+                                        <input type="text" placeholder="설립일" class="dateinput" id="dateOfFoundation" name="dateOfFoundation">
+                                        <h5>임직원수</h5>
+                                        <input type="number" placeholder="총 인원수">
+                                    </div>
+                                    <div>
+                                        <h5>업종</h5>
+                                        <input type="text" placeholder="업종을 입력해주세요">
+                                        <h5>이메일</h5>
+                                        <input type="email" placeholder="이메일을 입력해주세요">
+                                    </div>
+                                    <div class="largeinput">
+                                        <h5>소재지</h5>
+                                        <!--여기에요-->
+                                        <input type="text" name="postalCode" id="search-postcode" placeholder="우편번호" onclick="execDaumPostcode()">
+                                        <input type="button" class="search-postcode" onclick="execDaumPostcode()">
+                                        <input type="text" name="postalAddress" id="search-address" placeholder="주소" onclick="execDaumPostcode()">
+                                        <div class="search-address-table" id="wrap">
+                                            <a href="#" class="close" onclick="foldDaumPostcode()"><img src="../img/buttons/normal/close.svg" alt="닫기" title="닫기"></a>
+                                        </div>
+                                        <input type="text" name="detailAddress" placeholder="상세 주소">
+                                        <h5>홈페이지</h5>
+                                        <input type="text" placeholder="홈페이지 주소를 입력해주세요">
+                                    </div>
+
+                                </div>
+                                <div class="selectTeam">
+                                    <div>
+                                        <h5>팀명</h5>
+                                        <input type="text" placeholder="팀명">
+                                        <h5>대표자명</h5>
+                                        <input type="text" placeholder="이름">
+                                    </div>
+                                    <div>
+                                        <h5>업종</h5>
+                                        <input type="text" placeholder="업종을 입력해주세요">
+                                        <h5>팀원수</h5>
+                                        <input type="number" placeholder="총 인원을 입력해주세요">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area">
+                                <input type="reset" value="취소하기" onclick="resetBtn($(this));">
+                                <input class="off" type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+
+                    </article>
+                </section>
+                <section class="projectSection">
+                    <article class="project-article">
+                        <h3>소셜 네트워크 등록</h3>
+                        <div class="explain">
+                            <p>SNS계정을 등록해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete sns-complete">
+                                <div>
+                                    <img src="../img/fundingRegister/sns-facebook.png" alt="소셜네트워크" title="소셜네트워크">
+                                    <span class="sns-title">페이스북</span>
+                                    <span class="sns-url">https://www.facebook.com/neospring.kr/</span>
+                                </div>
+                                <div>
+                                    <img src="../img/fundingRegister/sns-insta.png" alt="소셜네트워크" title="소셜네트워크">
+                                    <span class="sns-title">기타 SNS서비스</span>
+                                    <span class="sns-url">https://www.instagram.com/neospring_official</span>
+                                </div>
+                            </div>
+                            <span class="registBtn">등록하기</span>
+                        </div>
+
+                        <form id="profileSNS">
+                            <div class="project-info">
+                                <p>기업이나 팀에서 사용하고 계신 SNS계정을 등록해주세요.</p>
+                            </div>
+                            <div class="snsbox">
+                                <div class="sns-selectbox">
+                                    <div class="sel-default" onclick="snsSelect($(this));"><img src="../img/fundingRegister/sns-select.png" alt=""><span>SNS 선택</span></div>
+                                    <ul class="select-sns">
+                                        <li><input type="radio" id="selfacebook" class="option" name="sns"><label for="selfacebook"><img src="../img/fundingRegister/sns-facebook.png" alt="">페이스북</label></li>
+                                        <li><input type="radio" id="selinsta" class="option" name="sns"><label for="selinsta"><img src="../img/fundingRegister/sns-insta.png" alt="">인스타그램</label></li>
+                                        <li><input type="radio" id="seltwitter" class="option" name="sns"><label for="seltwitter"><img src="../img/fundingRegister/sns-twitter.png" alt="">트위터</label></li>
+                                        <li><input type="radio" id="selnaver" class="option" name="sns"><label for="selnaver"><img src="../img/fundingRegister/sns-naver.png" alt="">네이버</label></li>
+                                        <li><input type="radio" id="seletc" class="option" name="sns"><label for="seletc"><img src="../img/fundingRegister/sns.png" alt="">기타 SNS서비스</label></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="snsinput" placeholder="주소를 입력해주세요">
+                            </div>
+                            <div id="sns-select-origin" style="display:none;"><!--dom 추가용-->
+                                <div class="snsbox">
+                                   <button class="remove">삭제</button>
+                                    <div class="sns-selectbox">
+                                        <div class="sel-default" onclick="snsSelect($(this));"><img src="../img/fundingRegister/sns-select.png" alt=""><span>SNS 선택</span></div>
+                                        <ul class="select-sns">
+                                            <li><input type="radio" id="selfacebook" class="option" name="sns"><label for="selfacebook"><img src="../img/fundingRegister/sns-facebook.png" alt="">페이스북</label></li>
+                                            <li><input type="radio" id="selinsta" class="option" name="sns"><label for="selinsta"><img src="../img/fundingRegister/sns-insta.png" alt="">인스타그램</label></li>
+                                            <li><input type="radio" id="seltwitter" class="option" name="sns"><label for="seltwitter"><img src="../img/fundingRegister/sns-twitter.png" alt="">트위터</label></li>
+                                            <li><input type="radio" id="selnaver" class="option" name="sns"><label for="selnaver"><img src="../img/fundingRegister/sns-naver.png" alt="">네이버</label></li>
+                                            <li><input type="radio" id="seletc" class="option" name="sns"><label for="seletc"><img src="../img/fundingRegister/sns.png" alt="">기타 SNS서비스</label></li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="snsinput" placeholder="주소를 입력해주세요">
+                                </div>
+                            </div>
+                            <!--멤버추가를 누르면 imagebox가 한개씩 생김-->
+                            <div class="update" onclick="snsUpdate()">
+                                <span>+ 내용 추가</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area off">
+                                <input type="reset" value="취소하기" disabled="true">
+                                <input type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+                    </article>
+                    <article class="project-article">
+                        <h3>기업&#47;팀 연혁(선택사항)</h3>
+                        <div class="explain">
+                            <p style="">기업 연혁을 등록해주세요</p>
+                            <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
+                            <div class="complete history-complete">
+                                <div class="historybox">
+                                    <div class="date">2017.11</div>
+                                    <div class="cont">
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                    </div>
+                                </div>
+                                <div class="historybox">
+                                    <div class="date">2017.9</div>
+                                    <div class="cont">
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                    </div>
+                                </div>
+                                <div class="historybox">
+                                    <div class="date">2017.5</div>
+                                    <div class="cont">
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                        <p>2017 중소기업제품 구매상담 및 전시회 참가예정</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span class="registBtn">등록하기</span>
+                        </div>
+
+
+                        <form method="post" id="comapnyHistory" action="">
+                            <div class="project-info">
+                                <p>기업이 창업되고 지금까지 걸어온 발자취를 적어주시면<br>투자자들이 보다 높은 신뢰와 관심있는 눈으로 프로젝트를 볼 수 있습니다.</p>
+                            </div>
+                            <div class="datebox">
+                                <div><input class="dateinput" id="dateOfFoundationPicker" name="dateOfFoundation" type="text" placeholder="날짜 입력" required=""></div>
+                                <textarea class="autosize" placeholder="내용을 추가해주세요."></textarea>
+                            </div>
+
+
+                            <!--멤버추가를 누르면 imagebox가 한개씩 생김-->
+                            <div class="update" onclick="contentAdd()">
+                                <span>+ 내용추가</span>
+                            </div>
+                            <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
+                            <div class="btn-area">
+                                <input type="reset" value="취소하기" onclick="resetBtn($(this));">
+                                <input class="off" type="submit" value="저장하기" disabled="true">
+                            </div>
+                        </form>
+
+                    </article>
+                </section>
+                <div class="btn-area">
+                    <input type="submit" value="다음" class="next">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+
+    <!-- 공통 푸터 -->
+    <footer>
+        <section class="footer-menu">
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링 이란?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a href="#">팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+
+
+</body>
+<!--퍼블리싱 ui script-->
+<!--화면동작만 확인하시고 필요한것만 사용하세요.-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //페이지 처음 로딩시 글자수체크
+        $(".lengChk").each(function(idx) {
+            var value = $(this).val();
+            var txtLen = value.length;
+            $(this).siblings('.textcount').find('span').text(txtLen);
+        });
+
+        //팀원 이미지 업로드 바인딩
+        $("#profileTeam input[name='image']").each(function() {
+            bindFileUpload($(this));
+        });
+
+        $("#profileTeam").submit(function() {
+            //경력이 없을경우 오류 수정
+            $("#profileTeam textarea[name='staffCareer']").each(function() {
+                if ($(this).val().trim().length < 1) {
+                    $(this).val(" ");
+                }
+            });
+        });
+
+        $(".project-article .btn-area").find("input[type='reset']").on('click', function() {
+            $(".top-menu .btn-area").find('button[type="submit"]').prop('disabled', false);
+            $(".top-menu .btn-area").find('button[type="submit"]').css('opacity', '1');
+        });
+        //각 정보 입력박스 활성화 동작
+        $(".project-article").on('click', function() {
+            var formState = $(this).find('form').css('display');
+            var wid = $(window).width();
+
+            if (formState === 'none') {
+                $(this).find('form').slideDown(300);
+                $(this).find('.explain').hide();
+                $(this).css('border', '1px solid #b8becc');
+
+                $(this).siblings('.project-article').css('border', 'none');
+                $(this).siblings('.project-article').addClass('unactive');
+                $(this).removeClass('unactive');
+                $(this).siblings('.project-article').find('form').slideUp(300);
+                $(this).siblings('.project-article').find('.explain').show();
+                $(".top-menu .btn-area").find('button[type="submit"]').prop('disabled', true);
+                $(".top-menu .btn-area").find('button[type="submit"]').css('opacity', '.5');
+                if (wid < 669) { //모바일화면 ui
+                    $(this).css({
+                        border: "none",
+                        borderBottom: "1px solid #b8becc"
+                    });
+                }
+            }
+            resizeAll();
+
+        });
+        //이미지 등록하기 버튼클릭 동작
+        $(".file-registBtn").on('click', function() {
+            $(this).next(".neo-file").click();
+        });
+        //멤버프로필 값이 있을때 삭제
+        $(".imagebox .remove").on('click', function() {
+            $(this).parent().find("input.state").val("DELETE");
+            $(this).parent().hide();
+            $(this).parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            $(this).parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        });
+
+        //textarea 자동높이조절
+        $("textarea.autosize").on('keydown keyup', function() {
+            $(this).height(1).height($(this).prop('scrollHeight') + 3);
+        })
+
+
+        //datepicker
+        $('#dateOfFoundationPicker').datetimepicker({
+            "format": "YYYYMM",
+            "dayViewHeaderFormat": "MM MM YYYY",
+            maxDate: new Date
+        });
+        //설립일
+        $('#dateOfFoundation').datetimepicker({
+            "format": "YYYYMM",
+            "dayViewHeaderFormat": "MM MM YYYY",
+            maxDate: new Date
+        });
+
+        //기업 팀정보 select옵션에 따른 페이지 보이기
+        $("#selectInfo select[name='opnerType']").change(function() {
+            var selState = $("#selectInfo").find('select[name="opnerType"]').val();
+            if (selState === 'COMPANY') {
+                $('.selectCompany').show();
+                $('.selectTeam').hide();
+            } else {
+                $('.selectTeam').show();
+                $('.selectCompany').hide();
+            }
+        })
+        $("ul.select-sns li label").click(seletEventBind);//소셜서비스 클릭 동작.
+    });
+
+    function snsSelect(target) { //소셜 박스 클릭시 셀렉트 박스 보이기
+        var snsList = target.siblings("ul.select-sns");
+        snsList.addClass('on');
+    }
+
+    function seletEventBind(e) { //소셜서비스 클릭하면 셀렉트박스 내용 변경하는 함수
+        var selectLabel = e.currentTarget;
+        console.log('d' + e.currentTarget)
+        var snsList = $(selectLabel).parent().parent('ul.select-sns'); //해당ul
+        var snsSelectBox = $(selectLabel).parent().parent().siblings('.sel-default'); //내용이 바뀔 박스
+        var newSrc = $(selectLabel).find('img').attr('src'); //선택한 sns이미지
+        var newText = $(selectLabel).text();
+
+        snsSelectBox.find('img').attr('src', newSrc);
+        snsSelectBox.find('span').text(newText);
+        snsSelectBox.addClass('on');
+        snsList.removeClass('on');
+        e.stopPropagation();
+        console.log("li");
+
+    }
+
+    //페이지 로딩 시 이미지 리사이징
+    window.onload = function() {
+        resizeAll();
+    } //window.onload
+    function resizeAll() {
+        var divs = document.querySelectorAll('.container .image-resizebox');
+        for (var i = 0; i < divs.length; ++i) {
+            if (divs[i].querySelector('img') != null) {
+                resize(divs[i]);
+                divs[i].style.cssText = 'background:none;'
+            }
+
+        } //for
+
+    }
+
+    function resize(div) {
+        var divAspect = div.offsetHeight / div.offsetWidth;
+        //div.style.overflow = 'hidden';
+
+        var img = div.querySelector('img');
+        var imgAspect = img.height / img.width;
+        if (imgAspect <= divAspect) {
+            // 이미지가 div보다 납작한 경우 세로를 div에 맞추고 가로는 잘라낸다
+            var imgWidthActual = div.offsetHeight / imgAspect;
+            var imgWidthToBe = div.offsetHeight / divAspect;
+            var marginLeft = -Math.round((imgWidthActual - imgWidthToBe) / 2);
+            img.style.cssText = 'width: auto; height: 100%; margin-left: ' + marginLeft + 'px;'
+        } else {
+            var imgHeightActual = div.offsetWidth / imgAspect;
+            var imgHeightToBe = div.offsetWidth / divAspect;
+            var marginTop = Math.round((imgHeightActual - imgHeightToBe) / 2);
+            // 이미지가 div보다 길쭉한 경우 가로를 div에 맞추고 세로를 잘라낸다
+            img.style.cssText = 'width: 100%; height: auto; margin-left: 0;margin-top:' + marginTop + 'px;'
+        } //else
+    }
+
+    //취소버튼 클릭시 폼 닫힘
+    function resetBtn(target) {
+
+        target.parent().parent().slideUp(300);
+        target.parent().parent().siblings('.explain').show(300);
+    }
+
+    //첨부파일 이미지 미리보여주는 함수, 두번째 파라미터가 이미지가 미리 보여질 위치
+    //alt속성때문에 같은 동작의 함수를 두개로 나눴습니다.
+
+    //프로젝트 대표이미지
+    function projectThumbnailPrivew(html, $target) {
+        console.log($target);
+        if (html.files && html.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+
+                $target.css('display', '');
+                $target.html('<img style="visibility:hidden" src="/file/" id="coverImg" alt="프로젝트 이미지" title="프로젝트 대표 이미지">');
+                $target.html('<img src="' + e.target.result + '" class="imgchange" border="0" alt="프로젝트 대표 이미지" title="프로젝트 대표 이미지" />');
+            };
+
+            reader.readAsDataURL(html.files[0]);
+
+            setTimeout(function() {
+                resizeAll();
+            }, 10);
+
+
+            $target.siblings('.file-registBtn').text('이미지 변경하기');
+            $target.css('background', 'none');
+
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        }
+        //취소하기 버튼 클릭시 이미지 reset
+        $target.parent().siblings(".btn-area").find('input[type="reset"]').click(function() {
+            $target.html('<img src="/file/" id="coverImg" alt="프로젝트 이미지" title="프로젝트 대표 이미지">');
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+        });
+
+    }
+    //프로필영역 이미지
+    function profileThumbnailPrivew(html, $target) {
+        if (html.files && html.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $target.css('display', '');
+                $target.html('<img style="visibility:hidden" src="/img/user/company-portrait-none.png" alt="프로필 이미지" title="프로필 이미지">');
+                $target.html('<img src="' + e.target.result + '" border="0" alt="프로필 이미지" title="프로필 이미지" />');
+            };
+            reader.readAsDataURL(html.files[0]);
+            setTimeout(function() {
+                resizeAll();
+            }, 10);
+            $target.siblings('.file-registBtn').text('이미지 변경하기');
+            $target.css('background', 'none');
+
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        }
+
+        //취소하기 버튼 클릭시 이미지 reset
+        $target.parent().siblings(".btn-area").find('input[type="reset"]').click(function() {
+            $target.html('<img src="/img/user/company-portrait-none.png" alt="프로필 이미지" title="프로필 이미지">');
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+            $target.parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+        });
+    }
+    //글자수 체크
+    function chkword(obj, maxByte, target) {
+        var $this = target;
+        var strValue = obj.value;
+        var strLen = strValue.length;
+        var totalByte = 0;
+        var len = 0;
+        var oneChar = "";
+        var str2 = "";
+
+        for (var i = 0; i < strLen; i++) {
+            totalByte++; //한글영문 상관없이 정해진 글자 수 만큼만
+
+            if (totalByte <= maxByte) {
+                len = i + 1;
+            }
+        }
+        target.siblings('.textcount').find('span').text(strLen);
+
+        console.log(totalByte + ", " + maxByte);
+
+        if (totalByte > maxByte) {
+            target.siblings('.textcount').find('span').addClass('over');
+
+            //글자수 초과시 버튼클릭 안되도록
+            target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+            target.parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+        } else if (totalByte === 0) {
+            //글자수 0일때도 버튼 안되도록
+            target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+            target.parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+        } else {
+            target.siblings('.textcount').find('span').removeClass('over');
+
+            //글자수 초과 안했을 경우 버튼 동작하도록
+            target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            target.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        }
+    }
+
+    //태그 폼 저장하기 버튼 활성화
+    function activeBtn(target) {
+        if (target.val().length !== 0) {
+            target.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            target.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        }
+    }
+    //질문추가 버튼 클릭 동작
+    function memberAdd() {
+        var index = $("#profileTeam .imagebox").length;
+        if (index == 0) {
+            $("#profileTeam .project-info").after('<div class="imagebox">' + '<input type="hidden" name="profileImageId">' + '<input type="hidden" class="state" name="state" value="INSERT"><input type="hidden" name="staffId" value="">' + '<button class="remove">삭제</button><div class="default-profile-image image-resizebox"></div><span class="file-registBtn">이미지 등록하기</span><input type="file" class="neo-file" name="image" placeholder="이미지를 등록 해주세요"  alt="멤버프로필 이미지" title="멤버프로필 이미지"><div class="member-info"><div><h5>이름</h5><input class="memberInput" type="text" onkeyup="staffCheck($(this))" name="staffName" placeholder="이름" required></div><div><h5>직책</h5><input class="memberInput" type="text" onkeyup="staffCheck($(this))" name = "staffTitle" placeholder="팀장/CEO" required></div><textarea class="autosize" name="staffCareer" placeholder="경력/이력을 추가해주세요(선택사항)"></textarea></div></div>');
+        } else {
+            $("#profileTeam .imagebox").last().after('<div class="imagebox">' + '<input type="hidden" name="profileImageId">' + '<input type="hidden" class="state" name="state" value="INSERT"><input type="hidden" name="staffId" value="">' + '<button class="remove">삭제</button><div  class="default-profile-image image-resizebox"></div><span class="file-registBtn">이미지 등록하기</span><input type="file" class="neo-file" name="image" placeholder="이미지를 등록 해주세요" alt="멤버프로필 이미지" title="멤버프로필 이미지"><div class="member-info"><div><h5>이름</h5><input class="memberInput" type="text" onkeyup="staffCheck($(this))" name="staffName" placeholder="이름" required></div><div><h5>직책</h5><input type="text" class="memberInput" onkeyup="staffCheck($(this))" name = "staffTitle" placeholder="팀장/CEO" required></div><textarea class="autosize" name="staffCareer" placeholder="경력/이력을 추가해주세요(선택사항)"></textarea></div></div>');
+        }
+        $("#profileTeam .imagebox").last().find(".file-registBtn").click(function() {
+            $(this).next(".neo-file").click();
+        });
+        $("#profileTeam .imagebox").last().find(".remove").on('click', function() {
+            $(this).parent().remove();
+        });
+
+        bindFileUpload($("#profileTeam .imagebox").last().find("input[type='file']"));
+
+    }
+
+    function staffCheck(target) {
+        $(".memberInput").each(function(idx) {
+            if ($(this).val().length != 0) {
+                $(this).parent().parent().parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+                $(this).parent().parent().parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+
+            } else {
+                $(this).parent().parent().parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+                $(this).parent().parent().parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+                return false;
+            }
+        });
+    }
+
+    function textareaCheck(target) {
+        target.parent().parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+        target.parent().parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+    }
+    //Staff 프로필 이미지 업로드
+    function bindFileUpload(fileInput) {
+        fileInput.change(function() {
+            fileInput.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            fileInput.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+            var url = "/file/publishUpload.json";
+
+            var formData = new FormData();
+            formData.append("file", fileInput[0].files[0]);
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                cache: false,
+                enctype: "multipart/form-data",
+                processData: false, // Don't process the files
+                contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+                success: function(data, textStatus, jqXHR) {
+                    if (data.result) {
+                        fileInput.siblings("input[name='profileImageId']").val(data.publishedS3UserFile.id);
+
+                        fileInput.siblings(".default-profile-image").find("img").hide();
+
+                        fileInput.siblings(".default-profile-image").html("<img src='" + __xprefix + data.publishedS3UserFile.filePath + "' alt='멤버프로필 이미지' title='멤버프로필 이미지'>");
+
+                        setTimeout(function() {
+                            resizeAll();
+                        }, 100);
+
+
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Handle errors here
+                    console.log('ERRORS: ' + textStatus);
+                    // STOP LOADING SPINNER
+                }
+            });
+
+            fileInput.parent().siblings(".btn-area").find('input[type="reset"]').click(function() {
+                fileInput.siblings(".default-profile-image").find("img").eq(0).show();
+                fileInput.siblings(".default-profile-image").find("img").eq(0).siblings("img").remove();
+                var profileId = fileInput.siblings("input[name='profileImageId']");
+                profileId = profileId.val(profileId.attr("data-id"));
+                fileInput.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', true);
+                fileInput.parent().siblings(".btn-area").find('input[type="submit"]').addClass('off');
+            });
+        });
+
+    }
+
+    //내용추가 함수
+    //질문추가 버튼 클릭 동작
+    function contentAdd() {
+        var index = $("comapnyHistory .datebox").length;
+        if (index == 0) {
+            $("#comapnyHistory .project-info").after('<div class="datebox"><button type="button" class="remove">삭제</button><input class="dateinput" id="dateOfFoundationPicker" name="dateOfFoundation" type="text" placeholder="날짜 입력" required=""><textarea class="autosize" placeholder="내용을 추가해주세요."></textarea></div>');
+        } else {
+            $("#profileTeam .imagebox").last().after('<div class="datebox"><input class="dateinput" id="dateOfFoundationPicker" name="dateOfFoundation" type="text" placeholder="날짜 입력" required=""><textarea class="autosize" placeholder="내용을 추가해주세요."></textarea></div>');
+        }
+
+    }
+
+
+    //소셜네트워크 내용 추가 동작
+    function snsUpdate() {
+        var index = $("#profileSNS .snsbox").length;
+        var new_item = $("#sns-select-origin").html();
+        console.log(new_item);
+        if (index === 0) {
+
+        } else {
+            $("#profileSNS>.snsbox").last().after(new_item);
+            $("#profileSNS>.snsbox .select-sns label").click(this, seletEventBind);
+        }
+         $("#profileSNS>.snsbox").find(".remove").on('click', function() {
+            $(this).parent().remove();
+        });
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////레디 함수///////////////////////////////////////////////////
+
+    //카테고리, 태그
+    $(function() {
+        var categoryForm = $("form#projectCategory");
+        var tagForm = $("form#projectTags");
+
+        var on_categories = function() {
+            $(this).parent().siblings(".btn-area").find('input').attr('disabled', false);
+            $(this).parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+        };
+        categoryForm.find("select[name='categories']").change(on_categories).focus();
+
+        var on_tags = function() {
+            var input = $(this);
+            input.parent().siblings(".btn-area").find('input[type="submit"]').attr('disabled', false);
+            input.parent().siblings(".btn-area").find('input[type="submit"]').removeClass('off');
+            var group = input.parent();
+            if (input.val() == "") {
+                var prev = group.prev(".tag-area").find("input");
+                var next = group.next(".tag-area").find("input");
+                if (next.length > 0) {
+                    group.remove();
+                } else {
+                    if (prev.length > 0) {
+                        if (prev.val() == "") {
+                            group.remove();
+                        }
+                    }
+                }
+            } else {
+                if (group.next(".tag-area").find("input").length == 0) {
+                    console.log(tagForm.find("input[name='tags']").length);
+                    if (tagForm.find("input[name='tags']").length < 3) {
+                        group.clone().insertAfter(group).find("input").removeAttr("id").val("").blur(on_tags).change(on_tags).focus();
+                    }
+                }
+            }
+        };
+
+        tagForm.find("input[name='tags']").blur(on_tags).change(on_tags);
+
+        tagForm.find("input[type='submit']").click(function() {
+            var tags = tagForm.find("[name='tags']");
+            var tagCount = 0;
+            tags.each(function(i, v) {
+                tagCount += !!$(v).val();
+            });
+
+            if (tagCount > 0) {
+                if ($(tags[tags.length - 1]).val().length == 0) {
+                    $(tags[tags.length - 1]).parent().remove();
+                }
+            }
+
+        });
+
+    });
+
+
+    // 우편번호 찾기 찾기 화면을 넣을 element
+    var element_wrap = document.getElementById('wrap');
+
+    function foldDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_wrap.style.display = 'none';
+    }
+
+    function execDaumPostcode() {
+        // 현재 scroll 위치를 저장해놓는다.
+        var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+        new daum.Postcode({
+            oncomplete: function(data) {
+                //새배송지로 만든다.
+                $("select[name='shippingId'] option").last().attr("selected", "selected");
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = data.address; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 기본 주소가 도로명 타입일때 조합한다.
+                if (data.addressType === 'R') {
+                    //법정동명이 있을 경우 추가한다.
+                    if (data.bname !== '') {
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if (data.buildingName !== '') {
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('search-postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('search-address').value = fullAddr;
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_wrap.style.display = 'none';
+
+                // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+                document.body.scrollTop = currentScroll;
+            }, // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+            onresize: function(size) {
+                element_wrap.style.height = size.height + 'px';
+            },
+            width: '100%',
+            height: '100%'
+        }).embed(element_wrap);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_wrap.style.display = 'block';
+    }
+</script>
+
+</html>

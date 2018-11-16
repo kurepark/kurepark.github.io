@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>네오스프링 전용관</title>
+	<meta name="description" content="불법주차 및 각종 주차문제를 해결하기 위해 유휴 공간을 활용한 주차 공간 공유 플랫폼 서비스를 준비중입니다.">
+	<meta name="author" content="Parking Brother ">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://www.neospring.kr/contest/8/funding/77">
+	<meta property="og:site_name" content="네오스프링 (크라우드펀딩 플랫폼)">
+	<meta property="og:title" content="유휴 공간을 활용한 주차 공간 공유 플랫폼 서비스">
+	<meta property="og:description" content="불법주차 및 각종 주차문제를 해결하기 위해 유휴 공간을 활용한 주차 공간 공유 플랫폼 서비스를 준비중입니다.">
+	<meta property="article:author" content="Parking Brother ">
+	<meta property="og:image" content="http://image.neospring.kr/702101c6/046d/4ca6/a5b3/55cb87898de0/parking brother.png">
+	<meta property="og:locale" content="ko_KR">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="http://www.neospring.kr/contest/8/funding/77">
+	<meta name="twitter:site" content="@neospring_kr">
+	<meta name="twitter:title" content="유휴 공간을 활용한 주차 공간 공유 플랫폼 서비스">
+	<meta name="twitter:description" content="불법주차 및 각종 주차문제를 해결하기 위해 유휴 공간을 활용한 주차 공간 공유 플랫폼 서비스를 준비중입니다.">
+	<meta name="twitter:creator" content="Parking Brother ">
+	<meta name="twitter:image" content="http://image.neospring.kr/702101c6/046d/4ca6/a5b3/55cb87898de0/parking brother.png">
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../css/user-login.css" rel="stylesheet" type="text/css">
+
+
+<link href="../css/guide-content.css" rel="stylesheet" type="text/css">
+<link href="../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/parsley.min.js"></script>
+
+	<script src="../js/on.js"></script>
+
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<link href="../js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../js/summernote/summernote.css" rel="stylesheet" type="text/css">
+	<script src="../js/summernote/summernote.min.js"></script>
+
+	<link href="../css/partner-member.css" rel="stylesheet" type="text/css">
+	<script>
+		$(document).ready(function(){
+
+			//초대장보내기 펼치기
+			$(".letter-box .foldBtn").on('click',function(){
+				var letter=$(".letter-box form");
+				if($(letter).css('display')=='block'){
+					$(letter).css('display','none');
+					$(this).css('background','url(../img/notice/chevron-down-gray.svg) no-repeat center');
+				}
+				else{
+					$(letter).css('display','block');
+					$(this).css('background','url(../img/notice/chevron-up-gray.svg) no-repeat center');
+				}
+			});
+
+			$(".letter-box textarea").summernote({
+				minHeight:350
+			});//초대장보내기 끝
+
+
+
+			//초대장 관리 펼치기
+			$(".letter-list .foldBtn").on('click',function(){
+				var letter=$(".letterlist-header form, .letter-table, .letter-list .pageArea");
+				if($(".letter-table").css('display')=='block'){
+					$(letter).css('display','none');
+					$(this).css('background','url(../img/notice/chevron-down-gray.svg) no-repeat center');
+					//$(".letterlist-header").css('height','auto');
+				}
+				else{
+					$(letter).css('display','block');
+					$(this).css('background','url(../img/notice/chevron-up-gray.svg) no-repeat center');
+					//$(".letterlist-header").css('height','60px');
+				}
+			});//초대장 관리 펼치기
+
+			//초대장 관리 내용
+			$(".letter-table .lettercont").on('click',function(){
+				$(".letterModal").show();
+			});//내용 끝
+			$(".closeModal").on('click',function(){
+				$(".letterModal").hide();
+			})
+			//편지지선택
+			$(".colorbox div").on('click',function(){
+				$(this).addClass("selcolor").siblings().removeClass("selcolor");
+			});
+
+		});
+
+
+	</script>
+
+
+
+
+
+
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<div class="tit-box">
+			<div class="go-back"><a href="#">&lt; 뒤로</a></div>
+			<h2>회원관리</h2>
+			</div>
+		<!--회원목록-->
+		<div class="member-list">
+			<div class="memlist-header">
+				<h3>회원목록<span class="count">총<b>23</b>명</span></h3>
+				<div class="formbox">
+				<form action="" method="get">
+					<input type="text" name="searchPartner" placeholder="회원명 또는 아이디" />
+					<a onclick=""><img src="../img/guide/large/img-large-search.png" alt="검색버튼"></a>
+				</form>
+				<div class="btn-area"> <a href="#" class="member-Btn accept">승인</a> <a href="#" class="member-Btn rejection">거절</a> </div>
+				</div>
+			</div>
+
+			<!--검색시 member-table이 한번 더 나오면 됨-->
+
+			<div class="member-table">
+				<div class="row"> <span class="cell col-1">#</span> <span class="cell col-45">아이디</span> <span class="cell col-2">회원명</span> <span class="cell col-15"><input type="checkbox" name="chk-accept" value="승인여부" class="chkbox" id="chkbox.id1"><label for="chkbox.id1"></label>승인 여부</span> </div>
+				<div class="row"> <span class="cell col-1">1</span> <span class="cell col-45">dddgj1122@naver.com</span> <span class="cell col-2">최명길</span> <span class="cell col-15 chkwait"><input type="checkbox" name="chk-accept" value="승인대기" class="chkbox" id="chkbox.id2"><label for="chkbox.id2"></label>승인 대기</span> </div>
+				<div class="row"> <span class="cell col-1">1</span> <span class="cell col-45">dddgj1122@naver.com</span> <span class="cell col-2">leeneohan</span> <span class="cell col-15 chkrefuse"><input type="checkbox" name="chk-accept" value="승인거절" class="chkbox" id="chkbox.id3"><label for="chkbox.id3"></label>승인 거절</span> </div>
+				<div class="row"> <span class="cell col-1">1</span> <span class="cell col-45">dddgj1122@naver.com</span> <span class="cell col-2">leeneohan</span> <span class="cell col-15 chkfinish"><input type="checkbox" name="chk-accept" value="승인완료" class="chkbox" id="chkbox.id4"><label for="chkbox.id4"></label>승인 완료</span> </div>
+				<div class="row"> <span class="cell col-1">1</span> <span class="cell col-45">dddgj1122@naver.com</span> <span class="cell col-2">leeneohan</span> <span class="cell col-15 chkfinish"><input type="checkbox" name="chk-accept" value="승인완료" class="chkbox" id="chkbox.id5"><label for="chkbox.id5"></label>승인 완료</span> </div>
+				<div class="row"> <span class="cell col-1">1</span> <span class="cell col-45">dddgj1122@naver.com</span> <span class="cell col-2">leeneohan</span> <span class="cell col-15 chkfinish"><input type="checkbox" name="chk-accept" value="승인완료" class="chkbox" id="chkbox.id6"><label for="chkbox.id6"></label>승인 완료</span> </div>
+			</div>
+			<div class="pageArea">
+				<div class="firstPage"></div>
+				<div class="prev"></div>
+				<div class="pageNum"> <span class="nowPage">1</span>/ <span class="nowCng">1</span> </div>
+				<div class="next"></div>
+				<div class="lastPage"></div>
+			</div>
+		</div>
+		<!--초대장보내기-->
+		<div class="letter-box">
+			<div class="letterbox-header">
+				<h3>초대장 보내기 <a href="#" class="foldBtn"></a></h3> </div>
+			<!--이메일 폼-->
+
+			<form>
+				<table>
+					<tr class="mailto">
+						<td><label for="">받는 사람 이메일</label><input type="email" placeholder="이메일을 입력해주세요."></td>
+					</tr>
+					<tr class="mailtit">
+						<td><input type="text" placeholder="제목"></td>
+					</tr>
+					<tr class="mailtext">
+						<td>
+							<textarea name="content">
+								<div>
+
+						<!--기본메일양식/ 고객에게 전송될 기본 폼-->
+						<table style="text-align:center; width:80%; margin:0 auto; font-size:14px; color:#969696; background:url(../img/partner/letter.png); background-repeat:no-repeat; background-position:top center;">
+
+									<tbody>
+										<!--<tr>
+											<td><img src="../img/ci/neospring-ci.svg" alt="네오스프링" style="width:82px; height:23px; float:right;"></td>로고
+										</tr>-->
+										<tr>
+											<td>
+											<p><br><br><br><br><br></p>
+												<p>네오스프링에서 <b style="color:#555; font-size:16px;">수원대학교 전용관</b>이 오픈되었습니다.</p>
+												<p>전용관에 오셔서 회원가입을 신청해보세요.</p>
+												<p>아래 링크를 클릭 하시면, <b style="font-weight:400;">수원대학교</b> 전용관으로 이동됩니다.</p>
+											</td><!--텍스트-->
+										</tr>
+										<tr>
+											<td>
+												<p><a href="#" style="color:#555; border-bottom:1px solid #555; text-decoration:none;">www.neospring.kr/sw_ep</a></p>
+											</td><!--주소-->
+										</tr>
+									</tbody>
+								</table>
+
+
+
+
+							</div>
+
+
+
+							</textarea>
+						</td>
+					</tr>
+				</table>
+				<div class="colorbox">
+				<h3>편지지 선택하기</h3>
+				<div class="backcolor selcolor" id="backimg"></div>
+				<div class="backcolor" id="pink"></div>
+				<div class="backcolor" id="none"></div>
+			</div>
+			<div class="btnArea">
+				<a href="#" class="mail-btn cancel">취소</a>
+				<a href="#" class="mail-btn submit">전송</a>
+			</div>
+			</form>
+
+
+
+		</div>
+		<!--초대장 관리-->
+		<div class="letter-list">
+			<div class="letterlist-header">
+				<h3>초대장 관리 <span class="count">총<b>23</b>건</span><a href="#" class="foldBtn"></a></h3>
+				<form action="" method="get">
+					<input type="text" name="searchPartner" placeholder="이름 또는 이메일" />
+					<a onclick=""><img src="../img/guide/large/img-large-search.png" alt="검색버튼"></a>
+				</form>
+			</div>
+			<div class="letter-table">
+				<div class="row"> <span class="cell col-15">날짜</span> <span class="cell col-5">제목</span> <span class="cell col-2">이메일</span> </div>
+				<div class="row lettercont"> <span class="cell col-15">2017-08-20 17:00</span> <span class="cell col-5">안녕하세요. 최명길님, 이번 7월 13일 수원대학교에서는 네오스프링 전용관을 블라블라블라</span> <span class="cell col-2">dddgj1122@naver.com</span> </div>
+				<div class="row lettercont"> <span class="cell col-15">2017-08-20 17:00</span> <span class="cell col-5">안녕하세요. 최명길님, 이번 7월 13일 수원대학교에서는 네오스프링 전용관을 블라블라블라</span> <span class="cell col-2">dddgj1122@naver.com</span> </div>
+				<div class="row lettercont"> <span class="cell col-15">2017-08-20 17:00</span> <span class="cell col-5">안녕하세요. 최명길님, 이번 7월 13일 수원대학교에서는 네오스프링 전용관을 블라블라블라</span> <span class="cell col-2">dddgj1122@naver.com</span> </div>
+				<div class="row lettercont"> <span class="cell col-15">2017-08-20 17:00</span> <span class="cell col-5">안녕하세요. 최명길님, 이번 7월 13일 수원대학교에서는 네오스프링 전용관을 블라블라블라</span> <span class="cell col-2">dddgj1122@naver.com</span> </div>
+				<div class="row lettercont"> <span class="cell col-15">2017-08-20 17:00</span> <span class="cell col-5">안녕하세요. 최명길님, 이번 7월 13일 수원대학교에서는 네오스프링 전용관을 블라블라블라</span> <span class="cell col-2">dddgj1122@naver.com</span> </div>
+			</div>
+			<!--페이징-->
+			<div class="pageArea">
+				<div class="firstPage"></div>
+				<div class="prev"></div>
+				<div class="pageNum"> <span class="nowPage">1</span>/ <span class="nowCng">1</span> </div>
+				<div class="next"></div>
+				<div class="lastPage"></div>
+			</div>
+		</div>
+		<div class="go-back"><a href="#">&lt; 뒤로</a></div>
+	</div>
+
+
+
+
+	<!--초대장 관리 클릭시 나오는 팝업-->
+	<section class="modal-layer letterModal">
+    <div class="modal-wrapper">
+    <div class="letter-title">
+    <span class="closeModal"><img src="../img/icon/icon-close.png" alt="닫기버튼"></span>
+    	<h4>[수원대학교 창업지원단] 네오스프리의 수원대학교 전용관에서 크라우드펀딩을 진행하려 합니다.</h4>
+    	<div>abcdefg123@google.com <span class="letter-date">2016-08-08 17:02</span></div>
+    </div>
+    <div class="letter-content">
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	네오스프링에서 보낸 이메일 뚜른뚜른<br>
+    	스크롤이다~
+    </div>
+    <div class="btnArea closeModal">
+    	<a href="#">닫기</a>
+    </div>
+
+	</div>
+    </section>
+</body>
+
+</html>

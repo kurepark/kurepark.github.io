@@ -1,0 +1,79 @@
+<!-- 자랑거리 성장하이라이트 모달 -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/investor-home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+   <!-- 자랑거리 입력 모달 수상실적/그래프/성장목표 선택하는 모달입니다-->
+    <section id="investorTypeSurveyModal" class="modal-layer survey-modal" style="display:block;">
+        <div class="survey-wrapper">
+           <!--모달 제목과 설명글-->
+            <div class="modal-header">
+                <h2>투자성향분석</h2>
+                <p class="step">STEP8</p>
+                <p>투자경험</p>
+            </div>
+
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+              <!--진척도-->
+               <div class="progress-stage">
+                   <div class="progress">
+                       <div class="progress-mask"><!--이곳의 width값으로 진행률 이동합니다-->
+                           <div class="rate">10%</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="body-item">
+                   <div class="item-title">투자경험과 가장 가까운 것은 어느 것입니까?</div>
+                   <div class="item-contents">
+                      <form>
+                          <ul class="nonfloat-list">
+                              <li><input type="radio" id="grade1" name="investmentExperience"><label for="grade1">은행 예&#47;적금, 국채, 지방채, 보증채, MMF, CMA 등</label></li>
+                              <li><input type="radio" id="grade2" name="investmentExperience"><label for="grade2">금융채, 신용도 높은 회사채, 채권형 펀드, 원금보장형 ELF(ELB). ELD 등</label></li>
+                              <li><input type="radio" id="grade3" name="investmentExperience"><label for="grade3">신용도 중간 등급의 회사채, 원금의 일부만 보장되는 ELF(ELB), 혼합형 펀드 등</label></li>
+                              <li><input type="radio" id="grade4" name="investmentExperience"><label for="grade4">신용도 낮은 회사채, 주식, 원금이 보장되지 않는 ELF(ELB), 시장수익률 수준의 수익을 추구하는 주식형 펀드 등</label></li>
+                              <li><input type="radio" id="grade5" name="investmentExperience"><label for="grade5">ELW, 선물옵션, 시장수익률 이상의 수익을 추구하는 주식형 펀드, 파생상품에 투자하는 펀드, 주식, 신용거래 등</label></li>
+                          </ul>
+                      </form> 
+                   </div>
+               </div>
+                
+           
+            </div>
+            <div class="modal-btn">
+                <button type="button" class="close-modal">이전</button>
+                <a href="#" class="next">다음 페이지</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<!--퍼블리싱 ui script-->
+
+<!--화면동작만 확인하시고 필요한것만 사용하세요.-->
+<script type="text/javascript">
+    $(document).ready(function() {}); //jqb
+</script>
+
+</html>

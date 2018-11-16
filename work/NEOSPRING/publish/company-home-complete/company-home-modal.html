@@ -1,0 +1,211 @@
+<!-- 자랑거리 성장하이라이트 모달 -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <script src="../../js/textarea-autosize/autosize.min.js"></script>
+    <link href="../../css/company-home-ex.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+
+    <!-- 기업 홈 성장하이라이트 클릭시 보이는 모달 -->
+    <section id="highlightDetail" class="modal-layer pride-modal" style="display:none;">
+        <div class="priedModal-wrapper">
+            <!--모달 제목과 설명글-->
+            <div class="modal-header">
+                <h2>성장 목표 상세보기</h2>
+                <p>성장 목표를 볼 수 있습니다</p>
+            </div>
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+
+                <!-- 달성완료 박스 -->
+                <div class="highlight-contents complete">
+                    <div class="step-tit">
+                        <h4>STEP 1</h4>
+                        <span class="badge">달성완료</span>
+                    </div>
+                    <div class="step-cont">
+                        <h3>법인설립</h3>
+                        <p>2010. 8. 25 SBA 청년창업 선정 법인설립 자본금 2천만원, 특허 1건등록 및 해외출원 [미국,일본,중국, EP]</p>
+                    </div>
+                </div>
+                <!--진행중인 박스-->
+                <div class="highlight-contents progress">
+                    <div class="step-tit">
+                        <h4>STEP 2</h4>
+                        <span class="badge">진행중</span>
+                    </div>
+                    <div class="step-cont">
+                        <h3>법인설립</h3>
+                        <p>2010. 8. 25 SBA 청년창업 선정 법인설립 자본금 2천만원, 특허 1건등록 및 해외출원 [미국,일본,중국, EP]</p>
+                    </div>
+                </div>
+                <div class="highlight-contents progress">
+                    <div class="step-tit">
+                        <h4>STEP 2</h4>
+                        <span class="badge">진행중</span>
+                    </div>
+                    <div class="step-cont">
+                        <h3>법인설립</h3>
+                        <p>2010. 8. 25 SBA 청년창업 선정 법인설립 자본금 2천만원, 특허 1건등록 및 해외출원 [미국,일본,중국, EP]</p>
+                    </div>
+                </div>
+                <!--진행예정인 박스-->
+                <div class="highlight-contents standby">
+                    <div class="step-tit">
+                        <h4>STEP 2</h4>
+                        <span class="badge">진행예정</span>
+                    </div>
+                    <div class="step-cont">
+                        <h3>법인설립</h3>
+                        <p>2010. 8. 25 SBA 청년창업 선정 법인설립 자본금 2천만원, 특허 1건등록 및 해외출원 [미국,일본,중국, EP]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-btn">
+                <button class="modal-check" onclick="forceHideModal();">닫기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 대표수상실적 모달 -->
+    <section id="awardDetail" class="modal-layer pride-modal" style="display:block;">
+        <div class="priedModal-wrapper">
+            <!--대표수상실적 타이틀-->
+            <div class="modal-header">
+                <h2>중국 쑤닝그룹 판매계약 상세보기</h2>
+            </div>
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+                <div class="profile">
+                    <img src="" alt="프로필이미지" title="프로필이미지" class="profile-image">
+                    <div>
+                        <span class="name">태민산업</span>
+                        <span class="date">10월 7일</span>
+                    </div>
+                    <button class="sns-share"></button>
+                    <ul class="sns-list">
+                        <li><a href="http://www.facebook.com/sharer/sharer.php?u=localhost/story/21" target="_blank"><span>페이스북으로 공유하기</span></a></li>
+                        <li><a href="http://twitter.com/home?status=localhost/story/21" target="_blank"><span>트위터로 공유하기</span></a></li>
+                        <li><a href="https://story.kakao.com/share?url=localhost/story/21" target="_blank"><span>카카오톡으로 공유하기</span></a></li>
+                        <li><a href="http://plus.google.com/share?url=localhost/story/21" target="_blank"><span>구글로 공유하기</span></a></li>
+                        <li><a onclick="clipboardUrl('localhost/story/21');"><span>링크복사하기</span></a></li>
+                        <li class="sns-close"><button><span>닫기</span></button></li>
+                    </ul>
+						<div class="sns-list-mobile">
+						<ul>
+							<li><span class="icon"></span><a href="http://www.facebook.com/sharer/sharer.php?u=${currURL}" target="_blank"><span>페이스북으로 공유하기</span></a></li>
+							<li><span class="icon"></span><a href="http://twitter.com/home?status=${currURL}" target="_blank"><span>트위터로 공유하기</span></a></li>
+							<li><span class="icon"></span><a href="https://story.kakao.com/share?url=${currURL}" target="_blank"><span>카카오톡으로 공유하기</span></a></li>
+							<li><span class="icon"></span><a href="http://plus.google.com/share?url=${currURL}" target="_blank"><span>구글로 공유하기</span></a></li>
+							<li><span class="icon"></span><a onclick="clipboardUrl('${currURL}');"><span>링크복사하기</span></a></li>
+							<li class="sns-close"><button><span>닫기</span></button></li>
+						</ul>
+						</div>                    
+                </div>
+                <div class="froala-body">
+                    어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태민산업 사례를 많이 이야기합니다. 어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태민산업 사례를 많이 이야기합니다. 어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태민산업 사례를 많이 이야기합니다. 어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!!
+                </div>
+                <div class="comment-state">
+                    <a role="button" class="open-comment-body"><span>0개</span>의 댓글 보기</a>
+                </div>
+                <!--댓글영역-->
+                <div class="comment-body">
+                   <div class="comments none-comment">댓글이 없습니다</div>
+                    <div class="comment-area">
+                        <div class="comments">
+
+                            <div class="comment-item profile">
+
+                                <img src="/file/ff17845b/1a61/4091/8e65/31712a19e02a/12492772.png" alt="프로필이미지" title="프로필이미지" class="profile-image">
+
+
+                                <div>
+                                    <span class="name">고양이왕</span> <span class="date">03월 08일</span>
+                                </div>
+                            </div>
+                            <!-- 댓글 내용  -->
+                            <div class="story-body">
+                                <p>가나다<br>가나다</p>
+                            </div>
+
+                            <!-- 댓글의 댓글이 보이는 영역 -->
+                            <!-- 코맨트 댓글 본문 -->
+                            <div class="reply-comments" style="display:block;">
+                                <div class="comment-item profile">
+
+                                    <img src="/file/ff17845b/1a61/4091/8e65/31712a19e02a/12492772.png" alt="프로필이미지" title="프로필이미지" class="profile-image">
+
+
+                                    <div>
+                                        <span class="name">고양이왕</span> <span class="date">04월25일</span>
+                                    </div>
+                                </div>
+                                <div class="story-body">
+                                    <p>g히히</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-btn">
+                <button class="modal-check" onclick="forceHideModal();">닫기</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    $(document).ready(function(){
+	var winWid = $(window).width();
+	//sns 리스트 보여주기
+	$(document).on('click','button.sns-share',function(){
+		if(winWid < 669) {
+			$("div.sns-list-mobile").show();
+		} else {
+			$(this).next('.sns-list').addClass('active');
+			$(this).css('display','none');
+		}
+
+	});
+	$(document).on('click','li.sns-close',function(){
+		if(winWid < 669 ){
+			$("div.sns-list-mobile").hide();
+		}else {
+			$(this).parent().removeClass('active');
+			$(this).parent().prev('button.sns-share').css('display','block');
+		}
+	});
+    //댓글보기 클릭 동작
+    $(".open-comment-body").on('click', function() {
+        $(this).parent().siblings('.comment-body').find('.comments').css('display', 'block');
+    });
+    });
+    
+    
+    </script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+   <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+<!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+<link href="../../css/error.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="background-color:#fff;">
+
+    <!-- 헤더 -->
+    <header class="small-header">
+       <!--헤더내용 모두 빠지고 네오스프링 로고만-->
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+        
+    </header>
+
+
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <section id="systemCheck">
+        <div class="wrapper">
+            <img src="../../img/icon/icon_noti_main.png" alt="" title="">
+            <h2>시스템 점검 중입니다</h2>
+            <p>보다 나은 서비스를 제공해드리기 위해 시스템을 점검하고 있습니다<br>
+            서비스 이용에 불편을 끼쳐 드려 대단히 죄송합니다</p>
+            <div class="check-info">
+                <div class="tit">점검 예정 시간</div>
+                <p><strong>12:00 ~ 12:00(0시간)</strong></p>
+            </div>
+            <p class="info-txt">※ 상기 작업 시간은 사정에 의해 변경될 수 있습니다</p>
+            <p class="info-txt">※ 예정된 시간에 작업이 완료될 수 있도록 최선을 다하겠습니다</p>
+            
+            <h1>
+                <a href="www.neospring.kr">
+                <img src="../../img/ci/neospring-ci.png" alt="네오스프링" title="네오스프링">
+                </a>
+            </h1>
+        </div>
+    </section>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+    
+    <!--점검안내 모달-->
+  		<section id="systemCheck-modal" class="modal-layer">
+			<section class="modal-wrapper">
+				<div class="modal-content">
+					<div class="icon-area">
+						<img src="../../img/icon/icon_noti_main.png" alt="" title="" />
+					</div>
+					<div class="modal-msg">
+						<p class="tit">시스템 점검 중입니다<br>12:00 ~ 12:00</p>
+						<p>보다 나은 서비스를 제공해드리기 위해 시스템을 점검하고 있습니다<br>서비스 이용에 불편을 끼쳐 드려 대단히 죄송합니다</p>
+					</div>
+				</div>
+					<div class="modal-btn-area full-modal-btn">
+						<button type="button" class="modal-cancel" onclick="forceHideModal();">확인</button>
+					</div>
+			</section>
+		</section>
+
+</body>
+
+</html>

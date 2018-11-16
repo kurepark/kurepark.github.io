@@ -36,7 +36,7 @@
 				<nav class="gnb">
 					<ul>
 						<li><a href="https://kurepark.github.io/#HOME">HOME</a></li>
-						<li><a href="https://kurepark.github.io/#WORK">WORK</a></li>
+						<li class="active"><a href="https://kurepark.github.io/#WORK">WORK</a></li>
 						<li><a href="https://kurepark.github.io/#ABOUT">ABOUT</a></li>
 					</ul>
 				</nav>
@@ -52,19 +52,21 @@
 			<div class="work_header">
         <div class="wrapper">
 				<h2>크라우드 펀딩 플랫폼 네오스프링</h2>
-        <p>국비지원 학원을 다니면서 만들었던 페이지 입니다<br>
+        <p>플랫폼에서 작업한 프로젝트 입니다. 프로젝트 기준으로 구분하였습니다<br>
         아래 버튼을 누르면 각 페이지에 대한 설명을 볼 수 있습니다</p>
 				<a class="btn_linkPage" data-url="desc_kofic.html">기업홈/투자자홈<i class="fas fa-angle-right"></i></a>
-        <a class="btn_linkPage" data-url="desc_arena.html">전용관 리뉴얼<i class="fas fa-angle-right"></i></a>
-        <a class="btn_linkPage" data-url="desc_arena.html">크라우드 펀딩개설 페이지<i class="fas fa-angle-right"></i></a>
-        <a class="btn_linkPage" data-url="desc_arena.html">네오스프링 소개페이지<i class="fas fa-angle-right"></i></a>
-        <a class="btn_linkPage" data-url="desc_arena.html">부분 리뉴얼 작업<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_dedicate.html">전용관 리뉴얼<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_fundingRegist.html">펀딩 등록 페이지<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_securityInvestment.html">증권형 투자페이지<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_companyInfo.html">네오스프링 소개페이지<i class="fas fa-angle-right"></i></a>
+        <a class="btn_linkPage" data-url="desc_etc.html">부분 리뉴얼 작업<i class="fas fa-angle-right"></i></a>
       </div>
 			</div>
 				<article id="workItem" class="article_item">
         </article>
 		</section>
 		<footer class="footer">
+				<button type="button" class="btn_top"><i class="fas fa-arrow-circle-up fa-2x"></i><span class="blind">맨 위로 가기</span></button>
 			<div class="wrapper">
 				<p class="copyright">© EUNHYE PARK 2018</p>
 			</div>
@@ -73,7 +75,7 @@
 	<script>
 		$(document).ready(function(){
 			//최초 로딩시 보여줄 페이지
-			$("#workItem").load('desc_kofic.html');
+			$("#workItem").load('desc_userHome.html');
 		});//jqb
 	</script>
 </body>

@@ -1,0 +1,860 @@
+<html>
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="../css/guide-content.css" rel="stylesheet" type="text/css">
+    <link href="../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+    <link href="../js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="../../css.oper/oper.css" rel="stylesheet" type="text/css">
+    <link href="../../css.oper/funding-body.css" rel="stylesheet" type="text/css">
+    <link href="../../js/bootstrap-3.3.7/datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../libcss/jquery-ui.min.css" rel="stylesheet">
+
+    <script src="../../js/format.js"></script>
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/summernote/summernote.min.js"></script>
+    <link href="../../js/summernote/summernote.css" rel="stylesheet">
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/moment.min.js"></script>
+    <script src="../../js/file-upload/jquery.ui.widget.js"></script>
+    <script src="../../js/file-upload/jquery.iframe-transport.js"></script>
+    <script src="../../js/file-upload/jquery.fileupload.js"></script>
+    <script src="../../js/file-upload/neoFileUpload.js"></script>
+    <script src="../../js/bootstrap-3.3.7/datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../js/textarea-autosize/autosize.min.js"></script>
+    <script src="../../js/search/memberSearch.js"></script>
+    <script src="../../js/search/leadInvestorSearch.js"></script>
+
+    <script>
+        var __xprefix = "http://image.neospring.kr/";
+    </script>
+
+
+    <title>네오스프링 관리자</title>
+    <style>
+        /* 리워드 펀딩 투자목록 css */
+        .info-row{
+            cursor:pointer;
+        }
+        .investment-detail {
+            display: none;
+        }
+        .investment-detail .list-group{
+            margin-bottom:0;
+        }
+        .investment-detail .list-group-item span{
+            display:inline-block;
+            width:15%;
+            text-align:center;
+        }
+        .investment-detail .list-group-item span:first-child{
+            width:35%;
+        }
+        .investment-detail .list-group-item.title{
+            font-weight:600;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            manageMainInit();
+
+            /* 관리자 ui 제이쿼리 */
+            /* 동적으로 생성된 요소에선 최상위에 클릭 on메서드 사용, 두번째 파라미터에 셀렉터. */
+
+            //리스트 클릭시 배경색 변경.
+            $(document).on('click', '#listArea table tbody tr', function() {
+                $('#listArea table tbody tr').first().css('background-color', 'inherit');
+                $(this).addClass('listActive');
+                $(this).siblings().removeClass('listActive');
+            })
+            //탭 클릭시 active 클래스 지정
+            $(document).on('click', '#manageFrame .nav-tabs>li', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+            /* 관리자 ui 제이쿼리 끝 */
+
+            
+            
+            
+            //테이블 리스트 클릭시 리워드 상세내용 보여짐
+            $(document).on('click', '.info-row', function() {
+                //체크박스 현재는 disabled로 되어있음, 혹시 몰라 row 클릭시 체크박스 동작 넣어놨습니다
+                //$(this).find('input[name="checkList"]').click();
+                var $this =$(this).next('.investment-detail'); 
+                    $this.show();
+                $("#investmentList").find('.investment-detail').not($this).hide();
+                
+            });
+
+
+        });
+
+        function manageMainInit() {
+            $('#loadingDiv').hide(); /* 로딩바 숨김 */
+            $("#programDiv").load("/manage/container");
+        }
+
+        function goPageNavigation(target, action, page, param) {
+            $("#" + target).load(action, "page=" + page + param);
+        }
+
+        function loadTo(target, action, param) {
+            showLoadingDiv();
+            $("#" + target).load(action, param, function() {
+                hideLoadingDiv();
+            });
+        }
+
+        function showLoadingDiv() {
+            $('#loadingDiv').show();
+        }
+
+        function hideLoadingDiv() {
+            $('#loadingDiv').hide();
+        }
+
+        /*
+        	로딩바 관련 function
+        */
+        function wrapMask() {
+            var maskHeight = $(document).height();
+            var maskWidth = $(document).width();
+            $(".mask").css({
+                'width': maskWidth,
+                'height': maskHeight
+            });
+            $(".mask").fadeTo('slow', 0.5);
+        }
+
+        function showLoadingDiv() {
+            $('#loadingDiv').show();
+            wrapMask();
+        }
+
+        function hideLoadingDiv() {
+            $('#loadingDiv').hide();
+        }
+
+        function divLoading(target, action, param) {
+            showLoadingDiv();
+            $("#" + target).load(action, param, hideLoadingDiv);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="container">
+            <div id="menuDiv" style="width: 250px;">
+
+
+
+
+
+
+
+
+                <nav class="menu navbar" role="navigation">
+                    <div class="nav-side-menu">
+                        <div class="top">네오스프링 관리자</div>
+
+                        <div class="menu-list">
+                            <ul id="menu-content" class="nav nav-bar menu-content">
+                                <li data-toggle="collapse" data-target="#company" class="collapsed"><a href="#">법인관리<i class="fa fa-fw pull-right fa-angle-down"></i></a>
+                                </li>
+                                <ul class="nav nav-bar sub-menu collapse" id="company">
+                                    <li action="/manage/company"><span>Companies</span></li>
+                                    <!-- 	<li><span>성장스토리</span></li>
+						<li><span>성장하이라이트</span></li> -->
+                                </ul>
+                                <li data-toggle="collapse" data-target="#member" class="collapsed"><a href="#">회원관리<i class="fa fa-fw pull-right fa-angle-down"></i></a></li>
+                                <ul class="nav nav-bar sub-menu collapse" id="member">
+                                    <li action="/manage/member"><span>Members</span></li>
+                                    <li action="/manage/email/page"><span>이메일 보내기</span></li>
+                                    <!-- 	<li><span>투자자등급변경 신청</span></li>
+						<li><span>실명인증신청</span></li>
+						<li><span>기업인증신청</span></li> -->
+                                </ul>
+                                <li data-toggle="collapse" data-target="#system" class="collapsed"><a href="#">시스템관리<i class="fa fa-fw pull-right fa-angle-down"></i></a></li>
+                                <ul class="nav nav-bar sub-menu collapse" id="system">
+                                    <!-- <li disabled="disabled"><span>Q ＆ A</span></li> -->
+                                    <li action="/manage/messageTemplate"><span>MessageTemplate</span></li>
+                                    <li action="/manage/file"><span>파일관리</span></li>
+                                    <li action="/manage/faqList"><span>이용안내</span></li>
+                                    <!-- <li><span>Message</span></li>
+						<li><span>전용관 설정</span></li> -->
+                                </ul>
+                                <li data-toggle="collapse" data-target="#funding" class="" aria-expanded="true"><a href="#">펀딩관리<i class="fa fa-fw pull-right fa-angle-down"></i></a></li>
+                                <ul class="nav nav-bar sub-menu collapse in" id="funding" aria-expanded="true" style="">
+                                    <li action="/manage/leadInvestor"><span>Lead Investor</span></li>
+                                    <li action="/manage/contest"><span>Contest</span></li>
+                                    <li action="/manage/rewardFunding" class="active"><span>리워드펀딩</span></li>
+                                    <li action="/manage/dedicate"><span>전용관 설정</span></li>
+                                    <!-- <li><span>증권형</span></li>
+						<li><span>모의크라우드 투자자</span></li>
+						<li><span>증권형 투자자</span></li> -->
+                                </ul>
+                                <li data-toggle="collapse" data-target="#contestFunding" class="collapsed"><a href="#">모의크라우드펀딩<i class="fa fa-fw pull-right fa-angle-down"></i></a></li>
+                                <ul class="nav nav-bar sub-menu collapse" id="contestFunding">
+                                    <li action="/manage/contestFunding"><span>모의크라우드 펀딩대회</span></li>
+                                    <li action="/manage/contest/extracount"><span>추가투자금관리</span></li>
+                                    <li action="/manage/contest/coupon"><span>추가투자금쿠폰관리</span></li>
+                                </ul>
+
+                                <li data-toggle="collapse" data-target="#OBProgram" class="collapsed"><a href="#">예전프로그램<i class="fa fa-fw pull-right fa-angle-down"></i></a></li>
+                                <ul class="nav nav-bar sub-menu collapse" id="OBProgram">
+                                    <li action="/oper/company"> <span>Company</span> </li>
+                                    <li action="/oper/leadInvestor"> <span>Lead Investor</span> </li>
+                                    <li action="/oper/contest"> <span>Contest</span> </li>
+                                    <li action="/oper/funding/contest/list"> <span>모의투자</span> </li>
+                                    <li action="/oper/funding/reward/list"> <span>리워드형</span> </li>
+                                    <li action="/oper/member"> <span>Member</span> </li>
+                                    <li action="/oper/funding/security/list"> <span>증권형</span> </li>
+                                    <li action="/oper/investment/contest"> <span>모의투자투자</span> </li>
+                                    <li action="/oper/investment/security"> <span>증권형투자</span> </li>
+                                    <li action="/oper/file"> <span>File</span> </li>
+                                    <li action="/oper/question"> <span class="disabled">Q&amp;A</span> </li>
+                                    <li action="/oper/message"> <span>Message</span> </li>
+                                    <li action="/oper/messageTemplate"> <span>Template</span> </li>
+                                    <li action="/oper/certApply/list"> <span>투자자등급변경 신청</span> </li>
+                                    <li action="/oper/identityCertApply/list"> <span>실명인증신청</span> </li>
+                                    <li action="/oper/corporationCertApply/list"> <span>법인인증신청</span> </li>
+                                    <li action="/oper/chkGrowthHighlight/list"> <span>성장하이라이트</span> </li>
+                                    <li action="/oper/story/list"> <span>성장스토리</span> </li>
+                                    <li action="/oper/faq/list"> <span>이용안내</span> </li>
+                                    <li action="#"> <span class="disabled">전용관 설정</span> </li>
+                                </ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <script>
+                    $(document).ready(function() {
+                        //클릭한 하위메뉴 표시
+                        $(".sub-menu li").on('click', function() {
+                            $(this).addClass('active');
+                            $("#menu-content li").not($(this)).removeClass('active');
+                        });
+                        $(".sub-menu li").click(function() {
+                            $("#programDiv").load($(this).attr("action"));
+                        });
+                    });
+                </script>
+            </div>
+            <div id="programDiv" style="padding-left: 250px;">
+
+
+
+
+
+
+
+
+
+
+                <title>후원형 펀딩관리</title>
+
+
+                <div id="manageFrame">
+                    <div id="upperLayer">
+                        <div id="topArea" class="col-lg-12">
+
+
+
+
+
+
+
+
+
+                            <script type="text/javascript">
+                                jQuery(document).ready(function() {
+                                    pageInit();
+                                });
+
+                                function pageInit() {
+                                    $("#listArea").load("/manage/rewardFunding/list");
+                                }
+
+                                function searchReward() {
+                                    var param = "title=" + $("input[name='title']").val();
+
+                                    $("#listArea").load("/manage/rewardFunding/list", param);
+                                }
+
+                                $(".btn-register").click(function() {
+                                    $("#detailArea").load("/manage/rewardFunding/registerFunding");
+                                });
+                            </script>
+                            <div class="contents-box">
+                                <h2>후원형 펀딩 관리</h2>
+                                <form id="contest-list-form" class="form-inline text-left" novalidate="">
+                                    <div class="form-group">
+                                        <input type="text" name="title" placeholder="후원형펀딩명" class="form-control">
+                                    </div>
+                                    <span type="submit" value="search" class="btn btn-search" onclick="searchReward();">조회</span>
+                                    <span type="button" value="Register" class="btn btn-register">Register</span>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div id="lowerLayer">
+                        <div id="listArea" class="col-lg-3">
+
+
+
+
+
+
+
+
+                            <script type="text/javascript">
+                                jQuery(document).ready(function() {
+                                    pageInit();
+                                });
+
+                                function pageInit() {
+                                    var id = $('#fundingList tr:eq(1) td:eq(0)').text();
+                                    showDetail(id);
+                                }
+
+                                function showDetail(id) {
+                                    var param = "fundingId=" + id;
+                                    divLoading("detailArea", "/manage/rewardFunding/detail", param);
+                                }
+                            </script>
+                            <div class="contents-box">
+                                <div class="inner-box">
+                                    <h3>후원형 펀딩 목록</h3>
+
+                                    <table class="table table-bordered table-hover table-fixed" id="fundingList">
+
+                                        <thead>
+                                            <tr>
+                                                <th class="col-xs-2">#</th>
+                                                <th class="col-xs-10">Title</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr onclick="showDetail('245')" style="background-color: inherit;">
+                                                <td class="col-xs-2">245</td>
+                                                <td class="col-xs-10"><span>칫솔 보관 편리하게! 세균 걱정하지 마세요 : 와이비 칫솔 걸이대</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('244')" class="">
+                                                <td class="col-xs-2">244</td>
+                                                <td class="col-xs-10"><span>아기와 엄마를 위한 친화적인 소재 아기용품 '아리베베'</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('243')" class="listActive">
+                                                <td class="col-xs-2">243</td>
+                                                <td class="col-xs-10"><span>"창제귀선(創製龜船)" 선물하는 당신은 그뤠잇!</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('101')">
+                                                <td class="col-xs-2">101</td>
+                                                <td class="col-xs-10"><span>다가오는 추석에 편지와 선물로 마음을 전하세요!</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('100')">
+                                                <td class="col-xs-2">100</td>
+                                                <td class="col-xs-10"><span>음악과 빛으로 식물과의 교감을..QPlant 스마트화분</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('21')">
+                                                <td class="col-xs-2">21</td>
+                                                <td class="col-xs-10"><span>시각장애인과 저시력 노령 계층을 위한 독서보조기 개발</span></td>
+                                            </tr>
+
+                                            <tr onclick="showDetail('20')">
+                                                <td class="col-xs-2">20</td>
+                                                <td class="col-xs-10"><span>설거지가 필요없는 일회용 만능종이찜기</span></td>
+                                            </tr>
+
+                                        </tbody>
+
+
+                                    </table>
+
+
+
+
+
+
+
+
+
+
+                                    <nav aria-label="Page navigation" class="text-center">
+                                        <ul class="pagination">
+                                            <li onclick="goPageNavigation('listArea', '/manage/rewardFunding/list', '0', '&amp;title=')"><span aria-hidden="true">«</span></li>
+
+
+
+                                            <li class="active paginate-btn" onclick="goPageNavigation('listArea', '/manage/rewardFunding/list', '1', '&amp;title=')"><span>1</span></li>
+
+
+
+
+                                            <li onclick="goPageNavigation('listArea', '/manage/rewardFunding/list', '0', '&amp;title=')"><span aria-hidden="true">»</span></li>
+                                        </ul>
+                                    </nav>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="detailArea" class="col-lg-9">
+
+
+
+
+
+
+
+
+                            <script>
+                                var target = "tabInner";
+                                var fundingId = '243';
+                                var type = 'REWARD';
+                                var param = "fundingId=" + fundingId;
+
+                                jQuery(document).ready(function() {
+                                    pageInit();
+                                });
+
+                                function pageInit() {
+                                    var action = "/manage/rewardFunding/fundingInfo";
+
+                                    if (fundingId == null || "" == fundingId) {
+                                        divLoading(target, action, null);
+                                    } else {
+                                        divLoading(target, action, param);
+                                    }
+                                }
+
+                                function showFunding() {
+                                    divLoading(target, "/manage/rewardFunding/fundingInfo", param);
+                                }
+
+                                function showBody() {
+                                    divLoading(target, "/manage/rewardFunding/" + type + "/body", param);
+                                }
+
+                                function showReward() {
+                                    divLoading(target, "/manage/rewardFunding/reward", param);
+                                }
+
+                                function showInvestmentList() {
+                                    divLoading(target, "/manage/rewardFunding/investmentList", param);
+                                }
+
+                                function showFaq() {
+                                    divLoading(target, "/manage/rewardFunding/" + type + "/fundingFaq", param);
+                                }
+
+                                function showNotice() {
+                                    divLoading(target, "/manage/rewardFunding/" + type + "/fundingNotice", param);
+                                }
+                            </script>
+                            <div class="contents-box">
+                                <div class="inner-box">
+                                    <section id="tabContainer">
+                                        <h3>
+                                            리워드형 Funding Detail
+
+                                            <small><a href="/reward/funding/243">»Preview</a></small>
+
+                                        </h3>
+                                        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+
+
+                                            <li role="presentation" onclick="showFunding()" class=""><span>Funding</span></li>
+                                            <li role="presentation" onclick="showBody()"><span>Body</span></li>
+                                            <li role="presentation" onclick="showReward()"><span>리워드</span></li>
+                                            <li role="presentation" onclick="showInvestmentList()" class="active"><span> 투자목록 </span> </li>
+                                            <li role="presentation" onclick="showFaq()"><span>FAQ</span></li>
+                                            <li role="presentation" onclick="showNotice()"><span>공지사항</span></li>
+
+                                        </ul>
+                                        <div id="tabInner">
+
+
+
+
+
+
+
+
+
+                                            <script type="text/javascript">
+                                                var msg = '';
+                                                if (msg != "") {
+                                                    $("#tanInner").empty();
+                                                    alert(msg);
+                                                }
+                                                /*
+                                                	function getCheckValue(){
+
+                                                		var investArray = Array();
+                                                		var index = 0;
+                                                		var checkbox = $(".investmentCheck");
+
+                                                		for(i=0; i<checkbox.length; i++){
+                                                			if(checkbox[i].checked==true){
+                                                				investArray[index] = checkbox[i].value;
+                                                				index++;
+                                                			}
+                                                		}
+                                                	}
+                                                	 */
+                                                var investArray = new Array();
+                                                $("input:checkbox[name='checkList']:checked").each(function() {
+                                                    investArray.push($(this).val());
+                                                });
+
+
+                                                function paid() {
+                                                    alert(investArray);
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        async: false,
+                                                        url: "/manage/rewardFunding/investmentList/pay",
+                                                        dataType: "json",
+                                                        timeout: 30000,
+                                                        cache: false,
+                                                        data: {
+                                                            "investmentId": investArray
+                                                        },
+                                                        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                        beforeSend: function() {},
+                                                        error: function(request, status, error) {
+                                                            alert("서버 통신중 오류가 발생하였습니다.[" + status + "]");
+                                                        },
+                                                        success: function(result, status, request) {
+                                                            alert(JSON.stringify(result.errorMsg));
+                                                        },
+                                                        complete: function() {}
+                                                    });
+                                                }
+                                            </script>
+
+                                            <h4>"창제귀선(創製龜船)" 선물하는 당신은 그뤠잇!대회투자목록</h4>
+                                            <form id="investment-list-form" class="form-inline text-right">
+                                                <input type="hidden" id="fundingId" value="243">
+
+                                                <div class="form-group">
+                                                    <span type="button" class="btn btn-success" onclick="paid();">Paid</span>
+                                                    <input type="submit" value="Failed" class="btn btn-warning">
+                                                    <input type="submit" value="Cancel" class="btn btn-danger">
+                                                    <select name="state" class="form-control">
+			<option value="">모두보이기</option>
+			<option value="WAITING">결제대기</option>
+			<option value="FAILED">결제 실패</option>
+			<option value="CANCELED">취소</option>
+			<option value="PAID">결제 완료</option>
+			<option value="SENT">발송 완료</option>
+		</select>
+
+                                                </div>
+
+                                                <span type="submit" class="btn btn-search" onclick="serch();"> Search </span>
+
+                                            </form>
+                                            <table class="table table-striped" id="investmentList">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>#</th>
+                                                        <th>Amount</th>
+                                                        <th>State</th>
+                                                        <th>Payment</th>
+                                                        <th>Member</th>
+                                                        <th>Date/Time</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <!-- 퍼블리싱 영역-->
+                                                <tbody>
+
+
+
+                                                    <tr class="info-row">
+
+
+                                                        <td><input type="checkbox" name="checkList" value="16571"></td>
+                                                        <td>16571</td>
+
+                                                        <td>4만 8,000원</td>
+
+
+                                                        <td><input type="button" value="PAID" class="form-control btn btn-success">
+                                                        </td>
+                                                        <td>PostpaidCard</td>
+                                                        <td>이필립</td>
+                                                        <td>2018-01-13 16:55.15</td>
+                                                    </tr>
+                                                    <tr class="investment-detail">
+                                                        <td colspan="7">
+                                                            <ul class="list-group">
+                                                                <li class="title list-group-item">
+                                                                    <span>타이틀</span>
+                                                                    <span>금액</span>
+                                                                    <span>수량</span>
+                                                                    <span>후원더하기</span>
+                                                                    <span>배송비</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 4개입</span>
+                                                                    <span>8,000원</span>
+                                                                    <span>2개</span>
+                                                                    <span>0원</span>
+                                                                    <span>3000원</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 12개입 </span>
+                                                                    <span>4,000원</span>
+                                                                    <span>10개</span>
+                                                                    <span>10,000원</span>
+                                                                    <span>0원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="info-row">
+                                                        <td><input type="checkbox" name="checkList" value="16570"></td>
+                                                        <td>16570</td>
+
+                                                        <td>3만 2,000원</td>
+
+
+                                                        <td>
+                                                            <input type="button" value="PAID" class="form-control btn btn-success">
+                                                        </td>
+                                                        <td>PostpaidCard</td>
+                                                        <td>고현경</td>
+                                                        <td>2018-01-12 16:10.54</td>
+                                                    </tr>
+                                                    <tr class="investment-detail">
+                                                        <td colspan="7">
+                                                            <ul class="list-group">
+                                                                <li class="title list-group-item">
+                                                                    <span>타이틀</span>
+                                                                    <span>금액</span>
+                                                                    <span>수량</span>
+                                                                    <span>후원더하기</span>
+                                                                    <span>배송비</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 4개입</span>
+                                                                    <span>8,000원</span>
+                                                                    <span>2개</span>
+                                                                    <span>0원</span>
+                                                                    <span>3000원</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 12개입 </span>
+                                                                    <span>4,000원</span>
+                                                                    <span>10개</span>
+                                                                    <span>10,000원</span>
+                                                                    <span>0원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="info-row">
+                                                        <td><input type="checkbox" name="checkList" value="16569"></td>
+                                                        <td>16569</td>
+
+                                                        <td>1만 9,000원</td>
+                                                        <td>
+                                                            <input type="button" value="PAID" class="form-control btn btn-success">
+                                                        </td>
+                                                        <td>PostpaidCard</td>
+                                                        <td>김태민</td>
+                                                        <td>2018-01-08 14:29.16</td>
+                                                    </tr>
+                                                    <tr class="investment-detail">
+                                                        <td colspan="7">
+                                                            <ul class="list-group">
+                                                                <li class="title list-group-item">
+                                                                    <span>타이틀</span>
+                                                                    <span>금액</span>
+                                                                    <span>수량</span>
+                                                                    <span>후원더하기</span>
+                                                                    <span>배송비</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 4개입</span>
+                                                                    <span>8,000원</span>
+                                                                    <span>2개</span>
+                                                                    <span>0원</span>
+                                                                    <span>3000원</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 12개입 </span>
+                                                                    <span>4,000원</span>
+                                                                    <span>10개</span>
+                                                                    <span>10,000원</span>
+                                                                    <span>0원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="info-row">
+                                                        <td><input type="checkbox" name="checkList" value="16568"></td>
+                                                        <td>16568</td>
+
+                                                        <td>4만원</td>
+
+
+                                                        <td>
+                                                            <input type="button" value="CANCELED" class="form-control btn btn-danger">
+                                                        </td>
+                                                        <td>PostpaidCard</td>
+                                                        <td>김태민</td>
+                                                        <td>2018-01-08 10:22.56</td>
+                                                    </tr>
+                                                    <tr class="investment-detail">
+                                                        <td colspan="7">
+                                                            <ul class="list-group">
+                                                                <li class="title list-group-item">
+                                                                    <span>타이틀</span>
+                                                                    <span>금액</span>
+                                                                    <span>수량</span>
+                                                                    <span>후원더하기</span>
+                                                                    <span>배송비</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 4개입</span>
+                                                                    <span>8,000원</span>
+                                                                    <span>2개</span>
+                                                                    <span>0원</span>
+                                                                    <span>3000원</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 12개입 </span>
+                                                                    <span>4,000원</span>
+                                                                    <span>10개</span>
+                                                                    <span>10,000원</span>
+                                                                    <span>0원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="info-row">
+                                                        <td><input type="checkbox" name="checkList" value="16567"></td>
+                                                        <td>16567</td>
+
+                                                        <td>9만 6,000원</td>
+
+
+                                                        <td>
+                                                            <input type="button" value="PAID" class="form-control btn btn-success">
+                                                        </td>
+                                                        <td>PostpaidCard</td>
+                                                        <td>정영실</td>
+                                                        <td>2018-01-05 12:32.32</td>
+                                                    </tr>
+                                                    <tr class="investment-detail">
+                                                        <td colspan="7">
+                                                            <ul class="list-group">
+                                                                <li class="title list-group-item">
+                                                                    <span>타이틀</span>
+                                                                    <span>금액</span>
+                                                                    <span>수량</span>
+                                                                    <span>후원더하기</span>
+                                                                    <span>배송비</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 4개입</span>
+                                                                    <span>8,000원</span>
+                                                                    <span>2개</span>
+                                                                    <span>0원</span>
+                                                                    <span>3000원</span>
+                                                                </li>
+                                                                <li class="cont list-group-item">
+                                                                    <span>거북선 타르트 12개입 </span>
+                                                                    <span>4,000원</span>
+                                                                    <span>10개</span>
+                                                                    <span>10,000원</span>
+                                                                    <span>0원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+
+
+                                                </tbody>
+                                                <!-- / 퍼블리싱 영역 끝 -->
+                                            </table>
+
+
+                                            <nav aria-label="Page navigation" class="text-center">
+                                                <ul class="pagination">
+                                                    <li onclick="goPageNavigation('tabInner', '/manage/rewardFunding/investmentList', '0', '&amp;fundingId=243')"><span aria-hidden="true">«</span></li>
+
+
+
+                                                    <li class="active paginate-btn" onclick="goPageNavigation('tabInner', '/manage/rewardFunding/investmentList', '1', '&amp;fundingId=243')"><span>1</span></li>
+
+
+
+
+                                                    <li onclick="goPageNavigation('tabInner', '/manage/rewardFunding/investmentList', '0', '&amp;fundingId=243')"><span aria-hidden="true">»</span></li>
+                                                </ul>
+                                            </nav>
+
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="loadingDiv" style="display: none;">
+                <div class="mask" style="width: 1920px; height: 949px; opacity: 0.5;"></div>
+                <img src="/img/popUp/loading.gif">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="note-popover popover in note-link-popover bottom">
+        <div class="arrow"></div>
+        <div class="popover-content note-children-container"><span><a target="_blank"></a>&nbsp;</span>
+            <div class="note-btn-group btn-group note-link"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Edit"><i class="note-icon-link"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Unlink"><i class="note-icon-chain-broken"></i></button></div>
+        </div>
+    </div>
+    <div class="note-popover popover in note-image-popover bottom">
+        <div class="arrow"></div>
+        <div class="popover-content note-children-container">
+            <div class="note-btn-group btn-group note-imagesize"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Resize Full"><span class="note-fontsize-10">100%</span></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Resize Half"><span class="note-fontsize-10">50%</span></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Resize Quarter"><span class="note-fontsize-10">25%</span></button></div>
+            <div class="note-btn-group btn-group note-float"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float Left"><i class="note-icon-align-left"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float Right"><i class="note-icon-align-right"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float None"><i class="note-icon-align-justify"></i></button></div>
+            <div class="note-btn-group btn-group note-remove"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Remove Image"><i class="note-icon-trash"></i></button></div>
+        </div>
+    </div>
+</body>
+
+</html>

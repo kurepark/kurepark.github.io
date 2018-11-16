@@ -1,0 +1,2216 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>당신의 음악에 닿는 전문가의 손길 FeedYourMusic / Q&amp;A - 네오스프링 (크라우드펀딩 플랫폼)</title>
+<meta name="description" content="깐느미뎀스타트업 / 예술창작은인간이 / AI는거들뿐">
+<meta name="author" content="(주)올댓시리즈">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:8080/contest/10/funding/111/post">
+<meta property="og:site_name" content="네오스프링 (크라우드펀딩 플랫폼)">
+<meta property="og:title" content="당신의 음악에 닿는 전문가의 손길 FeedYourMusic / Q&amp;A">
+<meta property="og:description" content="깐느미뎀스타트업 / 예술창작은인간이 / AI는거들뿐">
+<meta property="article:author" content="(주)올댓시리즈">
+<meta property="og:image" content="http://localhost:8080/file/da14ba37/942a/427a/a526/9e149b73868b/슬라이드1.JPG">
+<meta property="og:locale" content="ko_KR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="http://localhost:8080/contest/10/funding/111/post">
+<meta name="twitter:site" content="@neospring_kr">
+<meta name="twitter:title" content="당신의 음악에 닿는 전문가의 손길 FeedYourMusic / Q&amp;A">
+<meta name="twitter:description" content="깐느미뎀스타트업 / 예술창작은인간이 / AI는거들뿐">
+<meta name="twitter:creator" content="(주)올댓시리즈">
+<meta name="twitter:image" content="http://localhost:8080/file/da14ba37/942a/427a/a526/9e149b73868b/슬라이드1.JPG">
+
+
+
+<link href="../js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="../js/summernote/summernote.css" rel="stylesheet" type="text/css">
+<link href="../css/funding-view.css" rel="stylesheet" type="text/css">
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<link href="../css/guide-content.css" rel="stylesheet" type="text/css">
+<link href="../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/jquery.scrollTo.min.js"></script>
+
+
+<script src="../js/parsley.min.js"></script>
+<script src="../js/function.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/on.js"></script>
+
+
+<script src="../js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/file-upload/neoFileUpload.js"></script>
+<script src="../js/summernote/summernote.min.js"></script>
+
+<link href="../css/mobile-verification.css" rel="stylesheet" type="text/css">
+<link href="../css/alert-investment.css" rel="stylesheet" type="text/css">
+<link href="../css/user-mobile-verification.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+  
+
+
+
+
+
+
+
+
+<script>
+	var __xprefix = "/file/";
+	function pointBoxToggle(toggle) {
+		document.getElementById("counsel").className = "point-" + toggle;
+	}
+</script>
+<header class="small-header">
+		<a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+		
+
+
+
+
+
+
+
+<link href="../css/guide-small.css" rel="stylesheet" type="text/css">
+<section class="guide-small hide">
+		<header class="guide-header">
+				<h3>무엇을 도와드릴까요?</h3>
+				<span class="closed"><a onclick="hideQnA();"><img src="/img/guide/large/img-large-close.png" alt="close" title="close"></a></span>
+				<form action="" method="get" id="searchSmallKeywordForm">
+						<input type="text" name="searchKeyword" placeholder="질문 또는 키워드로 검색하세요" /> <a onclick="searchSmallFaq();"><img src="/img/guide/large/img-large-search.png"></a>
+				</form>
+		</header>
+		<div class="guide-wrap">
+				<!--  검색 리스트 -->
+				<article class="guide-cont guide-search fadeIn hide">
+						<div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<ul id="faq-small-search-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+						<div class="clear"></div>
+				</article>
+				<!--  검색 리스트 -->
+				<!--  상세 -->
+				<article class="guide-cont guide-detail fadeIn hide">
+						<div>
+								<div class="go-back">
+										<a onclick="smallFrontView();"><span>&lt; 뒤로</span></a>
+								</div>
+								<div class="guide-sub-tit">
+										<span><label class="pink-box-label depth1"></label></span><span class="depth2"></span>
+								</div>
+								<article class="guide-qna-cont">
+										<div class="qna-contents">
+												<h1 class="question">Q. </h1>
+												<div class="qna-list answer" style="padding: 0;"></div>
+												<ul id="addtional-small-faq">
+														
+												</ul>
+												<div class="go-back go-back2">
+														<a onclick="smallFrontView();"><span>&lt; 뒤로</span></a>
+												</div>
+										</div>
+								</article>
+						</div>
+				</article>
+				<!--  상세끝 -->
+				<!--  프론트 -->
+				<article class="guide-cont guide-front fadeIn">
+						<div>
+								<h4 style="margin-bottom: 10px;">자주하는 질문</h4>
+								<ul>
+										
+										<li>
+												<h6><a onclick="rewardBackerFaq();">리워드</a></h6>
+												<dl>
+														
+																<dt>
+																		<a onclick="rewardBackerFaq();"><img src="/img/guide/common/img-sponsor-badge.png" alt="후원자" title="후원자"></a>
+																</dt>
+																<dd>
+																		<a onclick="getSmallDetail(25)"><span>펀딩 후원은 어떻게 하나요?</span></a>
+																</dd>
+														
+														
+																<dt>
+																		<a onclick="rewardFounderFaq();"> <img src="/img/guide/common/img-opener-badge.png" alt="개설자" title="개설자">
+																		</a>
+																</dt>
+																<dd>
+																		<a onclick="getSmallDetail(42)"><span>리워드형 크라우드펀딩이란 무엇인가요?</span></a>
+																</dd>
+														
+												</dl>
+										</li>
+										<li class="neo-logo-li">
+												<h6><a onclick="contestBackerFaq();">모의크라우드펀딩</a></h6>
+												<dl>
+														
+																<dt>
+																		<a onclick="contestBackerFaq();"><img src="/img/guide/common/img-participant-badge.png" alt="참여자" title="참여자"></a>
+																</dt>
+																<dd>
+																		<a onclick="getSmallDetail(10)"><span>모의크라우드펀딩이란 무엇인가요?</span></a>
+																</dd>
+														
+														
+																<dt>
+																		<a onclick="contestFounderFaq();"> <img src="/img/guide/common/img-opener-badge.png" alt="개설자" title="개설자">
+																		</a>
+																</dt>
+																<dd>
+																		<a onclick="getSmallDetail(20)"><span>진행하기 위하여 어떠한 것이 필요한가요?</span></a>
+																</dd>
+														
+												</dl>
+										</li>
+										<li>
+												<h6><a onclick="etcSmallFaq();">기타</a></h6>
+												<dl>
+														
+																<dt></dt>
+																<dd>
+																		<a onclick="getSmallDetail(2)"><span>비밀번호를 변경하고 싶습니다. 방법이 무엇인가요?</span></a>
+																</dd>
+														
+																<dt></dt>
+																<dd>
+																		<a onclick="getSmallDetail(6)"><span>성장스토리가 무엇인가요?</span></a>
+																</dd>
+														
+												</dl>
+										</li>
+								</ul>
+						</div>
+				</article>
+				<!--  프론트 -->
+				<!-- 리워드 후원자 페이지 -->
+				<article class="guide-cont guide-page guide-reward-backer hide">
+						<div>
+								<div class="guide-lnb-tit">
+										<h1>리워드</h1>
+								</div>
+								<div class="guide-sub-tit">
+										<span class="seltit"><a>후원자</a></span> <span><a onclick="rewardFounderFaq();">개설자</a></span>
+								</div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<h4>
+														후원하기 <i id="REWARD_BACKER_BACKUP" class="margin-anchor50"></i>
+												</h4>
+												<ul class="first-list">
+														
+												</ul>
+												<h4>
+														후원 후 <i id="REWARD_BACKER_BACKUPAFTER" class="margin-anchor50"></i>
+												</h4>
+												<ul class="second-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+				</article>
+				<!-- 리워드 후원자 페이지 -->
+				<!-- 리워드 개설자 페이지 -->
+				<article class="guide-cont guide-page guide-reward-founder hide">
+						<div>
+								<div class="guide-lnb-tit">
+										<h1>리워드</h1>
+								</div>
+								<div class="guide-sub-tit">
+										<span><a onclick="rewardBackerFaq();">후원자</a></span> <span class="seltit"><a>개설자</a></span>
+								</div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<h4>
+														심사기준<i id="REWARD_FOUNDER_STANDARD" class="margin-anchor50"></i>
+												</h4>
+												<ul class="first-list">
+														
+												</ul>
+												<h4>
+														개설 전<i id="REWARD_FOUNDER_OPENBEFORE" class="margin-anchor50"></i>
+												</h4>
+												<ul class="second-list">
+														
+												</ul>
+												<h4>
+														개설 후<i id="REWARD_FOUNDER_OPENAFTER" class="margin-anchor50"></i>
+												</h4>
+												<ul class="third-list">
+														
+												</ul>
+												<h4>
+														펀딩 종료<i id="REWARD_FOUNDER_FINISH" class="margin-anchor50"></i>
+												</h4>
+												<ul class="fourth-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+				</article>
+				<!-- 리워드 개설자 페이지 -->
+				<!-- 모의투자 투자자-->
+				<article class="guide-cont guide-page guide-contest-backer hide">
+						<div>
+								<div class="guide-lnb-tit">
+										<h1>모의크라우드펀딩</h1>
+								</div>
+								<div class="guide-sub-tit">
+										<span class="seltit"><a>참여자</a></span> <span><a onclick="contestFounderFaq();">개설자</a></span>
+								</div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<h4>
+														모의크라우드펀딩에 대해 <i id="CONTEST_BACKER_ABOUT" class="margin-anchor50"></i>
+												</h4>
+												<ul class="first-list">
+														
+												</ul>
+												<h4>
+														투자 진행 <i id="CONTEST_BACKER_PROCCESS" class="margin-anchor50"></i>
+												</h4>
+												<ul class="second-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+				</article>
+				<!-- 모의투자 투자자-->
+				<!--  모의투자 개설자 -->
+				<article class="guide-cont guide-page guide-contest-founder hide">
+						<div>
+								<div class="guide-lnb-tit">
+										<h1>모의크라우드펀딩</h1>
+								</div>
+								<div class="guide-sub-tit">
+										<span><a onclick="contestBackerFaq();">참여자</a></span> <span class="seltit"><a>개설자</a></span>
+								</div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<h4>
+														기관 <i id="CONTEST_FOUNDER_AGENCY" class="margin-anchor50"></i>
+												</h4>
+												<ul class="first-list">
+														
+												</ul>
+												<h4>
+														신청진행 <i id="CONTEST_FOUNDER_PROCCESS" class="margin-anchor50"></i>
+												</h4>
+												<ul class="second-list">
+														
+												</ul>
+												<h4>
+														개설 전 <i id="CONTEST_FOUNDER_OPENBEFORE" class="margin-anchor50"></i>
+												</h4>
+												<ul class="third-list">
+														
+												</ul>
+												<h4>
+														개설 후 <i id="CONTEST_FOUNDER_OPENAFTER" class="margin-anchor50"></i>
+												</h4>
+												<ul class="fourth-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+				</article>
+				<!--  모의투자 개설자 -->
+				<!-- etc -->
+				<article class="guide-cont guide-page guide-etc hide">
+						<div>
+								<div class="guide-lnb-tit">
+										<h1>기타</h1>
+								</div>
+								<article class="guide-faq-cont">
+										<div class="faq-contents">
+												<h4>개인회원</h4>
+												<ul class="first-list">
+														
+												</ul>
+												<h4>기업회원</h4>
+												<ul class="second-list">
+														
+												</ul>
+										</div>
+								</article>
+						</div>
+						<div class="clear"></div>
+				</article>
+				<!-- etc -->
+				<div class="go-to-more">
+						<a href="/faq"><span>더 알아보기</span></a>
+				</div>
+		</div>
+</section>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#searchSmallKeywordForm input[name='searchKeyword']").keypress(function (e) {
+		  if (e.which == 13) {
+		  	searchSmallFaq();
+		    return false;
+		  }
+		});
+	});
+
+	//이용안내 메뉴 보이기
+	function showQnA() {
+		$('.guide-small').removeClass('hide');
+		if($(window).width()<670){
+			$('#header-menu').fadeOut();
+		}
+	}
+	function hideQnA() {
+		$('.guide-small').addClass('hide');
+		
+	}
+
+	//뷰  변환
+	function smallSearchView() {
+		$(".guide-cont").addClass("hide");
+		$(".guide-search").removeClass("hide");
+	}
+	function smallFrontView() {
+		$(".guide-cont").addClass("hide");
+		$(".guide-front").removeClass("hide");
+
+	}
+	function smallDetailView() {
+		$(".guide-cont").addClass("hide");
+		$(".guide-detail").removeClass("hide");
+	}
+	function etcView(){
+		$(".guide-cont").addClass("hide");
+		$(".guide-etc").removeClass("hide");
+	}
+	function rewardBackerView(){
+		$(".guide-cont").addClass("hide");
+		$(".guide-reward-backer").removeClass("hide");
+	}
+	function rewardFounderView(){
+		$(".guide-cont").addClass("hide");
+		$(".guide-reward-founder").removeClass("hide");
+	}
+	function contestBackerView(){
+		$(".guide-cont").addClass("hide");
+		$(".guide-contest-backer").removeClass("hide");
+	}
+	function contestFounderView(){
+		$(".guide-cont").addClass("hide");
+		$(".guide-contest-founder").removeClass("hide");
+	}
+
+
+	//etc 페이지
+	function etcSmallFaq(){
+		etcView();
+		var etcForm =$(".guide-etc");
+		var firstList =etcForm.find(".first-list");
+		var secondList =etcForm.find(".second-list");
+		firstList.html('');
+		secondList.html('');
+		jQuery.ajax({
+			url : "/faq/etc/personal.json",
+			type:"GET",
+			success : function(data) {
+				$.each(data.faqPersonal, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqCompany, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+			}
+		});
+	}
+
+//리워드/투자자 페이지
+	function rewardBackerFaq(){
+		rewardBackerView();
+		var etcForm =$(".guide-reward-backer");
+		var firstList =etcForm.find(".first-list");
+		var secondList =etcForm.find(".second-list");
+		firstList.html('');
+		secondList.html('');
+		jQuery.ajax({
+			url : "/faq/reward/backer.json",
+			type:"GET",
+			success : function(data) {
+				$.each(data.faqRewardBackup, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqRewardBackupAfter, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+			}
+		});
+	}
+//리워드/ 개설자
+	function rewardFounderFaq(){
+		rewardFounderView();
+		var etcForm =$(".guide-reward-founder");
+		var firstList =etcForm.find(".first-list");
+		var secondList =etcForm.find(".second-list");
+		var thirdList =etcForm.find(".third-list");
+		var fourthList =etcForm.find(".fourth-list");
+		firstList.html('');
+		secondList.html('');
+		thirdList.html('');
+		fourthList.html('');
+		jQuery.ajax({
+			url : "/faq/reward/founder.json",
+			type:"GET",
+			success : function(data) {
+				$.each(data.faqRewardStandard, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqRewardBefore, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqRewardAfter, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqRewardFinish, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+			}
+		});
+	}
+//모의투자/ 투자자
+	function contestBackerFaq(){
+		contestBackerView();
+		var etcForm =$(".guide-contest-backer");
+		var firstList =etcForm.find(".first-list");
+		var secondList =etcForm.find(".second-list");
+		firstList.html('');
+		secondList.html('');
+		jQuery.ajax({
+			url : "/faq/contest/backer.json",
+			type:"GET",
+			success : function(data) {
+				$.each(data.faqContestAbout, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqContestProcess, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+			}
+		});
+	}
+//모의투자/ 개설자
+	function contestFounderFaq(){
+		contestFounderView();
+		var etcForm =$(".guide-contest-founder");
+		var firstList =etcForm.find(".first-list");
+		var secondList =etcForm.find(".second-list");
+		var thirdList =etcForm.find(".third-list");
+		var fourthList =etcForm.find(".fourth-list");
+		firstList.html('');
+		secondList.html('');
+		thirdList.html('');
+		fourthList.html('');
+		jQuery.ajax({
+			url : "/faq/contest/founder.json",
+			type:"GET",
+			success : function(data) {
+				$.each(data.faqContestFounderAgency, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqContestFounderProcess, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqContestFounderOpenBefore, function(index, data) {
+					firstList.append(getSmallFaqItem(data));
+				});
+				$.each(data.faqContestFounderOpenAfter, function(index, data) {
+					secondList.append(getSmallFaqItem(data));
+				});
+			}
+		});
+	}
+
+
+
+	//faq 검색 결과
+	function searchSmallFaq() {
+		smallSearchView();
+		jQuery.ajax({
+			url : "/faq.json",
+			data:{searchKeyword:$("#searchSmallKeywordForm input[name='searchKeyword']").val()},
+			type:"GET",
+			success : function(data) {
+				$("#faq-small-search-list").html('');
+				$.each(data.searchFaqs, function(index, data) {
+					$("#faq-small-search-list").append(getSmallFaqItem(data));
+				});
+				if(data.searchFaqs.length==0){
+					$("#faq-small-search-list").append("검색결과가 없습니다.");
+				}
+			}
+		});
+	}
+
+	function getSmallFaqItem(data){
+			var questionListBody = '<li><a onclick="getSmallDetail('+data.id+');"><span>'+data.question+'</span></a></li>';
+			return questionListBody;
+	}
+
+	//faq 상세 페이지
+	function getSmallDetail(id) {
+		smallDetailView();
+		var detailElement = $(".guide-small .guide-detail");
+		detailElement.find(".depth1");
+		detailElement.find(".depth2");
+		detailElement.find(".question");
+		detailElement.find(".answer");
+
+		jQuery.ajax({
+			url : "/faq/detail/"+id+".json",
+			type:"GET",
+			success : function(data) {
+				detailElement.find(".depth1").text(data.depth1Name);
+				detailElement.find(".depth2").text(data.depth2Name);
+				detailElement.find(".question").html(data.faq.question);
+				detailElement.find(".answer").html(data.faq.answer);
+				$("#addtional-small-faq").html('');
+				$.each(data.afterFaqs,function(index,innerData){
+					$("#addtional-small-faq").append(getSmallFaqItem(innerData));
+				})
+			}
+		});
+	}
+	//프론트 페이지
+	function getSmallFront(){
+		smallFrontView();
+	}
+
+</script>
+		<div id="header-menu">
+				<ul class="header-menu">
+						<li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+						
+								
+										<li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a
+												href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
+												<ul id="header-menu-contest">
+														
+																<li class="menu-list"><a href="/contest/10/funding">위더스콜라보데이 모의투자</a></li>
+														
+														<li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
+												</ul></li>
+								
+								
+						
+						<li class="menu-list"><a href="/reward/funding">리워드형</a></li>
+
+				</ul>
+				
+
+
+
+
+
+
+
+
+
+<ul class="header-user-menu" id="header-user-menu">
+		
+				<li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
+				<li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
+		
+		
+				
+				
+						<li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
+				
+		
+		<li class="menu-list"><a href="/dedicate">전용관</a></li>
+		<li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+		
+		
+				<li class="menu-list"><a href="#header-user" data-toggle="toggle" class="user-profile name"><img src="/file/42a04475/1703/47dd/8c90/898ce704391c/그림1.jpg" alt="김태민"
+								title="김태민" class="profile-img"> &#44608;&#53468;&#48124;</a>
+						<ul id="header-user">
+								
+										<li class="menu-list"><a href="/user/investment">내 펀딩 현황</a></li>
+										<li class="menu-list"><a href="/user/profile">투자자 등록하기</a></li>
+										<li class="menu-list"><a href="/user/profile">개인정보관리</a></li>
+										
+										
+												<li class="menu-list"><a href="/company/user-regist-company">기업정보 관리</a></li>
+										
+										
+												<li class="menu-list"><a href="/user/corporation/loginCorporationChange">기업회원으로 전환</a></li>
+										
+										
+												<li class="menu-list"><a href="/security/funding/apply">펀딩 신청하기</a></li>
+										
+								
+								
+								
+						</ul></li>
+				<li class="menu-list">
+						<form method="post" action=" /user/logout" class="logout">
+								
+								<input type="hidden" name="" value="" />
+								
+								
+								
+								<input type="hidden" name="targetUrl" value="/contest/10/funding/111/post">
+								
+								<input type="submit" value="로그아웃">
+						</form>
+				</li>
+		
+</ul>
+
+		</div>
+		
+
+
+
+
+
+
+
+<div class="mobile-menu">
+
+
+	<a href="/user/logout">로그아웃</a>
+
+<a href="#header-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
+</div>
+</header>
+
+
+  <article>
+    <div class="container">
+      <div class="wrapper">
+
+        
+
+
+
+
+
+
+
+<link href="../css/funding-list.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".leadInvestor").mouseover(function() {
+		  var href = $(this).attr("href");
+	  $(href).show();
+	  return false;
+	});
+
+	$(".leadInvestor").mouseleave(function() {
+	  var href = $(this).attr("href");
+	  $(href).hide();
+	  return false;
+	});
+});
+
+</script>
+<section class="summary">
+		
+		<section class="company-name">
+				<a href="/company/home/story/4364">(주)올댓시리즈</a>
+		</section>
+		
+		<section class="cover">
+				
+						
+						
+								<img src="/file/da14ba37/942a/427a/a526/9e149b73868b/슬라이드1.JPG" alt="당신의 음악에 닿는 전문가의 손길 FeedYourMusic" id="coverImg">
+								<script>
+			$(document).ready(function(){
+				if($('#coverImg').width() > $('#coverImg').height()){
+					$('#coverImg').addClass('longWidth');
+				}else{
+					$('#coverImg').addClass('longHeight');
+				}
+			});
+		</script>
+						
+				
+		</section>
+		
+		
+		<section class="actions">
+		
+		
+		
+			
+		
+
+			<a class="fb-share" href="http://www.facebook.com/sharer/sharer.php?u=localhost/contest/10/funding/111" target="_blank">
+				<img src="/img/socialMedia/facebook.png" alt="페이스북 공유하기">공유하기
+			</a>
+				
+				
+						
+						
+						
+						
+								
+										
+										
+										
+										
+										
+										
+										
+												
+												
+												
+										
+										
+								
+						
+				
+				<a href="/contest/10/funding/111/invest/amount"  
+						 
+						 class="">모의투자하기</a>
+		</section>
+		
+		
+				<section class="status">
+						<ul>
+								<li class="targetAmount"><span class="label">목표금액</span><strong>2,000만원</strong></li>
+								<li class="participantCount"><span class="label">투자자수</span><strong>13명</strong></li>
+
+								
+								
+								<li class="currentAmount"><span class="label">현재금액</span><strong>2,200만원</strong></li>
+								
+
+								
+								
+
+						</ul>
+						
+						<div class="achivement">
+								
+								<div class="progress">
+										<div class="progress-mask" style="width: 0%;"></div>
+								</div>
+								
+								<div class="currentPercentage">
+										110.0%
+								</div>
+						</div>
+						
+						<div class="endDateTime">
+								2017년 12월 14일 18:00까지
+						</div>
+				</section>
+		
+		
+
+		<section class="tags-area">
+				<span class="accessory">
+						<ul class="tags">
+								
+										<li>깐느미뎀스타트업</li>
+								
+										<li>예술창작은인간이</li>
+								
+										<li>AI는거들뿐</li>
+								
+						</ul>
+				</span>
+		</section>
+		
+		
+				
+
+
+
+
+
+
+
+<section class="others">
+
+  
+    <dl class="compan-valuation">
+      <dt class="label">발행인 기업 가치</dt>
+      <dd class="value">
+        1,000,000,000원
+      </dd>
+    </dl>
+  
+
+  <dl class="leadInvestor" style="text-align:center">
+    <dt class="label">후원기관</dt>
+    <dd class="value">
+      대구한의대학교
+    </dd>
+  </dl>
+
+</section>
+
+
+		
+		
+</section>
+
+
+		
+		<section id="mobile-verification">
+				<div class="wrapper">
+						
+
+
+
+
+
+
+
+<section id="user-mobile-verification">
+
+  <h2>휴대전화 번호 인증</h2>
+
+  <p class="instruction">
+    투자를 하시기 위해서는 휴대전화 번호를 인증하셔야 합니다.
+    
+      <br>
+      기존 등록 번호는 다른 이용자가 이번 대회에서 사용하였습니다.
+    
+  </p>
+
+  
+  
+    
+  
+  
+  
+  <form id="mobileNumberForm" method="post"
+    action="/user/phone/had"
+    data-action-had="/user/phone/had"
+    data-action-add="/user/phone/add"
+    data-action-used="/contest/10/phone-used"
+    data-action-requestVerification="/user/phone/requestVerification"
+    data-action-remove="/user/phone/remove">
+    
+    <input type="hidden" name="" value="" />
+    
+    <input type="hidden" name="phoneId" id="mobileNumberForm-phoneId">
+    
+    <input type="hidden" name="name" value="MOBILE">
+    
+    <label for="mobileNumberForm-number">휴대전화 번호</label>
+    
+    <input type="text" name="number" placeholder="010-0000-0000"
+      id="mobileNumberForm-number">
+    
+    <div class="message"></div>
+    
+    <input type="submit" value="전송" id="mobileNumberForm-submit">
+    
+  </form>
+
+  <form id="mobileVerifyForm" method="post"
+    action="/user/phone/verify"
+    data-action-amount="/contest/10/funding/111/invest/amount">
+    
+    <input type="hidden" name="" value="" />
+    
+    <input type="hidden" name="phoneId" value="7699">
+    
+    <input type="hidden" name="publicKey">
+    
+    <label for="mobileVerifyForm-secretKey">인증번호</label>
+    
+    <input type="text" name="secretKey" placeholder="000000"
+      id="mobileVerifyForm-secretKey" autocomplete="off" maxlength="6">
+    
+    <div class="message"></div>
+    
+    <span class="signage">0:00</span>
+    
+    <input type="submit" value="인증" id="mobileVerifyForm-submit">
+  </form>
+
+  <script src="../js/user-mobile-verification.js"></script>
+
+</section>
+
+				</div>
+		</section>
+		
+
+		
+				<section id="fail-security-condition" class="modal-layer">
+						<section class="modal-wrapper ">
+								<div class="modal-content">
+										<div class="icon-area">
+												<img src="/img/notice/caution.svg" />
+										</div>
+										<div class="modal-msg" style="margin-top: 0;">
+												<p class="title"></p>
+												<p class="message">
+														투자자 정보를 모두 등록해야 투자가 가능합니다.<br> 지금 바로 등록하시겠습니까?
+												</p>
+										</div>
+										<div class="modal-btn-area">
+												<a class="first" onclick="forceHideModal();">아니오</a> <a class="second" href="/user/profile">네</a>
+										</div>
+								</div>
+						</section>
+				</section>
+		
+		
+
+
+
+        
+
+
+
+
+
+
+
+<section class="menu">
+
+  
+  
+  
+
+  <ul class="tab">
+    <li><a href="/contest/10/funding/111"
+      class="">펀딩 소개</a></li>
+    <li><a href="/contest/10/funding/111/teamAndInvestor"
+      class="">팀&amp;투자자</a></li>
+	  
+    <li class=""><a href="/contest/10/funding/111/post"
+      class="active">Q&amp;A</a></li>
+  </ul>
+
+  
+
+	
+</section>
+
+<div class="dummy-mask"></div>
+
+
+        <section class="detail">
+          
+
+
+
+
+
+
+
+<section class="notice">
+
+  <div class="btn-area"><!--개설자 화면에서만 버튼박스 보여야함.-->
+  	<button type="button" class="post-write-btn" onclick="showNoticeform()">새 글 등록</button>
+  	<!--체크박스 클릭시에 수정버튼 활성화, 그 전엔 비활성화.-->
+  	<button type="button" class="post-write-btn editBtn" disabled="disabled" onclick="showNoticeform()">수정</button>
+  </div>
+  
+  <h2>공지사항</h2>
+
+    <div class="thread">
+      <div class="subject-title">
+      <!--라디오와 라벨, 개설자화면에서만 보임, 디자인은 체크박스지만 한개씩만 클릭되어야함.-->
+       <input type="radio" name="check-noti" class="check-noti" id="checkNoti" onclick="$('.notice .editBtn').attr('disabled',false)">
+       <label for="checkNoti"></label>
+		  <span><strong class="date">2016.08.23</strong>[새소식] 꽁지사항이 어쩌고 저쩌고 이럴수가 저럴수가 이럴수가 아아아아아아아아 길어진다 글이 길어진다</span>
+      </div>
+      <div class="subject-body">
+        꽁지
+      </div>
+    </div>
+  
+    <div class="thread">
+      <div class="subject-title">
+       <input type="radio" name="check-noti" class="check-noti" id="checkNoti01" onclick="$('.notice .editBtn').attr('disabled',false)">
+       <label for="checkNoti01"></label>
+       <!-- / 라디오와 라벨, 개설자화면에서만 보임-->
+       <!-- date 날짜 작성일. 수정일자 아님-->
+        <span><strong class="date">2016.08.23</strong>[이벤트관련] 공지사항입니다. 읽어주세요</span>
+      </div>
+      <div class="subject-body">
+        고고고고고공지
+      </div>
+    </div>
+
+<!-- 새글 등록 / 글 수정시 나오는 글 박스 -->
+    <form id="notice-form" method="post" style="display:none;"
+      action="/contest/10/funding/111/post">
+	<select name="list">
+		<option value="new">새소식</option>
+		<option value="reward">리워드</option>
+		<option value="shipping">배송관련</option>
+		<option value="payment">결제관련</option>
+		<option value="refund">환불관련</option>
+		<option value="event">이벤트관련</option>
+		<option value="etc">기타</option>
+	</select>
+      <input type="hidden" name="" value="" />
+      
+      <input type="hidden" name="type" value="NOTICE" />
+
+      
+      <input type="text" name="subject" placeholder="제목">
+      
+      <textarea name="body" placeholder="내용"></textarea>
+      <div class="form-btn-area">
+      <input type="button" name="cancel" value="취소">
+      <input type="button" name="Post" value="등록" onclick="notiEdit()">
+		</div>
+   <div class="noti-line">등록버튼 클릭 시, 모든 투자자들에게 메일로 내용이 전송됩니다.</div>
+    </form>
+  
+
+</section>
+  
+<section class="faq">
+ <div class="btn-area"><!--개설자 화면에서 버튼박스 보여야함.-->
+  	<button type="button" class="post-write-btn" onclick="showFaqform()">새 글 등록</button>
+  	<button type="button" class="post-write-btn editBtn" disabled="disabled" onclick="showFaqform()">수정</button>
+  </div>
+  
+  <h2>자주 하는 질문</h2>
+
+  
+    <div class="thread">
+      <div class="subject-title">
+         <!--라디오와 라벨, 개설자화면에서만 보임-->
+          <input type="radio" name="check-faq" class="check-noti" id="checkfaq" onclick="$('.faq .editBtn').attr('disabled',false)">
+       <label for="checkfaq"></label>
+        <!-- / 라디오와 라벨, 개설자화면에서만 보임-->
+        <span>이곳이 자주하는 질문이구나</span>
+      </div>
+      <div class="subject-body">
+        그렇구나.
+      </div>
+    </div>
+  
+    <div class="thread">
+      <div class="subject-title">
+          <input type="radio" name="check-faq" class="check-noti" id="checkfaq01" onclick="$('.faq .editBtn').attr('disabled',false)" >
+       <label for="checkfaq01"></label>
+        <span>질문도 내가</span>
+      </div>
+      <div class="subject-body">
+        답도 내가
+      </div>
+    </div>
+    <!-- 새글 등록 / 글 수정시 나오는 글 박스 -->
+    <form id="faq-form" method="post" style="display:none;"
+      action="/contest/10/funding/111/post">
+
+      
+      <input type="hidden" name="" value="" />
+      
+      <input type="hidden" name="type" value="FAQ" />
+
+      
+      <span>Q. </span><input type="text" name="subject">
+
+      
+      <span class="gold">A. </span><textarea name="body"></textarea>
+
+      
+      <div class="form-btn-area">
+      <input type="button" name="cancel" value="취소" onclick="faqEdit()">
+      <input type="submit" name="Post" value="등록" onclick="faqEdit()">
+		</div>
+    </form>
+  
+
+</section>
+          
+
+<section class="qna">
+
+	<h2>Q&amp;A</h2>
+
+	<section class="caution">
+		<h3>질문/의견 작성 시 유의사항</h3>
+		<ol>
+			<!-- 			<li>네오스프링의 홈페이지에는 회원만 글을 작성할 수 있으며 <b>저희는 투자자들의 투자 관련 의견을 임의로 삭제하거나 수정하지 않습니다.</b></li> -->
+			<!-- 			<li>본 토론장에 타인의 청약을 유도할 목적으로 <b>허위의 의사표시를 하는 경우 부정거래행위 등으로 처벌</b>받을 수 있습니다.</li> -->
+			<!-- 			<li>발행인과 이해관계가 있는 자(임직원, 대주주, 대가관계 있는 파워블로거 등)는 <b>해당 이해관계등을 명확히 표시</b>하고 의견을 제시해야 합니다.</li> -->
+			<li>네오스프링은 홈페이지의 건전한 운영을 위하여 운영기준 상 부적절하거나 <b>문제의 소지가 있는 게시물이 게재될 경우 (예:명예훼손, 음란물 등) 이를 삭제 또는 변경할 수 있으며</b>, 해당 내용을 삭제 또는 변경하는 경우 해당 사유 등을 기록하여 <b>콘텐츠의 사본과 함께 이를 1년 간 관리</b>합니다.
+			</li>
+		</ol>
+	</section>
+
+	<form method="post" class="question" action="/contest/10/funding/111/question">
+		<input type="hidden" name="" value="" />
+		
+			<input type="hidden" name="contestId" value="10" />
+		
+		<label>질문 / 의견 작성하기</label>
+		
+			<textarea name="body" cols="30" rows="10"></textarea>
+			<input type="submit" name = "questionRegister" id = "questionRegister" value="등록">
+		
+
+		
+	</form>
+
+	<section class="questions">
+		<h3>
+			총 질문/의견 <em>3</em>
+		</h3>
+
+		
+
+		
+			<section class="trhead">
+				<div class="question">
+					
+					
+					<!-- 질문수정 -->
+					<!-- 본인이 쓴 글에만 수정버튼 보임 -->
+					
+					
+
+					<div class="btn-area" style="display:none">
+						<button class="post-write-btn" id="questionEdit" data-id="17">수정</button>
+					</div>
+					
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/2c8e7285/8b30/4e05/8a45/f580a5a06030/그림1.jpg"
+    alt="박은혜님의 사진" class="portrait-small">
+  <div class="name">
+    박은혜
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:48
+    
+  </div>
+</div>
+
+					<div class="body" data-id="17">
+						안녕하세요!  앞으로도 다양성 영화들이 한국에 더 많이 등장하길 바라고 응원하는 영화팬입니다 :)  먼저, 투자자들을 영화 제작 과정에서 어떻게 참여시킬 계획인지 궁금합니다. 내년 상반기 개봉 전까지 제작기간이 꽤 남아 있는 상태인데, 제작이 많이 진행되지 않은 상태에서 어떤 방식으로 투자자들에게 영화에 대한 확신과 믿음을 주실 수 있을지 여쭙고 싶습니다. 
+					</div>
+
+					<form method="post" action="/contest/10/funding/111/changeQuestion" class="changeQuestion">
+						<input type="hidden" name="questionId" value="17" />
+						
+						
+							<input type="hidden" name="contestId" value="10" />
+						
+						<div class="question-cont-area" style="display: none" data-id="17">
+							<textarea name="body" id="question">안녕하세요!  앞으로도 다양성 영화들이 한국에 더 많이 등장하길 바라고 응원하는 영화팬입니다 :)  먼저, 투자자들을 영화 제작 과정에서 어떻게 참여시킬 계획인지 궁금합니다. 내년 상반기 개봉 전까지 제작기간이 꽤 남아 있는 상태인데, 제작이 많이 진행되지 않은 상태에서 어떤 방식으로 투자자들에게 영화에 대한 확신과 믿음을 주실 수 있을지 여쭙고 싶습니다. </textarea>
+						</div>
+
+						<div class="btn-area-edit" style="display: none" data-id="17">
+							<button class="post-write-btn edit" id="questionSubmit" type="submit">등록</button>
+						</div>
+					</form>
+				</div>
+
+				<!--question div끝 -->
+				<div class="answers">
+					<h4>
+						답글 <em>4</em>
+					</h4>
+					<div class="answer-cover">
+						<div class="answer-area">
+
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:48
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="5">
+										내질문엔 내가 답을달지
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="5">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="17" /> <input type="hidden" name="answerId" value="5" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="5">
+											<textarea name="body">내질문엔 내가 답을달지</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="5">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:51
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="6">
+										ㅇㅇ
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="6">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="17" /> <input type="hidden" name="answerId" value="6" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="6">
+											<textarea name="body">ㅇㅇ</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="6">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/2c8e7285/8b30/4e05/8a45/f580a5a06030/그림1.jpg"
+    alt="박은혜님의 사진" class="portrait-small">
+  <div class="name">
+    박은혜
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 24. 11:33
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="8">
+										답을달아용.ㅇㅇㅇ
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="8">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="17" /> <input type="hidden" name="answerId" value="8" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="8">
+											<textarea name="body">답을달아용.ㅇㅇㅇ</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="8">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/2c8e7285/8b30/4e05/8a45/f580a5a06030/그림1.jpg"
+    alt="박은혜님의 사진" class="portrait-small">
+  <div class="name">
+    박은혜
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 24. 11:33
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="9">
+										2ㅎㅎㅎㅎffdddd
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="9">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="17" /> <input type="hidden" name="answerId" value="9" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="9">
+											<textarea name="body">2ㅎㅎㅎㅎffdddd</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="9">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+						</div>
+						<!-- answer-area끝  -->
+
+						<!-- 로그인권한이 있어야 답글작성창이 나옴 -->
+						
+							<form method="post" action="/contest/10/funding/111/answer" class="answer">
+								<input type="hidden" name="" value="" /> <input type="hidden" name="questionId" value="17" />
+								
+									<input type="hidden" name="contestId" value="10" />
+								
+								<label>답글 작성하기</label>
+								<textarea name="body"></textarea>
+								<input type="submit" value="등록">
+							</form>
+						
+					</div>
+					<!-- answer-cover끝 -->
+				</div>
+			</section>
+		
+			<section class="trhead">
+				<div class="question">
+					
+					
+					<!-- 질문수정 -->
+					<!-- 본인이 쓴 글에만 수정버튼 보임 -->
+					
+					
+						
+					
+
+					<div class="btn-area" style="">
+						<button class="post-write-btn" id="questionEdit" data-id="16">수정</button>
+					</div>
+					
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/42a04475/1703/47dd/8c90/898ce704391c/그림1.jpg"
+    alt="김태민님의 사진" class="portrait-small">
+  <div class="name">
+    김태민
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:26
+    
+  </div>
+</div>
+
+					<div class="body" data-id="16">
+						질문이 다섯개! 다섯개!
+					</div>
+
+					<form method="post" action="/contest/10/funding/111/changeQuestion" class="changeQuestion">
+						<input type="hidden" name="questionId" value="16" />
+						
+						
+							<input type="hidden" name="contestId" value="10" />
+						
+						<div class="question-cont-area" style="display: none" data-id="16">
+							<textarea name="body" id="question">질문이 다섯개! 다섯개!</textarea>
+						</div>
+
+						<div class="btn-area-edit" style="display: none" data-id="16">
+							<button class="post-write-btn edit" id="questionSubmit" type="submit">등록</button>
+						</div>
+					</form>
+				</div>
+
+				<!--question div끝 -->
+				<div class="answers">
+					<h4>
+						답글 <em>0</em>
+					</h4>
+					<div class="answer-cover">
+						<div class="answer-area">
+
+							
+						</div>
+						<!-- answer-area끝  -->
+
+						<!-- 로그인권한이 있어야 답글작성창이 나옴 -->
+						
+							<form method="post" action="/contest/10/funding/111/answer" class="answer">
+								<input type="hidden" name="" value="" /> <input type="hidden" name="questionId" value="16" />
+								
+									<input type="hidden" name="contestId" value="10" />
+								
+								<label>답글 작성하기</label>
+								<textarea name="body"></textarea>
+								<input type="submit" value="등록">
+							</form>
+						
+					</div>
+					<!-- answer-cover끝 -->
+				</div>
+			</section>
+		
+			<section class="trhead">
+				<div class="question">
+					
+					
+					<!-- 질문수정 -->
+					<!-- 본인이 쓴 글에만 수정버튼 보임 -->
+					
+					
+						
+					
+
+					<div class="btn-area" style="">
+						<button class="post-write-btn" id="questionEdit" data-id="15">수정</button>
+					</div>
+					
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/42a04475/1703/47dd/8c90/898ce704391c/그림1.jpg"
+    alt="김태민님의 사진" class="portrait-small">
+  <div class="name">
+    김태민
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 16:43
+    
+  </div>
+</div>
+
+					<div class="body" data-id="15">
+						질문있어요.
+					</div>
+
+					<form method="post" action="/contest/10/funding/111/changeQuestion" class="changeQuestion">
+						<input type="hidden" name="questionId" value="15" />
+						
+						
+							<input type="hidden" name="contestId" value="10" />
+						
+						<div class="question-cont-area" style="display: none" data-id="15">
+							<textarea name="body" id="question">질문있어요.</textarea>
+						</div>
+
+						<div class="btn-area-edit" style="display: none" data-id="15">
+							<button class="post-write-btn edit" id="questionSubmit" type="submit">등록</button>
+						</div>
+					</form>
+				</div>
+
+				<!--question div끝 -->
+				<div class="answers">
+					<h4>
+						답글 <em>5</em>
+					</h4>
+					<div class="answer-cover">
+						<div class="answer-area">
+
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 16:56
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="1">
+										답입ㄴ디ㅏ.sdfdsf 수정됨
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="1">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="15" /> <input type="hidden" name="answerId" value="1" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="1">
+											<textarea name="body">답입ㄴ디ㅏ.sdfdsf 수정됨</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="1">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:28
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="2">
+										답 또달아요. 수정이요.
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="2">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="15" /> <input type="hidden" name="answerId" value="2" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="2">
+											<textarea name="body">답 또달아요. 수정이요.</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="2">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:28
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="3">
+										난 답만다는 답쟁이
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="3">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="15" /> <input type="hidden" name="answerId" value="3" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="3">
+											<textarea name="body">난 답만다는 답쟁이</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="3">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/3733afa5/90d7/4c6c/ab4b/3a85d2be3b38/14102615_1239751836099396_7295707809093621867_n.jpg"
+    alt="민나영님의 사진" class="portrait-small">
+  <div class="name">
+    민나영
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 23. 17:29
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="4">
+										답답이
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="4">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="15" /> <input type="hidden" name="answerId" value="4" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="4">
+											<textarea name="body">답답이</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="4">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+								<div class="answer-profile">
+									<img src="/img/icon/reply.png" alt="" class="reply-arrow">
+									
+									
+									
+
+
+
+
+
+
+
+
+<div class="profile">
+  <img src="/file/2c8e7285/8b30/4e05/8a45/f580a5a06030/그림1.jpg"
+    alt="박은혜님의 사진" class="portrait-small">
+  <div class="name">
+    박은혜
+  </div>
+<!--   <div class="investor-type">| 일반 투자자</div> -->
+
+  <div class="written">
+    
+      2017. 11. 24. 13:37
+    
+  </div>
+</div>
+
+
+									<div class="answer-cont" data-id="10">
+										답달이
+									</div>
+									<!-- 댓글 수정 -->
+									<!-- 본인이 쓴 답글만 수정버튼 보임 -->
+									
+									
+
+									<div class="btn-area" style="display:none">
+										<button class="post-write-btn edit" data-id="10">수정</button>
+									</div>
+									<form method="post" action="/contest/10/funding/111/changeAnswer" class="changeAnswer">
+										<input type="hidden" name="questionId" value="15" /> <input type="hidden" name="answerId" value="10" />
+										
+											<input type="hidden" name="contestId" value="10" />
+										
+
+										<div class="answer-cont-area" style="display: none" data-id="10">
+											<textarea name="body">답달이</textarea>
+										</div>
+										<div class="btn-area-edit" style="display: none" data-id="10">
+											<button class="post-write-btn edit" type="submit">등록</button>
+										</div>
+									</form>
+									<!-- 수정 -->
+								</div>
+							
+						</div>
+						<!-- answer-area끝  -->
+
+						<!-- 로그인권한이 있어야 답글작성창이 나옴 -->
+						
+							<form method="post" action="/contest/10/funding/111/answer" class="answer">
+								<input type="hidden" name="" value="" /> <input type="hidden" name="questionId" value="15" />
+								
+									<input type="hidden" name="contestId" value="10" />
+								
+								<label>답글 작성하기</label>
+								<textarea name="body"></textarea>
+								<input type="submit" value="등록">
+							</form>
+						
+					</div>
+					<!-- answer-cover끝 -->
+				</div>
+			</section>
+		
+
+	</section>
+
+</section>
+
+<!--퍼블리싱 스크립트 / 동작만 확인해주세요.-->
+<script>
+	$(document).ready(function() {
+	
+		
+		//답글 수정버튼 클릭시 동작
+		$(".btn-area .edit").on('click', function() {
+			$(".answer-area .btn-area").hide(); //수정버튼 숨김
+			$(".answer-area .answer-cont[data-id=" + $(this).attr("data-id") + "]").hide();//수정전 내용숨김
+			$(".answer-area .btn-area-edit[data-id=" + $(this).attr("data-id") + "]").show(); //등록 버튼 보여줌, 등록클릭시 답글이 수정됩니다.
+			$(".answer-area .answer-cont-area[data-id=" + $(this).attr("data-id") + "]").show();
+		})
+		//답글 수정후 등록버튼 클릭
+		$(".btn-area-edit .edit").on('click', function() {
+			$(".answer-area .btn-area[data-id=" + $(this).attr("data-id") + "]").show();
+			$(".answer-area .btn-area-edit[data-id=" + $(this).attr("data-id") + "]").hide();
+			$(".answer-area .answer-cont-area[data-id=" + $(this).attr("data-id") + "]").hide(); //답글 수정 textarea나타남
+		})
+	
+		//질문 수정버튼 클릭시 동작
+		$(".btn-area #questionEdit").on('click', function() {
+			$(".question .btn-area").hide(); //수정버튼 숨김
+			$(".question .body[data-id=" + $(this).attr("data-id") + "]").hide();//수정전 내용숨김
+			$(".question .btn-area-edit[data-id=" + $(this).attr("data-id") + "]").show(); //등록 버튼 보여줌, 등록클릭시 답글이 수정됩니다.
+			$(".question .question-cont-area[data-id=" + $(this).attr("data-id") + "]").show();
+		})
+		//질문 수정후 등록버튼 클릭
+		$(".btn-area-edit #questionSubmit").on('click', function() {
+			$(".question .btn-area[data-id=" + $(this).attr("data-id") + "]").show();
+			$(".question .btn-area-edit[data-id=" + $(this).attr("data-id") + "]").hide();
+			$(".question .question-cont-area[data-id=" + $(this).attr("data-id") + "]").hide(); //질문 수정 textarea나타남
+		})
+		
+		//공지사항 summernote적용
+		//공지사항 입력박스 summernote양식 필요하다고 되어있어서 부트스트랩 삽입.
+		$("#notice-form textarea").summernote({
+			height:200
+		});
+	});
+	
+	
+	
+	//공지사항 수정 클릭 시 글 수정박스 등장
+	function showNoticeform(){
+			$(".notice .btn-area").hide();
+			$(".notice .thread").hide();
+			$(".notice #notice-form").show();
+		}
+	//수정 후 등록버튼 클릭
+	function notiEdit(){
+		$("#notice-form").hide();
+		$(".notice .btn-area").show();
+		$(".notice .thread").show();
+		
+		//제목, 내용 빈값일때 뜨는 안내문구
+		if($("input[name='subject']").val().trim() == ""){
+			$("#notice-form input[name='subject']").after("<span class='message'>제목을 입력해주세요</span>");
+		}
+		if($("#notice-form textarea").val().trim() == ""){
+			$("#notice-form .note-editor").after("<span class='message'>내용을 입력해주세요</span>");			
+		}
+	}
+	//자주하는질문 수정 클릭 시 글 수정박스 등장
+	function showFaqform(){
+		$(".faq .btn-area").hide();
+			$(".faq .thread").hide();
+			$(".faq #faq-form").show();
+	}
+	//수정 후 등록버튼 클릭
+	function faqEdit(){
+		$("#faq-form").hide();
+		$(".faq .btn-area").show();
+		$(".faq .thread").show();
+	}
+	
+</script>
+          <a href="/contest/10/funding" class="transfer line-transfer">목록으로 돌아가기</a>
+        </section>
+
+      </div>
+    </div>
+  </article>
+
+  
+
+
+
+
+
+
+
+<link href="../css/sponsor-list.css" rel="stylesheet" type="text/css">
+
+
+  
+
+
+
+
+
+
+
+<footer>
+		<section class="footer-menu">
+				<!--div class="menu-block">
+						<div class="menu-title">펀딩</div>
+						<div class="menu-part">
+								<a href="/security/funding/apply">펀딩 신청하기</a>
+						</div>
+				</div-->
+				<div class="menu-block">
+						<div class="menu-title">
+								<img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+						</div>
+						<div class="menu-part">
+								<a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+						</div>
+						<div class="menu-part">
+								<a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+						</div>
+				</div>
+				<div class="menu-block">
+						<div class="menu-title">회사소개</div>
+						<div class="menu-part">
+								<a href="/us" target="_blank">네오스프링 이란?</a>
+						</div>
+						<div class="menu-part">
+								<a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+						</div>
+						<div class="menu-part">
+								<a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+						</div>
+				</div>
+		</section>
+		<section class="contact-us">
+
+				<div class="company-name">네오스프링(주)</div>
+				<ul class="contact-info">
+						<li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+						<li><a href="#">팩스 : 02-853-2297</a></li>
+						<li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+						<li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+				</ul>
+				<ul class="registration-info">
+						<li>네오스프링(주) 대표이사 : 김석표</li>
+						<li>사업자등록번호 : 542-86-00492</li>
+						<li>통신판매업신고 : 2016-서울구로-0321</li>
+				</ul>
+				<div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+		</section>
+		<section class="sitemap">
+				<div class="wrapper">
+						<ul class="agreements">
+								<li><a href="/help/agreement">플랫폼 이용약관</a></li>
+								<li><a href="/help/privacy">개인정보 취급방침</a></li>
+								<li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+								<li><a href="/help/reward">리워드 정책</a></li>
+						</ul>
+						<div class="ci">
+								<a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+						</div>
+				</div>
+		</section>
+		<div class="wrapper">
+				<div class="scroll-down-menu fadeIn">
+						<a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+				</div>
+		</div>
+		<section class="common-popup">
+				<div class="modal-layer" id="find-id-modal">
+						<section class="modal-wrapper">
+								<div class="modal-content">
+										<h2 class="title">
+												<span>아이디</span> 찾기
+										</h2>
+										<p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+										<form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+												<input class="center" type="email" name="email" placeholder="이메일" required />
+										</form>
+										<a class="submit" onclick="emailMemeberCheck();">확인</a>
+								</div>
+								<div class="result false">
+										<p class="email"></p>
+										<p class="message">등록되어있지않은 이메일 ID입니다.</p>
+										<a href="/user/register">회원가입</a>
+								</div>
+								<div class="result true">
+										<p class="email"></p>
+										<p class="message">등록된 이메일 Id입니다.</p>
+										<a href="/user/login">로그인</a>
+								</div>
+						</section>
+				</div>
+				<div class="modal-layer" id="reset-password-request-popup">
+						<section class="modal-wrapper">
+								<div class="modal-content">
+										<h2 class="title">
+												<span>비밀번호</span> 찾기
+										</h2>
+										<p class="message">
+												가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+										</p>
+										<form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+												<input class="center" type="email" name="email" placeholder="이메일" required />
+										</form>
+										<a class="submit" onclick="requestResetPassword();">링크 발송</a>
+								</div>
+								<div class="result false">
+										<p class="email"></p>
+										<p class="message">이메일을 보내지 못했습니다.</p>
+								</div>
+								<div class="result true">
+										<p class="email"></p>
+										<p class="message">위의 이메일로 링크를 보냈습니다.</p>
+								</div>
+						</section>
+				</div>
+		</section>
+</footer>
+<a id="general-notice-btn" data-toggle="modal" data-target="#general-notice-modal" style="display: none;"></a>
+<div class="modal-layer" id="general-notice-modal">
+		<section class="modal-wrapper">
+				<div class="modal-content">
+						<div class="modal-msg">
+								등록하신 파일을 확인 중입니다.<br>파일 상태를 변경하실 수 없습니다.
+						</div>
+						<div class="modal-btn-area">
+								<div class="modal-ok close-modal">확인</div>
+						</div>
+				</div>
+		</section>
+</div>
+
+
+<script>
+	function use_general_notice(msg) {
+		$('#general-notice-modal').find('.modal-msg').html(msg);
+		$('#general-notice-btn').click();
+	}
+	on.fire();
+</script>
+
+
+
+  <script src="../js/funding-view.js"></script>
+
+</body>
+</html>

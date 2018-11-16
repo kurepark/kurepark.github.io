@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>회원정보 - 네오스프링 (크라우드펀딩 플랫폼)</title>
+    <meta name="description" content="회원님의 개인정보를 관리할 수 있습니다.">
+    <meta name="author" content="네오스프링">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:8080/user-profile">
+    <meta property="og:site_name" content="네오스프링 (크라우드펀딩 플랫폼)">
+    <meta property="og:title" content="회원정보">
+    <meta property="og:description" content="회원님의 개인정보를 관리할 수 있습니다.">
+    <meta property="article:author" content="https://www.facebook.com/neospring.kr/">
+    <meta property="og:image" content="http://localhost:8080/img/ci/neospring_ci_large_nosecu.png">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://localhost:8080/user-profile">
+    <meta name="twitter:site" content="@neospring_kr">
+    <meta name="twitter:title" content="회원정보">
+    <meta name="twitter:description" content="회원님의 개인정보를 관리할 수 있습니다.">
+    <meta name="twitter:creator" content="네오스프링">
+    <meta name="twitter:image" content="http://localhost:8080/img/ci/neospring_ci_large_nosecu.png">
+
+
+
+
+
+
+
+
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/guide-content.css" rel="stylesheet" type="text/css">
+    <link href="../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+    <link href="../css/guide-small.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/parsley.min.js"></script>
+    <script src="../js/function.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/on.js"></script>
+
+    <link href="../css/user-profile.css" rel="stylesheet" type="text/css">
+    <link href="../css/user-investment-list.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="small-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+        <div id="header-menu">
+            <ul class="header-menu">
+                <li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+
+
+                <li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
+                    <ul id="header-menu-contest">
+
+                        <li class="menu-list"><a href="/contest/12/funding">전북지역 모의투자</a></li>
+
+                        <li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-list"><a href="/reward/funding">리워드형</a></li>
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+            <ul class="header-user-menu" id="header-user-menu">
+
+                <li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
+                <li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
+
+
+
+
+                <li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
+                <li class="menu-list"><a href="/dedicate">전용관</a></li>
+                <li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+
+
+                <li class="menu-list">
+
+                    <a href="#header-user" data-toggle="toggle" class="user-profile name">
+				
+					<img src="/file/8aefdb9a/5ae7/480a/8544/77a094f5b0d3/12492772.png" alt="고양고양고양이"  title="고양고양고양이" class="profile-img">
+ 					고양고양고양이
+				
+				
+			  </a>
+                    <ul id="header-user">
+
+                        <li class="menu-list"><a href="/user/investment">내 펀딩 현황</a></li>
+                        <li class="menu-list"><a href="/user/profile#investorType-area">투자자 등록하기</a></li>
+                        <li class="menu-list"><a href="/user/profile">개인정보관리</a></li>
+
+
+
+                    </ul>
+                </li>
+                <li class="menu-list">
+                    <form method="post" action=" /user/logout" class="logout">
+
+                        <input type="hidden" name="" value="" />
+
+
+
+                        <input type="hidden" name="targetUrl" value="/user/investment">
+
+                        <input type="submit" value="로그아웃">
+                    </form>
+                </li>
+
+                <li class="menu-list">
+                    <button type="button" class="funding-search" onclick="showSearch()">펀딩검색, 펀딩을 찾아보세요.</button>
+                </li>
+            </ul>
+            <script>
+                $('input[name="keyword"]').keydown(function(e) {
+                    if (e.keyCode === 13) {
+                        searchFunding();
+                        return false;
+                    }
+                });
+
+                function searchFunding() {
+                    var keyword = $("input[name=keyword]").val();
+                    var param = "keyword=" + encodeURI(keyword);
+                    var url = "/searchFunding?" + param;
+                    location.href = url;
+                }
+            </script>
+
+        </div>
+
+
+
+    </header>
+
+
+    <article id="user-favorite-funding-list" class="activities">
+        <div class="container">
+            <div class="wrapper">
+
+                <section>
+                    <h1 style="background-color:#fff;padding:15px 0 15px 20px;border-top:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4;font-size:16px;font-weight:700;">
+                        내 펀딩 현황<small>회원님의 활동 정보를 확인할 수 있습니다.</small>
+                    </h1>
+                </section>
+                <div class="grid-row">
+                    <div class="grid-1-1">
+                        <section id="profile">
+                            <div class="general-info">
+                                <div class="image-cover">
+                                    <a href="#" class="profile-img"><img src="/file/8aefdb9a/5ae7/480a/8544/77a094f5b0d3/12492772.png" alt="프로필 이미지"></a>
+                                </div>
+                                <div class="info-list">
+                                    <span class="name">고양고양고양이</span>
+                                    <span class="email">testcat@gmail.com</span>
+                                    <div class="investorType">일반 투자자</div>
+                                </div>
+                            </div>
+                            <a href="/user/profile" class="user-profile"><span class="user-profile"><img src="/img/icon/icon-setup-gold.png" alt="">개인정보관리</span></a>
+                        </section>
+                    </div>
+                </div>
+
+
+                <ul class="activities-menu">
+                    <li><a href="/user/favorite"> 관심 펀딩</a></li>
+                    <li class="active"><a href="/user/investment">투자한 펀딩</a></li>
+                    <li><a href="/user/investment/contest">참여한 대회</a></li>
+                </ul>
+
+               
+               
+               <!-- 관심펀딩 퍼블리싱 -->
+                <section id="reward" class="activities investment-funding">
+                   
+                   <!--관심펀딩이 없을 때 -->
+                    <div class="funding">
+                        <div class="favorite-funding">
+                            <div class="funding-none">
+                                <p>관심 펀딩이 없습니다</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                   <!--리스트 추가될때 클래스 funding div가 하나씩 증가! -->
+                    <div class="funding">
+                        <div class="favorite-funding">
+                            <div class="funding-title">
+                                <span class="type-reward">리워드</span>
+                                <a href="#">다가오는 추석에 편지와 선물로 마음을 전하세요!</a>
+                                <div class="funding-info">
+                                    <span class="endDateTime">2017.11.31 15:00 까지</span>
+                                    <span class="left-days">2일 남음</span>
+                                </div>
+                            </div>
+                            <div class="invest-info">
+                                <span class="amount">55,000원 펀딩</span>
+                                <span class="date">2017.11.31</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="funding">
+                        <div class="favorite-funding">
+                            <div class="funding-title">
+                                <span class="type-reward">리워드</span>
+                                <a href="#">다가오는 추석에 편지와 선물로 마음을 전하세요!</a>
+                                <div class="funding-info">
+                                    <span class="endDateTime">2017.11.31 15:00 까지</span>
+                                    <span class="left-days end">펀딩 종료</span>
+                                </div>
+                            </div>
+                            <div class="invest-info">
+                            <a href="#" class="participate-funding">펀딩 참여하기</a>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="funding">
+                        <div class="favorite-funding">
+                            <div class="contest">세명대학교 모의크라우드펀딩 대회</div>
+                            <div class="funding-title">
+                                <span class="type-contest">모의</span>
+                                <a href="#">다가오는 추석에 편지와 선물로 마음을 전하세요!</a>
+                                <div class="funding-info">
+                                    <span class="endDateTime">2017.11.31 15:00 까지</span>
+                                    <span class="left-days end">대회 종료</span>
+                                </div>
+                            </div>
+                            <div class="invest-info">
+                                <span class="amount">2,000,000원 펀딩</span>
+                                <span class="date">2017.11.31</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  
+                    <div class="funding">
+                        <div class="favorite-funding">
+                            <div class="contest">세명대학교 모의크라우드펀딩 대회</div>
+                            <div class="funding-title">
+                                <span class="type-contest">모의</span>
+                                <a href="#">다가오는 추석에 편지와 선물로 마음을 전하세요!</a>
+                                <div class="funding-info">
+                                    <span class="endDateTime">2017.11.31 15:00 까지</span>
+                                    <span class="left-days">2일 남음</span>
+                                </div>
+                            </div>
+                            <div class="invest-info">
+                                <a href="#" class="participate-funding">펀딩 참여하기</a>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  
+                    <div style="text-align:center; width:100%;">
+                        <span id="showListAllReward" class="showListAll">더보기</span>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </article>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <section class="footer-menu">
+            <!--div class="menu-block">
+						<div class="menu-title">펀딩</div>
+						<div class="menu-part">
+								<a href="/security/funding/apply">펀딩 신청하기</a>
+						</div>
+				</div-->
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target="_blank"><img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링 이란?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a>팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a>주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/intro"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <label for="findEmail" class="blind">이메일</label>
+                            <input id="findEmail" class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <label for="emailLink" class="blind">이메일</label>
+                            <input id="emailLink" class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

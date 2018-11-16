@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>진행한 펀딩</title>
+    <script src="../../js/webFont.js"></script>
+    <link href="../../font/font_default.css" rel="stylesheet" type="text/css">
+    <link href="dedicate-exhibitionPDF-common.css" rel="stylesheet" type="text/css">
+    <link href="../../js/froala/css/froala_editor.custom.css" rel="stylesheet" type="text/css">
+<style>
+    /*펀딩상세페이지*/
+    
+    /*헤더 영역*/
+    .main-cont .title{
+        margin-bottom: 3.75rem;
+    }
+    .main-cont .title h4{
+        margin-bottom: 0.938rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .main-cont .title .sub-tit{
+        margin-bottom: 1.125rem;
+        color: #6b7799;
+        font-size: 1rem;
+    }
+    .main-cont .title .funding-cover{
+        max-width: 40rem;
+        width: 100%;
+        min-height: 26.563rem;
+        background-size: cover;      
+        background-position: center;
+    }
+    
+    /*새소식*/
+    .invest-news .tit .badge{
+        margin-bottom: 1.875rem;
+        display: inline-block;
+        padding:0.225rem 0.438rem;
+        color: #fff;
+        font-size: 0.750rem;
+        background-color: #6666ff;
+        box-sizing: border-box;
+    }
+    .invest-news .tit h5{
+        margin-bottom: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        word-break: keep-all;
+    }
+    .invest-news .tit span{
+        color: #6b7799;
+        font-size: .875rem;
+    }
+    /*메인컨텐츠 전체 div*/
+    .content .main-cont>div{
+        margin-bottom: 3.938rem;
+    }
+    /*하단 정보영역*/
+    .container .tit{
+        margin-bottom: 1.563rem;
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+    .container .tit small{
+        margin-left: .625rem;
+        color: #9b9b9b;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    /*진행자 정보*/
+    .team-info .info-wrapper{
+        font-size: 0;
+    }
+    .team-info .member{
+        margin-bottom: 3.75rem;
+    }
+    .team-info .member .profile{
+        position: relative;
+        padding-left: 4.75rem;
+        height: 3.75rem;
+    }
+    .team-info .member .profile .user-image{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+    .team-info .member .profile .name{
+        margin-bottom: 0.625rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+    .team-info .member .profile .position{
+        color: #6b7799;
+        font-size: 0.875rem;
+        font-weight: 300;
+    }
+    .team-info .member .career{
+        padding-left: 4.75rem;
+    }
+    .team-info .member .career p{
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    /*자주하는 질문*/
+    .funding-qna .answer{
+        position: relative;
+        padding:1.875rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .funding-qna .answer:first-child{
+        border-top:1px solid #ddd;
+    }
+    .funding-qna .answer span{
+        position: absolute;
+        top:1.875rem;
+        left: 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .funding-qna .answer h5{
+        margin-bottom: 0.625rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        word-break: keep-all;
+    }
+    .funding-qna .answer p{
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    
+    /*기업정보*/
+    .company-info dl{
+        font-size: 0;
+    }
+    .company-info dl dt{
+        margin-bottom: 1.25rem;
+        display: inline-block;
+        width: 15%;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .company-info dl dd{
+        display: inline-block;
+        width: 75%;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .company-info dl dd img{
+        margin-right: .625rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        border-radius: .375rem;
+        vertical-align: middle;
+    }
+    .company-info .half dd{
+        width: 35%;
+    }
+    
+    /*우측 펀딩 정보*/
+    .side-cont .funding-status {
+	
+        margin-bottom: 2.813rem;
+}
+    .side-cont .funding-status ul {
+        margin-left: 3.438rem;
+        position: relative;
+	    top:4.375rem;
+        text-align: left;
+    }
+    .side-cont .funding-status ul li{
+        margin-bottom: 2.5rem;
+    }
+    .side-cont .funding-status ul li .label{
+        margin:0;
+        color: #6b7799;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .side-cont .funding-status ul li span{
+        margin-left: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .side-cont .funding-status ul li.percentage{
+        margin:0;
+        position: relative;
+    }
+    .side-cont .funding-status ul li.percentage span{
+        position: absolute;
+        top:-3.75rem;
+        right: 0;
+    }
+    .side-cont .funding-status ul li.percentage .status-bar{
+        position: absolute;
+        top:-1.563rem;
+        height: 0.125rem;
+        width: 100%;
+        background-color: #dadde6;
+    }
+    .side-cont .funding-status ul li.percentage .progress{
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 0.125rem;
+        width: 30%;
+        background-color: #e60073;
+    }
+    .side-cont .funding-status ul li.tags::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .side-cont .funding-status ul li.tags>span{
+        float: left;
+    }
+    .side-cont .funding-status ul li.tags div{
+        padding-left: 65px;
+    }
+    .side-cont .funding-status ul li.tags div span{
+        display: inline-block;
+        margin:0 1.25rem 1.25rem 0;
+        font-weight: 300;
+        word-break: keep-all;
+    }
+    /* 펀딩카드 */
+    .side-cont .reward-wrapper{
+        margin-left: 3.438rem;
+        position: relative;
+        top:3.438rem;
+        text-align: left;
+    }
+    .side-cont .reward-wrapper .label{
+        margin-bottom: 0.75rem;
+        color: #6b7799;
+    }
+    .side-cont .reward-wrapper .reward-card{
+        margin-bottom: 1.875rem;
+        padding:1.875rem;
+        border: 1px solid #dadde6;
+        border-radius: 4px;
+    }
+    .side-cont .reward-wrapper .reward-card .price{
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .side-cont .reward-wrapper .reward-card .reward-title{
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+    }
+    .side-cont .reward-wrapper .reward-card .reward-info{
+        margin-bottom: 2.5rem;
+        color: #6b7799;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 24px;
+    }
+    .side-cont .reward-wrapper .reward-card dl .reward-label{
+        margin-bottom: .5rem;
+        color: #8a8f99;
+        font-size: 0.75rem;
+        font-weight: 300;
+    }
+    .side-cont .reward-wrapper .reward-card dl .lable-text{
+        margin-bottom: 1.875rem;
+        font-size: .875rem;
+        font-weight: 500;
+    }
+    .side-cont .reward-wrapper .reward-card .stock {
+	    color: #e60073;    
+        font-size: 0.875rem;
+        font-weight: 300;
+    }
+</style>    
+</head>
+
+<!-- 페이지 내용 -->
+<body>
+  <div class="page">
+   <article class="wrapper">
+       <header class="article-header">
+           <div class="head-info">
+               <h1>2018년 IP창업 데모데이</h1>
+               <h2>스타트업 아카데미 IP관련 투자유치 교육</h2>
+           </div>
+           <div class="article-title align-right">
+               <h3>진행한 펀딩</h3>
+               <p class="sub-title">펀딩 소개</p>
+           </div>
+       </header>
+       <section class="content">
+         <div class="main-cont top-align-cont">
+            <!--펀딩 기본 정보-->
+             <div class="title">
+                  <h4>내 손안의 시원한 바다 - 디세뇨 바다 휴대폰케이스</h4><!--펀딩 제목-->
+                  <p class="sub-tit">디세뇨와 함께 시원한 바다속으로 -!</p>
+                  <div class="funding-cover" style="background-image:url(../../img/socialMedia/facebook.png);"></div><!--펀딩 대표이미지 넣어주세요-->
+              </div>
+              <!--여기부터 펀딩상세 페이지 내용이 들어갑니다-->
+              
+              <!--새소식-->
+              <div class="invest-news">
+                  <div class="tit">
+                     <span class="badge">새소식 업데이트</span>
+                      <h5 class="news-tit">디세뇨 바다케이스 펀딩성공에 감사드립니다!</h5>
+                      <span class="date">8월 17일</span>
+                  </div>
+                  <div class="story-body froala-body">
+                     <p>//에디터로 입력했던 내용이 이곳에
+                      소중한 참여자분들의 많은 관심과 응원 덕분에 폭스아이디어의 첫번째 프로젝트가 펀딩 100%를 달성하였습니다! 참여해주신 모든 분들께 감사 드립니다. 향후 생산일정도 계속 업데이트 하겠으니, 참고 부탁드릴께요 - ! 다시 한 번  감사말씀 전하며, 계속해서 많은 지지와 응원 부탁드립니다</p>
+                  </div>
+              </div>
+              <!--/ 새소식-->
+              <!--펀딩 투자포인트-->
+              <div class="invest-point">
+                  <div class="story-body froala-body">
+                      <p>펀딩투자포인트 이야기 이곳에</p>
+                  </div>
+              </div>
+              <!--/ 펀딩 투자포인트-->
+              <!--팀멤버-진행자정보-->
+              <div class="team-info container">
+                  <div class="tit">
+                      진행자 정보<small>총 멤버 수 5명</small>
+                  </div>
+                  <div class="info-wrapper">
+                      <div class="member">
+                          <div class="profile">
+                              <span class="user-image" style="background-image:url();"></span>
+                              <div class="name">고양이</div>
+                              <div class="position">대표</div>
+                          </div>
+                          <div class="career">
+                              <p>저렇게<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상이화 여자대학교 스마트 창작터 Set-Up Business/대상이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br></p>
+                          </div>
+                      </div>
+                      <div class="member">
+                          <div class="profile">
+                              <span class="user-image" style="background-image:url();"></span>
+                              <div class="name">강아지</div>
+                              <div class="position">사원</div>
+                          </div>
+                          <div class="career">
+                              <p>저렇게<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상이화 여자대학교 스마트 창작터 Set-Up Business/대상이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br>
+이화 여자대학교 스마트 창작터 Set-Up Business/대상<br></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--/ 팀멤버-진행자정보-->
+              <!--자주하는질문-->
+              <div class="funding-qna container">
+                  <div class="tit">자주 하는 질문</div>
+                  <div class="info-wrapper">
+                      <div class="answer">
+                          <div class="answer-tit">
+                              <span>Q.</span>
+                              <h5>제품 디자인을 개인적으로 바꿀 수는 없나요? 불가사리의 개수나 바닷가의 색상 등이요~</h5>
+                              <p>네. 죄송하게도 네 가지 디자인을 한꺼번에 주문 받아 동시에 많은 수량의 작업이 들어가다 보니 개인적으로 디자인을 변경하는 것은 공정상 어렵습니다. 양해 부탁드립니다.</p>
+                          </div>
+                      </div>
+                      <div class="answer">
+                          <div class="answer-tit">
+                              <span>Q.</span>
+                              <h5>제품 디자인을 개인적으로 바꿀 수는 없나요? 불가사리의 개수나 바닷가의 색상 등이요~</h5>
+                              <p>네. 죄송하게도 네 가지 디자인을 한꺼번에 주문 받아 동시에 많은 수량의 작업이 들어가다 보니 개인적으로 디자인을 변경하는 것은 공정상 어렵습니다. 양해 부탁드립니다.</p>
+                          </div>
+                      </div>
+                      <div class="answer">
+                          <div class="answer-tit">
+                              <span>Q.</span>
+                              <h5>제품 디자인을 개인적으로 바꿀 수는 없나요? 불가사리의 개수나 바닷가의 색상 등이요~</h5>
+                              <p>네. 죄송하게도 네 가지 디자인을 한꺼번에 주문 받아 동시에 많은 수량의 작업이 들어가다 보니 개인적으로 디자인을 변경하는 것은 공정상 어렵습니다. 양해 부탁드립니다.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--/ 자주하는질문-->
+              <!--기업정보-->
+              <div class="company-info container">
+                  <div class="tit">
+                      기업정보
+                  </div>
+                  <div class="info-wrapper">
+                      <dl class="half">
+                          <dt>기업명</dt><dd>주식회사 고양이</dd>
+                          <dt>업종</dt><dd>디자인</dd>
+                          <dt>대표자명</dt><dd>김고양</dd>
+                          <dt>이메일</dt><dd>testcat@gmail.com</dd>
+                          <dt>설립일</dt><dd>2014. 3. 5.</dd>
+                          <dt>임·직원수</dt><dd>5명</dd>
+                      </dl>
+                      <dl>
+                          <dt>소재지</dt><dd>대전 유성구 동서대로 125 (덕명동, 한밭대학교)</dd>
+                          <dt>홈페이지</dt><dd>www.cat.com</dd>
+                          <dt>SNS</dt><dd><img src="../../img/fundingRegister/FACEBOOK.png" alt="페이스북" title="페이스북"><img src="../../img/fundingRegister/INSTAGRAM.png" alt="인스타그램" title="인스타그램"></dd>
+                      </dl>
+                  </div>
+              </div>
+              <!--/ 기업정보-->
+         </div>
+           
+           <div class="side-cont">
+              <!--펀딩 진행 정보-->
+              <div class="funding-status">
+                  <ul>
+                      <li><span class="label">목표금액</span><span>100만원</span></li>
+                      <li><span class="label">투자자수</span><span>11명</span></li>
+                      <li><span class="label">펀딩금액</span><span>100만 6,000원</span></li>
+                      <li class="percentage"><span class="label blind">펀딩달성률</span>
+                      <span>100.6%</span>
+                      <div class="status-bar">
+                          <div class="progress"></div>
+                      </div>
+                      </li>
+                      <li class="tags"><span class="label">태그</span><div><span>#폭스아이디어</span><span> #디세뇨</span><span> #바다폰케이스</span></div></li>
+                  </ul>
+              </div>
+              <div class="reward-wrapper">
+                  <div class="label">리워드</div>
+                  <div class="reward-card">
+                      <div class="reward-detail">
+                          <ul>
+                              <li class="price">2만 8천원 이상</li>
+                              <li class="reward-title">[얼리버드] 별 바다</li>
+                              <li class="reward-info">29,800원 → 20,800원 (30% 할인)
+배송메모란에 해당 기종을 꼭 기입해 주세요!</li>
+                             <li>
+                                <dl>
+                                 <dt class="reward-label">배송비</dt>
+                                 <dd class="lable-text">2,000원 <small>30,000원이상 배송비 무료</small></dd>
+                                 <dt class="reward-label">배송시작일</dt>
+                                 <dd class="lable-text">2018년 9월 7일 예정</dd>
+                                 </dl>
+                             </li>
+                             <li class="stock">제한수량 93개 남음</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="reward-card">
+                      <div class="reward-detail">
+                          <ul>
+                              <li class="price">2만 8천원 이상</li>
+                              <li class="reward-title">[얼리버드] 별 바다</li>
+                              <li class="reward-info">29,800원 → 20,800원 (30% 할인)
+배송메모란에 해당 기종을 꼭 기입해 주세요!</li>
+                             <li>
+                                <dl>
+                                 <dt class="reward-label">배송비</dt>
+                                 <dd class="lable-text">2,000원 <small>30,000원이상 배송비 무료</small></dd>
+                                 <dt class="reward-label">배송시작일</dt>
+                                 <dd class="lable-text">2018년 9월 7일 예정</dd>
+                                 </dl>
+                             </li>
+                             <li class="stock">제한수량 93개 남음</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+           </div>
+       </section>
+   </article>
+    </div>
+</body>
+</html>

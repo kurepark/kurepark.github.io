@@ -1,0 +1,98 @@
+<!-- 자랑거리 성장하이라이트 모달 -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+    <!--필수 css-->
+    <link href="../../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../../js/parsley.min.js"></script>
+    <script src="../../../js/function.js"></script>
+    <script src="../../../js/modal.js"></script>
+    <script src="../../../js/common.js"></script>
+    <script src="../../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../../css/investor-home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+   <!-- 자랑거리 입력 모달 수상실적/그래프/성장목표 선택하는 모달입니다-->
+    <section id="investorTypeSurveyModal" class="modal-layer survey-modal" style="display:block;">
+        <div class="survey-wrapper">
+           <!--모달 제목과 설명글-->
+            <div class="modal-header">
+                <h2>투자성향분석</h2>
+                <p class="step">STEP9</p>
+                <p>관심사</p>
+            </div>
+
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+              <!--진척도-->
+               <div class="progress-stage">
+                   <div class="progress">
+                       <div class="progress-mask"><!--이곳의 width값으로 진행률 이동합니다-->
+                           <div class="rate">10%</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="body-item">
+                   <div class="item-title">최대 5개 이하의 관심항목을 선택해 주세요</div>
+                   <div class="item-contents">
+                      <form>
+                          <ul class="float-list column4x">
+                              <li><input type="checkbox" id="CONTRIBUTIONS" name="interest"><label for="CONTRIBUTIONS">사회공헌</label></li>
+                              <li><input type="checkbox" id="CULTURE" name="interest"><label for="CULTURE">예술&#47;문화</label></li>
+                              <li><input type="checkbox" id="DESIGN" name="interest"><label for="DESIGN">디자인</label></li>
+                              <li><input type="checkbox" id="EDUCATION" name="interest"><label for="EDUCATION">교육</label></li>
+                              <li><input type="checkbox" id="FASHION" name="interest"><label for="FASHION">패션&#47;뷰티</label></li>
+                              <li><input type="checkbox" id="FOOD" name="interest"><label for="FOOD">음식</label></li>
+                              <li><input type="checkbox" id="GAME" name="interest"><label for="GAME">게임</label></li>
+                              <li><input type="checkbox" id="HEALTHCARE" name="interest"><label for="HEALTHCARE">헬스케어</label></li>
+                              <li><input type="checkbox" id="HOUSEHOLD" name="interest"><label for="HOUSEHOLD">생활용품</label></li>
+                              <li><input type="checkbox" id="IDEA" name="interest"><label for="IDEA">아이디어</label></li>
+                              <li><input type="checkbox" id="INDUSTRY" name="interest"><label for="INDUSTRY">산업</label></li>
+                              <li><input type="checkbox" id="LEISURE" name="interest"><label for="LEISURE">스포츠&#47;레저</label></li>
+                              <li><input type="checkbox" id="PHOTO" name="interest"><label for="PHOTO">사진</label></li>
+                              <li><input type="checkbox" id="SERVICE" name="interest"><label for="SERVICE">서비스</label></li>
+                              <li><input type="checkbox" id="TECHNOLOGY" name="interest"><label for="TECHNOLOGY">테크놀로지</label></li>
+                              <li><input type="checkbox" id="TOUR" name="interest"><label for="TOUR">관광</label></li>
+                          </ul>
+                      </form> 
+                   </div>
+               </div>
+                
+           
+            </div>
+            <div class="modal-btn">
+                <button type="button" class="close-modal">이전</button>
+                <a href="#" class="next">다음 페이지</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<!--퍼블리싱 ui script-->
+
+<!--화면동작만 확인하시고 필요한것만 사용하세요.-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        //관심사 5개까지만 선택
+        $(".item-contents input[name='interest']").on('change',function(){
+            if($("input[name='interest']:checked").length > 5 ) {
+                this.checked = false;
+            }
+        })
+        
+    }); //jqb
+</script>
+
+</html>

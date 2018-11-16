@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/dedicate.css" rel="stylesheet" type="text/css">
+    <script src="../../js/odometer-0.4.6/odometer.min.js"></script>
+    <link rel="stylesheet" href="../../js/odometer-0.4.6/themes/odometer-theme-default.css">
+
+</head>
+
+<body>
+
+    <!--헤더-->
+    <header id="sort-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"> <img class="ci white" src="/img/ci/neospring-ci-white.svg" alt="neospring" title="neospring">
+		</a>
+        <!--헤더 컨텐츠-->
+        <article id="dedicate-header" class="sort-setting dedicate-default-back">
+            <!--back처럼 배경이 클래스로 들어가야 반투명 배경적용-->
+            <!--전용관 메인페이지-->
+            <div class="wrapper partner-wrapper">
+                <div class="partner-main-header">
+                    <!--헤더 텍스트영역-->
+                    <div class="partner-title">
+                        <h1>수원대학교 전용관</h1>
+                        <p>수원대학교 전용관 입니다.</p>
+
+
+
+
+                        <div class="join-member">
+                            <a href="/susu/admin">회원 관리</a>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <!--헤더 통계영역-->
+
+                    <div class="funding-chartbox">
+                        <div class="chart-tit">
+                            <ul class="funding-type" style="left: 0px;">
+
+
+
+
+
+
+                                <li>
+                                    <h5>리워드 (총누적)</h5>
+                                </li>
+                                <li>
+                                    <h5>모의크라우드펀딩 (총누적)</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="chartbox"><img src="/img/partner/img-fundings.png" alt="">
+                                <ul class="funding-count" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>0</span></li>
+                                    <li class="number"><span>6</span></li>
+                                </ul> <span>펀딩 수</span></li>
+                            <li class="chartbox"><img src="/img/partner/img-investors.png" alt="">
+                                <ul class="investor-count" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>0</span></li>
+                                    <li class="number"><span>212</span></li>
+                                </ul> <span>투자자 수</span></li>
+                            <li class="chartbox"><img src="/img/partner/img-price.png" alt="">
+                                <ul class="amount" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>22,865</span></li>
+                                    <li class="number"><span>781,715,777</span></li>
+                                </ul> <span>모집 금액</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </header>
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <article class="partner-article">
+        <section class="dedicate-menu-wrapper">
+            <div class="wrapper">
+                <!--lnb메뉴-->
+                <div class="partners-menu swiper-container">
+                    <ul class="swiper-wrapper">
+                        <!-- li ><a href="/dedicate/home/1/securityFunding">증권형<b>12</b><em></em></a></li-->
+                        <li class="neospring-ci active swiper-slide "><a href="/SuwonAc/contestFunding">모의크라우드펀딩<b>47</b><em></em></a></li>
+                        <li class=" swiper-slide"><a href="/SuwonAc/participationCompany">참여기업<b>120</b></a></li>
+                        <li class="  swiper-slide"><a href="/SuwonAc/companyStories">성장스토리<b>8</b></a></li>
+                        <li class="  swiper-slide"><a href="/SuwonAc/community">커뮤니티<b>11</b></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!--모의크라우드 펀딩탭-->
+        <div class="wrapper">
+           <!-- 리워드 리스트 탭 -->
+           <div class="funding-tab">
+               <ul>
+                  <!--선택한 li는 active클래스-->
+                   <li class="active"><a href="#">특별관</a></li>
+                   <li><a href="#">리워드</a></li>
+               </ul>
+           </div>
+           <!--예정중인 대회 섹션-->
+           <section class="fundingList-section reward-list">
+					<p>
+						<b>1개</b>의 <span class="waiting">진행예정</span>인 특별관
+					</p>
+                   <ul class="end-list">
+                       <!--각 li에 콘테스트 이미지가 없을 때 non-contestImage 클래스 넣어주세요!@!-->
+                        <li class="waiting-list">
+                            <article>
+                                    <div class="image-area" style="background-image:url()"></div>
+                                <div class="text-area">
+                                    <div>
+                                        <div class="type">진행 예정인 대회</div>
+                                        <h2>가나다라 모의크라우드펀딩 대회</h2>
+                                        <div class="date">2018.11.07 ~ 2018.12.31</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                   </ul>
+           </section>
+            <!--진행중인 대회 섹션-->
+            <section class="fundingList-section reward-list">
+                <p><b>2개</b>의 <span>진행중인</span>특별관</p>
+                <ul class="progress-list">
+                    <li>
+                        <article>
+                            <a href="#">
+                                <div class="image-area" style="background-image:url();"></div>
+                                <div class="text-area">
+                                    <div>
+                                        <div class="type">진행중인 대회</div>
+                                        <h2>대구한의대학교 모의크라우드펀딩 대회 (2차)</h2>
+                                        <div class="date">2017.11.07 13:00까지</div>
+                                    </div>
+                                    <div>
+                                        <ul class="contest-status">
+                                            <li class="total-participation-count"><span>투자자</span>
+                                                <div><b class="odometers">680</b>명</div>
+                                            </li>
+                                            <li class="total-amount"><span>모의투자총액</span>
+                                                <div>17억3천7백만원</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                    <!--누군가 투자했을 때 알람이 보이면서 투자자/모의투자총액이 리프레시되면서 카운팅됨-->
+                    <li>
+                        <article>
+                            <a href="#">
+                                <div class="image-area"></div>
+                                <div class="text-area">
+                                    <div>
+                                        <div class="type">진행중인 대회</div>
+                                        <h2>대구한의대학교 모의크라우드펀딩 대회 (2차)</h2>
+                                        <div class="date">2017.11.07 13:00까지</div>
+                                    </div>
+                                    <div>
+                                        <ul class="contest-status">
+                                            <li class="total-participation-count"><span>투자자</span>
+                                                <div><b class="odometers" data-num="680">680</b>명</div>
+                                            </li>
+                                            <li class="total-amount"><span>모의투자총액</span>
+                                                <div><b class="odometers" data-num="17">17</b>억<b class="odometers" data-num="9539">9,539</b>만원</div>
+                                            </li>
+                                            <li class="alarm-area">
+                                                <!--알람 있을때마다 active클래스-->
+                                                <div class="alert-icon"><span><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span></div>
+                                                <div class="alert-text">
+                                                    <p><b class="investorName">익명의 투자자</b>가 <strong class="companyName">슈어</strong>에 <em class="amount">2,000,000원</em>을 투자하셨습니다</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 지난대회 리스트 섹션 -->
+            <section class="fundingList-section reward-list">
+                <p><b>3개</b>의 진행완료된 특별관</p>
+                <ul class="end-list">
+                    <li>
+                        <article>
+                            <a href="#">
+                                <div class="image-area" style="background-image:url();"></div>
+                                <div class="text-area">
+                                    <div>
+                                        <div class="type">진행중인 대회</div>
+                                        <h2>대구한의대학교 모의크라우드펀딩 대회 (2차)</h2>
+                                        <div class="date">2017.11.07 13:00까지</div>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li><span>투자자</span>
+                                                <div>680명</div>
+                                            </li>
+                                            <li><span>모의투자총액</span>
+                                                <div>17억3천7백만원</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+
+    <!-- 공통 푸터 -->
+    <footer>
+        <section class="footer-menu">
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링 이란?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a href="#">팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $(".odometers").each(function(){
+                alertInvestInfo();
+                bindOdo($(this));
+            });
+        }); //jqb
+
+        function alertInvestInfo(name, company, amount) {
+            $("div.alert-text").parent('li').addClass('animation');
+            $("div.alert-icon").addClass('active');
+        }
+
+        function bindOdo(node) {
+            //http://github.hubspot.com/odometer/
+            var el = node[0];
+            od = new Odometer({
+                el: el,
+                format: '(,ddd).dd',
+                theme: 'default',
+                value: 0,
+                dureation: 300
+                // Any option (other than auto and selector) can be passed in here
+            });
+            el.innerHTML = Number(node.attr('data-num'));
+
+
+        }
+    </script>
+
+</body>
+
+</html>

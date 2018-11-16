@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/partner-main.css" rel="stylesheet" type="text/css">
+    <link href="../../css/partner-community.css" rel="stylesheet" type="text/css">
+    <link href="../../css/partner-community-admin.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!--헤더-->
+    <header id="sort-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"> <img class="ci white" src="/img/ci/neospring-ci-white.svg" alt="neospring" title="neospring">
+		</a>
+        <!--헤더 컨텐츠-->
+        <article id="dedicate-header" class="sort-setting dedicate-default-back">
+            <!--back처럼 배경이 클래스로 들어가야 반투명 배경적용-->
+            <!--전용관 메인페이지-->
+            <div class="wrapper partner-wrapper">
+                <div class="partner-main-header">
+                    <!--헤더 텍스트영역-->
+                    <div class="partner-title">
+                        <h1>수원대학교 전용관</h1>
+                        <p>수원대학교 전용관 입니다.</p>
+
+
+
+
+                        <div class="join-member">
+                            <a href="/susu/admin">회원 관리</a>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <!--헤더 통계영역-->
+
+                    <div class="funding-chartbox">
+                        <div class="chart-tit">
+                            <ul class="funding-type" style="left: 0px;">
+
+
+
+
+
+
+                                <li>
+                                    <h5>리워드 (총누적)</h5>
+                                </li>
+                                <li>
+                                    <h5>모의크라우드펀딩 (총누적)</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="chartbox"><img src="/img/partner/img-fundings.png" alt="">
+                                <ul class="funding-count" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>0</span></li>
+                                    <li class="number"><span>6</span></li>
+                                </ul> <span>펀딩 수</span></li>
+                            <li class="chartbox"><img src="/img/partner/img-investors.png" alt="">
+                                <ul class="investor-count" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>0</span></li>
+                                    <li class="number"><span>212</span></li>
+                                </ul> <span>투자자 수</span></li>
+                            <li class="chartbox"><img src="/img/partner/img-price.png" alt="">
+                                <ul class="amount" style="left: 0px;">
+
+
+
+
+
+
+                                    <li class="number"><span>22,865</span></li>
+                                    <li class="number"><span>781,715,777</span></li>
+                                </ul> <span>모집 금액</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </header>
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <article class="partner-article">
+        <div class="wrapper">
+            <!--lnb메뉴-->
+            <div class="partners-menu">
+                <ul class="neo-tab white-box">
+
+                    <li style="width:33.3333%"><a href="/susu/rewardFunding">리워드<b>1</b><em></em>
+								</a></li>
+
+                    <li style="width:33.3333%" class="active"><a href="">성장스토리<b>12</b><em></em></a></li>
+                    <li style="width:33.3333%" class=" "><a href="/susu/community">커뮤니티<b>19</b></a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- 전용관에 가입한 기업들의 성장스토리 -->
+        <div class="nav-mask"></div>
+        <div class="wrapper">
+            <article class="company-story-article">
+                <article>
+                    <div class="headline">
+                        <div class="ham-menu" style="margin-left: 0px;"></div>
+                        <h2>성장스토리
+                            <div class="sub-title">2018</div>
+                        </h2>
+                    </div>
+                    <nav class="dedicate-side-nav">
+                        <div class="close-btn"></div>
+                        <ol class="story-nav side-nav">
+                            <li><a onclick="loadAllStoryList();">전체보기</a></li>
+                            <!--페이지 접속시 처음은 전체보기-->
+
+                            <li><a class="year-toggle-btn">2018년</a>
+                                <ol class="nav-dept1 story-nav-dept1">
+                                    <li><a onclick="loadYearStoryList(2018);">모아보기</a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,12);"><span class="month">12월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,11);"><span class="month">11월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,10);"><span class="month">10월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,9);"><span class="month">9월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,8);"><span class="month">8월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,7);"><span class="month">7월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,6);"><span class="month">6월</span><span>0</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,5);"><span class="month">5월</span><span>0</span></a></li>
+
+
+                                    <li>
+                                        <a onclick="loadMonthStoryList(2018,4);"><span class="month">4월</span><span>2</span></a></li>
+
+
+                                    <li class="non-story">
+                                        <a onclick="loadMonthStoryList(2018,3);"><span class="month">3월</span><span>0</span></a></li>
+
+
+                                    <li>
+                                        <a onclick="loadMonthStoryList(2018,2);"><span class="month">2월</span><span>2</span></a></li>
+
+
+                                    <li>
+                                        <a onclick="loadMonthStoryList(2018,1);"><span class="month">1월</span><span>4</span></a></li>
+
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </nav>
+                    <div class="dedicate-story-cont">
+
+                        <!--새 글을 쓰면 storybox가 하나씩 늘어납니다.
+                                
+                                댓글상태 - 최초 접속시 보여지는 화면.-->
+                        <div class="storybox">
+                            <div class="profile">
+                                <img src="../img/fundingRegister/ETCSNS.png" alt="프로필이미지" title="프로필이미지" class="profile-image">
+                                <div>
+                                    <span class="name">태주산업</span>
+                                    <span class="date">10월 7일</span>
+                                </div>
+                                <ul class="icon-list">
+                                    <!--공유-->
+
+                                    <li class="sns-share"><a onclick=""><img src="/img/companyHome/sns-share.png"></a>
+                                    </li>
+                                    <!--클릭하면 수정/삭제 보입니다-->
+
+                                    <li><a onclick="editBtn($(this));"><img src="/img/companyHome/etc.png" alt="수정/삭제하기" title="수정/삭제하기"></a></li>
+
+                                </ul>
+                                <ul class="sns-list">
+                                    <li><a href="http://www.facebook.com/sharer/sharer.php?u=test.neospring.kr/story/22" target="_blank"><span>페이스북으로 공유하기</span></a></li>
+                                    <li><a href="http://twitter.com/home?status=test.neospring.kr/story/22" target="_blank"><span>트위터로 공유하기</span></a></li>
+                                    <li><a href="https://story.kakao.com/share?url=test.neospring.kr/story/22" target="_blank"><span>카카오톡으로 공유하기</span></a></li>
+                                    <li><a href="http://plus.google.com/share?url=test.neospring.kr/story/22" target="_blank"><span>구글로 공유하기</span></a></li>
+                                    <li><a onclick="clipboardUrl('test.neospring.kr/story/22');"><span>링크복사하기</span></a></li>
+                                    <li class="sns-close"><button><span>닫기</span></button></li>
+                                </ul>
+
+
+                                <ul class="edit-box">
+                                    <li><button type="button" class="edit-btn edit">수정하기</button></li>
+                                    <li><button type="button" class="edit-btn delete" onclick="$('#comment-delete-modal').show();">삭제하기</button></li>
+                                </ul>
+
+                            </div>
+                            <div class="story-body">
+                                <p>어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태주산업 사례를 많이 이야기합니다.</p>
+
+                            </div>
+                            <div class="comment-state">
+                                <a href="#" role="button" class="open-comment-body"><span>0개</span>의 댓글 보기</a>
+                                <button type="button" class="open-comment">댓글쓰기</button>
+                            </div>
+                            <!--댓글 쓰기-->
+                            <div class="comment-body">
+                                <!--댓글이 없을 때-->
+                                <div class="none-comment">
+                                    댓글이 없습니다
+                                </div>
+                                <!--댓글이 있을 때-->
+                                <div class="comment-area">
+                                    <!--댓글 작성 폼-->
+                                    <form class="comment-formbox comment-form">
+                                        <!--원 글에 댓글-->
+                                        <div class="comment-item profile">
+                                            <img src="../img/companyHome/INSTAGRAM.png" alt="프로필 이미지" title="프로필 이미지" class="profile-image">
+                                        </div>
+                                        <textarea class="autosize" placeholder="댓글을 입력해주세요"></textarea>
+                                        <button type="submit">등록하기</button>
+                                        <!--최초 댓글 작성시에는 등록버튼만, 댓글 수정시에만 취소버튼이 생깁니다-->
+                                        <!--<button type="reset" class="reset-comment">취소하기</button>-->
+                                    </form>
+                                    <!--댓글쓴 후 댓글 내용 보이는 영역-->
+                                    <div class="comments">
+                                        <div class="comment-item profile">
+                                            <img src="../img/companyHome/INSTAGRAM.png" alt="프로필 이미지" title="프로필 이미지" class="profile-image">
+                                            <div>
+                                                <span class="name">태주산업</span>
+                                                <span class="date">10월 7일</span>
+                                            </div>
+                                            <ul class="icon-list">
+                                                <!--공유-->
+
+                                                <li class="sns-share"><a onclick=""><img src="/img/companyHome/sns-share.png"></a>
+                                                </li>
+                                                <!--클릭하면 수정/삭제 보입니다-->
+
+                                                <li><a onclick="editBtn($(this));"><img src="/img/companyHome/etc.png" alt="수정/삭제하기" title="수정/삭제하기"></a></li>
+
+                                            </ul>
+                                            <ul class="edit-box">
+                                                <li><button type="button" class="edit-btn edit">수정하기</button></li>
+                                                <li><button type="button" class="edit-btn delete" onclick="$('#comment-delete-modal').show();">삭제하기</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="story-body">
+                                            <p>어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태주산업 사례를 많이 이야기합니다.</p>
+                                            <button type="button" class="open-reply">답글달기</button>
+                                        </div>
+                                    </div>
+                                    <!--comments-->
+                                    <!--대댓글 입력 폼-->
+                                    <form class="comment-formbox reply-form">
+                                        <!--댓글에 댓글달기-->
+                                        <div class="comment-item profile">
+                                            <img src="../img/companyHome/INSTAGRAM.png" alt="프로필 이미지" title="프로필 이미지" class="profile-image">
+                                        </div>
+                                        <textarea class="autosize" placeholder="댓글을 입력해주세요"></textarea>
+                                        <button type="submit">등록하기</button>
+                                        <!--최초 댓글 작성시에는 등록버튼만, 댓글 수정시에만 취소버튼이 생깁니다-->
+                                        <!--<button type="reset" class="reset-comment">취소하기</button>-->
+                                    </form>
+                                    <!--대댓글 달았을때 내용 보여지는 영역-->
+                                    <div class="reply-comments">
+                                        <div class="comment-item profile">
+                                            <img src="../img/companyHome/INSTAGRAM.png" alt="프로필 이미지" title="프로필 이미지" class="profile-image">
+                                            <div>
+                                                <span class="name">태주산업</span>
+                                                <span class="date">10월 7일</span>
+                                            </div>
+                                            <ul class="icon-list">
+                                                <!--공유-->
+
+                                                <li class="sns-share"><a onclick=""><img src="/img/companyHome/sns-share.png"></a>
+                                                </li>
+                                                <!--클릭하면 수정/삭제 보입니다-->
+
+                                                <li><a onclick="editBtn($(this));"><img src="/img/companyHome/etc.png" alt="수정/삭제하기" title="수정/삭제하기"></a></li>
+
+                                            </ul>
+                                            <ul class="edit-box">
+                                                <li><button type="button" class="edit-btn edit">수정하기</button></li>
+                                                <li><button type="button" class="edit-btn delete" onclick="$('#comment-delete-modal').show();">삭제하기</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="story-body">
+                                            <p>어제 한국화학융합시험연구원 K책임과 통화하였던 내용인데요!! "많은 콘센트 업체가 대표님을 알고 대표님의 제품을 알고 많이 따라 할려고 합니다. 그런데 대표님 만큼 사용자의 안전을 고려하여 만드는 회사는 모범이 된다하여 태주산업 사례를 많이 이야기합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!--comments-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </div>
+
+    </article>
+
+
+    <!--글 삭제 모달-->
+    <section id="comment-delete-modal" class="modal-layer">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <div class="icon-area">
+                    <div><img src="../img/icon/icon_noti_main.png" style="width:100%"></div>
+                </div>
+                <div class="modal-msg">
+                    <p>해당 글을 삭제하시겠습니까?</p>
+                </div>
+            </div>
+            <div class="modal-btn-area">
+                <a href="#" class="modal-check" style="width:50%;" onclick="forceHideModal();">취소</a>
+                <a href="#" style="width:50%;color:#e60073;">삭제</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+
+    <!-- 공통 푸터 -->
+    <footer>
+        <section class="footer-menu">
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링 이란?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a href="#">팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+
+            //클릭 이벤트 아래코드는 동작만 보시고 기업홈에 만들어진 스크립트 참고하시면 됩니다.
+            //(스크립트 다름)
+
+            //성장스토리 연도 클릭
+            $(".year-toggle-btn").on('click', function() {
+                var btn = $(this);
+                $(this).parent().find("ol").slideToggle(300, function() {
+                    if (btn.hasClass("active")) {
+                        btn.removeClass("active");
+                    } else {
+                        btn.addClass("active");
+                        btn.parent('li').siblings().find('a').removeClass('active');
+                    }
+                });
+                btn.parent().siblings('li').find('.nav-dept1').slideUp(300); //열려있는 dept1 닫기
+            });
+
+            //댓글보기 클릭 동작
+            $(".open-comment-body").on('click', function() {
+                $(this).parent().siblings('.comment-body').find('.comments').css('display', 'block');
+            });
+
+            //댓글쓰기 버튼 클릭
+            $(".open-comment").on('click', function() {
+                $(this).parent().siblings('.comment-body').find('.comment-form').css('display', 'block');
+            });
+
+            //대댓글(답글)쓰기 버튼 클릭
+            $(".open-reply").on('click', function() {
+                $(this).parent().parent(".comments").siblings(".reply-form").css('display', 'block');
+                $(this).css('display', 'none');
+            });
+
+            //모바일- 사이드메뉴 햄버거버튼 클릭
+            $(".ham-menu").on('click', function() {
+                //클릭하면 메뉴가 나오면서 화면 mask가 나옴
+                $(".dedicate-side-nav").css('left', 0);
+                $(".nav-mask").fadeIn(300);
+                $('body').css({
+                    'overflow-y': 'hidden',
+                    'height': '100%'
+                });
+            });
+
+            //모바일 - 사이드 메뉴 닫기버튼 클릭
+            $("div.close-btn,.nav-mask").on('click', function() {
+                $(".dedicate-side-nav").css('left', '-100%');
+                $(".nav-mask").fadeOut(300);
+                $('body').css({
+                    'overflow-y': 'scroll',
+                    'height': '100%'
+                });
+            });
+
+            var headerHeight = $(".small-header").outerHeight(); //헤더 높이값
+            var headlineHeight = $(".headline").outerHeight(); //컨텐츠 타이틀 영역 높이값
+            var fixedHeight = headerHeight + headlineHeight;
+
+            var winWidth = $(window).width();
+            //스크롤시 중간메뉴 고정
+
+            // addmargin += $("#companyNav").height();
+
+            $(window).scroll(function() {
+                var navOffset = $(".company-story-article").offset().top;
+                var winTop = $(document).scrollTop();
+
+                if (winTop + 49 > navOffset) { //gnb높이만큼 더해줌
+                    $(".company-story-article").css("padding-top", headlineHeight);
+                    $("div.headline").addClass('contfix');
+                    if (winWidth < 669) {
+                        $(".ham-menu").css('margin-left', '0');
+                    }
+                    $("nav.dedicate-side-nav").addClass('sidenav-fix');
+                    //메뉴가 footer에 닿을때 사이드메뉴 고정 풀어주기
+                    sideNavAtBottom();
+
+                } else {
+                    $(".company-story-article").css("padding-top", 0);
+                    $("div.headline").removeClass('contfix');
+                    if (winWidth < 669) {
+                        $(".ham-menu").css('margin-left', '-40px');
+                        $(".dedicate-side-nav").css('left', '-100%');
+                        $(".nav-mask").fadeOut();
+                    }
+                    $("nav.dedicate-side-nav").removeClass('sidenav-fix');
+                }
+            });
+        }); //jqb
+
+
+        /**
+         * @return 펀딩 요약정보의 마진을 포함한 영역 전체 높이
+         */
+        function sideNavHeight() {
+            var sideNav = $(".dedicate-side-nav");
+            var marginTop = parseInt(sideNav.css("margin-top").replace(/px$/i, ''));
+            var marginBottom = parseInt(sideNav.css("margin-bottom")
+                .replace(/px$/i, ''));
+            var height = sideNav.height();
+            return marginTop + height + marginBottom;
+        }
+
+        /**
+         * 화면 스크롤 위치를 계산하여 푸터와 사이드메뉴가 겹치지 않도록
+         */
+        function sideNavAtBottom() {
+
+            // 스크롤 높이 + 헤더 높이 + 펀딩 요약정보 (영역) 높이
+            var scrolledLength = (function() {
+                var scrollTop = $(window).scrollTop();
+                //var headerHeight = $("header").height();
+                return scrollTop + sideNavHeight();
+            })();
+
+            // 푸터 위치
+            var threshold = $("footer").offset().top - 150;
+
+            var target = $(".company-story-article");
+            if ($(window).width() > 769) {
+                if (scrolledLength >= threshold) {
+                    // 요약정보 위치 고정
+                    $(".dedicate-side-nav").removeClass('sidenav-fix').addClass("sidenav-bottomAt");
+                } else {
+                    // 요약정보 위치 복구
+                    $(".dedicate-side-nav").addClass('sidenav-fix').removeClass("sidenav-bottomAt");
+                }
+            } else {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

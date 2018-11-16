@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+   <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+<!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+<script src="../../js/jquery-ui.min.js"></script>
+<link href="../../css/dedicate-user-admin.css" rel="stylesheet" type="text/css">
+<script src="../../js/dedicate-user-admin.js"></script>
+<script src="../../js/nestedSortable.js"></script>
+</head>
+ 
+<body>
+
+    <!-- 헤더 -->
+    <header class="small-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+<!-- pc버전 헤더영역 -->
+        <div id="header-menu">
+            <ul class="header-menu">
+                <li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+
+
+                <li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
+                    <ul id="header-menu-contest">
+
+                        <li class="menu-list"><a href="/contest/12/funding">전북지역 모의투자</a></li>
+
+                        <li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-list"><a href="/reward/funding">리워드형</a></li>
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+            <ul class="header-user-menu" id="header-user-menu">
+
+                <li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
+                <li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
+
+
+
+
+                <li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
+                <li class="menu-list"><a href="/dedicate">전용관</a></li>
+                <li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+
+                <li class="menu-list sign-up"><a href="/user/register">회원가입</a></li>
+                <li class="menu-list">
+                    <a class="pc-version" href="/user/login" data-toggle="modal" data-target="#header-login-layer">로그인</a>
+                    <a class="mobile-version" href="/user/login">로그인</a>
+                    <div id="header-login-layer" class="modal-layer">
+
+
+
+
+
+
+
+
+                        <section class="login">
+
+                            <div class="socialMedia">
+                                <ul>
+
+
+
+                                    <li>
+                                        <a href="/social/facebook/login"><img src="/img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/naver/login"><img src="/img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/kakao/login"><img src="/img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/google/login"><img src="/img/socialMedia/google.svg" alt="구글으로 로그인" title="구글으로 로그인"></a>
+                                    </li>
+
+                                </ul>
+                                <div>SNS계정으로 더욱 빠르게 로그인해 보세요!</div>
+                            </div>
+
+                            <form method="post" action="/user/login">
+                                <input type="hidden" name="" value="" />
+
+
+
+
+                                <input type="hidden" name="targetUrl" value="/file/download/390d8e16-4dd4-43a7-9ba9-e6b5d887cfe6/이봉수_아따맘마.jpg">
+
+                                <input type="text" name="username" placeholder="이메일 또는 휴대폰" required>
+
+                                <input type="password" name="password" placeholder="비밀번호" required>
+
+                                <div class="message">
+
+                                </div>
+                                <input type="submit" value="로그인" style="color:#fff;">
+                            </form>
+
+                            <ul class="links functions">
+                                <li><a href="/user/register">회원가입</a></li>
+                                <li><a data-toggle="modal" data-target="#find-id-modal">아이디 찾기</a></li>
+                                <li><a data-toggle="modal" data-target="#reset-password-request-popup">비밀번호 재설정</a></li>
+
+                            </ul>
+
+                        </section>
+
+                    </div>
+                </li>
+
+
+            </ul>
+
+        </div>
+        
+<!-- 모바일버전 헤더영역-->
+        <div class="mobile-menu">
+
+            <a href="/user/login">로그인</a>
+
+
+            <a href="#header-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
+        </div>
+        
+    </header>
+
+
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <section>
+        <div class="container">
+          <!--전용관 관리자 헤더-->
+           <section class="dedicate-user-admin-header">
+               <div class="dedicate-user-admin-wrapper">
+                   <h2>전용관 설정</h2>
+                   <div class="dedicate-tit">대전정보문화산업진흥원</div>
+                   <a href="#" class="back-btn">전용관 가기</a>
+               </div>
+           </section>
+           <!--전용관 관리자 메뉴영역-->
+           <section class="dedicate-user-admin-nav">
+               <div class="dedicate-user-admin-wrapper">
+                   <ul>
+                       <li><a href="#">파트너</a></li>
+                       <li class="active"><a href="#">커뮤니티</a></li>
+                   </ul>
+               </div>
+           </section>
+           <!--전용관 관리자 컨텐츠 영역-->
+           <section class="dedicate-user-admin-content">
+              <div class="nav-mask"></div>
+               <div class="dedicate-user-admin-wrapper">
+                   <div class="headline">
+                      <div class="ham-menu"></div>
+                       <h3>파트너 관리</h3>
+                       <div class="search-area">
+                           <form>
+                               <input type="text" id="searchPartner" name="" value="" placeholder="파트너를 검색해보세요">
+                               <label for="searchPartner" class="blind">파트너 검색</label>
+                               <button type="submit"><span class="blind">파트너 검색하기</span></button>
+                           </form>
+                       </div>
+                   </div>
+             <nav class="dedicate-side-nav">
+                 <div class="close-btn"></div>
+                 <ol class="partner-nav side-nav">
+                     <li class="active"><a href="#" class="toggle-btn">기업</a>
+                         <ol class="nav-dept1">
+                             <li><a href="#">전체보기</a></li>
+                             <li><a href="#">그룹1</a></li>
+                             <li><a href="#">그룹2</a></li>
+                             <li><a href="#">그룹3</a></li>
+                         </ol>
+                     </li>
+                     <li><a href="#">투자자</a></li>
+                     <li><a href="#">관리자</a></li>
+                 </ol>
+             </nav>
+             <div class="dedicate-cont">
+                 <div class="sub-title-area">
+                     <h3>그룹1</h3>
+                 </div>
+                 <!--그룹보기일때 정렬은 section태그 밑으로 들어갑니다-->
+                 <section>
+                    <button type="button" class="invite-btn" onclick="showModal('#inviteGroup-modal');">그룹 초대</button>
+                     <div class="group-divider">
+                         <p><span>4개 기업이 있습니다</span></p>
+                     <div class="sort-tab">
+                        <div>
+                         <a href="#">가입일순으로 보기</a>
+                         <a href="#">가나다순으로 보기</a>
+                        </div> 
+                     </div>
+                     </div>
+					<ul>
+						<li>
+                                <a href="#">
+									<div class="profile-image-box"><img src="/file/e233f3c0/1be8/4eb1/b5ad/e0bbb7b7d0b9/1531717324733.png"></div>
+									<div class="profile-name">
+										<div class="name">와이비소프트(주)아아아</div>
+									</div>
+								</a>
+								<span class="edit" onclick="editBtn($(this));">정보 더보기</span>
+								<ul class="edit-box">
+								    <li><button type="button" onclick="showModal('#partnerInfo-modal');">파트너 정보보기</button></li>
+								    <li><button type="button" onclick="showModal('#memberOut-modal');">탈퇴시키기</button></li>
+								</ul>
+							</li>
+						
+							<li>
+								
+								
+								
+								<a href="#">
+									<div class="profile-image-box"><img src="/img/user/investorPortrait.png"></div>
+									<div class="profile-name">
+										<div class="name">와이비소프트(주)아아아</div>
+									</div>
+								</a>
+								<span class="edit" onclick="editBtn($(this));">정보 더보기</span>
+								<ul class="edit-box">
+								    <li><button type="button" onclick="showModal('#partnerInfo-modal');">파트너 정보보기</button></li>
+								    <li><button type="button" onclick="showModal('#memberOut-modal');">탈퇴시키기</button></li>
+								</ul>
+							</li>
+						
+							<li>
+								
+								
+								
+								<a href="#">
+									<div class="profile-image-box"><img src="/file/96968acf/43c9/4b86/a1ce/d7eb6bdf7483/어치피.png"></div>
+									<div class="profile-name">
+										<div class="name">와이비소프트(주)아아아</div>
+									</div>
+								</a>
+								<span class="edit" onclick="editBtn($(this));">정보 더보기</span>
+								<ul class="edit-box">
+								    <li><button type="button" onclick="showModal('#partnerInfo-modal');">파트너 정보보기</button></li>
+								    <li><button type="button" onclick="showModal('#memberOut-modal');">탈퇴시키기</button></li>
+								</ul>
+							</li>
+						
+							<li>
+								
+								
+								
+								<a href="#">
+									<div class="profile-image-box"><img src="/file/9226b413/c014/48db/8fcd/203b93b5df5e/1526867690248.png"></div>
+									<div class="profile-name">
+										<div class="name">와이비소프트(주)아아아</div>
+									</div>
+								</a>
+								<span class="edit" onclick="editBtn($(this));">정보 더보기</span>
+								<ul class="edit-box">
+								    <li><button type="button" onclick="showModal('#partnerInfo-modal');">파트너 정보보기</button></li>
+								    <li><button type="button" onclick="showModal('#memberOut-modal');">탈퇴시키기</button></li>
+								</ul>
+							</li>
+						
+					</ul>
+                 </section>
+             </div>
+               </div>
+           </section>
+        </div>
+    </section>
+    
+    <!-- 파트너 정보보기 모달 -->
+<div id="partnerInfo-modal" class="modal-layer partner-info">
+    <section class="modal-wrapper">
+        <div>
+            <div class="profile-image-box"><img src="/file/9226b413/c014/48db/8fcd/203b93b5df5e/1526867690248.png"></div>
+            <div class="profile-name">
+                <div class="name">와이비소프트(주)아아아</div>
+                <span class="date">2018.7.31 가입</span>
+            </div>
+            <button type="button" class="modal-cancel" onclick="forceHideModal();"><span class="blind">파트너 정보보기 닫기</span></button>
+        </div>
+        <ul>
+            <li class="info">
+                <div class="tit">게시글</div>
+                <em>3</em>
+            </li>
+            <li class="info">
+                <div class="tit">댓글</div>
+                <em>52</em>
+            </li>
+        </ul>
+    </section>
+</div>   
+    <!-- 파트너 탈퇴하기 모달 -->
+<section id="memberOut-modal" class="modal-layer">
+    <div class="modal-wrapper">
+        <div class="modal-content">
+            <div class="icon-area">
+                <img src="../../img/icon/icon_noti_main.png" alt="" title="" />
+            </div>
+            <div class="modal-msg">
+                <p class="tit">탈퇴시키겠습니까?</p>
+            </div>
+        </div>
+        <div class="modal-btn-area">
+            <button type="button" class="modal-cancel" onclick="forceHideModal();">취소</button>
+            <button type="button" class="modal-confirm" onclick="">확인</button>
+        </div>
+    </div>
+</section>
+
+   <!-- 그룹초대 모달 -->
+    <section id="inviteGroup-modal" class="modal-layer search-modal">
+        <div class="modal-wrapper searchModal-wrapper">
+           <div class="modal-header">
+               <h2>대상 검색하기</h2>
+               <p>권한을 부여할 대상을 검색한 후 클릭해주세요</p>
+               <form>
+                   <label for="search" class="blind">권한 부여 대상 검색하기</label>
+                   <input type="text" id="search" name="" placeholder="권한대상 검색하기" />
+                   <button type="submit"><span class="blind">검색</span></button>
+               </form>
+           </div>
+           <div class="modal-body">
+              
+           <!--일반 검색하기 리스트 보여주는 화면/modal-body내용만 달라집니다-->
+                     <div class="sort-tab">
+                        <div>
+                         <a href="#">가입일순으로 보기</a>
+                         <a href="#">가나다순으로 보기</a>
+                        </div> 
+                     </div>
+               <div class="sort-list-wrapper">
+                   <ul>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                       <li>
+                           <div class="profile-image-box">
+                               <img src="" alt="프로필이미지" title="프로필이미지">
+                           </div>
+                           <div class="profile-name">
+                               <div class="name">고양이주식회사</div>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+               <div class="info-text">
+                   <p>선택된 1개 기업을 <span>1팀</span>(으)로 초대합니다</p>
+               </div>
+           </div>
+            <div class="modal-btn-area">
+                <button type="button" class="modal-cancel" onclick="forceHideModal();">나가기</button>
+                <button type="button" class="modal-confirm">선택완료</button>
+            </div>
+        </div>
+    </section> 
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+    
+    
+</body>
+
+</html>

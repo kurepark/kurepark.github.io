@@ -6,6 +6,11 @@ $(document).ready(function(){
     makeImageSlide();
   });	 
 
+  $(".btn_top").on('click',function(){
+    $('html, body').animate({
+      scrollTop : 0
+    },300)
+  });
   
 });
 

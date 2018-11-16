@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/dedicate-list.css" rel="stylesheet" type="text/css">
+    <script src="../../js/odometer-0.4.6/odometer.min.js"></script>
+    <link rel="stylesheet" href="../../js/odometer-0.4.6/themes/odometer-theme-default.css">
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header class="small-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+
+    </header>
+
+
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <section>
+        <div class="container">
+            <div class="wrapper dedicateList">
+                <!--여기 아래부터 전용관 리스트-->
+                <ul class="dedicate-list">
+                    <!-- 모의펀딩대회만 했던 전용관 -->
+                    <!-- 모의펀딩만 진행했던 전용관은
+                    funding-type밑에 span태그와
+                    info-area에 contest클래스를 넣어줍니다.
+
+                    그리고 funding-type밑에도 한개씩만 보입니다!!!!!!!!!!!!!!!
+                    -->
+                    <li>
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>대구한의대학교</h3>
+                                    <div class="funding-type">
+                                        <span class="contest"><em>모의</em></span>
+                                        <!--여기에 contest클래스 -->
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="contest">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span>680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>모의투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="last-update">
+                                    <!--새로운 알림이 없을 경우-->
+                                    <span class="tit">최근 업데이트</span>
+                                    <span class="date">2018년 12월 31일</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- 모의와 리워드 둘다 진행했던 전용관
+                        둘다 진행했으면 li에 all-type-funding
+                        인터렉션 시작은 모의부터. 모의펀딩이 모든 인터렉션의 기준!!!!!!!!
+                        리워드는 거들뿐.ㅎㅎ
+                    -->
+                    <li class="all-type-funding">
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>대구한의대학교</h3>
+                                    <div class="funding-type">
+                                        <!--둘다 진행하면 클래스 이렇게.-->
+                                        <span class="contest"><em>모의</em></span>
+                                        <span class="reward"><em>리워드</em></span>
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="contest">
+                                            <!--모의 먼저!!-->
+                                            <div class="invest">
+                                                <strong>투자자</strong><span><b class="odometers" data-num="680">680</b>명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>모의투자총액</strong><span><b class="odometers" data-num="17">17</b>억원</span>
+                                            </div>
+                                        </li>
+                                        <li class="reward">
+                                            <!--그 다음 리워드 li -->
+                                            <div class="invest">
+                                                <strong>투자자</strong><span><b class="odometers" data-num="680">680명</b></span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>투자총액</strong><span><b class="odometers" data-num="17">17</b>억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="alert-area">
+
+                                    <div class="alert-icon-box">
+                                        <!--아이콘 리워드는 new-reward 모의는 new-contest 둘다 진행했을 땐 기본 new-contest로 두면 알아서 바뀜.-->
+
+                                        <span class="new-contest"><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span>
+                                    </div>
+                                    <!--두개 진행했을 경우 div에 animation클래스를 넣어줍니다.-->
+                                    <div class="alert-text-box animation" data-index="1">
+                                        <ul>
+                                            <li class="new-contest">
+
+                                                <strong>새로운 대회</strong>가 시작되었습니다
+                                            </li>
+                                            <li class="new-reward">
+
+                                                <strong>새 리워드</strong>가 시작되었습니다
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 모의와 리워드 둘다 진행했던 전용관-->
+                    <li class="all-type-funding">
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>강원창조경제혁신센터</h3>
+                                    <div class="funding-type">
+                                        <span class="contest"><em>모의</em></span>
+                                        <span class="reward"><em>리워드</em></span>
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="contest">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span><b class="odometers" data-num="680">680</b>명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>모의투자총액</strong><span><b class="odometers" data-num="17">17</b>억원</span>
+                                            </div>
+                                        </li>
+                                        <li class="reward">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span><b class="odometers" data-num="1122">1122</b>명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>투자총액</strong><span><b class="odometers" data-num="200">200</b>억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="alert-area">
+
+                                    <div class="alert-icon-box">
+
+                                        <span class="new-contest"><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span>
+                                    </div>
+                                    <div class="alert-text-box animation" data-index="1">
+                                        <ul>
+                                            <li class="new-contest">
+
+                                                <strong>새로운 대회</strong>가 시작되었습니다
+                                            </li>
+                                            <li class="new-reward">
+
+                                                <strong>새 리워드</strong>가 시작되었습니다
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 모의와 리워드 둘다 진행했던 전용관-->
+                    <li class="all-type-funding">
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>강원창조경제혁신센터</h3>
+                                    <div class="funding-type">
+                                        <span class="contest"><em>모의</em></span>
+                                        <span class="reward"><em>리워드</em></span>
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="contest">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span>680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>모의투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                        <li class="reward">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span>680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="alert-area">
+
+                                    <div class="alert-icon-box">
+
+                                        <span class="new-contest"><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span>
+                                    </div>
+                                    <div class="alert-text-box animation" data-index="1">
+                                        <ul>
+                                            <li class="new-contest">
+
+                                                <strong>새로운 대회</strong>가 시작되었습니다
+                                            </li>
+                                            <li class="new-reward">
+
+                                                <strong>새 리워드</strong>가 시작되었습니다
+                                            </li>
+                                            <li class="new-post">
+
+                                                <strong>새 글</strong>이 등록되었습니다
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 모의와 리워드 둘다 진행했던 전용관-->
+                    <li class="all-type-funding">
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>대구한의대학교</h3>
+                                    <div class="funding-type">
+                                        <span class="contest"><em>모의</em></span>
+                                        <span class="reward"><em>리워드</em></span>
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="contest">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span data-num="680">680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>모의투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                        <li class="reward">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span>680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="alert-area">
+
+                                    <div class="alert-icon-box">
+
+                                        <span class="new-contest"><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span>
+                                    </div>
+                                    <div class="alert-text-box animation" data-index="1">
+                                        <ul>
+                                            <li class="new-contest">
+
+                                                <strong>새로운 대회</strong>가 시작되었습니다
+                                            </li>
+                                            <li class="new-reward">
+
+                                                <strong>새 리워드</strong>가 시작되었습니다
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 리워드만 했던 전용관 -->
+                    <!-- 리워드만 진행했던 전용관은
+                    funding-type밑에 span태그와
+                    info-area 자식 li에 reward클래스를 넣어줍니다.
+                    -->
+                    <li>
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>GIST 광주과학기술원</h3>
+                                    <div class="funding-type">
+                                        <span class="reward-normal"><em>리워드</em></span>
+                                        <!--리워드만 진행한 건 reward-normal클래스입니다. ui인터렉션때문에...ㅠ-->
+                                    </div>
+                                    <ul class="info-area">
+                                        <li class="reward">
+                                            <div class="invest">
+                                                <strong>투자자</strong><span>680명</span>
+                                            </div>
+                                            <div class="amount">
+                                                <strong>투자총액</strong><span>17억원</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="alert-area">
+
+                                    <div class="alert-icon-box">
+
+                                        <span class="new-reward"><img src="../../img/dedicate/icon-alert.png" alt="" title=""></span>
+                                    </div>
+                                    <div class="alert-text-box" data-index="1">
+                                        <ul>
+                                            <li class="new-reward">
+
+                                                <strong>새 리워드</strong>가 시작되었습니다
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!--모의도 리워드도 없을때.-->
+                    <li>
+                        <a href="#">
+                            <div class="image-area">
+                                <img src="../../img/fundingRegister/FACEBOOK.png" alt="대구한의대학교 전용관" title="대구한의대학교 전용관">
+                            </div>
+                            <div class="infobox">
+                                <div class="text-area">
+                                    <h3>GIST 광주과학기술원</h3>
+                                    <p class="dedicate-info">
+                                        산업교육진흥 및 산학협력촉진에 관 한 법률에 의거 대구한의대학교 교육 및 건학이념의 정신을 기반으로 산업 교육을 진흥하고 산학협력을 촉진함 으로써 지역발전 및 국가 경쟁력 제...
+                                    </p>
+                                </div>
+                                <div class="last-update">
+                                    <!--새로운 알림이 없을 경우-->
+                                    <span class="tit">최근 업데이트</span>
+                                    <span class="date">2018년 12월 31일</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+
+    <!-- 공통 푸터 -->
+    <footer>
+        <section class="footer-menu">
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링 이란?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a href="#">팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <input class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+
+</body>
+<script>
+    function bindOdo(node) {
+        var el = node[0];
+        od = new Odometer({
+            el: el,
+            theme: 'default',
+            value: 0,
+            dureation: 300
+            // Any option (other than auto and selector) can be passed in here
+        });
+        el.innerHTML = Number(node.attr('data-num'));
+        setTimeout(function(){
+         setInterval(function(){
+            node.text(0);
+            node.text(Number(node.attr('data-num')));
+        },6000);
+        },3000)
+
+    }
+    $(document).ready(function() {
+        //        $(".info-area .odometers").each(function() {
+        //            bindOdo($(this));
+        //        });
+        /* 리워드와 모의 둘다 있을 때 시간마다 바뀌는 ui */
+        //3초에 한번 투자정보 영역 애니메이션
+        $(".info-area .odometers").each(function() {
+            //var node = $(this);
+            bindOdo($(this));
+        });
+
+
+        setTimeout(function() {
+            setInterval(function() {
+                $(".all-type-funding").find(".funding-type").toggleClass('active'); //모의, 리워드 탭 변경
+                $(".all-type-funding").find(".info-area").toggleClass('active'); //투자정보 동작
+            }, 6000);
+        }, 3000);
+
+
+        //접속 후 첫번째 알림 텍스트 display 보여주기
+        $(".alert-text-box").each(function() {
+            $(this).find('li').first().css('display', 'block');
+        })
+
+        //6초에 한번씩 알림창 애니메이션
+        $(".alert-text-box.animation").each(function() {
+            var aniList = $(this);
+            var index = Number(aniList.attr("data-index"));
+            $(".alert-icon-box").addClass('active');
+            setInterval(function() {
+                aniList.find('li').hide();
+                aniList.find('li').eq(index).show();
+
+                var selClass = aniList.find('li').eq(index).attr('class');
+                aniList.prev('.alert-icon-box').find('span').attr('class', selClass);
+                index++;
+                if (index >= aniList.find('li').length) {
+                    index = 0;
+                }
+                aniList.attr("data-index", index);
+            }, 6000);
+        });
+    }); //jqb
+
+    //텍스트롤링 opacity 미리 주기
+    function setInitialOpacities() {
+        var ul = $(".all-type-funding .alert-text-box").each(function(i, data) {
+            $(data).find('ul');
+        });
+        ul.children('li:nth-child(1)').css("opacity", 1);
+        ul.children('li:nth-child(2)').css("opacity", 0);
+        ul.children('li:nth-child(3)').css("opacity", 0);
+    }
+</script>
+
+</html>

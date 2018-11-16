@@ -1,0 +1,92 @@
+<!-- 자랑거리 성장하이라이트 모달 -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+    <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <link href="../../css/investor-home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+   <!-- 자랑거리 입력 모달 수상실적/그래프/성장목표 선택하는 모달입니다-->
+    <section id="investorTypeSurveyModal" class="modal-layer survey-modal" style="display:block;">
+        <div class="survey-wrapper">
+           <!--모달 제목과 설명글-->
+            <div class="modal-header">
+                <h2>투자성향분석</h2>
+                <p class="step">STEP3</p>
+                <p>직업</p>
+            </div>
+
+            <!-- 모달 body의 내용만 바뀝니다-->
+            <div class="modal-body">
+              <!--진척도-->
+               <div class="progress-stage">
+                   <div class="progress">
+                       <div class="progress-mask"><!--이곳의 width값으로 진행률 이동합니다-->
+                           <div class="rate">10%</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="body-item">
+                   <div class="item-title">고객님의 직업은 무엇입니까?</div>
+                   <div class="item-contents">
+                      <form>
+                          <ul class="float-list column4x">
+                              <li><input type="radio" id="trade" name="career"><label for="trade">무역&#47;유통</label></li>
+                              <li><input type="radio" id="management" name="career"><label for="management">경영&#47;사무</label></li>
+                              <li><input type="radio" id="manufacturer" name="career"><label for="manufacturer">생산&#47;제조</label></li>
+                              <li><input type="radio" id="media" name="career"><label for="media">미디어</label></li>
+                              <li><input type="radio" id="sales" name="career"><label for="sales">영업&#47;고객상담</label></li>
+                              <li><input type="radio" id="marketing" name="career"><label for="marketing">마케팅&#47;광고&#47;홍보</label></li>
+                              <li><input type="radio" id="education" name="career"><label for="education">교육</label></li>
+                              <li><input type="radio" id="profession" name="career"><label for="profession">전문&#47;특수직</label></li>
+                              <li><input type="radio" id="service" name="career"><label for="service">서비스</label></li>
+                              <li><input type="radio" id="IT" name="career"><label for="IT">IT&#47;인터넷</label></li>
+                              <li><input type="radio" id="construction" name="career"><label for="construction">건설</label></li>
+                              <li><input type="radio" id="R&D" name="career"><label for="R&D">연구개발&#47;설계</label></li>
+                              <li><input type="radio" id="student" name="career"><label for="student">학생</label></li>
+                              <li><input type="radio" id="design" name="career"><label for="design">디자인</label></li>
+                              <li><input type="radio" id="medical" name="career"><label for="medical">의료</label></li>
+                              <li><input type="radio" id="freelancer" name="career"><label for="freelancer">프리랜서</label></li>
+                              <li><input type="radio" id="theOthers" name="career"><label for="theOthers">기타</label></li>
+                              <li><input type="radio" id="inoccupation" name="career"><label for="inoccupation">없음</label></li>
+                          </ul>
+                      </form> 
+                   </div>
+               </div>
+                
+           
+            </div>
+            <div class="modal-btn">
+                <button type="button" class="close-modal">이전</button>
+                <a href="#" class="next">다음 페이지</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<!--퍼블리싱 ui script-->
+
+<!--화면동작만 확인하시고 필요한것만 사용하세요.-->
+<script type="text/javascript">
+    $(document).ready(function() {}); //jqb
+</script>
+
+</html>

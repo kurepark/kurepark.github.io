@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기업 정보</title>
+    <script src="../../js/webFont.js"></script>
+    <link href="../../font/font_default.css" rel="stylesheet" type="text/css">
+    <link href="dedicate-exhibitionPDF-common.css" rel="stylesheet" type="text/css">
+    <link href="../../js/froala/css/froala_editor.custom.css" rel="stylesheet" type="text/css">
+    <script src="../../js/Chart.bundle.js"></script>
+<style>
+    /*펀딩상세페이지*/
+
+    /* 기본정보 */
+    .basic-info{
+        margin-bottom: 6.25rem;
+    }
+    .basic-info .headline{
+        margin-bottom: 2.5rem;
+        padding-left: 11.875rem;
+        padding-top: 3.438rem;
+        position: relative;
+        height: 10rem;
+    }
+    .basic-info .headline .company-logo {
+	    position: absolute;
+        top:0;
+        left: 0;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        border:1px solid rgba(0, 0, 0, 0.2);
+    }
+    .basic-info .headline .name{
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+        font-weight: 300;
+    }
+    .basic-info .headline .web-address {
+	    color: #6b7799;
+        font-size:1rem; 
+    }
+ 
+    /*업종, 설립, 사원수*/
+    .info-list{
+        margin-bottom: 3.75rem;
+    }
+    .info-list::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .info-list li{
+        margin-right: 4.063rem;
+        padding-left: 3.75rem;
+        padding-top:0.5rem;
+        position: relative;
+        height: 2.875rem;
+	    float: left;
+    }
+    .info-list li img{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 2.875rem;
+        height: 2.875rem;
+    }
+    .info-list .tit{
+        margin-bottom: .375rem;
+        color: #292c33;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .info-list div{
+        color: rgba(41,44,51,0.8);
+        font-size: .75rem;
+    }
+    /*소셜미디어*/
+    .social-list li{
+        margin-bottom: 1.25rem;
+    }
+    .social-list li img{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: .25rem;
+        vertical-align: middle;
+    }
+    .social-list li span{
+        margin-left: .75rem;
+        font-weight: 300;
+    }
+    /*매력포인트*/
+    .point-wrapper {
+        margin-bottom: 6.25rem;
+        font-size: 0;
+    }
+    .point-wrapper .tit{
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+    .point-wrapper .point-box{
+        padding:2.063rem;
+        position: relative;
+        display: inline-block;
+        width: 32.3333%;
+        box-sizing: border-box;
+    }
+    .point-wrapper .point-box span{
+        position: absolute;
+        top:2.063rem;
+        left: 0;
+        color: #6666ff;
+        font-size: 1.75rem;
+        font-weight: 300;
+    }
+    .point-wrapper .point-box p{
+        font-size: .875rem;
+        font-weight: 300;
+    }
+    
+    /*그래프 모듈*/
+    .graph-wrapper {
+        font-size: 0;
+    }
+    .graph-wrapper .module{
+        display: inline-block;
+        width: 33.3333%;
+        text-align:center;
+        vertical-align: top;
+    }
+    .graph-wrapper .module .tit{
+        margin-bottom: 0.75rem;
+	    font-size: 1.125rem;
+        font-weight: 700;
+    }
+    /*아이콘모듈*/
+    .graph-wrapper .icon-module li{
+        padding:1.25rem 1.688rem;
+	    display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .graph-wrapper .icon-module li img {
+	    width: 5.375rem;
+        height: 4rem;
+    }
+    .graph-wrapper .icon-module li .title {
+	    display: table-cell;
+        padding:.625rem 0;
+        width: 7.813rem;
+        height: 3rem;
+        font-size: 1rem;
+        word-wrap: break-word;
+        word-break: keep-all;
+        vertical-align: middle;
+    }
+</style>    
+</head>
+
+<!-- 페이지 내용 -->
+<body>
+  <div class="page">
+   <article class="wrapper">
+       <header class="article-header">
+           <div class="head-info">
+               <h1>2018년 IP창업 데모데이</h1>
+               <h2>스타트업 아카데미 IP관련 투자유치 교육</h2>
+           </div>
+           <div class="article-title align-right">
+               <h3>기업 정보</h3>
+               <p class="sub-title">업종, 설립일, 직원수 등</p>
+           </div>
+       </header>
+       <section class="content">
+           <div class="basic-info">
+               <div class="headline">
+                   <div class="company-logo"></div>
+                   <h4 class="name">네오스프링</h4>
+                   <div class="web-address"></div>
+               </div>
+               <ul class="info-list">
+                   <li>
+                      <img src="../../img/user_companyHome/icon-business-gray.png" alt="" title="">
+                       <div class="tit">크라우드펀딩</div>
+                       <div>업종</div>
+                   </li>
+                   <li>
+                      <img src="../../img/user_companyHome/icon-company-gray.png" alt="" title="">
+                       <div class="tit">설립 3년 차</div>
+                       <div>2015. 1. 12</div>
+                   </li>
+                   <li>
+                      <img src="../../img/user_companyHome/icon-member-gray.png" alt="" title="">
+                       <div class="tit">50명</div>
+                       <div>임직원 수</div>
+                   </li>
+               </ul>
+               <ul class="social-list">
+                   <li><img src="../../img/user_companyHome/FACEBOOK.png" alt="" title=""><span>www.facebook.com/neospring.kr</span></li>
+                   <li><img src="../../img/user_companyHome/TWITTER.png" alt="" title=""><span>www.facebook.com/neospring.kr</span></li>
+                   <li><img src="../../img/user_companyHome/INSTAGRAM.png" alt="" title=""><span>www.facebook.com/neospring.kr</span></li>
+                   <li><img src="../../img/user_companyHome/NAVER.png" alt="" title=""><span>www.facebook.com/neospring.kr</span></li>
+               </ul>
+           </div>
+           <div class="point-wrapper">
+               <div class="tit">매력 포인트</div>
+               <div class="point-box">
+                   <span>1</span>
+                   <p>소중한 참여자분들의 많은 관심과 응원 덕분에 폭스아이디어의 첫번째 프로젝트가 펀딩 100%를 달성하였습니다! 참여해주신 모든 분들께 감사 드립니다. 향후 </p>
+               </div>
+               <div class="point-box">
+                   <span>2</span>
+                   <p>소중한 참여자분들의 많은 관심과 응원 덕분에 폭스아이디어의 첫번째 프로젝트가 펀딩 100%를 달성하였습니다! 참여해주신 모든 분들께 감사 드립니다. 향후 </p>
+               </div>
+               <div class="point-box">
+                   <span>3</span>
+                   <p>소중한 참여자분들의 많은 관심과 응원 덕분에 폭스아이디어의 첫번째 프로젝트가 펀딩 100%를 달성하였습니다! 참여해주신 모든 분들께 감사 드립니다. 향후 </p>
+               </div>
+           </div>
+           <div class="graph-wrapper">
+               <div class="icon-module module">
+                   <div class="tit">대표수상 및 실적</div>
+                   <ul>
+                       <li>
+                           <img src="../../img/user_companyHome/icon-news-color.png" alt="제목제목" title="제목제목">
+                           <div class="title">제목제목</div>
+                           <div class="date">2017.7</div>
+                       </li>
+                       <li>
+                           <img src="../../img/user_companyHome/icon-medal-color.png" alt="제목제목" title="제목제목">
+                           <div class="title">제목제목</div>
+                           <div class="date">2017.7</div>
+                       </li>
+                   </ul>
+               </div>
+               <div class="icon-module module">
+                   <div class="tit">대표수상 및 실적</div>
+                   <ul>
+                       <li>
+                           <img src="../../img/user_companyHome/icon-news-color.png" alt="제목제목" title="제목제목">
+                           <div class="title">제목이 길어지면</div>
+                           <div class="date">2017.7</div>
+                       </li>
+                       <li>
+                           <img src="../../img/user_companyHome/icon-handshake-color.png" alt="제목제목" title="제목제목">
+                           <div class="title">제목제목제 목제목제목제목</div>
+                           <div class="date">2017.7</div>
+                       </li>
+                   </ul>
+               </div>
+               <div class="graph-module module">
+                   <div class="tit">기업회원 수(만명)</div>
+                   <canvas id="chartGraph" class="graph-canvas"></canvas>
+               </div>
+               <div class="graph-module module">
+                   <div class="tit">기업회원 수(만명)</div>
+                   <canvas id="chartGraph-Pie" class="graph-canvas"></canvas>
+               </div>
+               <div class="graph-module module">
+                   <div class="tit">기업회원 수(만명)</div>
+                   <canvas id="chartGraph-Line" class="graph-canvas"></canvas>
+               </div>
+           </div>
+       </section>
+   </article>
+    </div>
+    <script>
+  
+    /* 바 차트 생성 */
+    var ctx = document.getElementById("chartGraph");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Red", "Blue", "Yellow"],
+            datasets: [{
+				label : 'graph',
+                data: [12, 19, 3],
+                backgroundColor: "#5252cc",
+				borderWidth : 0
+            }]
+        },
+		options : {
+			layout: {
+				padding:{
+					left:0,
+					right:0,
+					top:200,
+					bottom:0
+
+				}
+			},
+			tooltips: {
+		         enabled: false
+		    },
+			"hover": {
+			      "animationDuration": 0
+			    },
+			"animation": {
+			      "duration": 1000,
+			      "onComplete": function() {
+			        var chartInstance = this.chart,
+			          ctx = chartInstance.ctx;
+			        //font 설정
+			        ctx.font = Chart.helpers.fontString(14, Chart.defaults.global.defaultFontStyle,'Noto Sans');
+			        ctx.textAlign = 'center';
+			        ctx.textBaseline = 'bottom';
+
+			        this.data.datasets.forEach(function(dataset, i) {
+			          var meta = chartInstance.controller.getDatasetMeta(i);
+			          meta.data.forEach(function(bar, index) {
+			            var data = dataset.data[index];
+			            ctx.fillText(data, bar._model.x, bar._model.y - 2);
+			          });
+			        });
+			      }
+			    },
+			legend : {
+				display : true,
+				labels : {
+					boxWidth: 0,
+					fontSize : 0
+				}
+			},
+			pieceLabel : {
+				render : "label"
+			// https://emn178.github.io/Chart.PieceLabel.js/
+			},
+			scaleGridLineColor: "#e60073",
+			scales : {
+				yAxes : [{
+					gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true
+                    }
+				}],
+				 xAxes: [{
+					 	barPercentage:0.6,
+		                gridLines: {
+		                    display:false,
+		                    drawBorder: false
+		                    //lineWidth:0.5,
+		                    //color: "#e60073"/*바닥선색*/
+		                },
+		                ticks: {//하단에 라벨
+		                	/*display:label,*/
+		                    fontSize: 14,
+		                    fontStyle: "bold",
+		                    fontColor: '#475066'
+		                }
+		        }]
+			}
+		}
+    });
+    /* 파이차트 */
+    var ctx = document.getElementById("chartGraph-Pie");
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        responsive: false,
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+            datasets: [{
+				label : 'graph',
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                    '#2ee6c7',
+                    '#00bfe6',
+                    '#6666ff',
+                    '#5c3d99',
+                    '#993d8a'
+                ]
+            }]
+        },
+	    options: {
+	        legend: {
+	            display: true,
+	            position: "right",
+	            labels: {
+	                boxWidth: 20,
+	                usePointStyle: true,
+	                padding: 12,
+	                fontSize: 14,
+	                fontColor: "#475066"
+	            },
+	        },
+	        pieceLabel: {
+	            render: false,
+	            fontSize: 14,
+	            // font color, can be color array for each data or function for dynamic color, default is defaultFontColor
+	            fontColor: '#fff',
+	            // font style, default is defaultFontStyle
+	            fontStyle: 'bold',
+	            fontFamily: 'Noto Sans'
+	            // https://emn178.github.io/Chart.PieceLabel.js/
+	        },
+	        scales: {
+	            yAxes: [{
+	                display: false,
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	                }]
+	        }
+	    }
+    });
+    /* 라인차트 */
+    var ctx = document.getElementById("chartGraph-Line");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        responsive: false,
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+            datasets: [{
+                data: [12, 19, 3, 5, 2],
+                fill: false,
+                borderColor: '#5252cc',
+                pointRadius: 7,
+                lineTension: 0
+            }]
+        },
+		options : {
+			padding : {
+				x : 30,
+				y : 30
+			},
+			tooltips: {
+		         enabled: false
+		    },
+			"hover": {
+			      "animationDuration": 0
+			    },
+			"animation": {
+			      "duration": 1000,
+			      "onComplete": function() {
+			        var chartInstance = this.chart,
+			          ctx = chartInstance.ctx;
+			        //font 설정
+			        ctx.font = Chart.helpers.fontString(12, Chart.defaults.global.defaultFontStyle, 'Noto Sans');
+			        ctx.textAlign = 'center';
+			        ctx.textBaseline = 'bottom';
+			        ctx.fillStyle='#3d3d99';
+
+			        this.data.datasets.forEach(function(dataset, i) {
+			          var meta = chartInstance.controller.getDatasetMeta(i);
+			          meta.data.forEach(function(bar, index) {
+			            var data = dataset.data[index];
+			            ctx.fillText(data, bar._model.x, bar._model.y - 10);
+			          });
+			        });
+			      }
+			    },
+			legend : {
+				display : true,
+				labels :{
+					boxWidth : 0,
+					fontSize : 0
+				}
+			},
+			pieceLabel : {
+				render : "label"
+			// https://emn178.github.io/Chart.PieceLabel.js/
+			},
+			scales: {
+                xAxes: [{
+                	gridLines:{
+                        display: false,
+                        drawBorder : false,
+                        color: 'rgba(255,255,255)'
+                	},
+                	ticks : {
+                		display:true,
+	                    fontStyle: "bold",
+                		fontColor:'#475066',
+                		fontSize:14
+                	}
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        display: true,
+                        beginAtZero: true,
+                        fontSize:0
+                    }
+                }]
+            },
+            elements: {
+                point: {
+                    pointStyle: 'oriole',
+                    borderWidth: 6,
+                    backgroundColor: '#fff'
+                }
+            }
+		}
+    });  
+    </script>
+</body>
+</html>

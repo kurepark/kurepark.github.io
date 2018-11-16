@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>회원가입 - 네오스프링 (크라우드펀딩 플랫폼)</title>
+	<meta name="description" content="네오스프링에 오신 것을 환영합니다.">
+	<meta name="author" content="네오스프링">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://neospring.kr/user/register">
+	<meta property="og:site_name" content="네오스프링 (크라우드펀딩 플랫폼)">
+	<meta property="og:title" content="회원가입">
+	<meta property="og:description" content="네오스프링에 오신 것을 환영합니다.">
+	<meta property="article:author" content="https://www.facebook.com/neospring.kr/">
+	<meta property="og:image" content="http://neospring.kr/img/ci/neospring_ci_large_nosecu.png">
+	<meta property="og:locale" content="ko_KR">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="http://neospring.kr/user/register">
+	<meta name="twitter:site" content="@neospring_kr">
+	<meta name="twitter:title" content="회원가입">
+	<meta name="twitter:description" content="네오스프링에 오신 것을 환영합니다.">
+	<meta name="twitter:creator" content="네오스프링">
+	<meta name="twitter:image" content="http://neospring.kr/img/ci/neospring_ci_large_nosecu.png">
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../css/user-login.css" rel="stylesheet" type="text/css">
+	<link href="../css/guide-content.css" rel="stylesheet" type="text/css">
+	<link href="../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/parsley.min.js"></script>
+	<script src="../js/on.js"></script>
+	<link href="../css/user-register.css" rel="stylesheet" type="text/css"> </head>
+
+<body>
+	<script>
+		var __xprefix = "http://image.neospring.kr/";
+
+		function pointBoxToggle(toggle) {
+			document.getElementById("counsel").className = "point-" + toggle;
+		}
+	</script>
+	<header>
+		<script type="text/javascript" src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<div class="wrapper">
+			<a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"> </a>
+			<div id="header-menu">
+				<ul class="header-menu">
+					<li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+					<li class="menu-list" style="display: none;"><a href="/reward/funding">리워드형</a></li>
+					<li class="menu-list"><a href="/contest">모의크라우드펀딩</a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a></li>
+				</ul>
+				<link href="../css/guide-small.css" rel="stylesheet" type="text/css">
+				<section class="guide-small hide">
+					<header class="guide-header">
+						<h3>무엇을 도와드릴까요?</h3> <span class="close"><a onclick="hideQnA();"><img src="/img/guide/large/img-large-close.png" alt="close" title="close"></a></span>
+						<form action="" method="get" id="searchSmallKeywordForm">
+							<input type="text" name="searchKeyword" placeholder="질문 또는 키워드로 검색하세요" />
+							<a onclick="searchSmallFaq();"><img src="/img/guide/large/img-large-search.png"></a>
+						</form>
+					</header>
+					<div class="guide-wrap">
+						<!--  검색 리스트 -->
+						<article class="guide-cont guide-search fadeIn hide">
+							<div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<ul id="faq-small-search-list"> </ul>
+									</div>
+								</article>
+							</div>
+							<div class="clear"></div>
+						</article>
+						<!--  검색 리스트 -->
+						<!--  상세 -->
+						<article class="guide-cont guide-detail fadeIn hide">
+							<div>
+								<div class="go-back"> <a onclick="smallFrontView();"><span>&lt; 뒤로</span></a> </div>
+								<div class="guide-sub-tit"> <span><label class="pink-box-label depth1"></label></span><span class="depth2"></span> </div>
+								<article class="guide-qna-cont">
+									<div class="qna-contents">
+										<h1 class="question">Q. </h1>
+										<div class="qna-list answer" style="padding: 0;"></div>
+										<ul id="addtional-small-faq"> </ul>
+										<div class="go-back go-back2"> <a onclick="smallFrontView();"><span>&lt; 뒤로</span></a> </div>
+									</div>
+								</article>
+							</div>
+						</article>
+						<!--  상세끝 -->
+						<!--  프론트 -->
+						<article class="guide-cont guide-front fadeIn">
+							<div>
+								<h4 style="margin-bottom: 10px;">자주하는 질문</h4>
+								<ul>
+									<li>
+										<h6><a onclick="rewardBackerFaq();">리워드</a></h6>
+										<dl> <dt>
+																		<a onclick="rewardBackerFaq();"><img src="/img/guide/common/img-sponsor-badge.png" alt="후원자" title="후원자"></a>
+																</dt>
+											<dd> <a onclick="getSmallDetail(25)"><span>펀딩 후원은 어떻게 하나요?</span></a> </dd> <dt>
+																		<a onclick="rewardFounderFaq();"> <img src="/img/guide/common/img-opener-badge.png" alt="개설자" title="개설자">
+																		</a>
+																</dt>
+											<dd> <a onclick="getSmallDetail(42)"><span>리워드형 크라우드펀딩이란 무엇인가요?</span></a> </dd>
+										</dl>
+									</li>
+									<li class="neo-logo-li">
+										<h6><a onclick="contestBackerFaq();">모의크라우드펀딩</a></h6>
+										<dl> <dt>
+																		<a onclick="contestBackerFaq();"><img src="/img/guide/common/img-participant-badge.png" alt="참여자" title="참여자"></a>
+																</dt>
+											<dd> <a onclick="getSmallDetail(10)"><span>모의크라우드펀딩이란 무엇인가요?</span></a> </dd> <dt>
+																		<a onclick="contestFounderFaq();"> <img src="/img/guide/common/img-opener-badge.png" alt="개설자" title="개설자">
+																		</a>
+																</dt>
+											<dd> <a onclick="getSmallDetail(20)"><span>진행하기 위하여 어떠한 것이 필요한가요?</span></a> </dd>
+										</dl>
+									</li>
+									<li>
+										<h6><a onclick="etcSmallFaq();">기타</a></h6>
+										<dl> <dt></dt>
+											<dd> <a onclick="getSmallDetail(2)"><span>비밀번호를 변경하고 싶습니다. 방법이 무엇인가요?</span></a> </dd> <dt></dt>
+											<dd> <a onclick="getSmallDetail(6)"><span>성장스토리가 무엇인가요?</span></a> </dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</article>
+						<!--  프론트 -->
+						<!-- 리워드 후원자 페이지 -->
+						<article class="guide-cont guide-page guide-reward-backer hide">
+							<div>
+								<div class="guide-lnb-tit">
+									<h1>리워드</h1> </div>
+								<div class="guide-sub-tit"> <span class="seltit"><a>후원자</a></span> <span><a onclick="rewardFounderFaq();">개설자</a></span> </div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<h4>
+														후원하기 <i id="REWARD_BACKER_BACKUP" class="margin-anchor50"></i>
+												</h4>
+										<ul class="first-list"> </ul>
+										<h4>
+														후원 후 <i id="REWARD_BACKER_BACKUPAFTER" class="margin-anchor50"></i>
+												</h4>
+										<ul class="second-list"> </ul>
+									</div>
+								</article>
+							</div>
+						</article>
+						<!-- 리워드 후원자 페이지 -->
+						<!-- 리워드 개설자 페이지 -->
+						<article class="guide-cont guide-page guide-reward-founder hide">
+							<div>
+								<div class="guide-lnb-tit">
+									<h1>리워드</h1> </div>
+								<div class="guide-sub-tit"> <span><a onclick="rewardBackerFaq();">후원자</a></span> <span class="seltit"><a>개설자</a></span> </div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<h4>
+														심사기준<i id="REWARD_FOUNDER_STANDARD" class="margin-anchor50"></i>
+												</h4>
+										<ul class="first-list"> </ul>
+										<h4>
+														개설 전<i id="REWARD_FOUNDER_OPENBEFORE" class="margin-anchor50"></i>
+												</h4>
+										<ul class="second-list"> </ul>
+										<h4>
+														개설 후<i id="REWARD_FOUNDER_OPENAFTER" class="margin-anchor50"></i>
+												</h4>
+										<ul class="third-list"> </ul>
+										<h4>
+														펀딩 종료<i id="REWARD_FOUNDER_FINISH" class="margin-anchor50"></i>
+												</h4>
+										<ul class="fourth-list"> </ul>
+									</div>
+								</article>
+							</div>
+						</article>
+						<!-- 리워드 개설자 페이지 -->
+						<!-- 모의투자 투자자-->
+						<article class="guide-cont guide-page guide-contest-backer hide">
+							<div>
+								<div class="guide-lnb-tit">
+									<h1>모의크라우드펀딩</h1> </div>
+								<div class="guide-sub-tit"> <span class="seltit"><a>참여자</a></span> <span><a onclick="contestFounderFaq();">개설자</a></span> </div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<h4>
+														모의크라우드펀딩에 대해 <i id="CONTEST_BACKER_ABOUT" class="margin-anchor50"></i>
+												</h4>
+										<ul class="first-list"> </ul>
+										<h4>
+														투자 진행 <i id="CONTEST_BACKER_PROCCESS" class="margin-anchor50"></i>
+												</h4>
+										<ul class="second-list"> </ul>
+									</div>
+								</article>
+							</div>
+						</article>
+						<!-- 모의투자 투자자-->
+						<!--  모의투자 개설자 -->
+						<article class="guide-cont guide-page guide-contest-founder hide">
+							<div>
+								<div class="guide-lnb-tit">
+									<h1>모의크라우드펀딩</h1> </div>
+								<div class="guide-sub-tit"> <span><a onclick="contestBackerFaq();">참여자</a></span> <span class="seltit"><a>개설자</a></span> </div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<h4>
+														기관 <i id="CONTEST_FOUNDER_AGENCY" class="margin-anchor50"></i>
+												</h4>
+										<ul class="first-list"> </ul>
+										<h4>
+														신청진행 <i id="CONTEST_FOUNDER_PROCCESS" class="margin-anchor50"></i>
+												</h4>
+										<ul class="second-list"> </ul>
+										<h4>
+														개설 전 <i id="CONTEST_FOUNDER_OPENBEFORE" class="margin-anchor50"></i>
+												</h4>
+										<ul class="third-list"> </ul>
+										<h4>
+														개설 후 <i id="CONTEST_FOUNDER_OPENAFTER" class="margin-anchor50"></i>
+												</h4>
+										<ul class="fourth-list"> </ul>
+									</div>
+								</article>
+							</div>
+						</article>
+						<!--  모의투자 개설자 -->
+						<!-- etc -->
+						<article class="guide-cont guide-page guide-etc hide">
+							<div>
+								<div class="guide-lnb-tit">
+									<h1>기타</h1> </div>
+								<article class="guide-faq-cont">
+									<div class="faq-contents">
+										<h4>개인회원</h4>
+										<ul class="first-list"> </ul>
+										<h4>기업회원</h4>
+										<ul class="second-list"> </ul>
+									</div>
+								</article>
+							</div>
+							<div class="clear"></div>
+						</article>
+						<!-- etc -->
+						<div class="go-to-more"> <a href="/faq"><span>더 알아보기</span></a> </div>
+					</div>
+				</section>
+				<script type="text/javascript">
+					$(document).ready(function () {
+						$("#searchSmallKeywordForm input[name='searchKeyword']").keypress(function (e) {
+							if (e.which == 13) {
+								searchSmallFaq();
+								return false;
+							}
+						});
+					});
+					//이용안내 메뉴 보이기
+					function showQnA() {
+						$('.guide-small').removeClass('hide');
+					}
+
+					function hideQnA() {
+						$('.guide-small').addClass('hide');
+					}
+					//뷰  변환
+					function smallSearchView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-search").removeClass("hide");
+					}
+
+					function smallFrontView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-front").removeClass("hide");
+					}
+
+					function smallDetailView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-detail").removeClass("hide");
+					}
+
+					function etcView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-etc").removeClass("hide");
+					}
+
+					function rewardBackerView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-reward-backer").removeClass("hide");
+					}
+
+					function rewardFounderView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-reward-founder").removeClass("hide");
+					}
+
+					function contestBackerView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-contest-backer").removeClass("hide");
+					}
+
+					function contestFounderView() {
+						$(".guide-cont").addClass("hide");
+						$(".guide-contest-founder").removeClass("hide");
+					}
+					//etc 페이지
+					function etcSmallFaq() {
+						etcView();
+						var etcForm = $(".guide-etc");
+						var firstList = etcForm.find(".first-list");
+						var secondList = etcForm.find(".second-list");
+						firstList.html('');
+						secondList.html('');
+						jQuery.ajax({
+							url: "/faq/etc/personal.json"
+							, type: "GET"
+							, success: function (data) {
+								$.each(data.faqPersonal, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqCompany, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+							}
+						});
+					}
+					//리워드/투자자 페이지
+					function rewardBackerFaq() {
+						rewardBackerView();
+						var etcForm = $(".guide-reward-backer");
+						var firstList = etcForm.find(".first-list");
+						var secondList = etcForm.find(".second-list");
+						firstList.html('');
+						secondList.html('');
+						jQuery.ajax({
+							url: "/faq/reward/backer.json"
+							, type: "GET"
+							, success: function (data) {
+								$.each(data.faqRewardBackup, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqRewardBackupAfter, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+							}
+						});
+					}
+					//리워드/ 개설자
+					function rewardFounderFaq() {
+						rewardFounderView();
+						var etcForm = $(".guide-reward-founder");
+						var firstList = etcForm.find(".first-list");
+						var secondList = etcForm.find(".second-list");
+						var thirdList = etcForm.find(".third-list");
+						var fourthList = etcForm.find(".fourth-list");
+						firstList.html('');
+						secondList.html('');
+						thirdList.html('');
+						fourthList.html('');
+						jQuery.ajax({
+							url: "/faq/reward/founder.json"
+							, type: "GET"
+							, success: function (data) {
+								$.each(data.faqRewardStandard, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqRewardBefore, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqRewardAfter, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqRewardFinish, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+							}
+						});
+					}
+					//모의투자/ 투자자
+					function contestBackerFaq() {
+						contestBackerView();
+						var etcForm = $(".guide-contest-backer");
+						var firstList = etcForm.find(".first-list");
+						var secondList = etcForm.find(".second-list");
+						firstList.html('');
+						secondList.html('');
+						jQuery.ajax({
+							url: "/faq/contest/backer.json"
+							, type: "GET"
+							, success: function (data) {
+								$.each(data.faqContestAbout, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqContestProcess, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+							}
+						});
+					}
+					//모의투자/ 개설자
+					function contestFounderFaq() {
+						contestFounderView();
+						var etcForm = $(".guide-contest-founder");
+						var firstList = etcForm.find(".first-list");
+						var secondList = etcForm.find(".second-list");
+						var thirdList = etcForm.find(".third-list");
+						var fourthList = etcForm.find(".fourth-list");
+						firstList.html('');
+						secondList.html('');
+						thirdList.html('');
+						fourthList.html('');
+						jQuery.ajax({
+							url: "/faq/contest/founder.json"
+							, type: "GET"
+							, success: function (data) {
+								$.each(data.faqContestFounderAgency, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqContestFounderProcess, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqContestFounderOpenBefore, function (index, data) {
+									firstList.append(getSmallFaqItem(data));
+								});
+								$.each(data.faqContestFounderOpenAfter, function (index, data) {
+									secondList.append(getSmallFaqItem(data));
+								});
+							}
+						});
+					}
+					//faq 검색 결과
+					function searchSmallFaq() {
+						smallSearchView();
+						jQuery.ajax({
+							url: "/faq.json"
+							, data: {
+								searchKeyword: $("#searchSmallKeywordForm input[name='searchKeyword']").val()
+							}
+							, type: "GET"
+							, success: function (data) {
+								$("#faq-small-search-list").html('');
+								$.each(data.searchFaqs, function (index, data) {
+									$("#faq-small-search-list").append(getSmallFaqItem(data));
+								});
+								if (data.searchFaqs.length == 0) {
+									$("#faq-small-search-list").append("검색결과가 없습니다.");
+								}
+							}
+						});
+					}
+
+					function getSmallFaqItem(data) {
+						var questionListBody = '<li><a onclick="getSmallDetail(' + data.id + ');"><span>' + data.question + '</span></a></li>';
+						return questionListBody;
+					}
+					//faq 상세 페이지
+					function getSmallDetail(id) {
+						smallDetailView();
+						var detailElement = $(".guide-small .guide-detail");
+						detailElement.find(".depth1");
+						detailElement.find(".depth2");
+						detailElement.find(".question");
+						detailElement.find(".answer");
+						jQuery.ajax({
+							url: "/faq/detail/" + id + ".json"
+							, type: "GET"
+							, success: function (data) {
+								detailElement.find(".depth1").text(data.depth1Name);
+								detailElement.find(".depth2").text(data.depth2Name);
+								detailElement.find(".question").html(data.faq.question);
+								detailElement.find(".answer").html(data.faq.answer);
+								$("#addtional-small-faq").html('');
+								$.each(data.afterFaqs, function (index, innerData) {
+									$("#addtional-small-faq").append(getSmallFaqItem(innerData));
+								})
+							}
+						});
+					}
+					//프론트 페이지
+					function getSmallFront() {
+						smallFrontView();
+					}
+				</script>
+				<ul class="header-user-menu" id="header-user-menu">
+					<li class="menu-list"><a href="/company/story">기업 성장스토리</a></li>
+					<li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+					<li class="menu-list sign-up"><a href="/user/register">회원가입</a></li>
+					<li class="menu-list"><a href="/user/login" id="header-user-menu-login" data-toggle="modal" data-target="#header-login-layer">로그인</a>
+						<div id="header-login-layer" class="modal-layer">
+							<section class="login">
+								<div class="socialMedia">
+									<ul>
+										<li>
+											<a href="/social/facebook/login"><img src="../img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
+										</li>
+										<li>
+											<a href="/social/naver/login"><img src="../img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
+										</li>
+										<li>
+											<a href="/social/kakao/login"><img src="../img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
+										</li>
+										<li>
+											<a href="/social/google/login"><img src="../img/socialMedia/google.svg" alt="구글으로 로그인" title="구글으로 로그인"></a>
+										</li>
+									</ul>
+									<div>SNS계정으로 더욱 빠르게 로그인해 보세요!</div>
+								</div>
+								<form method="post" action="/user/login">
+									<input type="hidden" name="" value="" />
+									<input type="hidden" name="targetUrl" value="/user/register">
+									<input type="text" name="username" placeholder="이메일 또는 휴대폰" required>
+									<input type="password" name="password" placeholder="비밀번호" required>
+									<div class="message"> </div>
+									<input type="submit" value="로그인"> </form>
+								<ul class="links functions">
+									<li><a href="/user/register">회원가입</a></li>
+									<li><a data-toggle="modal" data-target="#find-id-modal">아이디 찾기</a></li>
+									<li><a data-toggle="modal" data-target="#reset-password-request-popup">비밀번호 재설정</a></li>
+								</ul>
+							</section>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a href="#header-menu" class="mobile-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
+		</div>
+	</header>
+	<article>
+		<div class="container">
+			<section>
+				<div class="wrapper">
+					<section class="register">
+						<h3>회원가입</h3>
+						<p class="infotxt">소속직원은 개인 투자자로 가입 후 '소속직원 임명 요청'을 해주세요.</p>
+						<ul class="register-tab">
+							<li class="onbtn">
+								<button type="button">투자자</button>
+							</li>
+							<li>
+								<button type="button">개설자</button>
+							</li>
+						</ul>
+						<div class="user-tab">
+							<input type="radio" name="register" id="user-register-individual" value="개인" onclick="checkuser()" checked>
+							<label for="user-register-individual">개인</label>
+							<input type="radio" name="register" id="user-register-corporate" value="법인" onclick="checkuser()">
+							<label for="user-register-corporate">법인</label>
+						</div>
+						<!--컨텐츠 변경영역/폼태그 안에서 내용이 바뀌도록/동의,가입버튼 공통-->
+						<form id="user-register-form" method="post" action="/user/register" data-action-register="/user/register" data-action-check="/user/check">
+							<!--투자자-->
+							<div class="investor register-form">
+								<!--투자자/개인 시작-->
+								<div class="individual">
+									<div class="socialMedia">
+										<ul>
+											<li>
+												<a href="/social/facebook/register" class="inactive"><img src="/img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
+											</li>
+											<li>
+												<a href="/social/naver/register" class="inactive"><img src="/img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
+											</li>
+											<li>
+												<a href="/social/kakao/register" class="inactive"><img src="/img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
+											</li>
+											<li>
+												<a href="/social/google/register" class="inactive"><img src="/img/socialMedia/google.svg" alt="구글로 로그인" title="구글로 로그인"></a>
+											</li>
+										</ul>
+										<div>SNS계정으로 더욱 빠르게 가입해 보세요!</div>
+									</div>
+									<input type="hidden" name="" value="" />
+									<input type="hidden" name="targetUrl" value="/user/register">
+									<input type="text" name="name" placeholder="이름(닉네임)" value=""><span class="message"></span>
+									<input type="text" name="username" placeholder="이메일 주소(ID)" value=""><span class="message"></span>
+									<input type="password" name="password" placeholder="비밀번호"> <span class="message"></span>
+									<input type="password" name="password_retyped" placeholder="비밀번호 확인"> <span class="message"></span>
+									<div class="message"></div>
+								</div>
+								<!--투자자/개인 끝-->
+								<!--투자자/법인 시작-->
+								<div class="corporate" style="display:none;">
+									<input type="hidden" name="" value="" />
+									<input type="hidden" name="targetUrl" value="/user/register">
+									<input type="text" name="corporationname" placeholder="법인명" value=""><span class="message"></span>
+									<input type="text" name="representativename" placeholder="대표자명" value=""><span class="message"></span>
+									<input type="text" name="registrationnumber" placeholder="사업자등록번호" value=""><span class="message"></span>
+									<input type="text" name="username" placeholder="이메일주소(ID)" value=""><span class="message"></span>
+									<input type="password" name="password" placeholder="비밀번호"> <span class="message"></span>
+									<input type="password" name="password_retyped" placeholder="비밀번호 확인"> <span class="message"></span>
+									<div class="message"></div>
+								</div>
+								<!--투자자/법인 끝-->
+							</div>
+							<!--투자자 끝-->
+							<!--개설자-->
+							<div class="opener register-form" style="display:none">
+								<!--개설자/개인 시작-->
+								<div class="individual">
+									<input type="hidden" name="" value="" />
+									<input type="hidden" name="targetUrl" value="/user/register">
+									<input type="text" name="companyname" placeholder="회사명(단체명)" value=""><span class="message"></span>
+									<input type="text" name="representativename" placeholder="대표자명" value=""><span class="message"></span>
+									<input type="text" name="username" placeholder="이메일 주소(ID)" value=""><span class="message"></span>
+									<input type="password" name="password" placeholder="비밀번호"> <span class="message"></span>
+									<input type="password" name="password_retyped" placeholder="비밀번호 확인"> <span class="message"></span>
+									<div class="message"></div>
+								</div>
+								<!--개설자/개인 끝-->
+								<!--개설자/법인 시작-->
+								<div class="corporate" style="display:none;">
+									<input type="hidden" name="" value="" />
+									<input type="hidden" name="targetUrl" value="/user/register">
+									<input type="text" name="corporationname" placeholder="법인명" value=""><span class="message"></span>
+									<input type="text" name="representativename" placeholder="대표자명" value=""><span class="message"></span>
+									<input type="text" name="registrationnumber" placeholder="사업자등록번호" value=""><span class="message"></span>
+									<input type="text" name="username" placeholder="이메일주소(ID)" value=""><span class="message"></span>
+									<input type="password" name="password" placeholder="비밀번호"> <span class="message"></span>
+									<input type="password" name="password_retyped" placeholder="비밀번호 확인"> <span class="message"></span>
+									<div class="message"></div>
+								</div>
+								<!--개설자/법인 끝-->
+							</div>
+							<!--개설자 끝-->
+							<!--공통사항 체크박스 영역-->
+							<fieldset style="border-bottom:1px solid #e4e4e4; padding-bottom:20px">
+								<input type="checkbox" name="all" id="user-register-all">
+								<label for="user-register-all">전체 동의</label><span class="message"></span> </fieldset>
+							<fieldset>
+								<input type="checkbox" name="agreement" id="user-register-agreement">
+								<label for="user-register-agreement">&#40;필수&#41; 플랫폼 이용약관</label> <a href="#agreement">보기</a><span class="message"></span> </fieldset>
+							<fieldset>
+								<input type="checkbox" name="newsletter" id="receive-newsletter-agreement">
+								<label for="receive-newsletter-agreement">&#40;선택&#41; 네오스프링 관련 소식 받기 </label></fieldset>	
+							<fieldset>
+								<input type="checkbox" name="privacy" id="user-register-privacy">
+								<label for="user-register-privacy">&#40;필수&#41; 개인정보 취급방침</label> <a href="#privacy">보기</a><span class="message"></span> </fieldset>
+							<fieldset>
+								<input type="checkbox" name="serviceAgreement1" id="user-register-serviceAgreement1">
+								<label for="user-register-serviceAgreement1">&#40;필수&#41; 리워드형 및 기부형 크라우드펀딩
+									<br/> 서비스 이용약관</label> <a href="#serviceAgreement1">보기</a><span class="message"></span> </fieldset>
+							<!-- 		<fieldset> -->
+							<!-- 			<input type="checkbox" name="serviceAgreement2" id="user-register-serviceAgreement2"> <label for="user-register-serviceAgreement2">(필수) 온라인소액투자중개서비스<br/> 이용약관</label> <a href="#serviceAgreement2">보기</a><span class="message"></span> -->
+							<!-- 		</fieldset> -->
+							<input type="submit" value="회원가입"> </form>
+						<ul class="links">
+							<li><a href="/user/login">로그인</a></li>
+							<li><a href="/user/login">아이디 찾기</a></li>
+							<li><a href="/user/login">비밀번호 찾기</a></li>
+						</ul>
+					</section>
+					<section id="agreement">
+						<h1>플랫폼 이용약관</h1>
+						<h2>제1장 총칙</h2>
+						<h3>제1조 (목적)</h3>
+						<p>본 약관은 네오스프링 주식회사(이하 “회사”)가 온라인으로 제공하는 플랫폼 서비스 및 이에 부수된 제반 서비스(이하 “서비스”)의 이용과 관련하여 회사와 회원 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함 을 목적으로 합니다.</p>
+						<br>
+						<h3>제2조 (용어의 정의)</h3>
+						<p>본 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+							<br>
+							<br> 1. “회원”이라 함은 회사의 서비스에 접속하여 이 약관에 따라 회사와 이용계약을 체결하여 회사가 제공하는 서비스를 이용하는 고객을 의미합니다.
+							<br> ‘회원’은 아래 각 호와 같이 투자유치 회원(기업 회원)과 투자자 회원(개인투자자 회원, 법인투자자 회원)으로 구분됩니다.
+							<br>
+							<br> 가. ‘투자유치 회원’이라 함은 회원으로 가입하여 크라우드펀딩의 방식으로 투자 또는 후원 등을 유치하고자 하는 법인 기업을 말합니다.
+							<br> 다만, 자본시장과 금융투자업에 관한 법률(이하 ‘자본시장법’)에 따른 온라인소액투자중개의 대상이 되는 ‘기업회원’은 창업 후 7년 미만의 초기기업 또는 프로젝트성 사업을 수행하는 자에 해당하는 기업으로 한정됩니다. (자본시장법 제9조 제27항 참고)
+							<br> 나. ‘개인투자자 회원’이라 함은 플랫폼을 통하여 투자유치 회원에게 투자 또는 후원 등을 하고자 하는 개인회원을 말하며, 개인투자자 회원의 전문성, 위험감수 능력 등에 따라 일반투자자, 소득요건구비 투자자, 전문투자자로 구분합니다.
+							<br> 다. ‘법인투자자 회원’이라 함은 플랫폼을 통하여 투자유치 회원에게 투자 또는 후원 등을 하고자 하는 법인회원을 말하며, 법인투자자 회원의 전문성, 위험감수능력 등에 따라 일반투자자, 소득요건구비 투자자, 전문투자자로 구분합니다.
+							<br>
+							<br> 2. “플랫폼” 이라 함은 이용자가 컴퓨터, 휴대형단말기 등 유·무선 정보통신 설비를 통하여 투자 및 후원 등의 방식으로 크라우드펀딩에 참여할 수 있도록 중개하는 회사의 플랫폼을 말합니다.
+							<br>
+							<br> 3. “서비스”라 함은 회사가 회원에게 온라인으로 제공하는 온라인소액투자중개 서비스 및 이에 부수된 제반 서비스를 의미합니다.
+							<br>
+							<br> 4. “로그인 이메일”이라 함은 회원의 식별과 서비스 이용을 위하여 회원이 선정하고 회사가 부여하는 문자, 숫자 또는 이메일 ID형식을 의미합니다.
+							<br>
+							<br> 5. “회원정보“라 함은 회원의 로그인 이메일, 비밀번호, 성명 등 회원이 회사에 제공한 일반 정보 및 서비스이용정보, 이용요금 결제상태 등 생성 정보를 통칭합니다.</p>
+						<br>
+						<h3>제3조 (회사정보 등의 제공)</h3>
+						<p>회사는 다음 각 호의 사항을 서비스 초기화면이나 서비스 홈페이지에 게시하여 회원이 이를 쉽게 알 수 있도록 합니다.
+							<br>다만, 약관과 개인정보 취급방침은 회원이 연결화면을 통하여 볼 수 있도록 할 수 있습니다.
+							<br>
+							<br> 1. 상호 및 대표자 성명
+							<br> 2. 사업장 소재지 주소 및 전자우편 주소
+							<br> 3. 전화번호, 팩스번호
+							<br> 4. 사업자등록번호
+							<br> 5. 플랫폼 이용약관 등 서비스 관련 약관
+							<br> 6. 개인정보 취급방침
+							<br> 7. 투자위험고지</p>
+						<br>
+						<h3>제4조 (약관의 게시와 개정)</h3>
+						<p>① 회사는 본 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 초기 화면이나 서비스 홈페이지에 게시합니다.
+							<br>
+							<br> ② 회사는 서비스를 이용하고자 하는 자(이하 “이용자”라 한다)가 약관의 내용을 알 수 있도록 작성하고 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 계약 해제ㆍ해지, 회사의 면책사항 및 이용자에 대한 피해보상 등 중요한 내용을 이용자가 알 수 있도록 합니다.
+							<br>
+							<br> ③ 회사는「전자상거래 등에서의 소비자보호에 관한 법률」,「약관의 규제에 관한 법률」, 「정보통신망이용촉진 및 정보보호 등에 관한 법률」,「콘텐츠산업진흥법」등 관련 법령에 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.
+							<br>
+							<br> ④ 회사가 약관을 개정할 경우에는 적용일자 및 개정내용, 개정사유 등을 명시하여 그 적용일자로부터 최소한 7일 이전(단, 이용자에게 불리하거나 중대한 사항의 변경은 30일 이전)부터 그 적용일자 경과 후 상당한 기간이 경과할 때까지 초기화면 또는 초기화면과의 연결화면을 통해 공지합니다. 기존회원에게는 알림 공지 외에 개정약관을 전자우편주소로 발송합니다.
+							<br>
+							<br> ⑤ 회사가 약관을 개정할 경우에는 개정약관 공지 후 개정약관의 적용에 대한 회원의 동의 여부를 확인합니다. 개정약관 공지 시 회원이 동의 또는 거부의 의사표시를 하지 않으면 승낙한 것으로 간주하겠다는 내용도 함께 공지한 경우에는 회원이 약관 시행일까지 거부의사를 표시하지 않는다면 개정약관에 동의한 것으로 간주할 수 있습니다.
+							<br>
+							<br> ⑥ 회원이 개정약관의 적용에 동의하지 않는 경우 회사는 개정 약관의 내용을 적용하지 않으며, 이 경우 회원은 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는 회사가 동의하지 않은 회원과의 이용계약을 해지할 수 있습니다.
+							<br>
+							<br> ⑦ 회사는 회사가 제공하는 개별 서비스에 대해서 별도의 이용약관(이하 “개별약관”)을 둘 수 있으며, 해당 내용이 본 약관과 상충할 경우에는 개별약관이 우선하여 적용됩니다.
+							<br>
+							<br> ⑧ 본 약관에서 정하지 아니한 사항과 본 약관의 해석에 관하여는 개별약관 및「전자상거래 등에서의 소비자보호에 관한 법률」,「약관의 규제에 관한 법률」,「정보통신망이용촉진 및 정보보호 등에 관한 법률」,「콘텐츠산업진흥법」등 관련 법령 또는 상관례에 따릅니다.</p>
+						<br>
+						<h3>제5조 (운영정책)</h3>
+						<p>① 약관을 적용하기 위하여 필요한 사항과 회원의 권익을 보호하고 서비스 내 질서를 유지하기 위하여 회사는 약관에서 구체적 범위를 정하여 위임한 사항을 서비스 운영정책 (이하 “운영정책”이라 합니다)으로 정할 수 있습니다.
+							<br>
+							<br> ② 회사는 운영정책의 내용을 회원이 알 수 있도록 서비스 초기 화면이나 플랫폼에 게시하거나 연결화면을 제공하는 방법으로 회원에게 공지하여야 합니다.
+							<br>
+							<br> ③ 회원의 권리 또는 의무에 중대한 변경을 가져오거나 약관 내용을 변경하는 것과 동일한 효력이 발생하는 운영정책 개정의 경우에는 제4조의 절차에 따릅니다.
+							<br>단, 운영정책 개정이 다음 각 호의 어느 하나에 해당하는 경우에는 제2항의 방법으로 사전에 공지합니다.
+							<br>
+							<br> 1. 약관에서 구체적으로 범위를 정하여 위임한 사항을 개정하는 경우
+							<br> 2. 회원의 권리·의무와 관련 없는 사항을 개정하는 경우
+							<br> 3. 운영정책의 내용이 약관에서 정한 내용과 근본적으로 다르지 않고 회원이 예측가능한 범위 내에서 운영정책을 개정하는 경우</p>
+						<br>
+						<h2>제2장 플랫폼 서비스 이용계약의 체결</h2>
+						<h3>제6조 (회원 로그인 이메일 및 비밀번호)</h3>
+						<p>① 회사는 회원에 대하여 회원정보 보호, 서비스 이용안내 등의 편의를 위해 회원이 선정한 일정한 문자, 숫자 또는 특수문자의 조합을 로그인 이메일(ID)과 비밀번호로 부여합니다.
+							<br>
+							<br> ② 회사는 로그인정보를 통하여 당해 회원의 서비스 이용가능 여부 등의 제반 회원 관리업무를 수행합니다.
+							<br>
+							<br> ③ 회원은 자신의 로그인정보를 선량한 관리자로서의 주의 의무를 다하여 관리하여야 합니다.
+							<br>회원이 본인의 로그인정보를 소홀히 관리하거나 제3자에게 이용을 승낙함으로써 발생하는 손해에 대하여는 회원에게 책임이 있습니다.
+							<br>
+							<br> ④ 비밀번호의 관리책임은 회원에게 있으며, 회원이 원하는 경우에는 보안상의 이유 등으로 언제든지 변경이 가능합니다.
+							<br>
+							<br> ⑤ 회원은 정기적으로 비밀번호를 변경하여야 합니다.</p>
+						<br>
+						<h3>제7조 (회원 정보의 제공 및 변경)</h3>
+						<p>① 회원은 본 약관에 의하여 회사에 정보를 제공하여야 하는 경우에 진실된 정보를 제공하여야 하며, 허위정보 제공으로 인해 발생한 불이익에 대해서는 보호받지 못합니다.
+							<br>
+							<br> ② 회원은 회원정보관리화면을 통하여 언제든지 자신의 개인정보를 열람하고 수정할 수 있습니다.
+							<br>다만, 서비스 관리를 위해 필요한 실명, 로그인 이메일(ID) 등은 수정이 불가능합니다.
+							<br>
+							<br> ③ 회원은 회원가입 신청 시 기재한 사항이 변경되었을 경우 온라인으로 수정을 하거나 기타 방법으로 회사에 대하여 그 변경사항을 알려야 합니다.
+							<br>
+							<br> ④ 회원이 로그인이메일 및 비밀번호를 분실하였을 때 서비스를 이용하기 위해서는 기존에 실명인증을 하였을 경우 로그인 정보를 찾을 수 있도록 하며, 그렇지 않은 경우는 온라인 플랫폼을 통하여 새로운 로그인이메일과 비밀번호를 부여받거나 기타 방법으로 회사에 문의하여 수정을 해야 합니다.
+							<br>
+							<br> ⑤ 제3항과 제4항의 변경사항을 회사에 알리지 않아 발생한 불이익에 대하여 회사는 책임을 지지 않습니다.</p>
+						<br>
+						<h3>제8조 (개인정보의 보호 및 관리)</h3>
+						<p>① 회사는 관계 법령이 정하는 바에 따라 계정정보를 포함한 회원의 개인정보를 보호하기 위해 노력하며, 회원 개인정보의 보호 및 사용에 대해서는 관계법령 및 회사가 별도로 고지하는 개인정보취급방침이 적용됩니다.
+							<br>
+							<br> ② 서비스의 일부로 제공되는 개별 서비스를 제외한 것으로서 홈페이지 및 서비스별 웹사이트에서 단순히 링크된 제3자 제공의 서비스에 대하여는 회사의 개인정보취급방침이 적용되지 않습니다.
+							<br>
+							<br> ③ 회사는 회원의 귀책사유로 인하여 노출된 회원의 계정정보를 포함한 모든 정보에 대해서는 일체의 책임을 지지 않습니다.</p>
+						<br>
+						<h2>제3장 계약 당사자의 의무</h2>
+						<h3>제9조 (회사의 의무)</h3>
+						<p>① 회사는 관련 법령을 준수하고 본 약관이 정하는 권리의 행사와 의무를 성실하게 이행하며, 지속적이고 안정적인 플랫폼 서비스를 제공하는데 최선을 다합니다.
+							<br>
+							<br> ② 회사는 회원이 안전하게 서비스를 이용할 수 있도록 개인정보 보호를 위해 보안시스템을 갖추어야 하며, 개인정보취급방침을 공시하고 준수합니다.
+							<br>또한 본 약관 및 개인정보취급방침에서 정한 경우를 제외하고는 회원의 개인정보가 제3자에게 공개 또는 제공되지 않도록 합니다.
+							<br>
+							<br> ③ 회사는 이용자가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.
+							<br>
+							<br> ④ 회사는 계속적이고 안정적인 서비스의 제공을 위하여 서비스 개선을 하던 중 설비에 장애가 생기거나 데이터 등이 멸실된 때에는 천재지변, 비상사태, 현재의 기술로는 해결이 불가능한 결함 및 장애 등 부득이한 사유가 없는 한 지체 없이 이를 수리 또는 복구하도록 최선의 노력을 다합니다.</p>
+						<br>
+						<h3>제10조 (회원의 의무)</h3>
+						<p>① 회원은 다음 행위를 하여서는 안 됩니다.
+							<br>
+							<br> 1. 신청 또는 변경 시 허위내용의 기재
+							<br> 2. 타인의 정보 도용
+							<br> 3. 회사의 임직원, 운영자, 기타 관계자를 사칭하는 행위
+							<br> 4. 회사가 게시한 정보의 변경
+							<br> 5. 회사가 금지한 정보(컴퓨터 프로그램 등)의 송신 또는 게시
+							<br> 6. 회사가 제공 또는 승인하지 아니한 컴퓨터 프로그램이나 기기 또는 장치를 제작, 배포, 이용, 광고하는 행위
+							<br> 7. 회사와 기타 제3자의 저작권 등 지적재산권에 대한 침해
+							<br> 8. 회사 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
+							<br> 9. 외설 또는 폭력적인 말이나 글, 화상, 음향, 기타 사회질서에 반하는 정보를 회사의 플랫폼에 공개 또는 게시하는 행위
+							<br> 10. 서비스 데이터를 유상으로 처분하거나 권리의 객체로 하는 행위
+							<br> 11. 제10호의 행위를 유도하거나 광고하는 행위
+							<br> 12. 회사의 동의 없이 영리, 영업, 광고, 정치활동 등을 목적으로 서비스를 사용하는 행위
+							<br> 13. 기타 관련 법령에서 금지하거나 선량한 풍속 기타 사회통념상 허용되지 않는 행위
+							<br>
+							<br> ② 투자유치 회원은 투자 또는 후원 유치를 위해 게시된 사업의 신뢰성 확보를 위하여 회사가 요청하는 관계서류를 제출해야 하며, 제출된 서류는 회사에 귀속됩니다.
+							<br>
+							<br> ③ 회원은 본 약관의 규정, 이용안내 및 서비스와 관련하여 공지한 주의사항, 회사가 통지하는 사항 등을 확인하고 준수할 의무가 있습니다.
+							<br>
+							<br> ④ 회사는 제1항, 제3항 및 다음 각 호의 어느 하나에 해당하는 행위의 구체적인 유형을 운영정책에서 정할 수 있으며, 회원은 이를 준수할 의무가 있습니다.
+							<br>
+							<br> 1. 회원의 로그인 이메일명, 기타 서비스상 사용하는 명칭에 대한 제한
+							<br> 2. 댓글이용에 대한 제한
+							<br> 3. 서비스 이용방법에 대한 제한
+							<br> 4. 기타 회원의 서비스 이용에 대한 본질적 권리를 침해하지 않는 범위 내에서 회사가 서비스 운영상 필요하다고 인정되는 사항</p>
+						<br>
+						<h2>제4장 서비스 이용</h2>
+						<h3>제11조 (서비스의 변경 및 내용 수정)</h3>
+						<p>① 회원은 회사가 제공하는 서비스를 본 약관, 운영정책 및 회사가 설정한 서비스규칙에 따라 이용할 수 있습니다.
+							<br>
+							<br> ② 회사는 서비스 내용의 제작, 변경, 유지, 보수에 관한 포괄적인 권한을 가집니다.
+							<br>
+							<br> ③ 회사가 상당한 이유가 있는 경우에 운영상, 기술상의 필요에 따라 제공하고 있는 서비스를 수정할 수 있으며, 서비스 수정을 하는 경우에는 변경 후 해당 서비스 화면 등을 통하여 공지합니다.</p>
+						<br>
+						<h3>제12조 (서비스의 제공 및 중단 등)</h3>
+						<p>① 회사는 영업방침에 따라 정해진 시간동안 서비스를 제공하며, 서비스를 일정 범위로 분할하여 각 범위별로 이용가능 시간을 별도로 지정할 수 있습니다.
+							<br>
+							<br> ② 회사는 다음 각 호에 해당하는 경우 일정한 시간동안 서비스의 제공을 중단할 수 있습니다.
+							<br>
+							<br> 1. 컴퓨터 등 정보통신설비의 보수점검, 교체, 정기점검 또는 서비스의 수정을 위하여 필요한 경우
+							<br> 2. 해킹, 통신사고, 회원들의 비정상적인 서비스 이용, 미처 예상하지 못한 서비스의 불안정성에 대응하기 위하여 필요한 경우
+							<br> 3. 관련 법령에서 특정 시간 또는 방법으로 서비스 제공을 금지하는 경우
+							<br> 4. 천재지변, 비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 서비스 제공이 불가능할 경우
+							<br> 5. 회사의 분할, 합병, 영업양도, 영업의 폐지, 당해 서비스의 수익 악화 등 회사의 경영상 중대한 필요에 의한 경우
+							<br> ③ 회사는 제2항 제1호의 경우, 매주 또는 격주 단위로 일정 시간을 정하여 서비스를 중지할 수 있습니다.
+							<br>이 경우 회사는 최소한 24시간 전에 그 사실을 회원에게 서비스 초기 화면이나 서비스 플랫폼에 고지합니다.
+							<br>
+							<br> ④ 제2항 제2호의 경우, 회사는 사전 고지 없이 서비스를 일시 중지할 수 있습니다.
+							<br>회사는 이러한 경우 그 사실을 서비스 초기 화면이나 서비스 플랫폼에 사후 고지할 수 있습니다.
+							<br>
+							<br> ⑤ 회사는 회사가 제공하는 무료서비스 이용과 관련하여 이용자에게 발생한 어떠한 손해에 대해서도 책임을 지지 않습니다.
+							<br> 다만, 회사의 고의 또는 중대한 과실로 인하여 발생한 손해의 경우는 제외합니다.
+							<br>
+							<br> ⑥ 제2항 제3호 및 제5호의 경우에 회사는 기술상 · 운영상 필요에 의해 서비스 전부를 중단할 수 있으며, 이를 사전에 공지합니다.
+							<br>사전에 공지할 수 없는 부득이한 사정이 있는 경우는 사후에 공지를 할 수 있습니다.
+							<br>
+							<br> ⑦ 회사가 부득이한 사유에 따라 서비스를 종료하는 경우 회원은 서비스 이용이 중단됨에 따른 손해배상을 청구할 수 없습니다.</p>
+						<br>
+						<h3>제13조 (부적합한 투자 또는 후원 유치 신청)</h3>
+						<p>다음 각 호에 해당하는 경우 사업에 대한 투자 또는 후원 유치 신청에 대해 회사가 게시를 거부할 수 있습니다.
+							<br>
+							<br> 1. 미성년자에게 판매가 금지된 물품의 판매를 목적으로 하는 사업
+							<br> 2. 허위 또는 과장된 사업 계획을 바탕으로 하는 사업
+							<br> 3. 특허권, 상표권, 의장권, 실용신안권 등 타인의 지식재산권을 침해하는 사업
+							<br> 4. 법률에 위반되거나 법령상 필요한 신고, 허가, 심의, 심사, 검사 등을 획득 하지 않은 사업
+							<br> 5. 기타 회사에서 부적절하다고 판단하는 사업</p>
+						<br>
+						<h3>제14조 (정보의 수집 등)</h3>
+						<p>① 회사는 서비스 내에서 회원간에 이루어지는 모든 게시 내용을 저장ㆍ보관할 수 있으며, 회원간의 분쟁 조정, 민원 처리 또는 서비스 질서의 유지를 위하여 회사가 필요하다고 판단하는 경우에 한하여 본 정보를 열람할 수 있습니다.
+							<br>
+							<br> ② 본 정보는 관계 법령으로 권한을 부여 받지 아니한 제3자는 열람할 수 없으며, 회사는 해당 정보를 열람하기 전에 게시내용의 열람이 필요한 사유 및 열람 범위를 개인에게 사전 고지하기로 합니다.
+							<br>다만, 계정도용, 현금거래, 언어폭력, 서비스 내 사기 등 기망행위, 버그 악용, 기타 현행 법령 위반행위 및 본 약관 제10조에서 정하는 중대한 약관위반 행위의 조사, 처리, 확인 및 이의 구제와 관련하여 회원의 게시 정보를 열람해야 할 필요가 있는 경우에는 사후에 게시정보가 열람된 개인들에 대하여 열람한 사유와 열람한 정보 중 본인과 관련된 부분을 고지하기로 합니다.
+							<br>
+							<br> ③ 회사는 서비스 운영 및 프로그램 안정화 등 서비스 품질 개선을 위하여 회원 PC 등 단말기 설정 및 사양 정보를 수집 및 활용할 수 있습니다.</p>
+						<br>
+						<h3>제15조 (저작권 및 지적재산권 등 권리의 귀속)</h3>
+						<p>① 회사가 제공하는 서비스 내 모든 콘텐츠에 대한 저작권 및 기타 지적재산권은 회사에 귀속됩니다.
+							<br>단, 회원이 작성한 게시물에 대한 저작권은 해당 게시물의 저작자에게 귀속됩니다.
+							<br>
+							<br> ② 회원은 회사가 제공하는 서비스를 이용함으로써 얻은 정보 중 회사 또는 제공업체에 지적재산권이 귀속된 정보를 회사 또는 제공업체의 사전승낙 없이 복제, 송신, 출판, 배포, 방송 등의 방법에 의하여 영리목적으로 이용하거나 제3자에게 제공하여서는 안됩니다.
+							<br>
+							<br> ③ 회원이 작성한 게시물은 검색결과 또는 서비스 등을 통해 노출될 수 있으며, 이를 위해 회사가 필요한 범위 내에서 해당 자료를 수정, 복제, 편집하여 이용할 수 있습니다.
+							<br>
+							<br> ④ 회사는 제3항 이외의 방법으로 회원이 작성한 게시물을 이용하고자 하는 경우 회원의 사전동의를 받습니다.
+							<br>
+							<br> ⑤ 회사는 회원이 작성한 게시물에 대해 제10조 제1항에서 규정하는 금지행위에 해당된다고 판단되는 경우 이를 삭제하거나 비공개 등의 조치를 취할 수 있습니다.
+							<br>
+							<br> ⑥ 제3항은 회사가 서비스를 운영하는 동안 유효하며 회원탈퇴 후에도 지속적으로 적용됩니다.</p>
+						<br>
+						<h3>제16조 (서비스 이용계약의 해지 및 이용 제한)</h3>
+						<p>① 회사는 회원이 제10조에서 정하는 회원의 의무를 위반한 경우 회원에게 사전 통보 후 서비스 이용계약을 해지할 수 있습니다.
+							<br>단, 시정이 가능하다고 인정되는 경우 회원에게 그 사유를 통지하고 일정한 기간동안 회원에게 경고, 일시정지, 영구이용정지 등으로 서비스의 이용을 단계적으로 제한할 수 있습니다.
+							<br>
+							<br> ② 회사가 계약을 해지하는 경우 회사는 회원에게 서면 또는 전자우편의 방법으로 해지사유를 통보합니다.
+							<br>
+							<br> ③ 제1항의 사유로 계약이 해지되었을 경우 회원은 서비스의 사용권한 및 서비스 이용을 통해 획득한 혜택 등을 상실하며, 이로 인한 손해배상을 청구할 수 없습니다.
+							<br>
+							<br> ④ 회원은 계약 해지 및 이용제한에 대하여 이의신청을 할 수 있으며, 이의신청이 정당하다고 회사가 인정하는 경우 회사는 서비스의 이용을 재개합니다.</p>
+						<br>
+						<h2>제5장 손해배상 등</h2>
+						<h3>제17조 (손해배상)</h3>
+						<p>① 회사가 고의 또는 중과실로 회원에게 손해를 끼친 경우, 손해에 대하여 배상할 책임이 있습니다.
+							<br>
+							<br> ② 회원이 본 약관을 위반하거나 위법한 행위로 회사에 손해를 끼친 경우, 회원은 회사에 대하여 그 손해에 대하여 배상할 책임이 있습니다.</p>
+						<br>
+						<h3>제18조 (회사의 면책)</h3>
+						<p>① 회사는 천재지변 또는 이에 준하는 불가항력, 정보통신설비의 보수점검 또는 교체, 고장, 통신두절 등으로 인하여 원활한 서비스를 제공할 수 없는 경우에는 서비스 제공에 대한 책임이 면제됩니다.
+							<br>
+							<br> ② 회사는 회원의 고의 또는 과실로 인한 서비스 이용의 장애 및 계약해지에 대하여는 책임이 면제됩니다.
+							<br>
+							<br> ③ 회사는 회원이 작성한 게시물에 대하여 신뢰도, 정확성 등을 보증하지 않으며, 이를 신뢰함에 따라 발생한 투자 손해에 대하여는 책임을 지지 않습니다.
+							<br>
+							<br> ④ 회사는 회원 상호간 또는 제3자 상호간에 서비스를 매개로 발생한 분쟁, 개별적인 거래와 관련하여 책임을 지지 않습니다.
+							<br>
+							<br> ⑤ 회사는 무료로 제공하는 서비스와 관련하여 회사의 고의 또는 중대한 과실이 없는 한 책임을 지지 않습니다.
+							<br>
+							<br> ⑥ 회사 서비스 중 일부 서비스는 다른 사업자가 제공하는 서비스를 통하여 제공될 수 있으며, 회사는 다른 사업자가 제공하는 서비스로 인하여 발생한 손해 등에 대해서는 회사의 고의 또는 중대한 과실이 없는 한 책임을 지지 않습니다.
+							<br>
+							<br> ⑦ 회사는 관련 법령, 정부 정책 등에 의하여 서비스 또는 회원에 따라 서비스 이용시간 등을 제한할 수 있으며, 이러한 제한사항 및 제한에 따라 발생하는 서비스 이용 관련 제반사항에 대해서는 책임이 면제됩니다.</p>
+						<br>
+						<h3>제19조 (회원에 대한 통지)</h3>
+						<p>① 회사가 회원에게 통지를 하는 경우 회원이 지정한 전자우편, 휴대폰 SMS, 전자쪽지 등으로 할 수 있습니다.
+							<br>다만, 회원이 변경된 회원정보를 수정하지 않아 통지를 받지 못한 경우 회원은 통지받지 못한 것을 이유로 회사에 책임을 물을 수 없습니다.
+							<br>
+							<br> ② 회사는 회원 전체에게 통지를 하는 경우 서비스 초기화면에 게시하거나 팝업화면, 알림메세지 등을 제시함으로써 제1항의 통지에 갈음할 수 있습니다.</p>
+						<br>
+						<h3>제20조 (준거법 및 재판권) </h3>
+						<p>① 회사와 회원간에 발생한 분쟁에 관한 소송은 대한민국법을 준거법으로 합니다.
+							<br>
+							<br> ② 회사와 회원간에 발생한 분쟁에 관한 소송의 관할은 민사소송법이 정하는 바에 따릅니다.</p>
+						<br> </section>
+					<section id="privacy">
+						<h1>개인정보 취급방침</h1>
+						<p>네오스프링 주식회사(이하 “회사”라 함)는 회원의 개인정보를 소중히 생각하며, 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 관련 법령 및 규정을 준수하고 있습니다.</p>
+						<p>회사는 본 개인정보 취급방침을 통하여 회사가 수집하는 정보의 항목 및 수집방법, 이용목적, 개인정보 보호를 위한 조치 등을 온라인 플랫폼 및 모바일 웹에 공개하여 이용자가 언제나 용이하게 열람할 수 있도록 하고 있습니다.</p>
+						<h3>제1조 (수집하는 개인정보의 항목 및 수집방법)</h3>
+						<p>① 회사는 이용자의 동의 없이 개인정보를 수집하지 않으며, 회원가입 시 서비스 이용을 위해 필요한 최소한의 개인정보만을 수집합니다. 이용자는 개인정보 수집 동의를 거부할 권리가 있으며, 이용자가 거부한 개인정보의 항목에 따라 서비스 이용이 일부 제한될 수 있습니다.
+							<br>
+							<br> ② 수집하는 개인정보의 항목은 다음 각 호와 같습니다.
+							<br>
+							<br> 1. 공통 필수항목 : 이름, 이메일 주소, 비밀번호, 주민등록번호(법인일 시 사업자등록번호, 법인등록번호), 주소, 연락처
+							<br> 2. 소득요건 확인 또는 전문투자자 확인 시(이하 ‘투자자 확인’) 필수항목 : 소득요건 확인서류(금융소득명세서, 근로소득원칭징수영수증 등) 또는 전문투자자 확인서류(전문자격증, 전문투자자 확인증 등)
+							<br> 3. 계좌 등록 및 청약증거금 납입 시 필수항목 : 금융기관명, 계좌번호(본인 명의)
+							<br>
+							<br> ③ 서비스 이용과정이나 업무처리 과정에서 다음 각 호와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+							<br>
+							<br> 1. 서비스 이용과정에서 이용자가 입력한 정보 및 작성한 저작물
+							<br> 2. IP Address, 쿠키, 방문 일시, 서비스 이용 기록, 불량 이용 기록
+							<br>
+							<br> ④ 회사는 다음 각 호와 같은 방법으로 개인정보를 수집합니다.
+							<br>
+							<br> 1. 회원 가입, 서비스 이용 등 플랫폼 이용과정에서 생성된 정보
+							<br> 2. 회원이 이메일, 전화 등의 방법으로 회사에 제공한 정보</p>
+						<br>
+						<h3>제2조 (개인정보의 수집 및 이용목적)</h3>
+						<p>개인정보의 수집 및 이용목적은 다음 각 호와 같습니다.
+							<br>
+							<br> 1. 온라인소액투자서비스 제공, 실명확인, 청약증거금 결제 등 서비스 제공에 관한 계약 이행 및 이에 따른 요금 정산
+							<br> 2. 회원 서비스 이용에 따른 본인 확인, 개인식별, 불량회원의 부정 이용방지 및 비인가 사용 방지, 가입의사 확인, 가입 및 가입횟수 제한, 분쟁 조정을 위한 기록 보존, 민원 처리, 고지사항 전달 등의 회원관리
+							<br> 3. 회원별 맞춤 서비스 제공, 신규 서비스 개발 및 광고 게재 등 마케팅에 활용</p>
+						<br>
+						<h3>제3조 (개인정보의 보유 및 이용기간)</h3>
+						<p>① 회사는 원칙적으로 개인정보의 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다.
+							<br>
+							<br> ② 제1항에도 불구하고 관련 법령 또는 규정상의 의무이행 및 금융감독원 등 감독기관의 요청, 명령에 따른 제출할 의무이행에 필요할 것으로 판단되는 정보에 대해서는 개인정보를 파기하지 아니하고 보유할 수 있으며, 다음 각 호의 정보에 대해서는 아래의 명시한 기간동안 보존합니다.
+							<br>
+							<br> 1. 웹 사이트 접속 및 이용에 관한 기록 : 3개월
+							<br> 2. 소비자의 불만 또는 분쟁 처리에 관한 기록 : 3년
+							<br> 3. 거래정보 등의 제공내용 기록 관리 : 5년
+							<br> 4. 전자금융 거래에 대한 기록 : 5년</p>
+						<br>
+						<h3>제4조 (개인정보의 제3자 제공)</h3>
+						<p>회사는 이용자의 개인정보를 제2조에서 명시한 범위 내에서 사용하며, 이용자의 사전 동의 없이 동의 받은 범위를 초과하여 이용하거나 제3자에게 제공하지 않습니다.
+							<br>다만, 관련 법령 또는 규정에 의거하거나 다음 각 호에 해당하는 경우에는 예외로 합니다.
+							<br>
+							<br> 1. 통계, 학술연구, 시장조사를 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 가공하여 제공하는 경우
+							<br> 2. 금융실명거래 및 비밀보장에 관한 법률, 신용정보의 이용 및 보호에 관한 법률 등 법령 에 특별한 규정이 있는 경우 또는 법령에 정해진 절차와 방법에 따라 감독기관 또는 정부기관의 제공 요구가 있는 경우
+							<br> 3. 증권형 크라우드펀딩 업무를 위하여 한국증권금융, 한국예탁결제원, 금융결제원에 제공하는 경우</p>
+						<br>
+						<h3>제5조 (개인정보 처리의 위탁)</h3>
+						<p>회사는 서비스 향상 및 원활한 계약의 이행 등을 위하여 개인정보 처리업무를 외부업체에 위탁하여 처리할 수 있으며, 그러한 경우 미리 그 사실을 이용자에게 고지하고 동의를 받도록 하겠습니다. </p>
+						<br>
+						<h3>제6조 (이용자 및 법정대리인의 권리와 행사방법)</h3>
+						<p>① 이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입 해지를 요청할 수도 있습니다.
+							<br>단, 14세 미만의 이용자는 법정대리인을 통해 가능합니다.
+							<br>
+							<br> ② 이용자의 개인정보 조회, 수정을 위해서는 '개인정보 변경‘ 또는 '회원정보 수정‘을, 가입해지를 위해서는 "회원 탈퇴"를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다.
+							<br>
+							<br> ③ 이용자가 개인정보의 오류에 대한 정정을 요청하는 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않겠으며, 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다.
+							<br>
+							<br> ④ 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 제3조에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.</p>
+						<br>
+						<h3>제7조 (개인정보 파기절차 및 방법)</h3>
+						<p>① 이용자가 회원가입 등을 위해 입력한 정보는 목적이 달성된 후 회원정보 DB에서 회사 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라 일정 기간 저장된 후 파기되며, 이러한 목적에 따라 보관된 개인정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.
+							<br>
+							<br> ② 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기하며, 전자적 파일 형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</p>
+						<br>
+						<h3>제8조 (개인정보 자동 수집장치의 운영 및 거부에 관한 사항) </h3>
+						<p>① 회사는 이용자의 사용 편의 및 맞춤화된 서비스를 제공하기 위해서 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다.
+							<br>
+							<br> ② 이용자는 쿠키 설치에 대한 선택권이 있으며 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다. 단, 쿠키의 저장을 거부할 경우에는 회사의 일부 서비스를 제공받지 못하실 수 있습니다.</p>
+						<br>
+						<h3>제9조 (개인정보 보호 대책)</h3>
+						<p>회사는 이용자의 개인정보가 분실, 도난, 누출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 다음 각 호와 같은 기술적, 관리적 대책을 강구하고 있습니다.
+							<br>
+							<br> 1. 회원 아이디(ID)의 비밀번호는 암호화되어 저장 및 관리되고 있어 본인만이 알고 있으며, 개인정보의 확인 및 변경도 비밀번호를 알고 있는 본인에 의해서만 가능합니다.
+							<br> 2. 회사는 해킹이나 컴퓨터 바이러스 등에 의해 회원의 개인정보가 유출되거나 훼손되는 것 을 막기 위해 최신 백신프로그램 사용 및 네트워크상에서 개인정보를 안전하게 전송할 수 있는 보안장치를 채택하고 있으며, 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하는 등 보안성을 확보하기 위한 가능한 모든 기술적 장치를 갖추려 노력하고 있습니다.
+							<br> 3. 회사의 개인정보관련 취급 직원은 담당자에 한정시키고 있으며, 담당자에 대한 수시 교육을 통하여 개인정보취급방침의 준수를 항상 강조하고 있습니다.</p>
+						<br>
+						<h3>제10조 (개인정보 보호 책임자 및 담당자)</h3>
+						<p>회사는 이용자의 개인정보를 보호하고 개인정보 관련 민원을 처리하기 위하여 개인정보 보호 책임자 및 담당자를 지정하고 있사오니, 개인정보 관련 문의사항이 있으시면 아래의 책임자 및 담당자에게 연락주시기 바랍니다.
+							<br>회사는 이용자가 문의하신 사항에 대하여 신속하고 성실하게 답변해드리겠습니다.
+							<br>
+							<br> 1. 개인정보 관리책임자
+							<br> 이 름 : 김민수
+							<br> 전 화 : (02) 853-2295
+							<br> 메 일 : kimminsoo@neospring.kr
+							<br>
+							<br> 2. 개인정보 관리담당자
+							<br> 이 름 : 박미란
+							<br> 전 화 : (02) 853-2294
+							<br> 메 일 : mlpark@neospring.kr</p>
+						<br>
+						<h3>제11조 (고지 의무)</h3>
+						<p>관련 법령 또는 정책의 변경 등에 따라 본 개인정보취급방침의 내용이 추가, 삭제 및 수정이 있을 시에는 개정 최소 7일전부터 홈페이지를 통해 고지합니다.
+							<br>다만 개인정보의 수집 및 활용, 제3자 제공 등과 같이 이용자 권리의 중요한 변경이 있을 경우에는 최소 30일 전에 고지합니다.</p>
+						<br> </section>
+					<section id="serviceAgreement1">
+						<h1>리워드형 및 기부형 크라우드펀딩 서비스 이용약관</h1>
+						<h3>제1조 (목적)</h3>
+						<p>본 약관은 네오스프링 주식회사(이하 “회사”)와 회사가 제공하는 리워드형 및 기부형 크라우드펀딩(이하 “펀딩”) 서비스를 이용하는 회원 간의 서비스 이용에 관한 권리 및 의무, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+						<br>
+						<h3>제2조 (서비스의 제공)</h3>
+						<p>회사는 본 약관에 따라 다음 각 호의 서비스를 제공합니다.
+							<br>
+							<br> 1. 리워드형 및 기부형 크라우드펀딩의 중개
+							<br> 2. 제1호의 서비스 제공과 관련한 부가서비스</p>
+						<br>
+						<h3>제3조 (서비스의 이용료)</h3>
+						<p>① 회사는 본 약관에 따라 펀딩 서비스를 이용하는 회원에게 별도의 수수료를 징수하지 않습니다. 다만, 제11조 제4항에 따라 회원의 단순 변심에 의한 결제 취소일 경우 환불처리와 관련하여 계좌이체 수수료 등이 발생할 수 있습니다.
+							<br>
+							<br> ② 펀딩을 제공받고자 하는 펀딩 요청사는 회사와의 별도의 약정에 따라 수수료를 회사에 지급하여야 합니다.
+							<br>
+							<br> ③ 기타 서비스에 있어서 회사가 서비스 이용에 따른 수수료를 부과하고자 할 경우에는 회사는 부과기준 및 기타 상세한 내용을 시행 7일 전에 홈페이지에 공지합니다.</p>
+						<br>
+						<h3>제4조 (펀딩 정보의 게재)</h3>
+						<p>① 펀딩을 제공받고자 하는 펀딩 요청사는 회원들의 판단에 도움이 될 수 있는 펀딩에 관한 정보를 회사의 홈페이지에 게재하여야 합니다.
+							<br>
+							<br> ② 펀딩 요청사는 펀딩의 내용 변경 또는 추가 시 회원이 언제든지 확인할 수 있도록 회사 홈페이지에 그 내용을 게재하여야 합니다.
+							<br>
+							<br> ③ 회사 홈페이지에 게재된 펀딩에 관한 정보가 허위, 기재 누락, 오기가 있음에 따라 발생한 분쟁, 법적 책임, 불이익에 대해서는 펀딩 요청사가 모든 책임을 단독으로 부담하여야 합니다.
+							<br>
+							<br> ④ 회원이 홈페이지에 게재된 내용에 의존하여 펀딩에 참여한 경우 이로부터 발생하는 결과에 대하여 회사는 회사의 고의 또는 과실이 없는 이상 책임을 지지 않습니다.</p>
+						<br>
+						<h3>제5조 (펀딩 참여 전 유의사항)</h3>
+						<p>회원은 본 약관에 따른 펀딩에 참여하기 전에 홈페이지를 통해 제공되는 정보뿐만 아니라 펀딩 목적, 펀딩기간, 보상품 제공의 조건 등 펀딩의 내용을 충분히 숙지한 후 펀딩에 참여하여야 합니다.</p>
+						<br>
+						<h3>제6조 (의견교환)</h3>
+						<p>① 회원은 홈페이지에 개설된 게시판을 통해 펀딩에 대한 질의 또는 답변을 게시하는 방법으로 펀딩 요청사와 의견을 교환할 수 있습니다.
+							<br>
+							<br> ② 회사는 홈페이지에 게시된 회원의 의견을 임의로 삭제하거나 수정하지 않습니다. 다만, 다른 법률에 근거가 있거나 게시된 글이 회사 약관에 따라 삭제될 수 있는 경우에는 그러하지 아니합니다.</p>
+						<br>
+						<h3>제7조 (펀딩 참여 방법)</h3>
+						<p>① 회원은 회사 홈페이지를 통하여 펀딩 내용(기부금액, 보상품의 내용, 수량 등)과 결제방법을 입력하고 회사가 제공하는 결제절차를 마치면 펀딩 참여가 완료됩니다.
+							<br>
+							<br> ② 회사는 펀딩 요청사가 합리적이고 명확한 기준에 따라 펀딩 참여 회원의 자격 또는 펀딩금액에 제한을 두기를 요청한 경우 그에 따라 펀딩의 신청 접수를 제한할 수 있습니다.
+							<br>
+							<br> ③ 회사는 정확하고 안전한 결제 처리를 위해 관계법령에 따라 다음 각 목과 같은 회원의 정보를 회원의 동의를 받아 결제 대행사에 제공하게 됩니다.
+							<br>
+							<br> 1. 신용카드의 번호, 유효기간
+							<br> 2. 신용카드 소유자의 성명
+							<br> 3. 계좌번호, 은행, 예금주 성명
+							<br> 4. 이메일, 휴대폰번호 등 결제 확인을 위한 연락처
+							<br>
+							<br> ④ 회원은 동일 펀딩에 중복으로 참여할 수 있으며, 참여시 최저 금액은 1,000원 이상입니다.</p>
+						<br>
+						<h3>제8조 (펀딩 참여 취소)</h3>
+						<p>① 펀딩 참여 취소는 펀딩 진행 기간중에만 가능하며, 마감시한이 지날 시 취소하실 수 없습니다.
+							<br>
+							<br> ② 이미 펀딩에 참여한 회원이 펀딩 참여 금액을 수정하고 싶은 경우에는 추가로 펀딩에 참여하거나 또는 이전 결제를 취소한 후 재결제를 진행하여야 합니다.</p>
+						<br>
+						<h3>제9조 (펀딩결과의 게시)</h3>
+						<p>① 목표한 펀딩금액에 도달하는 경우에만 펀딩금액을 지급받을 수 있도록 구성된 펀딩의 경우 펀딩기간이 종료되면 회사는 회원이 결제한 펀딩금액이 목표 펀딩금액 이상인지 미만인지에 따라 성공 또는 실패로 구분하여 홈페이지에 게시합니다.
+							<br>
+							<br> ② 목표한 펀딩금액의 도달 여부와 무관하게 펀딩금액을 지급받을 수 있도록 구성된 펀딩의 경우 펀딩기간이 종료할 당시 회원이 결제한 펀딩금액만큼 펀딩결과가 성공한 것으로 봅니다.</p>
+						<br>
+						<h3>제10조 (펀딩금액의 전달)</h3>
+						<p>① 제9조에 따라 펀딩결과가 성공인 경우 회원이 결제한 펀딩금액을 펀딩 요청사에게 지급합니다. 다만, 펀딩의 특성에 따라 펀딩 요청사와 별도 약정에서 달리 약정한 경우에는 조건부 또는 분할하여 지급될 수 있습니다.
+							<br>
+							<br> ② 제1항에도 불구하고 펀딩 요청사가 회원에게 보상품을 제공할 수 없음이 분명한 경우 회사는 펀딩금액의 지급을 유보하거나 전달하지 아니할 수 있으며, 필요한 경우 이미 지급된 펀딩금액에 대해서도 회원에게 환불하도록 요청할 수 있습니다.</p>
+						<br>
+						<h3>제11조 (펀딩금액의 반환 및 환불)</h3>
+						<p>① 회사는 다음 각 호의 사유가 발생한 경우 해당 사유가 발생한 날로부터 3일 이내에 모집된 펀딩금액의 결제를 일괄적으로 취소 및 환불 처리를 시행합니다. 다만, 펀딩금액의 결제를 취소하는 방법은 결제정보의 삭제 또는 회원 명의 계좌로의 반환 등 결제수단에 따라 달라질 수 있으며, 실제로 결제의 취소에 따른 환불 처리가 완료되는 기간도 결제수단 및 카드사 등 금융기관에 따라 달라질 수 있습니다.
+							<br>
+							<br> 1. 펀딩이 펀딩기간 중에 중도 철회 또는 취소된 경우
+							<br> 2. 제9조 제1항에 따라 펀딩결과가 “실패”인 경우
+							<br>
+							<br> ② 제10조 제2항에 따른 회사의 환불요청이 있거나 회사와 펀딩 요청사간에 체결한 약정상의 환불사유가 발생한 경우 펀딩 요청사는 지체 없이 이미 수령한 펀딩금액을 회원에게 반환해야 합니다.
+							<br>
+							<br> ③ 회사는 개별 서비스의 특성에 따라 환불 규정을 달리 정하여 공지할 수 있으며, 이 경우 환불규정이 본 약관에 우선하여 적용됩니다.
+							<br>
+							<br> ④ 회원의 단순 변심에 의한 결제 취소일 경우 환불 처리와 관련하여 계좌이체 수수료 등 이 발생할 수 있습니다.</p>
+						<br>
+						<h3>제12조 (펀딩금액의 사용)</h3>
+						<p>펀딩 요청사는 본 약관에 따라 전달받은 펀딩금액을 기부의 목적 또는 약속한 보상품의 제공 및 발송 등을 위한 경비로만 사용하여야 하며, 이를 이행하지 않음에 따라 발생하는 불이익 및 법적 책임은 펀딩 요청사가 모두 부담하여야 합니다.</p>
+						<br>
+						<h3>제13조 (보상품의 제공)</h3>
+						<p>① 펀딩 요청사는 회원에게 제공할 보상품과 관련하여 회원이 문의하는 사항들에 대하여 성실하게 답변 및 응대할 의무가 있습니다.
+							<br>
+							<br> ② 펀딩 요청사는 회사 홈페이지에 게재하여 약속한 내용(보상품의 내용, 수량, 제공 일정 등)을 성실하게 이행하여야 하며, 만일 펀딩 요청사가 고의 또는 과실로 이를 이행하지 않거나 게재한 내용과 다르게 혹은 일부만 이행하는 경우에 발생할 수 있는 모든 책임(회원에 의한 청구 등)은 펀딩 요청사가 부담하여야 합니다.</p>
+						<br>
+						<h3>제14조 (개인정보의 제공)</h3>
+						<p>① 회사는 펀딩 결제 및 보상품 제공과 관련하여 필요한 개인정보를 회원으로부터 동의를 얻은 후 결제 대행사 및 펀딩 요청사에게 제공합니다.
+							<br>
+							<br> ② 결제 대행사 및 펀딩 요청사는 제공받은 회원의 정보를 제1항의 동의를 받지 아니한 목적으로 이용하여서는 안되며, 이를 위반하여 발생한 개인정보 노출 사고 등에 대한 모든 책임은 회사의 고의 또는 과실이 없는 이상 결제 대행사 및 펀딩 요청사가 단독으로 부담하여야 합니다.</p>
+						<br>
+						<h3>제15조 (면책)</h3>
+						<p>① 회사는 플랫폼을 제공하여 온라인상의 거래를 중개하는 중개자로 펀딩 계약의 당사자가 아니며, 회원과의 펀딩계약에 관하여 발생하는 법적 분쟁에 대한 책임은 펀딩 요청사가 단독으로 부담합니다.
+							<br>
+							<br> ② 회사가 본 약관에 따라 정한 사유로 인하여 서비스 제공을 제한 또는 중지시킨 경우 회사는 이로 인해 발생한 회원의 손해에 대하여 배상할 책임을 지지 않습니다.
+							<br>
+							<br> ③ 회사는 회원이 전자우편 주소 등 개인정보를 부실하게 기재하거나 또는 입력하여야 하는 정보의 변경의무를 다하지 아니하여 발생한 손해에 대해 배상할 책임이 없습니다.
+							<br>
+							<br> ④ 홈페이지에 게재된 정보, 자료 등의 진실성, 정확성, 신뢰성은 회사가 보장하지 않으며, 회원의 판단에 의해 참여한 펀딩으로 인한 결과에 대해서는 회사의 고의 또는 과실이 없는 이상 회사가 일체의 책임을 지지 않습니다.
+							<br>
+							<br> ⑤ 회사는 회원간 또는 회원과 제3자간에 서비스를 매개로 발생한 분쟁에 대해 개입할 의무가 없으며, 서비스 이용과 관련하여 회원의 고의 또는 과실로 인하여 회원 또는 제3자에게 발생한 손해에 대하여 책임을 부담하지 않습니다.
+							<br>
+							<br> ⑥ 회사는 천재지변 또는 이에 준하는 불가항력이라고 인정되는 사유로 인하여 회원에게 발생하는 손해에 대하여 책임을 지지 않습니다.</p>
+						<br>
+						<h3>제16조 (약관의 적용 등)</h3>
+						<p>① 본 약관에서 정하지 아니한 사항에 대해서는 회사의 플랫폼 이용약관 및 전자상거래 등에서의 소비자보호에 관한 법률 등 관련 법령을 따릅니다. 다만, 관련 법령 및 관련 약관에서 정하는 바가 없으면 일반적인 상관례를 따릅니다.
+							<br>
+							<br> ② 회사와 회원간에 개별적으로 합의한 사항이 본 약관에서 정한 사항과 다를 때에는 그 합의사항을 본 약관에 우선하여 적용합니다.</p>
+						<br>
+						<h3>제17조 (약관의 게시와 개정)</h3>
+						<p>① 회사는 본 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 초기 화면이나 서비스 홈페이지에 게시합니다.
+							<br>
+							<br> ② 회사가 약관을 개정할 경우에는 적용일자 및 개정내용, 개정사유 등을 명시하여 그 적용일자로부터 최소한 7일 이전부터 그 적용일자 경과 후 상당한 기간이 경과할 때까지 초기화면 또는 초기화면과의 연결화면을 통해 공지합니다. 단, 이용자에게 불리하거나 중대한 사항의 변경은 30일 이전부터 공지하며, 공지 외에 일정기간 전자우편 등 전자적 수단을 통해 명확히 통지합니다.
+							<br>
+							<br> ③ 회사가 개정약관 공지 시 회원이 동의 또는 거부의 의사표시를 하지 않으면 승낙한 것으로 간주하겠다는 내용도 함께 공지한 경우에는 회원이 약관 시행일까지 거부의사를 표시하지 않는다면 개정약관에 동의한 것으로 간주할 수 있습니다.
+							<br>
+							<br> ④ 회원이 개정약관의 적용에 동의하지 않는 경우 회사는 개정 약관의 내용을 적용하지 않으며, 이 경우 회원은 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는 회사가 동의하지 않은 회원과의 이용계약을 해지할 수 있습니다.</p>
+						<br>
+						<h3>제18조 (준거법 및 재판권)</h3>
+						<p>① 회사와 회원간에 발생한 분쟁에 관한 소송은 대한민국법을 준거법으로 합니다.
+							<br>
+							<br> ② 회사와 회원간에 발생한 분쟁에 관한 소송의 관할은 민사소송법이 정하는 바에 따릅니다.</p>
+						<br> </section>
+					<section id="serviceAgreement2">
+						<h1>온라인소액투자중개서비스 이용약관</h1>
+						<h3>제1조 (목적)</h3>
+						<p>본 약관은 네오스프링 주식회사(이하 “회사”)와 회사가 제공하는 온라인소액투자중개서비스(이하 “서비스”)를 이용하는 회원간의 권리, 의무 및 업무절차, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+						<br>
+						<h3>제2조 (서비스의 제공)</h3>
+						<p>회사는 본 약관에 따라 다음 각 호의 서비스를 제공합니다.
+							<br>
+							<br> 1. 증권형 크라우드펀딩의 중개
+							<br> 2. 청약의 접수, 청약결과 통보 등 청약 관련 서비스
+							<br> 3. 제1호, 제2호의 서비스 제공과 관련한 부가서비스</p>
+						<br>
+						<h3>제3조 (서비스의 이용료)</h3>
+						<p>회사는 온라인소액증권 청약과 관련하여 별도의 수수료를 징수하지 아니합니다. 다만, 청약증거금 이체 시 이체수수료가 발생할 수 있습니다.</p>
+						<br>
+						<h3>제4조 (투자정보의 게재)</h3>
+						<p>① 회사는 증권의 모집을 시작하기 전에 온라인소액증권발행인(이하 “발행인”)이 회사의 홈페이지에 증권의 발행조건, 재무상황, 사업계획 등 이용자의 투자 판단을 위한 정보를 게재하도록 하여야 하며, 게재한 정보의 최신성, 진실성 여부를 확인하여야 합니다.
+							<br>
+							<br> ② 발행인이 청약기간의 종료일로부터 7일 이내에 홈페이지에 게재한 정보 중 투자자의 투자 판단에 영향을 미칠 수 있는 중요한 정보를 정정한 경우 청약기간의 말일을 그 게재일로부터 7일 후로 변경합니다.
+							<br>
+							<br> ③ 회원이 발행인이 게재한 정보에 의존하여 투자판단을 한 경우 이로부터 발생하는 결과에 대해서는 회사의 고의 또는 과실이 없는 이상 회사가 책임을 지지 않습니다.</p>
+						<br>
+						<h3>제5조 (청약 주문 전 정보 확인)</h3>
+						<p>① 회원은 청약의 주문 전에 제4조의 투자정보 및 청약 관련 정보를 충분히 숙지한 후 청약의 의사표시를 하여야 합니다.
+							<br>
+							<br> ② 회사는 회원의 청약 의사표시를 수락하기 전에 회원이 청약의 내용 및 투자위험 등을 충분히 숙지하였는지 여부를 회원으로부터 온라인상에서 확인한 후 청약 절차를 진행하여야 합니다.</p>
+						<br>
+						<h3>제6조 (투자의견 교환)</h3>
+						<p>① 회원은 홈페이지에 개설된 게시판을 통하여 투자정보에 대한 질의 또는 답변을 게시하는 방법으로 투자의견을 교환할 수 있습니다.
+							<br>
+							<br> ② 회사는 홈페이지에 게시된 회원의 의견을 임의로 삭제하거나 수정하지 않아야 합니다.</p>
+						<br>
+						<h3>제7조 (청약의 주문)</h3>
+						<p>① 회원이 본 서비스를 이용하기 위해서는 실명인증 절차를 거쳐야 하며, 회원이 일반투자자가 아닌 소득요건 적격 투자자 또는 전문투자자인 경우 이에 관한 증빙자료를 회사에 제출하여야 합니다.
+							<br>
+							<br> ② 회원은 자본시장과 금융투자업에 관한 법률(이하 “자본시장법”) 및 관련 법령에서 정하고 있는 투자한도를 준수하여 청약의 주문을 하여야 합니다.
+							<br>
+							<br> ③ 회원은 청약증거금을 회사 명의의 청약증거금 관리계좌에 직접 이체하여야 하며, 이체된 청약증거금은 청약증거금 관리기관에 예치 또는 신탁됩니다.</p>
+						<br>
+						<h3>제8조 (청약의 주문 취소 및 철회)</h3>
+						<p>① 회사는 회원으로부터 제공받은 정보 및 증빙자료에 대한 진위 여부 및 유효성을 확인하기 위하여 사실확인절차를 이행하며, 그 결과 허위로 판명되거나 누락된 경우 또는 입증이 이루어지지 않은 경우에는 청약의 주문이 취소될 수 있습니다.
+							<br>
+							<br> ② 회원은 청약 모집기간이 종료되기 전까지 청약을 철회할 수 있으며, 회원이 청약증거금을 입금한 후에 청약 철회 시 청약증거금은 회원의 계좌로 반환됩니다. 다만, 계좌이체 등으로 인하여 발생한 수수료는 환급되지 않습니다.</p>
+						<br>
+						<h3>제9조 (모집결과의 게시 및 통보)</h3>
+						<p>① 회사는 청약 모집기간 종료 시 청약 모집 결과를 홈페이지에 게시하고 청약 회원에게 전자우편 등을 통해 통지합니다.
+							<br>
+							<br> ② 모집된 금액이 모집예정금액을 초과하였을 경우 발행인의 의사에 따라 목표 모집금액을 증액할 수 있으며, 이러한 경우 발행인은 변경된 사항을 홈페이지에 정정하여 게재하고 제4조 제2항의 절차를 따릅니다.</p>
+						<br>
+						<h3>제10조 (청약금의 납입)</h3>
+						<p>모집종료일 기준 총 청약금액이 모집예정금액의 80% 이상인 경우 청약증거금 관리기관에 예치되어 있던 청약증거금 전액이 발행인 명의 납입계좌로 납입되며, 80% 미만인 경우 증권 발행이 취소되어 회원이 입금한 청약증거금은 회원의 계좌로 반환됩니다.</p>
+						<br>
+						<h3>제11조 (증권의 발행 및 예탁)</h3>
+						<p>회원은 본 서비스를 통하여 발행된 증권을 한국예탁결제원에 예탁하거나 보호예수하여야 하며, 예탁일 또는 보호예수일로부터 1년간 해당 증권을 매도, 양도할 수 없습니다. 다만, 자본시장법 등 관련 법령에서 허용하는 경우에는 예외로 합니다.</p>
+						<br>
+						<h3>제12조 (불가항력에 따른 면책)</h3>
+						<p>회사는 천재지변 또는 이에 준하는 불가항력이라고 인정되는 사유로 인하여 회원에게 발생하는 손해에 대하여 책임을 지지 않습니다.</p>
+						<br>
+						<h3>제13조 (약관의 적용 등)</h3>
+						<p>① 본 약관에서 정하지 아니한 사항에 대해서는 회사의 플랫폼 이용약관 및 자본시장법 등 관련 법령을 따릅니다. 다만, 관련 법령 및 관련 약관에서 정하는 바가 없으면 일반적인 상관례를 따릅니다.
+							<br>
+							<br> ② 본 약관에 의한 거래 중 전자금융거래에 관하여는 전자금융거래 관련 법령이 우선하여 적용됩니다.
+							<br>
+							<br> ③ 회사와 회원간에 개별적으로 합의한 사항이 본 약관에서 정한 사항과 다를 때에는 그 합의사항을 본 약관에 우선하여 적용합니다.</p>
+						<br>
+						<h3>제14조 (약관의 게시와 개정)</h3>
+						<p>① 회사는 본 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 초기 화면이나 서비스 홈페이지에 게시합니다.
+							<br>
+							<br> ② 회사가 약관을 개정할 경우에는 적용일자 및 개정내용, 개정사유 등을 명시하여 그 적용일자로부터 최소한 7일 이전부터 그 적용일자 경과 후 상당한 기간이 경과할 때까지 초기화면 또는 초기화면과의 연결화면을 통해 공지합니다. 단, 이용자에게 불리하거나 중대한 사항의 변경은 30일 이전부터 공지하며, 공지 외에 일정기간 전자우편 등 전자적 수단을 통해 명확히 통지합니다.
+							<br>
+							<br> ③ 회사가 개정약관 공지 시 회원이 동의 또는 거부의 의사표시를 하지 않으면 승낙한 것으로 간주하겠다는 내용도 함께 공지한 경우에는 회원이 약관 시행일까지 거부의사를 표시하지 않는다면 개정약관에 동의한 것으로 간주할 수 있습니다.
+							<br>
+							<br> ④ 회원이 개정약관의 적용에 동의하지 않는 경우 회사는 개정 약관의 내용을 적용하지 않으며, 이 경우 회원은 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는 회사가 동의하지 않은 회원과의 이용계약을 해지할 수 있습니다.</p>
+						<br>
+						<h3>제15조 (준거법 및 재판권)</h3>
+						<p>① 회사와 회원간에 발생한 분쟁에 관한 소송은 대한민국법을 준거법으로 합니다.
+							<br>
+							<br> ② 회사와 회원간에 발생한 분쟁에 관한 소송의 관할은 민사소송법이 정하는 바에 따릅니다.</p>
+						<br> </section>
+				</div>
+			</section>
+		</div>
+	</article>
+	<footer>
+		<section class="footer-menu">
+			<!--div class="menu-block">
+						<div class="menu-title">펀딩</div>
+						<div class="menu-part">
+								<a href="/security/funding/apply">펀딩 신청하기</a>
+						</div>
+				</div-->
+			<div class="menu-block">
+				<div class="menu-title"> <img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 </div>
+				<div class="menu-part">
+					<a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
+				</div>
+				<div class="menu-part">
+					<a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+				</div>
+			</div>
+			<div class="menu-block">
+				<div class="menu-title">회사소개</div>
+				<div class="menu-part"> <a href="/us" target="_blank">네오스프링 이란?</a> </div>
+				<div class="menu-part"> <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a> </div>
+				<div class="menu-part"> <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a> </div>
+			</div>
+		</section>
+		<section class="contact-us">
+			<div class="company-name">네오스프링(주)</div>
+			<ul class="contact-info">
+				<li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+				<li><a href="#">팩스 : 02-853-2297</a></li>
+				<li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+				<li><a href="#">주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+			</ul>
+			<ul class="registration-info">
+				<li>네오스프링(주) 대표이사 : 김석표</li>
+				<li>사업자등록번호 : 542-86-00492</li>
+				<li>통신판매업신고 : 2016-서울구로-0321</li>
+			</ul>
+			<div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+		</section>
+		<section class="sitemap">
+			<div class="wrapper">
+				<ul class="agreements">
+					<li><a href="/help/agreement">플랫폼 이용약관</a></li>
+					<li><a href="/help/privacy">개인정보 취급방침</a></li>
+					<li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+					<li><a href="/help/reward">리워드 정책</a></li>
+				</ul>
+				<div class="ci">
+					<a href="/"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+				</div>
+			</div>
+		</section>
+		<div class="wrapper">
+			<div class="go-to-top">
+				<a href="#"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+			</div>
+		</div>
+		<section class="common-popup">
+			<div class="modal-layer" id="find-id-modal">
+				<section class="modal-wrapper">
+					<div class="modal-content">
+						<h2 class="title">
+												<span>아이디</span> 찾기
+										</h2>
+						<p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+						<form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+							<input class="center" type="email" name="email" placeholder="이메일" required /> </form> <a class="submit" onclick="emailMemeberCheck();">확인</a> </div>
+					<div class="result false">
+						<p class="email"></p>
+						<p class="message">등록되어있지않은 이메일 ID입니다.</p> <a href="/user/register">회원가입</a> </div>
+					<div class="result true">
+						<p class="email"></p>
+						<p class="message">등록된 이메일 Id입니다.</p> <a href="/user/login">로그인</a> </div>
+				</section>
+			</div>
+			<div class="modal-layer" id="reset-password-request-popup">
+				<section class="modal-wrapper">
+					<div class="modal-content">
+						<h2 class="title">
+												<span>비밀번호</span> 찾기
+										</h2>
+						<p class="message"> 가입한 이메일로 비밀번호를 재설정 할 수 있는
+							<br>링크를 보내드립니다. </p>
+						<form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+							<input class="center" type="email" name="email" placeholder="이메일" required /> </form> <a class="submit" onclick="requestResetPassword();">링크 발송</a> </div>
+					<div class="result false">
+						<p class="email"></p>
+						<p class="message">이메일을 보내지 못했습니다.</p>
+					</div>
+					<div class="result true">
+						<p class="email"></p>
+						<p class="message">위의 이메일로 링크를 보냈습니다.</p>
+					</div>
+				</section>
+			</div>
+		</section>
+	</footer>
+	<a id="general-notice-btn" data-toggle="modal" data-target="#general-notice-modal" style="display: none;"></a>
+	<div class="modal-layer" id="general-notice-modal">
+		<section class="modal-wrapper">
+			<div class="modal-content">
+				<div class="modal-msg"> 등록하신 파일을 확인 중입니다.
+					<br>파일 상태를 변경하실 수 없습니다. </div>
+				<div class="modal-btn-area">
+					<div class="modal-ok close-modal">확인</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		function use_general_notice(msg) {
+			$('#general-notice-modal').find('.modal-msg').html(msg);
+			$('#general-notice-btn').click();
+		}
+	</script>
+	<script>
+		on.fire();
+	</script>
+	<script src="../js/jquery.scrollTo.min.js"></script>
+	<script src="../js/function.js"></script>
+	<script src="../js/modal.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="/js/user-login.js"></script>
+	<script>
+		//구글 에널리틱스
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-101611686-1', 'auto');
+		ga('send', 'pageview');
+		//투자자, 개설자 선택
+		$(function () {
+				$(".register-tab li").on('click', function () {
+					$(this).addClass('onbtn').siblings().removeClass('onbtn');
+					var tab = $(this).index();
+					$('.register-form').eq(tab).show().siblings('.register-form').hide();
+					if ($('.investor').css('display') == 'block') {
+						$(".infotxt").text("소속직원은 개인 투자자로 가입 후 '소속직원 임명 요청'을 해주세요.")
+					}
+					else if ($('.opener').css('display') == 'block') {
+						$(".infotxt").text('창업 동아리 / 예비 창업자 / 개인 사업자 / 비영리 단체는 개인으로 가입하여 주세요.')
+					}
+				})
+			})
+			//개인 법인 라디오버튼
+		function checkuser() {
+			if ($("input:radio[id='user-register-individual']").is(':checked')) {
+				$(".individual").show().siblings('div').hide();
+			}
+			else {
+				$(".corporate").show().siblings('div').hide();
+			}
+		}
+	</script>
+	<script src="../js/user-register.js"></script>
+</body>
+
+</html>

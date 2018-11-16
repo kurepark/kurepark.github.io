@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>증권형테스트 / 투자신청하기 - 네오스프링 (크라우드펀딩 플랫폼)</title>
+    <meta name="description" content="{funding.title}의 투자 정보입니다.">
+    <meta name="author" content="고양이왕">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:8080/security/funding/159/invest/amount">
+    <meta property="og:site_name" content="네오스프링 (크라우드펀딩 플랫폼)">
+    <meta property="og:title" content="증권형테스트 / 투자신청하기">
+    <meta property="og:description" content="{funding.title}의 투자 정보입니다.">
+    <meta property="article:author" content="고양이왕">
+    <meta property="og:image" content="http://localhost:8080/file/">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://localhost:8080/security/funding/159/invest/amount">
+    <meta name="twitter:site" content="@neospring_kr">
+    <meta name="twitter:title" content="증권형테스트 / 투자신청하기">
+    <meta name="twitter:description" content="{funding.title}의 투자 정보입니다.">
+    <meta name="twitter:creator" content="고양이왕">
+    <meta name="twitter:image" content="http://localhost:8080/file/">
+
+
+
+
+
+
+
+
+
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="../../css/guide-content.css" rel="stylesheet" type="text/css">
+    <link href="../../css/guide-content-detail.css" rel="stylesheet" type="text/css">
+    <link href="../../css/guide-small.css" rel="stylesheet" type="text/css">
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+    <script src="../../js/webFont.js"></script>
+
+
+
+    <link href="../../css/invest-process.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+    <header class="small-header ">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+    </header>
+
+
+    <article style="background-color:#fff;">
+        <div class="container">
+
+            <!-- 투자 단계 -->
+            <section class="steps">
+                <ol class="steps">
+                    <li class="active">
+                        <div class="order">01</div>
+                        <div class="step">투자신청하기</div>
+                    </li>
+                    <li>
+                        <div class="order">02</div>
+                        <div class="step">인증하기</div>
+                    </li>
+                    <li>
+                        <div class="order">03</div>
+                        <div class="step">이체하기</div>
+                    </li>
+                </ol>
+            </section>
+
+
+            <!-- 증권형 투자 퍼블리싱 -->
+            <section id="securityInvest-section">
+                <!--기본계좌사용시-->
+                <!--                <div class="security-invest-area">
+                    <h3>증권 계좌 확인하기</h3> 
+                    <a href="#" class="change-btn">다른 계좌 선택하기</a>
+                    <div class="security-account">
+                        <dl class="account">
+                            <dt>미래에셋대우 <span>기본</span></dt>
+                            <dd>4321 4321 4121 3</dd>
+                            <dd>홍길동</dd>
+                        </dl>
+                        <p>계좌가 <b>입고 불가능 상태(예금주 불일치, 입고 불가 등)</b>시, 배정받지 못할 수 있으므로 주의하시기 바랍니다</p>
+                    </div>
+                </div>-->
+                <!-- 다른계좌선택하기 -->
+                <div class="security-invest-area">
+                    <h3>증권 계좌 확인하기</h3>
+                    <a href="#" class="change-btn">기본 계좌 사용하기</a>
+                    <div class="security-account">
+                        <ul class="account-tab">
+                            <li class="on">
+                                <a href="#">저장된 계좌선택</a>
+                                <div class="account-item">
+                                    <ul>
+                                        <li class="selected">
+                                            <input type="radio" id="secuBank-1" name="registed-account">
+                                            <label for="secuBank-1">미래에셋대우</label>
+                                            <dl class="account">
+                                                <dt>미래에셋대우 <span>기본</span></dt>
+                                                <dd>4321 4321 4121 3</dd>
+                                                <dd>홍길동</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="secuBank-2" name="registed-account">
+                                            <label for="secuBank-2">농협투자증권</label>
+                                            <dl class="account">
+                                                <dt>농협투자증권</dt>
+                                                <dd>110 123456 8</dd>
+                                                <dd>홍길동</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                    <p>계좌가 <b>입고 불가능 상태(예금주 불일치, 입고 불가 등)</b>시, 배정받지 못할 수 있으므로 주의하시기 바랍니다</p>
+                                </div>
+                            </li>
+                            <li class="setbank-account">
+                                <a href="#">새로운 계좌 등록</a>
+                                <div class="account-item">
+                                    <form>
+                                        <select name="optionBankSel">
+                                            <option value="">은행 선택하기</option>
+                                            <option value="1">교보증권</option>
+                                            <option value="2">신한금융투자</option>
+                                            <option value="3">한국투자증권</option>
+                                            <option value="4">대신증권</option>
+                                            <option value="5">미래에셋대우</option>
+                                            <option value="6">신영증권</option>
+                                        </select>
+                                        <div class="account-form">
+                                            <label for="bankNumber" class="blind">계좌번호입력</label>
+                                            <input type="number" id="bankNumber" placeholder="계좌번호를 입력해주세요">
+                                            <label for="name" class="blind">이름</label>
+                                            <!--이름은 박혀서 나옵니다!-->
+                                            <input type="text" id="name" class="disabeld" value="홍길동" placeholder="이름을 입력해주세요" disabled>
+                                        </div>
+                                        <p>계좌가 <b>입고 불가능 상태(예금주 불일치, 입고 불가 등)</b>시, 배정받지 못할 수 있으므로 주의하시기 바랍니다</p>
+                                        <!--증권계좌 새로 입력시엔 증권계좌 확인하기 첫화면(증권계좌 색상 회색으로 되어있는 곳)으로 갑니다. 기본이라는 텍스트 변경으로 수정.)-->
+                                        <button type="button" disabled style="opaicty:.5;">이 <b>증권계좌</b>로 진행합니다</button>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="btn-area">
+                    <a href="#" class="next-btn">다음 단계</a>
+                    <a href="" class="back-btn">돌아가기</a>
+                </div>
+            </section>
+
+        </div>
+    </article>
+    <footer>
+        <section class="footer-menu">
+            <!--div class="menu-block">
+						<div class="menu-title">펀딩</div>
+						<div class="menu-part">
+								<a href="/security/funding/apply">펀딩 신청하기</a>
+						</div>
+				</div-->
+            <div class="menu-block">
+                <div class="menu-title">
+                    <img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩
+                </div>
+                <div class="menu-part">
+                    <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩 둘러보기</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target="_blank"><img src="/img/ci/footer-menu-neospringci.png" alt="네오스프링" title="네오스프링">모의크라우드펀딩 상담하기</a>
+                </div>
+            </div>
+            <div class="menu-block">
+                <div class="menu-title">회사소개</div>
+                <div class="menu-part">
+                    <a href="/us" target="_blank">네오스프링?</a>
+                </div>
+                <div class="menu-part">
+                    <a href="http://blog.naver.com/neospring_1" target="_blank">블로그</a>
+                </div>
+                <div class="menu-part">
+                    <a href="https://www.facebook.com/neospring.kr" target="_blank">페이스북</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact-us">
+
+            <div class="company-name">네오스프링(주)</div>
+            <ul class="contact-info">
+                <li><a href="tel:+82-2-853-2295">전화 : 02-853-2295</a></li>
+                <li><a>팩스 : 02-853-2297</a></li>
+                <li><a href="mailto:contact@neospring.kr">이메일 : contact@neospring.kr</a></li>
+                <li><a>주소 : 서울시 구로구 디지털로 30길 28 마리오타워 1108호 네오스프링</a></li>
+            </ul>
+            <ul class="registration-info">
+                <li>네오스프링(주) 대표이사 : 김석표</li>
+                <li>사업자등록번호 : 542-86-00492</li>
+                <li>통신판매업신고 : 2016-서울구로-0321</li>
+            </ul>
+            <div class="copyright">Copyright 2016 neospring all rights reserved.</div>
+
+        </section>
+        <section class="sitemap">
+            <div class="wrapper">
+                <ul class="agreements">
+                    <li><a href="/help/agreement">플랫폼 이용약관</a></li>
+                    <li><a href="/help/privacy">개인정보 취급방침</a></li>
+                    <li><a href="/help/serviceAgreement">서비스 이용약관</a></li>
+                    <li><a href="/help/reward">리워드 정책</a></li>
+                </ul>
+                <div class="ci">
+                    <a href="/intro"><img src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring"></a>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
+            <div class="scroll-down-menu fadeIn">
+                <a class="go-to-top"><img src="/img/buttons/normal/top-50x50.svg" alt="맨 위로" title="맨 위로"></a>
+            </div>
+        </div>
+        <section class="common-popup">
+            <div class="modal-layer" id="find-id-modal">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>아이디</span> 찾기
+                        </h2>
+                        <p class="message">사용하고 계시는 이메일로 가입여부를 확인해드립니다.</p>
+                        <form id="member-check-form" action="/open/user/memberCheck.json" method="post">
+                            <label for="findEmail" class="blind">이메일</label>
+                            <input id="findEmail" class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="emailMemeberCheck();">확인</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">등록되어있지않은 이메일 ID입니다.</p>
+                        <a href="/user/register">회원가입</a>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">등록된 이메일 Id입니다.</p>
+                        <a href="/user/login">로그인</a>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-layer" id="reset-password-request-popup">
+                <section class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="title">
+                            <span>비밀번호</span> 찾기
+                        </h2>
+                        <p class="message">
+                            가입한 이메일로 비밀번호를 재설정 할 수 있는<br>링크를 보내드립니다.
+                        </p>
+                        <form id="reset-password-request-form" action="/open/user/resetPasswordRequest.json" method="post">
+                            <label for="emailLink" class="blind">이메일</label>
+                            <input id="emailLink" class="center" type="email" name="email" placeholder="이메일" required />
+                        </form>
+                        <a class="submit" onclick="requestResetPassword();">링크 발송</a>
+                    </div>
+                    <div class="result false">
+                        <p class="email"></p>
+                        <p class="message">이메일을 보내지 못했습니다.</p>
+                    </div>
+                    <div class="result true">
+                        <p class="email"></p>
+                        <p class="message">위의 이메일로 링크를 보냈습니다.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            //접근성 탭메뉴
+            var ItemParent = $("ul.account-tab");
+            var accountItem = $("ul.account-tab div.account-item");
+            var firstItem = $("ul.account-tab>li:first-child");
+            var accountItemHeight = accountItem.outerHeight() + 80; //absolute사용으로 부모높이값 구하기 위해서.
+
+
+            //모든 컨텐츠박스 숨기기
+            accountItem.hide();
+            firstItem.addClass('on').find('div.account-item').css('display', 'block');
+            //접속시 부모 높이값 계산해서 넣어주기
+            ItemParent.css('height', accountItemHeight); //최초 접속시 계좌 높이값주기
+
+
+            //탭메뉴 클릭시 컨텐츠 전환
+            $('ul.account-tab>li>a').on('click', function() {
+                ItemParent = $("ul.account-tab");
+                var thisItem = $(this);
+                accountItemHeight = thisItem.parent('li').addClass('on').end().next().outerHeight(); //클릭시마다 높이값 입력
+
+                //탭 컨텐츠 보여주기
+                accountItem.hide().parent('li').removeClass('on');
+                thisItem.parent('li').addClass('on').end().next().css('display', 'block');
+
+                //클릭해서 보여지는 페이지 높이값
+                thisItem.parent('li').addClass('on').end().next().css('height', accountItemHeight);
+
+                //새로운 계좌 등록시엔 다음단계 버튼 없습니다
+                if ($(this).parent('li').hasClass('setbank-account')) {
+                    $("div.btn-area").css('display', 'none');
+                } else {
+                    $("div.btn-area").css('display', 'block');
+                }
+            });
+
+            //금융사 옵션 선택시 입력영역 보여주기
+            $("div.account-item select").change(function() {
+                if ($(this).val() !== '') {
+                    $(this).next('div.account-form').css('display', 'block');
+                } else {
+                    $(this).next('div.account-form').css('display', 'none');
+                }
+            });
+
+            //저장된 계좌선택
+            $(document).on('click', 'div.account-item>ul>li', function() {
+                $(this).addClass('selected').siblings('li').removeClass('selected');
+            });
+
+            //새로운 계좌등록 버튼 활성화
+            $("div.account-item form input").keyup(function() {
+                    var bankNumVal = $('input[type="number"]').val();
+                if(bankNumVal !== ''){
+                    $("div.account-item form button").attr('disabled',false).css('opacity','1');
+                }else{
+                    $("div.account-item form button").attr('disabled','disabled').css('opacity','.5');
+                }
+            })
+
+        }); //jqb
+    </script>
+</body>
+
+</html>

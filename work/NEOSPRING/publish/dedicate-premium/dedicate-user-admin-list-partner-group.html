@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>네오스프링 (크라우드펀딩 플랫폼)</title>
+
+   <!--필수 css-->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../js/jquery.scrollTo.min.js"></script>
+    <script src="../../js/parsley.min.js"></script>
+    <script src="../../js/function.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/on.js"></script>
+<!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+<script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/jquery.ui.touch-punch.min.js"></script>
+<link href="../../css/dedicate-user-admin.css" rel="stylesheet" type="text/css">
+<script src="../../js/dedicate-user-admin.js"></script>
+<script src="../../js/nestedSortable.js"></script>
+</head>
+ 
+<body>
+
+    <!-- 헤더 -->
+    <header class="small-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
+		</a>
+
+<!-- pc버전 헤더영역 -->
+        <div id="header-menu">
+            <ul class="header-menu">
+                <li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
+
+
+                <li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
+                    <ul id="header-menu-contest">
+
+                        <li class="menu-list"><a href="/contest/12/funding">전북지역 모의투자</a></li>
+
+                        <li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-list"><a href="/reward/funding">리워드형</a></li>
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+            <ul class="header-user-menu" id="header-user-menu">
+
+                <li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
+                <li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
+
+
+
+
+                <li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
+                <li class="menu-list"><a href="/dedicate">전용관</a></li>
+                <li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
+
+                <li class="menu-list sign-up"><a href="/user/register">회원가입</a></li>
+                <li class="menu-list">
+                    <a class="pc-version" href="/user/login" data-toggle="modal" data-target="#header-login-layer">로그인</a>
+                    <a class="mobile-version" href="/user/login">로그인</a>
+                    <div id="header-login-layer" class="modal-layer">
+
+
+
+
+
+
+
+
+
+                        <section class="login">
+
+                            <div class="socialMedia">
+                                <ul>
+
+
+
+                                    <li>
+                                        <a href="/social/facebook/login"><img src="/img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/naver/login"><img src="/img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/kakao/login"><img src="/img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="/social/google/login"><img src="/img/socialMedia/google.svg" alt="구글으로 로그인" title="구글으로 로그인"></a>
+                                    </li>
+
+                                </ul>
+                                <div>SNS계정으로 더욱 빠르게 로그인해 보세요!</div>
+                            </div>
+
+                            <form method="post" action="/user/login">
+                                <input type="hidden" name="" value="" />
+
+
+
+
+                                <input type="hidden" name="targetUrl" value="/file/download/390d8e16-4dd4-43a7-9ba9-e6b5d887cfe6/이봉수_아따맘마.jpg">
+
+                                <input type="text" name="username" placeholder="이메일 또는 휴대폰" required>
+
+                                <input type="password" name="password" placeholder="비밀번호" required>
+
+                                <div class="message">
+
+                                </div>
+                                <input type="submit" value="로그인" style="color:#fff;">
+                            </form>
+
+                            <ul class="links functions">
+                                <li><a href="/user/register">회원가입</a></li>
+                                <li><a data-toggle="modal" data-target="#find-id-modal">아이디 찾기</a></li>
+                                <li><a data-toggle="modal" data-target="#reset-password-request-popup">비밀번호 재설정</a></li>
+
+                            </ul>
+
+                        </section>
+
+                    </div>
+                </li>
+
+
+            </ul>
+
+        </div>
+        
+<!-- 모바일버전 헤더영역-->
+        <div class="mobile-menu">
+
+            <a href="/user/login">로그인</a>
+
+
+            <a href="#header-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
+        </div>
+        
+    </header>
+
+
+
+    <!-- 퍼블리싱 본문 영역 -->
+    <section>
+        <div class="container">
+          <!--전용관 관리자 헤더-->
+           <section class="dedicate-user-admin-header">
+               <div class="dedicate-user-admin-wrapper">
+                   <h2>전용관 설정</h2>
+                   <div class="dedicate-tit">대전정보문화산업진흥원</div>
+                   <a href="#" class="back-btn">전용관 가기</a>
+               </div>
+           </section>
+           <!--전용관 관리자 메뉴영역-->
+           <section class="dedicate-user-admin-nav">
+               <div class="dedicate-user-admin-wrapper">
+                   <ul>
+                       <li><a href="#">파트너</a></li>
+                       <li class="active"><a href="#">커뮤니티</a></li>
+                   </ul>
+               </div>
+           </section>
+           <!--전용관 관리자 컨텐츠 영역-->
+           <section class="dedicate-user-admin-content">
+               <div class="dedicate-user-admin-wrapper">
+                   <div class="headline">
+                       <h3>그룹 관리</h3>
+                   </div>
+                   <div class="inner-content">
+                      <!--좌측 메뉴영역-->
+                       <aside class="content-menu">
+                           <div class="menu-wrapper">
+                               <div class="menu-cont ">
+                                   <h4 class="menu-tit">그룹</h4>
+                                   <button type="button" class="position-btn" onclick="positioningBtn($(this));">위치이동</button>
+                                   <div class="menu-list-wrapper">
+                                   <ol class="menu-list sortable-list">
+                                       <li class="category-board">
+                                           <a href="#company-set" class="link-menu">기업
+                                           <div class="icon-menu">
+                                               <div class="bar top"></div>
+                                               <div class="bar middle"></div>
+                                               <div class="bar bottom"></div>
+                                           </div></a>
+                                           <ol class="board-list">
+                                           <li class="default-board"><a href="#group-set" class="link-menu"><span class="icon-list"></span>그룹1
+                                           <div class="icon-menu">
+                                               <div class="bar top"></div>
+                                               <div class="bar middle"></div>
+                                               <div class="bar bottom"></div>
+                                           </div></a></li>
+                                           <li class="default-board"><a href="#" class="link-menu"><span class="icon-list"></span>그룹2
+                                           <div class="icon-menu">
+                                               <div class="bar top"></div>
+                                               <div class="bar middle"></div>
+                                               <div class="bar bottom"></div>
+                                           </div></a></li>
+                                           <li class="default-board"><a href="#" class="link-menu"><span class="icon-list"></span>그룹3
+                                           <div class="icon-menu">
+                                               <div class="bar top"></div>
+                                               <div class="bar middle"></div>
+                                               <div class="bar bottom"></div>
+                                           </div></a></li>
+                                           </ol>
+                                       </li>
+                                   </ol>
+                                </div>
+                                <!--카테고리/게시판 생성 영역-->
+                                <div class="add-board-wrapper">
+                                    <form>
+                                        <div class="textwrap">
+                                                <input type="text" id="boardName" class="lengChk" placeholder="새 그룹명 입력" onkeyup="chkboardword(this, 10, $(this))" />
+                                               <span class="textcount">
+                                                   <span>0</span>
+                                                   /10자
+                                               </span>    
+                                               <div class="btn-area">
+                                                   <button type="reset" class="cancel-btn">취소</button>
+                                                   <button type="submit" class="submit-btn">확인</button>
+                                               </div>                                   
+                                        </div>
+                                     </form> 
+                                </div>
+                               </div>
+                               <div class="menu-btn-area group-btn-area">
+                                   <button type="button" class="make-btn" onclick="addNewGroup();">새 그룹 만들기</button>
+                                   <p>그룹을 드래그 하시면 자유롭게 위치를<br>이동시킬 수 있습니다.</p>
+                               </div>
+                           </div>
+                            <div class="menu-wrapper">
+                                <div class="menu-cont group-cont">
+
+                               <div class="menu-list-wrapper">
+                               <ol class="menu-list">
+                                   <li class="category-board">
+                                       <a href="#investor-set" class="link-menu">투자자
+                                       <div class="icon-menu">
+                                           <div class="bar top"></div>
+                                           <div class="bar middle"></div>
+                                           <div class="bar bottom"></div>
+                                       </div></a>
+                                   </li>
+                                   <li class="category-board">
+                                       <a href="#category-set" class="link-menu">관리자
+                                       <div class="icon-menu">
+                                           <div class="bar top"></div>
+                                           <div class="bar middle"></div>
+                                           <div class="bar bottom"></div>
+                                       </div></a>
+                                   </li>
+                               </ol>
+                            </div>
+
+                                </div>
+                               </div>
+                       </aside>
+                       <!--우측 컨텐츠 영역-->
+                       
+                       <!--기업설정-->
+                       <div id="company-set" class="content-item">
+                           <div class="item-wrapper">
+                               <h4>기업 설정</h4>
+                               <p>그룹에 속하지 않은 기업들을 설정합니다.</p>
+                               <form>
+                                   <div class="item-cell">
+                                       <strong class="item-tit">무소속 기업 공개여부 설정</strong>
+                                       <div class="toggle-btn-area">
+                                        <span>비공개</span>
+                                        <div class="toggle-public">
+                                            <input type="checkbox" id="toggle-public-btn" onchange="checkPublic();">
+                                            <div class="toggle-btn">
+                                                <label for="toggle-public-btn"></label>
+                                            </div>
+                                        </div>
+                                       </div>
+                                       <div class="info-text">
+                                       <p>아무 그룹에도 속하지 않은 기업들의 공개여부를 설정합니다. 비공개로
+하시면 전용관의 파트너가 아닌회원에게는 목록이 보여지지 않습니다
+</p>
+                                  </div>
+                                   </div>
+                                   <div class="item-btn-area">
+                                       <button type="reset" class="cancel-btn">취소하기</button>
+                                       <button type="submit" class="submit-btn">저장하기</button>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                       
+                       <!--그룹설정-->
+                       <div id="group-set" class="content-item">
+                           <div class="item-wrapper">
+                               <h4>그룹1 설정</h4>
+                               <p>그룹명을 변경하거나 삭제할 수 있습니다.</p>
+                               <form>
+                                   <div class="item-cell">
+                                       <strong class="item-tit">그룹명</strong>
+                                       <div class="textwrap">
+                                          <label for="groupname" class="blind">게시판 이름</label>
+                                           <input type="text" id="groupname" class="lengChk" placeholder="그룹이름을 입력해주세요" onkeyup="chkword(this, 10, $(this))">
+                                           <span class="textcount">
+                                               <span>0</span>
+                                               /10자
+                                           </span>
+                                       </div>
+                                   </div>                                   
+                                    <div class="item-cell">
+                                       <strong class="item-tit">공개여부 설정</strong>
+                                       <div class="toggle-btn-area">
+                                        <span>비공개</span>
+                                        <div class="toggle-public">
+                                            <input type="checkbox" id="toggle-public-btn" onchange="checkPublic();">
+                                            <div class="toggle-btn">
+                                                <label for="toggle-public-btn"></label>
+                                            </div>
+                                        </div>
+                                       </div>
+                                       <div class="info-text">
+                                       <p>그룹을 비공개로 전환하시면 전용관의 파트너가 아닌 회원에게는 
+그룹 내의 파트너가 보여지지 않습니다.</p>
+                                  </div>
+                                   </div>
+                                   <div class="item-cell">
+                                       <strong class="item-tit">그룹 삭제</strong>
+                                       <button type="button" class="delete-btn">삭제하기</button>
+                                       <div class="info-text">
+                                       <p>그룹을 삭제하셔도 그룹 내에 있는 파트너들은  기업탭의 전체보기에서
+확인하실수 있습니다.</p>
+                                  </div>
+                                   </div>
+                                   <div class="item-btn-area">
+                                       <button type="reset" class="cancel-btn">취소하기</button>
+                                       <button type="submit" class="submit-btn off" disabled>저장하기</button>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                       
+                       <!--투자자 설정-->
+                       <div id="investor-set" class="content-item">
+                           <div class="item-wrapper">
+                               <h4>투자자 설정</h4>
+                               <p>투자자 그룹의 공개여부 설정합니다.</p>
+                               <form>
+                                   <div class="item-cell">
+                                       <strong class="item-tit">공개여부 설정</strong>
+                                       <div class="toggle-btn-area">
+                                        <span>비공개</span>
+                                        <div class="toggle-public">
+                                            <input type="checkbox" id="toggle-public-btn" onchange="checkPublic();">
+                                            <div class="toggle-btn">
+                                                <label for="toggle-public-btn"></label>
+                                            </div>
+                                        </div>
+                                       </div>
+                                       <div class="info-text">
+                                       <p>그룹을 비공개로 전환하시면 전용관의 파트너가 아닌 회원에게는 
+그룹 내의 파트너가 보여지지 않습니다.</p>
+                                  </div>
+                                   </div>
+                                   <div class="item-btn-area">
+                                       <button type="reset" class="cancel-btn">취소하기</button>
+                                       <button type="submit" class="submit-btn off" disabled>저장하기</button>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                       
+                   </div>
+               </div>
+           </section>
+        </div>
+    </section>
+
+    <!-- / 퍼블리싱 본문 영역 끝 -->
+    
+    <script>
+        $(document).ready(function() {
+
+            $(".content-item").hide(); //기수별게시판, 게시판 설정 누르기전 보여주는 영역 숨기기
+
+
+            //게시판관리 리스트 active
+            $('ol.menu-list li>a, ol.board-list li>a').on('click', function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                var $thisHash = $this.attr('href');
+                $("ol.menu-list li").removeClass('on');
+                $("ol.board-list li").removeClass('on');
+                $this.parent('li').addClass('on');
+                $($thisHash).fadeIn();
+                $(".content-item").not($thisHash).fadeOut(100);
+
+            });
+
+            //카테고리, 게시판 만들기 취소버튼
+            $(".add-board-wrapper .cancel-btn").on('click', function() {
+                $(".add-board-wrapper").slideUp('600', 'easeInBack');
+            });
+            
+            $("button.submit-btn").on('click',function(){
+                showModalMessage('저장되었습니다','ok');
+            });
+        }); //jqb
+
+        //게시판 정렬하기 함수
+        function nestedSortableActive() {
+            $(".sortable-list").nestedSortable({
+                handle: 'a',
+                items: 'li',
+                toleranceElement: '> a',
+                maxLevels: 2,
+                disableNestingClass: 'default-board',
+                placeholder: 'placeholder',
+                forcePlaceholderSize: true,
+                opacity: .6
+            });
+        }
+
+        //위치이동 버튼 클릭
+        function positioningBtn(node) {
+            var list = node.siblings('.menu-list-wrapper').find('.menu-list');
+            var btnArea = node.parent().siblings('.menu-btn-area').html();
+            var textArea = node.parent().siblings('.menu-btn-area');
+
+            if (node.hasClass('positioning')) {
+                node.removeClass('positioning');
+                $("aside.content-menu .menu-wrapper").removeClass('position-complete');
+                node.text('위치이동');
+                textArea.find('button').show();
+                textArea.removeClass('info-text');
+                list.find('.icon-menu').removeClass('icon-move');
+                $(".sortable-list").nestedSortable("destroy");
+            } else {
+                node.addClass('positioning');
+                $("aside.content-menu .menu-wrapper").addClass('position-complete');
+                node.text('이동완료'); //버튼텍스트 변경
+                textArea.find('button').hide(); //카테고리, 게시판생성 버튼 숨기기
+                textArea.addClass('info-text'); //이동안내 텍스트 보여주기
+                list.find('li').removeClass('on');
+                list.find('.icon-menu').addClass('icon-move'); //리스트 우측 아이콘 변경
+                nestedSortableActive();
+                $(".add-board-wrapper").slideUp('600', 'easeInBack');
+            }
+        }
+        //게시판 만들기 버튼
+        function addNewGroup() {
+            $(".add-board-wrapper").slideDown(600, 'easeOutBounce');
+        }
+        //게시판 만들기 게시판이름 글자수 체크
+        function chkboardword(obj, maxByte, target) {
+            var $this = target;
+            var strValue = obj.value;
+            var strLen = strValue.length;
+            var totalByte = 0;
+            var len = 0;
+            var oneChar = "";
+            var str2 = "";
+
+            for (var i = 0; i < strLen; i++) {
+                totalByte++; //한글영문 상관없이 정해진 글자 수 만큼만
+
+                if (totalByte <= maxByte) {
+                    len = i + 1;
+                }
+            }
+            target.siblings('.textcount').find('span').text(strLen);
+
+            if (totalByte > maxByte) {
+                target.siblings('.textcount').find('span').addClass('over');
+
+                //글자수 초과시 버튼클릭 안되도록
+                target.siblings(".btn-area").find('button[type="submit"]').attr('disabled', true).addClass('off');
+            } else if (totalByte === 0) {
+                //글자수 0일때도 버튼 안되도록
+                target.siblings(".btn-area").find('button[type="submit"]').attr('disabled', true).addClass('off');
+            } else {
+                target.siblings('.textcount').find('span').removeClass('over');
+
+                //글자수 초과 안했을 경우 버튼 동작하도록
+                target.siblings(".btn-area").find('button[type="submit"]').attr('disabled', false).removeClass('off');
+            }
+        }
+                //글자수 체크
+        function chkword(obj, maxByte, target) {
+            var $this = target;
+            var strValue = obj.value;
+            var strLen = strValue.length;
+            var totalByte = 0;
+            var len = 0;
+            var oneChar = "";
+            var str2 = "";
+
+            for (var i = 0; i < strLen; i++) {
+                totalByte++; //한글영문 상관없이 정해진 글자 수 만큼만
+
+                if (totalByte <= maxByte) {
+                    len = i + 1;
+                }
+            }
+            target.siblings('.textcount').find('span').text(strLen);
+
+            if (totalByte > maxByte) {
+                target.siblings('.textcount').find('span').addClass('over');
+
+                //글자수 초과시 버튼클릭 안되도록
+                target.parents('.item-cell').siblings(".item-btn-area").find('button[type="submit"]').attr('disabled', true).addClass('off');
+            } else if (totalByte === 0) {
+                //글자수 0일때도 버튼 안되도록
+                target.parents('.item-cell').siblings(".item-btn-area").find('button[type="submit"]').attr('disabled', true).addClass('off');
+            } else {
+                target.siblings('.textcount').find('span').removeClass('over');
+
+                //글자수 초과 안했을 경우 버튼 동작하도록
+                target.parents('.item-cell').siblings(".item-btn-area").find('button[type="submit"]').attr('disabled', false).removeClass('off');
+            }
+        }
+        //공개여부 체크시 텍스트 변경
+        function checkPublic(){
+            var checkState = $("#toggle-public-btn").is(":checked");
+            if(checkState){
+                $(".toggle-btn-area>span").text('공개').addClass('public');
+            }else{
+                $(".toggle-btn-area>span").text('비공개').removeClass('public'); 
+            }
+        }
+    </script>
+</body>
+
+</html>
