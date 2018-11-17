@@ -4312,6 +4312,7 @@ ol::after {
   font-size: 12px;
 }
 #securityInvest-section div.security-invest-area div.relation-info {
+  display:none;
   margin-bottom: 10px;
   padding: 30px;
   border-radius: 4px;
@@ -4837,6 +4838,9 @@ ol::after {
   font-weight: 700;
 }
 #securityInvest-section div.benefit p.benefit-text.select {
+  display: none;
+}
+#securityInvest-section div.benefit ul.benefit-list{
   display: none;
 }
 #securityInvest-section div.benefit ul.benefit-list li {

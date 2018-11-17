@@ -54,7 +54,7 @@ $(document).ready(function () {
             $("div.headline").addClass('contfix');
             $(".dedicate-cont.closed").addClass('closedfix');
             if (winWidth < 669) {
-            	$("header").addClass('non-fixed');
+                $("header").addClass('non-fixed');
                 $(".ham-menu").css('margin-left', '0');
             }
             $("nav.dedicate-side-nav").addClass('sidenav-fix');
@@ -64,7 +64,7 @@ $(document).ready(function () {
             $("div.headline").removeClass('contfix');
             $(".dedicate-cont.closed").removeClass('closedfix');
             if (winWidth < 669) {
-            	$("header").removeClass('non-fixed');
+                $("header").removeClass('non-fixed');
                 $(".ham-menu").css('margin-left', '-45px');
                 $(".dedicate-side-nav").css('left', '-100%');
                 $(".nav-mask").fadeOut();
@@ -80,42 +80,51 @@ $(document).ready(function () {
 
     //정렬버튼
     var tabBtn = $(".sort-tab a");
-    $(document).on('click',".sort-tab a", function () {
+    $(document).on('click', ".sort-tab a", function () {
         if (this.nextElementSibling) {
-            $(this).css('display','none').next('a').css('display','inline-block');
+            $(this).css('display', 'none').next('a').css('display', 'inline-block');
         } else {
-            $(this).css('display','none');
-            tabBtn.first('a').css('display','inline-block');
+            $(this).css('display', 'none');
+            tabBtn.first('a').css('display', 'inline-block');
         }
     });
 
-	//sns 리스트 보여주기
-	$(document).on('click','li.sns-share',function(){
-		if(winWidth < 669) {
-			$("div.sns-list-mobile").show();
-		} else {
-			$(this).prev('.sns-list').addClass('showlist');
-			$(this).css('display','none');
-		}
+    //sns 리스트 보여주기
+    $(document).on('click', 'li.sns-share', function () {
+        if (winWidth < 669) {
+            $("div.sns-list-mobile").show();
+        } else {
+            $(this).prev('.sns-list').addClass('showlist');
+            $(this).css('display', 'none');
+        }
 
-	});
-	$(document).on('click','li.sns-close',function(){
-		if(winWidth < 669 ){
-			$("div.sns-list-mobile").hide();
-		}else {
-			$(this).parent().parent('li.sns-list').removeClass('showlist');
-			$(this).parent().parent().siblings('li.sns-share').css('display','block');
-		}
-	});
+    });
+    $(document).on('click', 'li.sns-close', function () {
+        if (winWidth < 669) {
+            $("div.sns-list-mobile").hide();
+        } else {
+            $(this).parent().parent('li.sns-list').removeClass('showlist');
+            $(this).parent().parent().siblings('li.sns-share').css('display', 'block');
+        }
+    });
 
 }); //jqb
 
 //모바일 검색영역 열고 닫기
-function openSearchMob(){
-    $(".headline .search-area").slideDown(300,'easeOutBack');
+function openSearchMob() {
+    $(".headline .search-area").slideDown(300, 'easeOutBack');
     $("button.mob-search-btn").hide();
 }
-function closeSearchMob(){
-    $(".headline .search-area").slideUp(300,'easeInBack');
+
+function closeSearchMob() {
+    $(".headline .search-area").slideUp(300, 'easeInBack');
     $("button.mob-search-btn").fadeIn(500);
+}
+//글 수정삭제 버튼
+function editBtn(target) {
+    var $this = target.siblings('.edit-box');
+    $this.toggle();
+    target.toggleClass('active');
+    $("ul.edit-box").not($this).css('display', 'none');
+    $("span.edit").not(target).removeClass('active');
 }

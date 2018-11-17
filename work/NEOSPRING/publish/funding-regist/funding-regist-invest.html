@@ -11,7 +11,7 @@
     <!--필수 css-->
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
 
-    <script src="../../js/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../../js/jquery.scrollTo.min.js"></script>
     <script src="../../js/parsley.min.js"></script>
     <script src="../../js/function.js"></script>
@@ -19,149 +19,153 @@
     <script src="../../js/common.js"></script>
     <script src="../../js/on.js"></script>
     <!--해당페이지 css와 스크립트는 이 밑으로 링크 걸기-->
+    <script src="../../js/textarea-autosize/autosize.min.js"></script>
     <script src="../../js/jQuery-Swapsie-Plugin.js"></script>
-    <script src="../../js/jquery.mask.js"></script>
+    <script src="../../js/jquery.mask.min.js"></script>
     <link href="../../css/funding-register.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-    <!-- 헤더 -->
-    <header class="small-header">
-        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring" title="neospring">
-		</a>
+    <!--헤더-->
+    <header id="sort-header">
+        <a class="neospring-logo" href="/intro"> <img class="ci color" src="/img/ci/neospring-ci.svg" alt="neospring"
+                title="neospring"> <img class="ci white" src="/img/ci/neospring-ci-white.svg" alt="neospring" title="neospring">
+        </a>
 
         <!-- pc버전 헤더영역 -->
         <div id="header-menu">
-            <ul class="header-menu">
-                <li class="menu-list" style="display: none;"><a href="/security/funding">증권형</a></li>
-
-
-                <li class="menu-list contest-list"><a href="#header-menu-contest" data-toggle="toggle"><span id="header-menu-pre-contest">모의크라우드펀딩</span></a> <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2"><span id="counsel" onmouseover="pointBoxToggle('over')" onmouseout="pointBoxToggle('out')" class="point-out">상담하기</span></a>
-                    <ul id="header-menu-contest">
-
-                        <li class="menu-list"><a href="/contest/12/funding">전북지역 모의투자</a></li>
-
-                        <li class="menu-list"><a href="/contest">지난 대회 보기</a></li>
-                    </ul>
-                </li>
-
-
-
-                <li class="menu-list"><a href="/reward/funding">리워드형</a></li>
-
-            </ul>
-
-
-
-
-
-
-
-
-
-
-            <ul class="header-user-menu" id="header-user-menu">
-
-                <li class="menu-list"><a href="/sort?fundingType=REWARD">테스트리워드형메뉴</a></li>
-                <li class="menu-list"><a href="/sort?fundingType=SECURITY">테스트증권형메뉴</a></li>
-
-
-
-
-                <li class="menu-list"><a href="/company/story">기업성장스토리</a></li>
-                <li class="menu-list"><a href="/dedicate">전용관</a></li>
-                <li class="menu-list"><a onclick="showQnA();">이용안내</a></li>
-
-                <li class="menu-list sign-up"><a href="/user/register">회원가입</a></li>
-                <li class="menu-list">
-                    <a class="pc-version" href="/user/login" data-toggle="modal" data-target="#header-login-layer">로그인</a>
-                    <a class="mobile-version" href="/user/login">로그인</a>
-                    <div id="header-login-layer" class="modal-layer">
-
-
-
-
-
-
-
-
-
-                        <section class="login">
-
-                            <div class="socialMedia">
-                                <ul>
-
-
-
-                                    <li>
-                                        <a href="/social/facebook/login"><img src="/img/socialMedia/facebook.svg" alt="페이스북으로 로그인" title="페이스북으로 로그인"></a>
-                                    </li>
-
-
-
-                                    <li>
-                                        <a href="/social/naver/login"><img src="/img/socialMedia/naver.svg" alt="네이버로 로그인" title="네이버로 로그인"></a>
-                                    </li>
-
-
-
-                                    <li>
-                                        <a href="/social/kakao/login"><img src="/img/socialMedia/kakao.svg" alt="카카오로 로그인" title="카카오로 로그인"></a>
-                                    </li>
-
-
-
-                                    <li>
-                                        <a href="/social/google/login"><img src="/img/socialMedia/google.svg" alt="구글으로 로그인" title="구글으로 로그인"></a>
-                                    </li>
-
-                                </ul>
-                                <div>SNS계정으로 더욱 빠르게 로그인해 보세요!</div>
-                            </div>
-
-                            <form method="post" action="/user/login">
-                                <input type="hidden" name="" value="" />
-
-                                <input type="text" name="username" placeholder="이메일 또는 휴대폰" required>
-
-                                <input type="password" name="password" placeholder="비밀번호" required>
-
-                                <div class="message">
-
+            <div class="header-wrapper">
+                <div class="neo-gnb">
+                    <h1><a href="/intro" class="neospring-logo"><span class="blind">크라우드펀딩 플랫폼 네오스프링</span></a></h1>
+                    <button type="button" class="open-fullnav-btn" onclick="toggleMobileMenu();">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="blind">메뉴 열기</span>
+                    </button>
+                    <div class="web-menu-list">
+                        <ul class="funding-menu">
+                            <li><a href="#">리워드형 크라우드펀딩</a></li>
+                            <li><a href="#">모의크라우드펀딩</a><a href="#" class="consult-btn">상담하기</a></li>
+                        </ul>
+                        <ul class="common-menu">
+                            <li><a href="#">기업성장스토리</a></li>
+                            <li><a href="#">전용관</a></li>
+                            <li><a href="#">이용안내</a></li>
+                            <li class="user-noti"><a href="#" class="notification-bell" onclick="toggleNotificationList();"><span
+                                        class="notification-ico"><em class="noti-num"></em></span><span class="blind">알림</span></a></li>
+                            <li><a href="#">로그인</a></li>
+                            <li class="user-profile"><a href="#" style="background-image:url();"><span class="blind">메뉴
+                                        열기</span></a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="funding-search"><span class="blind">펀딩검색, 펀딩을 찾아보세요</span></button><!-- onclick="showSearch();"-->
+                </div>
+                <div class="fullnav">
+                    <div class="fullnav-wrap">
+                        <div class="fullnav-circle-wrap"></div>
+                        <div class="fullnav-body">
+                            <!--웹에서 감싸줄 말풍선-->
+                            <div class="profile-wrap">
+                                <div class="user-info">
+                                    <div class="profile-image" style="background-image:url();"></div>
+                                    <!--<p class="user-text"><strong>홍길동</strong>님<br>안녕하세요</p>-->
+                                    <!--미 로그인시-->
+                                    <a href="#">로그인</a>
+                                    <p>다양한 서비스를 이용해 보세요</p>
                                 </div>
-                                <input type="submit" value="로그인" style="color:#fff;">
-                            </form>
-
-                            <ul class="links functions">
-                                <li><a href="/user/register">회원가입</a></li>
-                                <li><a data-toggle="modal" data-target="#find-id-modal">아이디 찾기</a></li>
-                                <li><a data-toggle="modal" data-target="#reset-password-request-popup">비밀번호 재설정</a></li>
-
+                                <div class="func-wrap">
+                                    <!--기능 아이콘 -->
+                                    <a href="#" class="register-btn"><span>회원가입</span></a>
+                                    <a href="#"><span class="blind">새로운 알림</span></a>
+                                    <a href="" class="user-set-btn"><span class="blind">회원정보설정</span></a>
+                                </div>
+                            </div>
+                            <ul class="mobile-menu">
+                                <li><a href="#"><span class="blind">알림</span></a></li>
+                                <li><a href="#">회원가입</a></li>
+                                <li><a href="#">로그인</a></li>
                             </ul>
+                            <ul>
+                                <li class="nav-label"><span>MY</span></li>
+                                <li><a href="#">나의 펀딩 보기</a></li>
+                                <li><a href="#">내 투자자 홈</a></li>
+                            </ul>
+                            <ul>
+                                <li class="nav-label"><span>펀딩 둘러보기</span></li>
+                                <li><a href="#">리워드형 크라우드펀딩</a></li>
+                                <li><a href="#">모의크라우드펀딩</a></li>
+                            </ul>
+                            <ul>
+                                <li class="nav-label"><span>기업 정보</span></li>
+                                <li><a href="#">기업성장스토리</a></li>
+                                <li><a href="#">전용관</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">이용안내</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        </section>
+        </div>
+        <!--헤더 컨텐츠-->
+        <article id="dedicate-header" class="sort-setting dedicate-default-back">
+            <!--back처럼 배경이 클래스로 들어가야 반투명 배경적용-->
+            <!--전용관 메인페이지-->
+            <div class="wrapper partner-wrapper">
+                <div class="partner-main-header">
+                    <!--헤더 텍스트영역-->
+                    <div class="partner-title">
+                        <h1>대전대학교서원대학교</h1>
+                        <p>도약기 창업기업의 국내 투자 유치를 위해 역량강화교육 및 실습과 함께 우수창업 기업에게 국대IR 및 크라우드펀딩(리워드형) 기회를 제공합니다.</p>
+
+
+                        <div class="join-member">
+                            <a href="../dedicate-premium/dedicate-user-admin-list.html">전용관 가입하기</a>
+                        </div>
 
                     </div>
-                </li>
+                    <!--헤더 통계영역-->
+
+                    <div class="funding-chartbox">
+                        <div class="dedicateheader-swiper-container swiper-container">
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-wrapper user-info-list">
+
+                                <div class="swiper-slide">
+                                    <!--모의-->
+                                    <ul>
+                                        <li>
+                                            <div class="list-bg"></div>
+                                            <div class="list-cont">57</div>
+                                            <div class="list-title">펀딩 수</div>
+                                        </li>
+                                        <li>
+                                            <div class="list-bg"></div>
+                                            <div class="list-cont">71</div>
+                                            <div class="list-title">투자자 수</div>
+                                        </li>
+                                        <li>
+                                            <div class="list-bg"></div>
+                                            <div class="list-cont">202,000,000</div>
+                                            <div class="list-title">모집 금액</div>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
-            </ul>
+                            </div>
+                        </div>
+                    </div>
 
-        </div>
-
-        <!-- 모바일버전 헤더영역-->
-        <div class="mobile-menu">
-
-            <a href="/user/login">로그인</a>
-
-
-            <a href="#header-menu" data-toggle="toggle" data-toggle-effect="fade"><img src="/img/buttons/normal/mobile-menu.svg" alt="메뉴" title="메뉴"></a>
-        </div>
-
+                </div>
+            </div>
+        </article>
     </header>
-
-
 
     <!-- 퍼블리싱 본문 영역 -->
     <section>
@@ -188,18 +192,20 @@
                         <div class="explain">
                             <p>금액을 입력해주세요</p>
                             <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
-                            <div class="complete text">12,000,000원
+                            <!-- <div class="complete text">12,000,000원
                                 <span class="recite">천이백만원</span>
-                            </div>
+                            </div> -->
                             <!--입력,등록하기 버튼은 입력완료 후 수정하기로 텍스트 전환-->
                             <span class="registBtn">입력하기</span>
                         </div>
                         <form id="projectCapital">
                             <div class="project-info">
-                                <p>자본금이란 사업을 시작하거나 유지하는 데에 밑천이 되는 돈입니다.<br>주주가 기업에 투자한 액면가액이 자본금이 되며, 주당 액면가에 발행주식수를 곱한 금액을 말합니다.</p>
+                                <p>자본금이란 사업을 시작하거나 유지하는 데에 밑천이 되는 돈입니다.<br>주주가 기업에 투자한 액면가액이 자본금이 되며, 주당 액면가에 발행주식수를 곱한
+                                    금액을 말합니다.</p>
                             </div>
                             <div>
-                                <label for="capacity"><input type="text" id="capacity" class="money zerocheck" placeholder="0" min="0" onkeyup="fn_change_hangul_money($(this));"><span>원</span></label>
+                                <label for="capacity"><input type="text" id="capacity" class="money zerocheck"
+                                        placeholder="0" min="0" onkeyup="fn_change_hangul_money($(this));"><span>원</span></label>
                                 <small class="recite"></small>
                             </div>
                             <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
@@ -214,17 +220,20 @@
                         <div class="explain">
                             <p>금액을 입력해주세요</p>
                             <!--complete클래스 div, 입력완료된 내용이 보이는 곳-->
-                            <div class="complete text">65,000,000원
-                                <span class="recite">육천오백만원</span></div>
+                            <!-- <div class="complete text">65,000,000원
+                                <span class="recite">육천오백만원</span></div> -->
                             <!--입력,등록하기 버튼은 입력완료 후 수정하기로 텍스트 전환-->
                             <span class="registBtn">입력하기</span>
                         </div>
                         <form id="projectCompanyValue">
                             <div class="project-info">
-                                <p>기업이 현재 어느 정도의 자산을 가지고 있고, 앞으로 벌어들일 이익은 얼마인지 등을 평가한 금액입니다.<br>이러한 평가의 기준은 각자 다르기 때문에 평가방식이 정해져 있는 것은 아닙니다.</p>
+                                <p>기업이 현재 어느 정도의 자산을 가지고 있고, 앞으로 벌어들일 이익은 얼마인지 등을 평가한 금액입니다.<br>이러한 평가의 기준은 각자 다르기 때문에
+                                    평가방식이 정해져 있는 것은 아닙니다.</p>
                             </div>
                             <div>
-                                <label for="companyValue"><input type="text" id="companyValue" class="money zerocheck" placeholder="0" min="0" onkeyup="fn_change_hangul_money($(this));"><span>원</span></label><small class="recite"></small>
+                                <label for="companyValue"><input type="text" id="companyValue" class="money zerocheck"
+                                        placeholder="0" min="0" onkeyup="fn_change_hangul_money($(this));"><span>원</span></label><small
+                                    class="recite"></small>
                             </div>
                             <!--기본적으로 버튼은 비활성화, form태그에 내용이 입력되면 off클래스 빼주세요-->
                             <div class="btn-area off">
@@ -238,7 +247,7 @@
                         <div class="explain">
                             <p>지분형태를 입력해주세요</p>
                             <!--complete클래스, 입력완료된 내용이 보이는 곳-->
-                            <div class="complete text"><strong>지분증권</strong> 형식으로 진행합니다.</div>
+                            <!-- <div class="complete text"><strong>지분증권</strong> 형식으로 진행합니다.</div> -->
                             <span class="registBtn">설정하기</span>
                         </div>
                         <form id="projectEquityForm">
@@ -287,17 +296,18 @@
                         <div class="explain">
                             <p>투자혜택을 입력해주세요</p>
                             <span style="" class="registBtn">등록하기</span>
-                            <div class="complete">
+                            <!-- <div class="complete">
                                 <article class="benefit-card">
                                     <h5>투자혜택1</h5>
                                     <ul>
                                         <li class="amount">300주이상</li>
                                         <li class="title">[이벤트]3D올인원 베개</li>
-                                        <li class="cont">네오스프링 리워드 특별할인가 약 25% 할인된 가격 45,000원 → 26,900원 *토끼, 아기양, 별, 도트, 별앤달, 퍼피베베 중 택1 (배송메모란 기입 필수!)</li>
+                                        <li class="cont">네오스프링 리워드 특별할인가 약 25% 할인된 가격 45,000원 → 26,900원 *토끼, 아기양, 별,
+                                            도트, 별앤달, 퍼피베베 중 택1 (배송메모란 기입 필수!)</li>
                                         <li class="quantity">제한수량 30개</li>
                                     </ul>
                                 </article>
-                            </div>
+                            </div> -->
                         </div>
                         <form id="investbenefitInfo">
                             <div class="user-info">
@@ -313,17 +323,20 @@
                                     <div class="basicinfo">
                                         <div class="amountbox">
                                             <label for="amount">혜택조건</label>
-                                            <input type="text" id="amount" class="zerocheck" placeholder="0" min="0" required>
+                                            <input type="text" id="amount" class="zerocheck" placeholder="0" min="0"
+                                                required>
                                             <span class="unit">주</span>이상 투자 시 혜택
                                         </div>
                                         <div class="textwrap">
                                             <label for="benefitTitle">혜택명</label>
-                                            <input type="text" id="benefitTitle" class="lengChk" placeholder="혜택명을 간략하게 적어주세요" onkeyup="chkBenefitWord(this, 20, $(this))" required>
+                                            <input type="text" id="benefitTitle" class="lengChk" placeholder="혜택명을 간략하게 적어주세요"
+                                                onkeyup="chkBenefitWord(this, 20, $(this))" required>
                                             <span class="textcount"><span>0</span>&#47;20자</span>
                                         </div>
                                         <div class="textwrap">
                                             <label for="benefitDesc">상세설명</label>
-                                            <textarea id="benefitDesc" class="lengChk autosize" onkeyup="chkBenefitWord(this, 100, $(this))" placeholder="내용을 추가해주세요" required></textarea>
+                                            <textarea id="benefitDesc" class="lengChk autosize" onkeyup="chkBenefitWord(this, 100, $(this))"
+                                                placeholder="내용을 추가해주세요" required></textarea>
                                             <span class="textcount"><span>0</span>&#47;100자</span>
                                         </div>
                                         <div class="quantitybox">
@@ -335,7 +348,8 @@
                                     </div>
                                 </div>
                             </article>
-                            <div class="update" onclick="benefitAdd();" style="margin-bottom:0;background-color:#fff;border-top:1px solid #ddd;"><span>+투자혜택 추가</span></div>
+                            <div class="update" onclick="benefitAdd();" style="margin-bottom:0;background-color:#fff;border-top:1px solid #ddd;"><span>+투자혜택
+                                    추가</span></div>
                             <div class="btn-area off" style="margin-top:0;padding:30px;background-color:#fff;">
                                 <input type="reset" value="취소하기" onclick="resetBtn($(this));ResetBoxBtn();">
                                 <input type="submit" value="저장하기" disabled class="off">
@@ -351,16 +365,19 @@
                                 <div class="basicinfo">
                                     <div class="amountbox">
                                         <label for="amount">혜택조건</label>
-                                        <input type="text" id="amount" class="zerocheck" placeholder="0" min="0" required><span class="unit">주</span>이상 투자 시 혜택
+                                        <input type="text" id="amount" class="zerocheck" placeholder="0" min="0"
+                                            required><span class="unit">주</span>이상 투자 시 혜택
                                     </div>
                                     <div class="textwrap">
                                         <label for="benefitTitle">혜택명</label>
-                                        <input type="text" id="benefitTitle" class="lengChk" onkeyup="chkBenefitWord(this, 20, $(this))" placeholder="혜택명을 간략하게 적어주세요" required>
+                                        <input type="text" id="benefitTitle" class="lengChk" onkeyup="chkBenefitWord(this, 20, $(this))"
+                                            placeholder="혜택명을 간략하게 적어주세요" required>
                                         <span class="textcount"><span>0</span>&#47;20자</span>
                                     </div>
                                     <div class="textwrap">
                                         <label for="benefitDesc">상세설명</label>
-                                        <textarea id="benefitDesc" class="lengChk autosize" onkeyup="chkBenefitWord(this, 100, $(this))" placeholder="내용을 추가해주세요" required></textarea>
+                                        <textarea id="benefitDesc" class="lengChk autosize" onkeyup="chkBenefitWord(this, 100, $(this))"
+                                            placeholder="내용을 추가해주세요" required></textarea>
                                         <span class="textcount"><span>0</span>&#47;100자</span>
                                     </div>
                                     <div class="quantitybox">
@@ -391,7 +408,8 @@
                     <a href="/contest"><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 둘러보기</a>
                 </div>
                 <div class="menu-part">
-                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩 상담하기</a>
+                    <a href="https://goo.gl/forms/SLekWpNPqbE4NIBZ2" target=""><img src="/img/ci/footer-menu-neospringci.png">모의크라우드펀딩
+                        상담하기</a>
                 </div>
             </div>
             <div class="menu-block">
@@ -501,11 +519,11 @@
 funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있습니다 -->
 <script type="text/javascript">
     var rewardSort = '${lastSortNum}';
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         ////// funding-regist-info.js 에 있음
         //각 정보 입력박스 활성화 동작
-        $(".project-article").on('click', function() {
+        $(".project-article").on('click', function () {
             var formState = $(this).find('form').css('display');
             var wid = $(window).width();
 
@@ -532,7 +550,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         //////// funding-regist-info.js 에 있음
 
         //천단위 자릿수표기 submit할때 자릿수 빼고 전송.
-        $("#projectCapital, #projectCompanyValue, #investbenefitInfo").submit(function() {
+        $("#projectCapital, #projectCompanyValue, #investbenefitInfo").submit(function () {
             $(".money").unmask();
         });
         //투자혜택 주,구좌입력 
@@ -542,7 +560,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         });
 
         //투자형태 라디오버튼 카드디자인 클릭시 동작
-        $(".selectCard").on('click', function() {
+        $(".selectCard").on('click', function () {
             $(this).addClass('on');
             $(this).siblings().removeClass('on');
             $(this).find('input').prop('checked', 'true');
@@ -557,12 +575,13 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
             }
         });
         //금액 0이상 입력되도록.
-        $(document).on("keyup", ".zerocheck", function() {
+        $(document).on("keyup", ".zerocheck", function () {
             if ($(this).val() < 1 && $(this).val() !== '') {
                 $(this).val('');
                 zeroCheckModal();
             } else {
-                $(this).parents('form').find('input[type="submit"]').attr('disabled', false).removeClass('off');
+                $(this).parents('form').find('input[type="submit"]').attr('disabled', false).removeClass(
+                    'off');
             }
         });
 
@@ -640,8 +659,10 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         $('body').append(' <div id="zeroCheck-modal" class="modal-layer popupModal">' +
             '<section class="modal-wrapper">' +
             '  <div class="modal-content">' +
-            '<div class="icon-area"><div style="width:80px;margin:0 auto;"><img src="' + icon + '" style="width:100%"/></div></div>' +
-            '    <div class="modal-msg"><p style="font-size:20px;font-weight:700;padding-bottom:15px;">' + message1 + '</p></div>' +
+            '<div class="icon-area"><div style="width:80px;margin:0 auto;"><img src="' + icon +
+            '" style="width:100%"/></div></div>' +
+            '    <div class="modal-msg"><p style="font-size:20px;font-weight:700;padding-bottom:15px;">' + message1 +
+            '</p></div>' +
             ' </div>' +
             '   <div class="modal-btn-area">' +
             okbtn +
@@ -659,7 +680,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         var new_item = $($(".benefit-box-origin").html());
         var boxId = new_item.attr("id", "target" + add_index);
 
-        var label = new_item.find(".input-label").each(function() {
+        var label = new_item.find(".input-label").each(function () {
             var label_orgin = $(this).attr("for");
             $(this).attr("for", label_orgin + add_index);
             $(this).next().attr("id", label_orgin + add_index);
@@ -670,7 +691,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         deleteBtnState();
         //new_item.find('.sortnum').attr('class',"sortnum"+add_index).text(++rewardSort);
 
-        $("#investbenefitInfo .benefitbox").find('.remove').on('click', function() {
+        $("#investbenefitInfo .benefitbox").find('.remove').on('click', function () {
             console.log(123)
             $(this).parent().remove();
             deleteBtnState();
@@ -683,7 +704,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
         newBox.remove();
 
         //삭제후 취소시 삭제한 div 보여주기
-        $("#investbenefitInfo .benefitbox").each(function() {
+        $("#investbenefitInfo .benefitbox").each(function () {
             if ($(this).css('display') === 'none') {
                 $(this).css('display', 'block');
             }
@@ -711,7 +732,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
             target: prev.attr("id"),
             opacity: "0.5",
             speed: 500,
-            callback: function() {
+            callback: function () {
                 prev.before(meNode).css("top", 0);
                 meNode.css("top", 0);
             }
@@ -728,7 +749,7 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
             target: next.attr("id"),
             opacity: "0.5",
             speed: 500,
-            callback: function() {
+            callback: function () {
                 next.after(meNode).css("top", 0);
                 meNode.css("top", 0);
             }
@@ -758,10 +779,12 @@ funding-regist-info.js에 기본 열리고 닫히는 동작은 스크립트 있�
             target.siblings('.textcount').find('span').addClass('over');
 
             //글자수 초과시 버튼클릭 안되도록
-            target.parents('.benefit-basic-info').siblings(".btn-area").find('input[type="submit"]').attr('disabled', true).addClass('off');
+            target.parents('.benefit-basic-info').siblings(".btn-area").find('input[type="submit"]').attr('disabled',
+                true).addClass('off');
         } else if (totalByte === 0) {
             //글자수 0일때도 버튼 안되도록
-            target.parents('.benefit-basic-info').siblings(".btn-area").find('input[type="submit"]').attr('disabled', true).addClass('off');
+            target.parents('.benefit-basic-info').siblings(".btn-area").find('input[type="submit"]').attr('disabled',
+                true).addClass('off');
         } else {
             target.siblings('.textcount').find('span').removeClass('over');
         }
