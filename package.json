@@ -1,0 +1,21 @@
+{
+  "name": "kurepark.github.io",
+  "version": "1.0.0",
+  "description": "웹퍼블리셔 박은혜의 포트폴리오입니다",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss":"node-sass -w scss --output-style compressed -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurepark/kurepark.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurepark/kurepark.github.io/issues"
+  },
+  "homepage": "https://github.com/kurepark/kurepark.github.io#readme"
+}
