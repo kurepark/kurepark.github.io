@@ -1,0 +1,86 @@
+// 작업물 공통 헤더부분
+
+
+.main_content{
+    position: relative;
+    display: inline-block;
+    width: 75%;
+    height: 100vh;
+    vertical-align: top;
+    &.work_main_content{
+        width: 100%;
+        .content_wrap{
+            padding: 4%;
+            .work_wrap{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                .work_image{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+.content_wrap{
+    padding: 4% 0;
+    height: 100%;
+    box-sizing: border-box;
+    .work_image{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        transform:scale(1.2);
+        transition:all 0.8s cubic-bezier(0.37, 0.045, 0.105, 0.8);
+    }
+    .work_info{
+        position: absolute;
+        top: 2.5%;
+        left: 2.5%;
+        dl{
+            dt{
+                margin-bottom: 0.5vw;
+                color: $color_sub;
+                font-size: $font_size14;
+                font-weight: 700;
+            }
+            dd{
+                margin-bottom: 1.5vw;
+                color: $color_sub;
+                font-size: $font_size20;
+                font-weight: 300;
+            }
+        }
+    }
+    .work_title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color_sub;
+        font-size: 7.2vw;
+    }
+    .btn_home{
+        position: absolute;
+        top: 2vw;
+        right: 2vw;
+        width: 4.16vw;
+        height: 4.16vw;
+        border-radius: 100%;
+        background: #fff url(../images/icon_close.png) no-repeat center/1.5vw;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    .icon_scroll{
+        position: absolute;
+        bottom: 2vw;
+        left: 50%;
+        transform:translateX(-50%);
+        width: 2.9vw;
+        height: 1.5vw;
+        background:url(../images/icon_arrow.png) no-repeat center/100%;
+    }
+}

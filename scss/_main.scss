@@ -1,0 +1,131 @@
+// 포폴 프론트 css
+
+// header
+.main_header{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    height: 100vh;
+    vertical-align: top;
+    .header_wrap{
+        padding:4% 0 4% 4%;
+    }
+    .header_title{
+        h2{
+            margin-bottom: 2vw;
+            font-size: 1.25vw;
+            color: #0055ff;
+        }
+        h1{
+            color: $color_main;
+            font-size: 4.1vw;
+        }
+    }
+    .header_nav{
+        position: absolute;
+        bottom: 4%;
+        left: 4%;
+        ul{
+            li{
+                margin-bottom: 1.5vw;
+                a span{
+                    color: $color_main;
+                    font-size: $font_size14;
+                    font-weight: 300;
+                    text-shadow: 2.5px 4.3px 5px rgba(0, 0, 0, 0.1);
+                }
+                &.active span{
+                    font-weight: 700;
+              }   
+            }
+        }
+    }
+}
+ 
+// content
+    //slider
+    .content_slider{
+        width: 100%;
+        height: 100%;
+        .content_work{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            &:hover{
+                .work_image{
+                    transform: scale(1);
+                }
+            }
+            .btn_work_detail{
+                padding: 1.0vw;
+                max-width: 10.4vw;
+                width: 100%;
+                position: absolute;
+                top:65%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                border-radius: 1.56vw;
+                border:2px solid $color_sub;
+                span{
+                    color: $color_sub;
+                    font-size: $font_size20;
+                    i{
+                        padding-left: 1.0vw;
+                    }
+                }
+            }
+        }
+    }
+    .pagination_wrap{
+        margin-bottom: 4%;
+        position: absolute;
+        left: 2.5vw;
+        bottom: 2.5vw;
+        width: 15.1vw;
+        height: 7.65vw;
+        max-height: 147px;
+        .work_pagination {
+            width: inherit;
+            height: inherit;
+            .swiper-pagination-bullet{
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: initial;
+                height: initial;
+                color: $color_sub;
+                font-size: 10.416vw;
+                font-weight: 500;
+                &.swiper-pagination-bullet-active{
+                    display: inline-block;
+                    background:none;
+                }
+            }
+        }
+        .swiper_btn{
+            margin:0;
+            width: 2.9vw;
+            height: 1.56vw;
+            background:none;
+            border:0;
+            &.swiper-button-next{
+                right: 0;
+                left: initial;
+                top: initial;
+                bottom: 0;
+                background:url(../images/icon_arrow.png) no-repeat center/100%;
+            }
+            &.swiper-button-prev{
+                right: 0;
+                left: initial;
+                top: 0;
+                bottom: initial;
+                transform: rotate(180deg);
+                background:url(../images/icon_arrow.png) no-repeat center/100%;
+            }
+        }
+    
+}

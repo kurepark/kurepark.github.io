@@ -15,19 +15,78 @@
 	<meta property="og:image" content="images/meicon.png">
 	<meta property="og:description" content="웹 퍼블리셔 박은혜입니다">
 	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+KR" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Roboto:300,400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	
 
-	<title>EUNHYE PORTFOLIO</title>
+	<title>EUNHYE PORTFOLIO</title> 
 </head>
 
 <body>
-	
+	<div class="wrap">
+		<div class="inner_section">
+			<header class="main_header">
+				<div class="header_wrap">
+				<a href="#" class="header_title">
+					<h2>DO HEE KANG</h2>
+					<h1>UX/UI<br>
+					Designer</h1>
+				</a>
+				<nav class="header_nav">
+					<ul>
+						<li class="active">
+							<a href="#"><span>RESUME</span></a>
+						</li>
+						<li>
+								<a href="#"><span>WORK</span></a></li>
+						<li>
+								<a href="#"><span>ABOUT</span></a></li>
+						<li>
+								<a href="#"><span>CONTACT</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			</header>
+			<section class="main_content">
+				<div class="content_wrap swiper-container">
+					<ul class="content_slider swiper-wrapper">
+						<li class="content_work swiper-slide">
+							<a href="#">
+								<!-- 작업물 이미지가 배경으로 들어갑니다 -->
+								<figure class="work_image" style="background-image:url(/images/testbg.jpg)"></figure>
+								<div class="work_info">
+									<dl>
+										<dt>ROLE</dt>
+										<dd>Lead Designer</dd>
+										<dt>YEAR</dt>
+										<dd>2018</dd>
+										<dt>COMPANY</dt>
+										<dd>Neospring</dd>
+									</dl>
+								</div>
+								<div class="work_title">
+									<h4>work title</h4>
+								</div>
+								<div class="btn_work_detail">
+									<span>자세히 보기<i class="fas fa-angle-right"></i></span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="pagination_wrap">
+					<div class="work_pagination swiper-pagination"></div>
+					<button type="button" class="swiper_btn swiper-button-next"></button>
+					<button thpe="button" class="swiper_btn swiper-button-prev"></button>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
