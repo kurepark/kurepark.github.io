@@ -2,11 +2,18 @@
 
 // header
 .main_header{
-    position: relative;
-    display: inline-block;
-    width: 25%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25.7291666667%;
     height: 100vh;
     vertical-align: top;
+    transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1);
+    &.wide {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
     .header_wrap{
         padding:4% 0 4% 4%;
     }
@@ -86,13 +93,16 @@
         width: 15.1vw;
         height: 7.65vw;
         max-height: 147px;
+        transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1);
+        z-index: 11;
+        //transition-delay: 1s;
         .work_pagination {
             width: inherit;
             height: inherit;
             .swiper-pagination-bullet{
                 display: none;
                 position: absolute;
-                top: 0;
+                top: -12px;
                 left: 0;
                 width: initial;
                 height: initial;

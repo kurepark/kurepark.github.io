@@ -38,55 +38,28 @@
 				</a>
 				<nav class="header_nav">
 					<ul>
-						<li class="active">
-							<a href="#"><span>RESUME</span></a>
-						</li>
 						<li>
-								<a href="#"><span>WORK</span></a></li>
+								<a class="btn_menu" data-url="main.html"><span>WORK</span></a>
+							</li>
 						<li>
-								<a href="#"><span>ABOUT</span></a></li>
-						<li>
-								<a href="#"><span>CONTACT</span></a></li>
+								<a class="btn_menu" data-url="about.html"><span>ABOUT</span></a>
+							</li>
 					</ul>
 				</nav>
 			</div>
 			</header>
-			<section class="main_content">
-				<div class="content_wrap swiper-container">
-					<ul class="content_slider swiper-wrapper">
-						<li class="content_work swiper-slide">
-							<a href="#">
-								<!-- 작업물 이미지가 배경으로 들어갑니다 -->
-								<figure class="work_image" style="background-image:url(/images/testbg.jpg)"></figure>
-								<div class="work_info">
-									<dl>
-										<dt>ROLE</dt>
-										<dd>Lead Designer</dd>
-										<dt>YEAR</dt>
-										<dd>2018</dd>
-										<dt>COMPANY</dt>
-										<dd>Neospring</dd>
-									</dl>
-								</div>
-								<div class="work_title">
-									<h4>work title</h4>
-								</div>
-								<div class="btn_work_detail">
-									<span>자세히 보기<i class="fas fa-angle-right"></i></span>
-								</div>
-							</a>
-						</li>
-					</ul>
-					<div class="pagination_wrap">
-					<div class="work_pagination swiper-pagination"></div>
-					<button type="button" class="swiper_btn swiper-button-next"></button>
-					<button thpe="button" class="swiper_btn swiper-button-prev"></button>
-					</div>
-				</div>
+			<section id="mainContent" class="main_content">
 			</section>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function(){
+			//최초 로딩시 보여줄 페이지
+			$("#mainContent").load('main.html');
+		});//jqb
+	</script>
 	<script src="js/main.js"></script>
+
 </body>
 
 </html>

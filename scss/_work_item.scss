@@ -3,4 +3,66 @@
 .work_content{
     margin-top:70px;
     position: relative;
+    width: 100% !important;
+    left: auto;
+    .work_inner {
+        padding: 0 4% 1.2vw;
+        &.bg_inner {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.work_inner_wrap {
+    display: flex;
+    height: 100%;
+    &.row {
+        &.right {
+            margin: 0;
+            flex-direction: row;
+        }
+        &.left {
+            margin: 0;
+            flex-direction: row-reverse;
+        }
+        &.center { 
+            margin: 0;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+}
+.work_inner {
+    font-weight: 500;
+    line-height: 1.35;
+    .header{
+        margin-bottom: 3vw !important;
+    }
+    .work_title {
+        font-size: 2.0vw;
+        color: $color_main;
+    }
+    .sub_title {
+        font-size: $font_size14;
+        color: $color_em;
+        background-color: $color_sub_bg;
+    }
+    .work_desc {
+        font-size: 0.8vw;
+        line-height: 1.75;
+        color: $color_main;
+    }
+    .work_desc + .work_desc {
+        padding-top: 2.6vw;
+    }
+    .work_text{
+        margin: 0 1%;
+        position: relative;
+        width: 48%;
+        height: 100%;
+        background-color: $color_sub_bg;
+        box-sizing: border-box;
+    }
 }

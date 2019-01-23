@@ -1,0 +1,29 @@
+.about_wrap {
+    height: 100vh;
+    h3{
+        color: $color_em;
+        font-size: 2.08vw;
+        line-height: 1.35;
+        font-weight: 500;
+    }
+    .profile_list {
+        margin-bottom: 1.5vw;
+        li {
+            color: $color_main;
+            font-size: 0.83vw;
+            font-weight: 500;
+            line-height: 1.75;
+        }
+    }
+    .profile_text {
+        color: $color_main;
+        font-size: 0.83vw;
+        line-height: 1.75;
+    }
+}
+.col_half { 
+    margin-bottom: 1.25vw;
+    padding-bottom: 0.5vw;
+    width: 50%;
+    background-color: $color_sub_bg;
+}

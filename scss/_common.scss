@@ -9,16 +9,19 @@ body{
     height: 100vh;
     box-sizing: border-box;
     .inner_section{
+        position: relative;
         font-size: 0; 
+    }
+    &.wrap_bg {
+        background-color: rgba(0, 0, 204, 0.1);;
     }
 }
 
 .blind{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    font-size: 1px;
-    text-indent: -99999px;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
