@@ -14,10 +14,13 @@ $(document).ready(function(){
 
   //작업물 클릭
   $(document).on('click','.btn_work_link',function(){
-    var $url = $(this).attr('data-url');
-    console.log(11111)
+    var $url = 'work/' + $(this).attr('data-url');
+    //$url = 'work/' + $url;
+    console.log($url)
     $('.main_header, .main_content').addClass('wide');
-    setTimeout(linkToPage($url), 1000);
+    setTimeout(function(){
+      location.href = $url;
+    }, 3000);
   });
 
 
@@ -31,6 +34,10 @@ function workSlider() {
     slidesPerView: 1,
     spaceBetween: 30,
     mousewheel: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
