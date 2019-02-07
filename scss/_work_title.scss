@@ -51,6 +51,15 @@
         background-position: center;
         transform:scale(1.2);
         transition:all 0.8s cubic-bezier(0.37, 0.045, 0.105, 0.8);
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0; 
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     }
     .work_info{
         position: absolute;
