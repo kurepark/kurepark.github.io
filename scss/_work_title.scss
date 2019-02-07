@@ -13,7 +13,7 @@
         left: 0;
         .content_wrap {
             padding: 0 3%;
-        }
+        } 
         .pagination_wrap{
             left: -100%;
         }
@@ -78,6 +78,10 @@
         transform: translate(-50%, -50%);
         color: $color_sub;
         font-size: 7.2vw;
+        &.fadeout { 
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.15, 0.005, 0.155, 1)
+        }
     }
     .btn_home{
         position: absolute;

@@ -15,12 +15,11 @@ $(document).ready(function(){
   //작업물 클릭
   $(document).on('click','.btn_work_link',function(){
     var $url = 'work/' + $(this).attr('data-url');
-    //$url = 'work/' + $url;
-    console.log($url)
     $('.main_header, .main_content').addClass('wide');
+    $('.btn_work_detail, .work_title').addClass('fadeout');
     setTimeout(function(){
       location.href = $url;
-    }, 3000);
+    }, 1000);
   });
 
 

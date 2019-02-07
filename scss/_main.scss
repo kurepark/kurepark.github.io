@@ -75,12 +75,18 @@
                 text-align: center;
                 border-radius: 1.56vw;
                 border:2px solid $color_sub;
+                opacity: 1;
                 span{
                     color: $color_sub;
                     font-size: $font_size20;
                     i{
                         padding-left: 1.0vw;
                     }
+                }
+
+                &.fadeout { 
+                    opacity: 0;
+                    transition: all 0.4s cubic-bezier(0.15, 0.005, 0.155, 1)
                 }
             }
         }

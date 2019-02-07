@@ -13,12 +13,26 @@
     }
     .btn_link_main {
         position: fixed;
-        top: 6.2vw;
+        //top: 6.2vw;
         right: 6.2vw;
         width: 4.1vw;
         height: 4.1vw;
+        opacity: 0;
         background: $color_sub url(../images/icon_close.png) no-repeat center/40%;
         border-radius: 50%;
+        z-index: 9999; 
+        animation: showCloseBtn .5s ease-in-out forwards;
+    }
+} 
+
+@keyframes showCloseBtn {
+    0% {
+        top: 5vw;
+        opacity: 0;
+    }
+    100% {
+        top: 6.2vw;
+        opacity: 1;
     }
 }
 
@@ -68,7 +82,6 @@
     .sub_title {
         font-size: $font_size14;
         color: $color_em;
-        background-color: $color_sub_bg;
     }
     .work_desc {
         font-size: 0.8vw;
@@ -77,13 +90,33 @@
     }
     .work_desc + .work_desc {
         padding-top: 2.6vw;
-    }
+    } 
     .work_text{
         margin: 0 1%;
         position: relative;
         width: 48%;
         height: 100%;
-        background-color: $color_sub_bg;
         box-sizing: border-box;
     }
 }
+
+// work01 css
+#work01 { 
+    .work_text.header {
+        h2 {
+            padding: 8.3vw 0 0.5vw;
+            color: #ffb2cc;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+        }
+        h1 {
+            padding-bottom: 0;
+            color: $color_sub;
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+}
+// work02 css
