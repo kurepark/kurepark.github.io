@@ -10,16 +10,27 @@
     vertical-align: top;
     transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1);
     &.wide {
-        width: 0;
+        //width: 0;
         opacity: 0;
         visibility: hidden;
     }
     .header_wrap{
-        padding:4% 0 4% 4%;
+        position: relative;
+        left: 0;
+        margin-top: 30px;
+        padding:4% 0 4% 10%;
+        opacity: 1;
+        height: calc(100% - 30px);
+        box-sizing: border-box;
+        &.fadeout { 
+            opacity: 0;
+            left: -100%;
+            transition: all 0.4s cubic-bezier(0.15, 0.005, 0.155, 1)
+        }
     }
     .header_title{
         h2{
-            margin-bottom: 2vw;
+            margin-top: 2vw;
             font-size: 1.25vw;
             color: #0055ff;
         }
@@ -31,7 +42,7 @@
     .header_nav{
         position: absolute;
         bottom: 4%;
-        left: 4%;
+        left: 10%;
         ul{
             li{
                 margin-bottom: 1.5vw;
@@ -76,17 +87,40 @@
                 border-radius: 1.56vw;
                 border:2px solid $color_sub;
                 opacity: 1;
+                overflow: hidden;
                 span{
+                    position: relative;
                     color: $color_sub;
                     font-size: $font_size20;
+                    z-index: 1;
+                    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
                     i{
                         padding-left: 1.0vw;
                     }
+                }
+                &::before { 
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: #fff;
+                    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);	
                 }
 
                 &.fadeout { 
                     opacity: 0;
                     transition: all 0.4s cubic-bezier(0.15, 0.005, 0.155, 1)
+                }
+
+                &:hover { 
+                    &::before { 
+                        width: 100%;
+                    }
+                    span{
+                        color: $color_main;
+                    }
                 }
             }
         }

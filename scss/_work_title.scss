@@ -37,6 +37,7 @@
     margin: 3% 0;
     height: 92%;
     box-sizing: border-box;
+    box-shadow: 20px 34.6px 40px 0 rgba(0, 0, 0, 0.35);
     .btn_work_link {
         display: block;
         height: 100%;
@@ -65,6 +66,7 @@
         position: absolute;
         top: 2.5%;
         left: 2.5%;
+        opacity: 1;
         dl{
             dt{
                 margin-bottom: 0.5vw;
@@ -79,14 +81,6 @@
                 font-weight: 300;
             }
         }
-    }
-    .work_title{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $color_sub;
-        font-size: 7.2vw;
         &.fadeout { 
             opacity: 0;
             transition: all 0.4s cubic-bezier(0.15, 0.005, 0.155, 1)
@@ -111,4 +105,16 @@
         height: 1.5vw;
         background:url(../images/icon_arrow.png) no-repeat center/100%;
     }
+}
+
+
+.work_title{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color_sub;
+    font-size: 7.2vw;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
 }

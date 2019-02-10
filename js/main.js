@@ -3,6 +3,9 @@ $(document).ready(function(){
   //gnb클릭
   $(document).on('click','.btn_menu',function(){
     var $url = $(this).attr('data-url');
+    var $btn = $(this).parent('li');
+
+    $btn.addClass('active').siblings('li').removeClass('active');
     linkToPage($url);
     if($url === 'about.html') {
       $(".wrap").addClass('wrap_bg');
@@ -15,8 +18,9 @@ $(document).ready(function(){
   //작업물 클릭
   $(document).on('click','.btn_work_link',function(){
     var $url = 'work/' + $(this).attr('data-url');
-    $('.main_header, .main_content').addClass('wide');
-    $('.btn_work_detail, .work_title').addClass('fadeout');
+    $('.header_wrap').addClass('fadeout');
+    $('.main_header, .main_content').delay(100).addClass('wide');
+    $('.btn_work_detail, .work_info').addClass('fadeout');
     setTimeout(function(){
       location.href = $url;
     }, 1000);
