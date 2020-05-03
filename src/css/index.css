@@ -1,0 +1,284 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', 'Noto Sans KR', sans-serif;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.show {
+  display: block !important;
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  margin: -150px auto 0;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.body_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.date_wrap {
+  margin-bottom: 24px;
+  font-size: 0;
+  font-family: 'Righteous', cursive;
+  white-space: nowrap;
+}
+
+.date,
+.day {
+  display: inline-block;
+  font-size: 60px;
+  opacity: 0.9;
+}
+
+.date.day,
+.day.day {
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 20px;
+}
+
+.date.day.Sun,
+.day.day.Sun {
+  color: #FC3A51;
+}
+
+.date.day.Sat,
+.day.day.Sat {
+  color: #038CE2;
+}
+
+.time_wrap {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.time_wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.time_wrap .time {
+  font-size: 100px;
+  float: left;
+  padding-right: 20px;
+}
+
+.time_wrap .time_sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 40px;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+input {
+  color: #333;
+  width: 250px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid rgba(73, 95, 107, 0.7);
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.ask_text {
+  font-size: 24px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+.name_wrap {
+  margin-bottom: 24px;
+}
+
+.name_wrap .name_form {
+  display: none;
+}
+
+.name_wrap .user_name {
+  padding: 24px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.name_wrap .ask_text {
+  display: none;
+}
+
+.todo_list {
+  padding: 24px 0;
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.todo_list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todo_list li {
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.todo_list li span {
+  position: relative;
+  display: block;
+  padding: 0 24px 0 20px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo_list li span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 11px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.todo_list li span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  margin-top: 2px;
+  width: 0;
+  height: 0;
+  border-width: 5px 4px 0 2px;
+  border-color: #fff transparent transparent transparent;
+  border-style: solid;
+}
+
+.todo_list li button {
+  color: #F07A92;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  float: right;
+}
+
+.weather_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 24px 15px;
+  opacity: 0.8;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.8);
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.weather_wrap .info {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.weather_wrap .info + .info {
+  padding-left: 15px;
+}
+
+.weather_wrap .info + .info::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%);
+}

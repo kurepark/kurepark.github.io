@@ -1,0 +1,23 @@
+{
+  "name": "kurepark.github.io",
+  "version": "1.0.0",
+  "description": "[my github pages](https://kurepark.github.io/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss" : "node-sass -w src/scss --output-style expanded -o src/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurepark/kurepark.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurepark/kurepark.github.io/issues"
+  },
+  "homepage": "https://github.com/kurepark/kurepark.github.io#readme",
+  "dependencies": {
+    "node-sass": "^4.14.0"
+  }
+}
