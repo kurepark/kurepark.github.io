@@ -1,3 +1,3 @@
 #### github pages
 
-[my github pages](https://kurepark.github.io/)
+[JS Challenge](https://kurepark.github.io/docs/challenge_js/)
